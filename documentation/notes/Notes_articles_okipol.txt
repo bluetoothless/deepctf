@@ -1,0 +1,10 @@
+Baker, B., Kanitscheider, I., Markov, T., Wu, Y., Powell, G., McGrew, B., & Mordatch, I. (2019). Emergent tool use from multi-agent autocurricula. arXiv preprint arXiv:1909.07528.
+	Hide and seek
+	-nagrody: hiders -1 jesli jakikolwiek znaleziony, +1 jesli wszyscy ukryci, seekers -1 jesli nikogo nie znalezli, +1 jesli znalezli chociaz 1 hidersa, -10 jesli zbyt daleko pojda
+	-silnik:  MUJOCO physics engine
+	-inputy: pozycja, velocity rozmiar objektow i innych agentow, jesli entity nie sa w lini widzenia albo w 135stopni z przodu to sa maskowane, 30 laserow lidar
+	-agenty sa sferami
+	-mozliwe akcje: ruch poprzez nadanie sily w osiach x y z, binarne pdonoszenie obiektow, binarne zablokowanie objektow w miejscu
+	-Policies are optimized using Proximal Policy Optimization (PPO) (Schulman et al., 2017) and	Generalized Advantage Estimation (GAE) (Schulman et al., 2015), and training is performed using rapid (OpenAI, 2018)
+	-If randomization is reduced, we find that fewer stages of the skill progression emerges, and at times less sophisticated strategies emerge instead (e.g. hiders can learn to run away and use boxes as moveable shields.);
+	
