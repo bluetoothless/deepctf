@@ -1,0 +1,20 @@
+1. Unity 2021.2.16
+2. ML-Agents 2.1.0 (release_18, com.unity.ml-agents i com.unity.ml-agents.extensions)
+3. Dodać ML Agents do projektu Unity wg tej instrukcji:
+https://github.com/Unity-Technologies/ml-agents/blob/release_19_docs/docs/Installation.md
+4. Doinstalować pakiet InputSystem (Unity: Window -> Package Menager -> wyszukać "input" -> Install)
+5. Zmienić "using Newtonsoft.Json;" na "using Unity.Plastic.Newtonsoft.Json;"
+Jeśli dalej nie widzi Newtonsoft, to odinstalować i zainstalować Newtonsoft.json (Kliknięcie na error -> Visual Studio -> kliknięcie prawym na rozwiązanie "ML Agents Test" -> Zarządzaj Pakietami NuGet rozwiązania -> Zakładka Przeglądaj -> Newtonsoft.Json -> Zainstaluj).
+6. Unity: Edit -> Project Settings -> Player -> Other Settings -> Configuration -> Zmienić Active Input Handling na "Both", żeby nie było cały czas erroru o inputach (I po restarcie Unity sprawdzić, czy ustawienie na pewno się zmieniło).
+
+Są trzy typy zachowań (behavior):
+- heuristic: klasyczne zachowanie z gier - zachowanie wymyślone przez programistę i zhardcodowane; problem z adaptacją w różnych środowiskach
+- learning (default): model w trakcie uczenia
+- inference: nauczony model zachowania jest wykorzystywany, ale nie jest zmieniany, AI się nie uczy
+
+Skrypt agenta dziedziczy po klasie Agent. 
+W skrypcie agenta, w metodzie Initialize(), są przypisywane parametry z klasy Academy - Academy kontroluje trening wszystkich agentów.
+W metodzie CollectObservations() zapisuje się wszystkie informacje potrzebne do wykonania decyzji przez agenta.
+W metodzie OnActionReceived() zamienia się parametry akcji na konkretne akcje (ruchy agenta).
+W metodzie OnEpisodeBegin() (epizod trwa do momentu osiągnięcia celu lub przegrania - np. w przykładzie Ball3D epizod trwa, aż spadnie piłka).
+
