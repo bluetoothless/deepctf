@@ -2,6 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Biom
+{
+    public int chance;
+    public GameObject prefab;
+    public GameObject tiles;
+    public Biom(int ch, GameObject pr, GameObject til)
+    {
+        chance = ch;
+        prefab = pr;
+        tiles = til;
+    }
+}
+
 public class PerlinNoiseMapGeneration : MonoBehaviour
 {
     public GameObject lakePrefab;
@@ -25,23 +38,48 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         int height = (int)field.transform.localScale.x * 10; // 360
 
         // hardcoded map %
-        int lakes = 30;
-        int accelerate = 10;
-        int desert = 10;
+        Biom lakes = new(60, lakePrefab, lakeTiles);
+        Biom accelerate = new(60, acceleratePrefab, accelerateTiles);
+        Biom desert = new(60, desertPrefab, desertTiles);
 
-        GameObject currentPrefab;
-        GameObject currentTiles;
+        var bioms = new List<Biom> { accelerate, desert, lakes };
 
-        float scale = 3f;
+        float scale;
+        float offsetX;
+        float offsetY;
 
+        foreach (Biom biom in bioms)
+        {
+            scale = Random.Range(2f, 3f);
+            offsetX = Random.Range(0f, 99999f);
+            offsetY = Random.Range(0f, 99999f);
 
+            for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
+            {
+                for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
+                {
+                    float sample = Mathf.PerlinNoise(
+                        ((float)(current_tile_height + (height / 2)) / height) * scale + offsetX,
+                        ((float)(current_tile_width + (width / 2)) / width) * scale + offsetY);
+
+                    sample *= 100;
+
+                    if (sample < biom.chance)
+                    {
+                        GameObject newTile = Instantiate(biom.prefab, new Vector3(current_tile_height, 0, current_tile_width), Quaternion.identity);
+                        newTile.transform.SetParent(biom.tiles.transform);
+                    }
+                }
+            }
+        }
+        /*
         for (int current_tile_height = (height/2 - height) + (TileScale/2); current_tile_height < height/2; current_tile_height += TileScale)
         {
             for (int current_tile_width = (width/2 - width) + (TileScale/2); current_tile_width < width/2; current_tile_width += TileScale)
             {
                 float sample = Mathf.PerlinNoise(
-                    ((float)(current_tile_height + (height / 2)) / height) * scale,
-                    ((float)(current_tile_width + (width / 2)) / width) * scale);
+                    ((float)(current_tile_height + (height / 2)) / height) * scale + offsetX,
+                    ((float)(current_tile_width + (width / 2)) / width) * scale + offsetY);
 
                 sample *= 100;
 
@@ -69,7 +107,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 newTile.transform.SetParent(currentTiles.transform);
             }
         }
-
+        */
 
     }
 
