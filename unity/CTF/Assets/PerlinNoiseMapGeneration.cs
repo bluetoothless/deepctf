@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Biom
 {
+    public int counter = 0;
     public int chance;
     public GameObject prefab;
     public GameObject tiles;
@@ -13,6 +14,18 @@ public class Biom
         chance = ch;
         prefab = pr;
         tiles = til;
+    }
+}
+
+public class Tile
+{
+    public int xCenter;
+    public int yCenter;
+
+    public Tile(int x, int y)
+    {
+        xCenter = x;
+        yCenter = y;
     }
 }
 
@@ -25,6 +38,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public GameObject desertPrefab;
     public GameObject desertTiles;
 
+    public const int chanceEnhacerAdder = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,27 +49,85 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
 
         GameObject field = gameObject;
-        int TileScale = 4;
+        int TileScale = (int)lakePrefab.transform.localScale.x;
 
         //field.transform.position = Vector3.zero;
 
         // PERLIN NOISE MAP GENERATION
 
-        int width = (int)field.transform.localScale.z * 10; // 400
         int height = (int)field.transform.localScale.x * 10; // 360
+        int width = (int)field.transform.localScale.z * 10; // 400
+
+        var tiles = new List<Tile> {};
+
+        for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
+        {
+            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
+            {
+                tiles.Add(new Tile(current_tile_height, current_tile_width));
+            }
+        }
 
         // hardcoded map %
-        Biom lakes = new(70, lakePrefab, lakeTiles);
-        Biom accelerate = new(70, acceleratePrefab, accelerateTiles);
-        Biom desert = new(70, desertPrefab, desertTiles);
+        Biom lakes = new(30, lakePrefab, lakeTiles);
+        Biom accelerate = new(30, acceleratePrefab, accelerateTiles);
+        Biom desert = new(30, desertPrefab, desertTiles);
 
         var bioms = new List<Biom> { accelerate, desert, lakes };
-        bool[,] mapMatrix = new bool[360, 400];
+        // bool[,] mapMatrix = new bool[height, width];
+        int mapSize = (height * width) / (TileScale * TileScale) ;
 
         float scale;
         float offsetX;
         float offsetY;
+        scale = Random.Range(2f, 3f);
+        foreach (Biom biom in bioms)
+        {
+            offsetX = Random.Range(0f, 99999f);
+            offsetY = Random.Range(0f, 99999f);
 
+            int chanceEnhancer = 0;
+            bool notEnoughTiles = true;
+
+            while (notEnoughTiles)
+            {
+                // iterating in reverse, so I can remove a tile from list(tiles) in a run time
+                for (int i = tiles.Count - 1; i >= 0; i--)
+                {
+                    Tile tile = tiles[i];
+
+                    float sample = Mathf.PerlinNoise(
+                        (float)tile.xCenter / height * scale + offsetX,
+                        (float)tile.yCenter / width * scale + offsetY);
+
+                    sample *= 100;
+
+                    if (sample < biom.chance + chanceEnhancer)
+                    {
+                        // put newTile in game
+                        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
+                        newTile.transform.SetParent(biom.tiles.transform);
+                        // delete Tile from List, so it won't be consider in next loop
+                        tiles.Remove(tile);
+                        // check if enough tiles already in game
+                        biom.counter++;
+                        if (biom.counter >= mapSize * biom.chance / 100)
+                        {
+                            notEnoughTiles = false;
+                            break;
+                        }
+                    }
+                }
+                chanceEnhancer += chanceEnhacerAdder;
+            }
+        }
+
+        sw.Stop();
+
+        UnityEngine.Debug.Log("Seconds = " + sw.Elapsed + "Scale = ");
+
+
+        /*
         foreach (Biom biom in bioms)
         {
             scale = Random.Range(2f, 3f);
@@ -84,10 +157,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 i++;
             }
         }
+        */
 
-        sw.Stop();
-
-        UnityEngine.Debug.Log("Elapsed= " + sw.ElapsedTicks + "/// Seconds = " + sw.Elapsed);
 
         /*
         for (int current_tile_height = (height/2 - height) + (TileScale/2); current_tile_height < height/2; current_tile_height += TileScale)
