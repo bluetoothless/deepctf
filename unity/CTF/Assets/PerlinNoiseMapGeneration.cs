@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+public enum biomType
+{
+    grass,
+    accelerate,
+    desert,
+    lake
+}
+
 public class Biom
 {
     public int counter = 0;
     public int chance;
     public GameObject prefab;
     public GameObject tiles;
-    public Biom(int ch, GameObject pr, GameObject til)
+    public biomType type;
+    public Biom(int ch, GameObject pr, GameObject til, biomType t)
     {
         chance = ch;
         prefab = pr;
         tiles = til;
+        type = t;
     }
 }
 
@@ -21,11 +31,18 @@ public class Tile
 {
     public int xCenter;
     public int yCenter;
+    public biomType biom = biomType.grass;
+    public int domain = -1;
 
     public Tile(int x, int y)
     {
         xCenter = x;
         yCenter = y;
+    }
+
+    public void changeBiom(biomType b)
+    {
+        biom = b;
     }
 }
 
@@ -37,6 +54,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public GameObject accelerateTiles;
     public GameObject desertPrefab;
     public GameObject desertTiles;
+    public int lakesProcentage = 20;
+    public int accelerateSurfaceProcentage = 10;
+    public int desertsProcentage = 35;
 
     public const int chanceEnhacerAdder = 5;
 
@@ -44,88 +64,13 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     void Start()
     {
         Stopwatch sw = new Stopwatch();
-
         sw.Start();
 
-
-        GameObject field = gameObject;
-        int TileScale = (int)lakePrefab.transform.localScale.x;
-
-        //field.transform.position = Vector3.zero;
-
-        // PERLIN NOISE MAP GENERATION
-
-        int height = (int)field.transform.localScale.x * 10; // 360
-        int width = (int)field.transform.localScale.z * 10; // 400
-
-        var tiles = new List<Tile> {};
-
-        for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
-        {
-            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
-            {
-                tiles.Add(new Tile(current_tile_height, current_tile_width));
-            }
-        }
-
-        // hardcoded map %
-        Biom lakes = new(30, lakePrefab, lakeTiles);
-        Biom accelerate = new(30, acceleratePrefab, accelerateTiles);
-        Biom desert = new(30, desertPrefab, desertTiles);
-
-        var bioms = new List<Biom> { accelerate, desert, lakes };
-        // bool[,] mapMatrix = new bool[height, width];
-        int mapSize = (height * width) / (TileScale * TileScale) ;
-
-        float scale;
-        float offsetX;
-        float offsetY;
-        scale = Random.Range(2f, 3f);
-        foreach (Biom biom in bioms)
-        {
-            offsetX = Random.Range(0f, 99999f);
-            offsetY = Random.Range(0f, 99999f);
-
-            int chanceEnhancer = 0;
-            bool notEnoughTiles = true;
-
-            while (notEnoughTiles)
-            {
-                // iterating in reverse, so I can remove a tile from list(tiles) in a run time
-                for (int i = tiles.Count - 1; i >= 0; i--)
-                {
-                    Tile tile = tiles[i];
-
-                    float sample = Mathf.PerlinNoise(
-                        (float)tile.xCenter / height * scale + offsetX,
-                        (float)tile.yCenter / width * scale + offsetY);
-
-                    sample *= 100;
-
-                    if (sample < biom.chance + chanceEnhancer)
-                    {
-                        // put newTile in game
-                        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
-                        newTile.transform.SetParent(biom.tiles.transform);
-                        // delete Tile from List, so it won't be consider in next loop
-                        tiles.Remove(tile);
-                        // check if enough tiles already in game
-                        biom.counter++;
-                        if (biom.counter >= mapSize * biom.chance / 100)
-                        {
-                            notEnoughTiles = false;
-                            break;
-                        }
-                    }
-                }
-                chanceEnhancer += chanceEnhacerAdder;
-            }
-        }
+        var tiles = GenerateMap();
+        FindDomains(tiles);
 
         sw.Stop();
-
-        UnityEngine.Debug.Log("Seconds = " + sw.Elapsed + "Scale = ");
-
+        UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
 
         /*
         foreach (Biom biom in bioms)
@@ -203,5 +148,110 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     void Update()
     {
         
+    }
+
+    List<Tile> GenerateMap()
+    {
+        GameObject field = gameObject;
+        int TileScale = (int)lakePrefab.transform.localScale.x;
+
+        // PERLIN NOISE MAP GENERATION
+
+        int height = (int)field.transform.localScale.x * 10; // 360
+        int width = (int)field.transform.localScale.z * 10; // 400
+
+        var tiles = new List<Tile> { };
+
+        for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
+        {
+            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
+            {
+                tiles.Add(new Tile(current_tile_height, current_tile_width));
+            }
+        }
+
+        var tilesCopy = new List<Tile>(tiles);
+
+        Biom lakes = new(lakesProcentage, lakePrefab, lakeTiles, biomType.lake);
+        Biom accelerate = new(accelerateSurfaceProcentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
+        Biom desert = new(desertsProcentage, desertPrefab, desertTiles, biomType.desert);
+
+        var bioms = new List<Biom> { accelerate, desert, lakes };
+        int mapSize = (height * width) / (TileScale * TileScale);
+
+        float scale;
+        float offsetX;
+        float offsetY;
+        scale = Random.Range(2f, 3f);
+        foreach (Biom biom in bioms)
+        {
+            if (biom.chance == 0)
+            {
+                continue;
+            }
+            offsetX = Random.Range(0f, 99999f);
+            offsetY = Random.Range(0f, 99999f);
+
+            int chanceEnhancer = -(biom.chance/3);
+            bool notEnoughTiles = true;
+
+            while (notEnoughTiles)
+            {
+                // iterating in reverse, so I can remove a tile from list(tiles) in a run time
+                for (int i = tiles.Count - 1; i >= 0; i--)
+                {
+                    Tile tile = tiles[i];
+
+                    float sample = Mathf.PerlinNoise(
+                        (float)tile.xCenter / height * scale + offsetX,
+                        (float)tile.yCenter / width * scale + offsetY);
+
+                    sample *= 100;
+
+                    if (sample < biom.chance + chanceEnhancer)
+                    {
+                        // put newTile in game
+                        tile.changeBiom(biom.type);
+                        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
+                        newTile.transform.SetParent(biom.tiles.transform);
+                        // delete Tile from List, so it won't be consider in next loop
+
+                        tiles.Remove(tile);
+                        // check if enough tiles already in game
+                        biom.counter++;
+                        if (biom.counter >= mapSize * biom.chance / 100)
+                        {
+                            notEnoughTiles = false;
+                            break;
+                        }
+                    }
+                }
+                chanceEnhancer += chanceEnhacerAdder;
+            }
+        }
+        return tilesCopy;
+    }
+
+    void FindDomains(List<Tile> tiles)
+    {
+        int nextDomain = 0;
+        foreach (Tile tile in tiles)
+        {
+            if (tile.domain == -1)
+            {
+                addToDomain(tile, nextDomain);
+            }
+        }
+    }
+
+    void addToDomain(Tile tile, int domain)
+    {
+        tile.domain = domain;
+        addNeighborsToDomain(tile, domain);
+    }
+
+    void addNeighborsToDomain(Tile tile, int domain)
+    {
+        ;
     }
 }
