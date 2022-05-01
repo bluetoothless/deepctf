@@ -57,12 +57,28 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int lakesProcentage = 20;
     public int accelerateSurfaceProcentage = 10;
     public int desertsProcentage = 35;
+    private int height;
+    private int width;
+    private int TileScale;
+    private int mapSize;
 
     public const int chanceEnhacerAdder = 5;
+
+    private void Awake()
+    {
+        GameObject field = gameObject;
+        TileScale = (int)lakePrefab.transform.localScale.x;
+        height = (int)field.transform.localScale.x * 10; // 360
+        width = (int)field.transform.localScale.z * 10; // 400
+        mapSize = (height * width) / (TileScale * TileScale);
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
@@ -152,13 +168,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     List<Tile> GenerateMap()
     {
-        GameObject field = gameObject;
-        int TileScale = (int)lakePrefab.transform.localScale.x;
 
         // PERLIN NOISE MAP GENERATION
-
-        int height = (int)field.transform.localScale.x * 10; // 360
-        int width = (int)field.transform.localScale.z * 10; // 400
 
         var tiles = new List<Tile> { };
 
@@ -177,7 +188,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         Biom desert = new(desertsProcentage, desertPrefab, desertTiles, biomType.desert);
 
         var bioms = new List<Biom> { accelerate, desert, lakes };
-        int mapSize = (height * width) / (TileScale * TileScale);
 
         float scale;
         float offsetX;
@@ -235,23 +245,66 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     void FindDomains(List<Tile> tiles)
     {
         int nextDomain = 0;
-        foreach (Tile tile in tiles)
+        for (int i = 0; i < tiles.Count; i++)
         {
-            if (tile.domain == -1)
+            if (tiles[i].domain == -1)
             {
-                addToDomain(tile, nextDomain);
+                addToDomain(tiles, nextDomain, i);
+                nextDomain++;
             }
         }
     }
 
-    void addToDomain(Tile tile, int domain)
+    void addToDomain(List<Tile> tiles, int domain, int index)
     {
-        tile.domain = domain;
-        addNeighborsToDomain(tile, domain);
+        tiles[index].domain = domain;
+        addNeighborsToDomain(tiles, domain, index);
     }
 
-    void addNeighborsToDomain(Tile tile, int domain)
+    void addToDomainIfMatches(List<Tile> tiles, int domain, int index, int indexChange)
     {
-        ;
+        if ((tiles[index].biom == biomType.lake && tiles[index + indexChange].biom == biomType.lake)
+            || (tiles[index].biom != biomType.lake && tiles[index + indexChange].biom != biomType.lake)
+            && (tiles[index + indexChange].domain == -1))
+        {
+            addToDomain(tiles, domain, index + indexChange);
+        }
+    }
+
+    void addNeighborsToDomain(List<Tile> tiles, int domain, int startingIndex)
+    {
+        // zast¹piæ wyliczonymi sta³ymi
+
+        // for far left tiles
+        if ((startingIndex - 99) % 100 == 0)
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, -1);
+        }
+        // for far right tiles
+        else if (startingIndex % 100 == 0) 
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, 1);
+        }
+        else
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, -1);
+            addToDomainIfMatches(tiles, domain, startingIndex, 1);
+        }
+
+        // for far up tiles
+        if (startingIndex >= 8900)
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, -100);
+        }
+        // for far down tiles
+        else if (startingIndex <= 99) 
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, 100);
+        }
+        else
+        {
+            addToDomainIfMatches(tiles, domain, startingIndex, -100);
+            addToDomainIfMatches(tiles, domain, startingIndex, 100);
+        }
     }
 }
