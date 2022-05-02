@@ -1,0 +1,22 @@
+1. Stworzyć model defaultowej mapy
+2. wstawić ludziki i chodzenie nimi (do testów)
+3. zaimplementować i przetestować logike gry
+-------------------------------------------------
+4. Przejrzeć jakie algorytmy są wykorzystywane w generowaniu mapy w tego typu rozwiązaniach
+5. implementacja tego typu najodpowiedniejszego algorytmu w naszym przypadku
+
+```
+Flood Fill ->> Znaleźć wszystkie domeny (połączone obszary)
+3 zasady potem
+1. Nie można postawić flagi na wodzie
+2. Flagi muszą być w tej samej domenie
+3. podwójne przejście ehh bo inaczej agent może nie móc przejść bo skala 4 <> 5
+```
+
+
+6. Tryb obserwatora w którym zmienia się co jakiś czas widok z oczu gracza (widoki z oczu różnych agentów) jak w meczach komentowanych np xd
+7. w tym trybie na początku byłoby kręcenie do okoła graczy przed walką jak stoją 2 drużyny i ... FIGHTOO!!
+
+
+
+NEXT:: Flags random placement
