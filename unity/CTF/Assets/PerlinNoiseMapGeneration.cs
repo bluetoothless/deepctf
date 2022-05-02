@@ -57,10 +57,12 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int lakesProcentage = 20;
     public int accelerateSurfaceProcentage = 10;
     public int desertsProcentage = 35;
+    private int nextDomain = 0;
     private int height;
     private int width;
     private int TileScale;
     private int mapSize;
+    private List<Tile> tiles;
 
     public const int chanceEnhacerAdder = 5;
 
@@ -82,8 +84,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
-        var tiles = GenerateMap();
-        FindDomains(tiles);
+        GenerateMap();
+        FindDomains();
 
         sw.Stop();
         UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
@@ -166,12 +168,11 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         
     }
 
-    List<Tile> GenerateMap()
+    void GenerateMap()
     {
-
         // PERLIN NOISE MAP GENERATION
 
-        var tiles = new List<Tile> { };
+        tiles = new List<Tile> { };
 
         for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
         {
@@ -208,9 +209,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             while (notEnoughTiles)
             {
                 // iterating in reverse, so I can remove a tile from list(tiles) in a run time
-                for (int i = tiles.Count - 1; i >= 0; i--)
+                for (int i = tilesCopy.Count - 1; i >= 0; i--)
                 {
-                    Tile tile = tiles[i];
+                    Tile tile = tilesCopy[i];
 
                     float sample = Mathf.PerlinNoise(
                         (float)tile.xCenter / height * scale + offsetX,
@@ -226,7 +227,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                         newTile.transform.SetParent(biom.tiles.transform);
                         // delete Tile from List, so it won't be consider in next loop
 
-                        tiles.Remove(tile);
+                        tilesCopy.Remove(tile);
                         // check if enough tiles already in game
                         biom.counter++;
                         if (biom.counter >= mapSize * biom.chance / 100)
@@ -239,72 +240,161 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 chanceEnhancer += chanceEnhacerAdder;
             }
         }
-        return tilesCopy;
     }
 
-    void FindDomains(List<Tile> tiles)
+    // using FloodFill algorithm
+    void FindDomains()
     {
-        int nextDomain = 0;
+        bool somethingAdded = false;
+        Queue<int> queue = new Queue<int>();
+
         for (int i = 0; i < tiles.Count; i++)
         {
             if (tiles[i].domain == -1)
             {
-                addToDomain(tiles, nextDomain, i);
-                nextDomain++;
+                somethingAdded = true;
+                addToDomain(queue, i);
             }
+
+            while (queue.Count > 0)
+            {
+                int next = queue.Dequeue();
+
+                if (tiles[next].domain == -1)
+                {
+                    addToDomain(queue, next);
+                }
+            }
+            if (somethingAdded)
+            {
+                somethingAdded = false;
+                nextDomain++;
+            }        
         }
     }
 
-    void addToDomain(List<Tile> tiles, int domain, int index)
+    void addToDomain(Queue<int> queue, int index)
     {
-        tiles[index].domain = domain;
-        addNeighborsToDomain(tiles, domain, index);
+        tiles[index].domain = nextDomain;
+        addNeighborsToQueue(queue, index);
     }
 
-    void addToDomainIfMatches(List<Tile> tiles, int domain, int index, int indexChange)
+    void addToQueueIfMatches(Queue<int> queue, int index, int indexChange)
     {
         if ((tiles[index].biom == biomType.lake && tiles[index + indexChange].biom == biomType.lake)
             || (tiles[index].biom != biomType.lake && tiles[index + indexChange].biom != biomType.lake)
             && (tiles[index + indexChange].domain == -1))
         {
-            addToDomain(tiles, domain, index + indexChange);
+            queue.Enqueue(index + indexChange);
         }
     }
 
-    void addNeighborsToDomain(List<Tile> tiles, int domain, int startingIndex)
+    void addNeighborsToQueue(Queue<int> queue, int startingIndex)
     {
         // zast¹piæ wyliczonymi sta³ymi
 
         // for far left tiles
         if ((startingIndex - 99) % 100 == 0)
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, -1);
+            addToQueueIfMatches(queue, startingIndex, -1);
         }
         // for far right tiles
         else if (startingIndex % 100 == 0) 
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, 1);
+            addToQueueIfMatches(queue, startingIndex, 1);
         }
         else
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, -1);
-            addToDomainIfMatches(tiles, domain, startingIndex, 1);
+            addToQueueIfMatches(queue, startingIndex, -1);
+            addToQueueIfMatches(queue, startingIndex, 1);
         }
 
         // for far up tiles
         if (startingIndex >= 8900)
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, -100);
+            addToQueueIfMatches(queue, startingIndex, -100);
         }
         // for far down tiles
         else if (startingIndex <= 99) 
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, 100);
+            addToQueueIfMatches(queue, startingIndex, 100);
         }
         else
         {
-            addToDomainIfMatches(tiles, domain, startingIndex, -100);
-            addToDomainIfMatches(tiles, domain, startingIndex, 100);
+            addToQueueIfMatches(queue, startingIndex, -100);
+            addToQueueIfMatches(queue, startingIndex, 100);
         }
     }
+
+
+
+    //      THIS IS RECURSVE SOLUTION FOR FLOOD FILL ALGORITHM
+    //      IT RESOLVED IN STACK OVERFLOW, SO IT NEEDED TO BE CHANGED TO ITERATIVE SOLUTON
+
+/*
+// using FloodFill algorithm
+void FindDomains()
+{
+    for (int i = 0; i < tiles.Count; i++)
+    {
+        if (tiles[i].domain == -1)
+        {
+            addToDomain(i);
+            nextDomain++;
+        }
+    }
+}
+
+void addToDomain(int index)
+{
+    tiles[index].domain = nextDomain;
+    addNeighborsToDomain(index);
+}
+
+void addToDomainIfMatches(int index, int indexChange)
+{
+    if ((tiles[index].biom == biomType.lake && tiles[index + indexChange].biom == biomType.lake)
+        || (tiles[index].biom != biomType.lake && tiles[index + indexChange].biom != biomType.lake)
+        && (tiles[index + indexChange].domain == -1))
+    {
+        addToDomain(index + indexChange);
+    }
+}
+
+void addNeighborsToDomain(int startingIndex)
+{
+    // zast¹piæ wyliczonymi sta³ymi
+
+    // for far left tiles
+    if ((startingIndex - 99) % 100 == 0)
+    {
+        addToDomainIfMatches(startingIndex, -1);
+    }
+    // for far right tiles
+    else if (startingIndex % 100 == 0) 
+    {
+        addToDomainIfMatches(startingIndex, 1);
+    }
+    else
+    {
+        addToDomainIfMatches(startingIndex, -1);
+        addToDomainIfMatches(startingIndex, 1);
+    }
+
+    // for far up tiles
+    if (startingIndex >= 8900)
+    {
+        addToDomainIfMatches(startingIndex, -100);
+    }
+    // for far down tiles
+    else if (startingIndex <= 99) 
+    {
+        addToDomainIfMatches(startingIndex, 100);
+    }
+    else
+    {
+        addToDomainIfMatches(startingIndex, -100);
+        addToDomainIfMatches(startingIndex, 100);
+    }
+*/
 }
