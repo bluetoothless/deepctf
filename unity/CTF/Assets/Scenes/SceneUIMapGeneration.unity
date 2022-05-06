@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 48232174}
   - component: {fileID: 48232173}
   m_Layer: 5
-  m_Name: SliderAgentsBValue
+  m_Name: SliderAgentsRedValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 198987993}
   - component: {fileID: 198987994}
   m_Layer: 5
-  m_Name: SliderAgentsB
+  m_Name: SliderAgentRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1622,7 +1622,7 @@ GameObject:
   - component: {fileID: 467845590}
   - component: {fileID: 467845591}
   m_Layer: 5
-  m_Name: SliderAgentsA
+  m_Name: SliderAgentsBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,7 +1767,7 @@ GameObject:
   - component: {fileID: 577595298}
   - component: {fileID: 577595297}
   m_Layer: 5
-  m_Name: SliderAgentsAText
+  m_Name: SliderAgentsBlueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Number of Team A agents
+  m_text: Number of Blue agents
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3049,7 +3049,7 @@ GameObject:
   - component: {fileID: 1226747212}
   - component: {fileID: 1226747211}
   m_Layer: 5
-  m_Name: SliderAgentsAValue
+  m_Name: SliderAgentsBlueValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3634,7 +3634,7 @@ GameObject:
   - component: {fileID: 1464832084}
   - component: {fileID: 1464832083}
   m_Layer: 5
-  m_Name: SliderAgentsBText
+  m_Name: SliderAgentsRedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Number of Team B agents
+  m_text: Number of Red agents
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
