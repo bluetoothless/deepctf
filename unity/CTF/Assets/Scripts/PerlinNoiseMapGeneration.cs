@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-
 public enum biomType
 {
     grass,
@@ -92,6 +91,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public GameObject blueBase;
     public GameObject redBase;
     public GameObject bases;
+
     public int lakesProcentage = 20;
     public int accelerateSurfaceProcentage = 10;
     public int desertsProcentage = 35;
@@ -112,6 +112,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         height = (int)field.transform.localScale.x * 10; // 360
         width = (int)field.transform.localScale.z * 10; // 400
         mapSize = (height * width) / (TileScale * TileScale);
+        lakesProcentage = PlayerPrefs.GetInt("lakesPercent");
+        accelerateSurfaceProcentage = PlayerPrefs.GetInt("accSurfacesPercent");
+        desertsProcentage = PlayerPrefs.GetInt("desertsPercent");
     }
 
 
@@ -227,7 +230,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         Biom lakes = new(lakesProcentage, lakePrefab, lakeTiles, biomType.lake);
         Biom accelerate = new(accelerateSurfaceProcentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
         Biom desert = new(desertsProcentage, desertPrefab, desertTiles, biomType.desert);
-
         var bioms = new List<Biom> { accelerate, desert, lakes };
 
         float scale;

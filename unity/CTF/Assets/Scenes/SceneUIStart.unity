@@ -911,6 +911,7 @@ GameObject:
   - component: {fileID: 1024581628}
   - component: {fileID: 1024581627}
   - component: {fileID: 1024581626}
+  - component: {fileID: 1024581629}
   m_Layer: 5
   m_Name: ButtonExit
   m_TagString: Untagged
@@ -983,9 +984,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 963194229}
-        m_TargetAssemblyTypeName: LoadSceneScript, Assembly-CSharp
-        m_MethodName: LearningModeSelected
+      - m_Target: {fileID: 1024581629}
+        m_TargetAssemblyTypeName: ExitScript, Assembly-CSharp
+        m_MethodName: ExitProgram
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1033,6 +1034,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024581624}
   m_CullTransparentMesh: 1
+--- !u!114 &1024581629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024581624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf66c725ff3cc64f8e9a0dda0cff5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1324589479
 GameObject:
   m_ObjectHideFlags: 0
