@@ -1297,7 +1297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.55
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1305,7 +1305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 105.8
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1686,9 +1686,9 @@ MonoBehaviour:
   blueBase: {fileID: 6860966779638432219, guid: fb4ac725296dca140a7e67eef8a80b53, type: 3}
   redBase: {fileID: 6860966779638432219, guid: 18535bbd782d2a94b90931c1fd04f60f, type: 3}
   bases: {fileID: 1552363250}
-  lakesProcentage: 20
-  accelerateSurfaceProcentage: 10
-  desertsProcentage: 35
+  lakesProcentage: 99
+  accelerateSurfaceProcentage: 0
+  desertsProcentage: 0
 --- !u!1001 &973558344
 PrefabInstance:
   m_ObjectHideFlags: 0

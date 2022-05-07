@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueFlag
       objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
 --- !u!4 &226773927074182735 stripped
