@@ -1686,9 +1686,9 @@ MonoBehaviour:
   blueBase: {fileID: 6860966779638432219, guid: fb4ac725296dca140a7e67eef8a80b53, type: 3}
   redBase: {fileID: 6860966779638432219, guid: 18535bbd782d2a94b90931c1fd04f60f, type: 3}
   bases: {fileID: 1552363250}
-  lakesProcentage: 99
-  accelerateSurfaceProcentage: 0
-  desertsProcentage: 0
+  lakesProcentage: 30
+  accelerateSurfaceProcentage: 15
+  desertsProcentage: 20
 --- !u!1001 &973558344
 PrefabInstance:
   m_ObjectHideFlags: 0
