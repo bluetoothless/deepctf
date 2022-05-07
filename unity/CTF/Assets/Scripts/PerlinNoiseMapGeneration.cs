@@ -112,9 +112,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         height = (int)field.transform.localScale.x * 10; // 360
         width = (int)field.transform.localScale.z * 10; // 400
         mapSize = (height * width) / (TileScale * TileScale);
-        lakesProcentage = PlayerPrefs.GetInt("lakesPercent");
-        accelerateSurfaceProcentage = PlayerPrefs.GetInt("accSurfacesPercent");
-        desertsProcentage = PlayerPrefs.GetInt("desertsPercent");
+        //lakesProcentage = PlayerPrefs.GetInt("lakesPercent");
+        //accelerateSurfaceProcentage = PlayerPrefs.GetInt("accSurfacesPercent");
+        //desertsProcentage = PlayerPrefs.GetInt("desertsPercent");
     }
 
 
