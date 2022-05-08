@@ -107,9 +107,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public GameObject redBase;
     public GameObject bases;
 
-    public int lakesProcentage = 20;
-    public int accelerateSurfaceProcentage = 10;
-    public int desertsProcentage = 35;
+    public int lakesPercentage = 20;
+    public int accelerateSurfacePercentage = 10;
+    public int desertsPercentage = 35;
     private int nextDomain = 0;
     private int height;
     private int width;
@@ -127,9 +127,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         height = (int)field.transform.localScale.x * 10; // 360
         width = (int)field.transform.localScale.z * 10; // 400
         mapSize = (height * width) / (TileScale * TileScale);
-        //lakesProcentage = PlayerPrefs.GetInt("lakesPercent");
-        //accelerateSurfaceProcentage = PlayerPrefs.GetInt("accSurfacesPercent");
-        //desertsProcentage = PlayerPrefs.GetInt("desertsPercent");
+        lakesPercentage = PlayerPrefs.GetInt("lakesPercent");
+        accelerateSurfacePercentage = PlayerPrefs.GetInt("accSurfacesPercent");
+        desertsPercentage = PlayerPrefs.GetInt("desertsPercent");
     }
 
 
@@ -242,9 +242,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         var tilesCopy = new List<Tile>(tiles);
 
-        Biom lakes = new(lakesProcentage, lakePrefab, lakeTiles, biomType.lake);
-        Biom accelerate = new(accelerateSurfaceProcentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
-        Biom desert = new(desertsProcentage, desertPrefab, desertTiles, biomType.desert);
+        Biom lakes = new(lakesPercentage, lakePrefab, lakeTiles, biomType.lake);
+        Biom accelerate = new(accelerateSurfacePercentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
+        Biom desert = new(desertsPercentage, desertPrefab, desertTiles, biomType.desert);
         var bioms = new List<Biom> { accelerate, desert, lakes };
 
         float scale;

@@ -5,24 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpectatorModeSelected()
     {
         SceneManager.LoadScene("SceneUIMapGeneration");
     }
     public void LearningModeSelected()
     {
-        //SceneManager.LoadScene("SceneUIMapGeneration");
+        //SceneManager.LoadScene("");
+    }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("SceneUIStart");
+    }
+    public void GoToMainScene()
+    {
+        SceneManager.LoadScene("SceneMain");
     }
 }

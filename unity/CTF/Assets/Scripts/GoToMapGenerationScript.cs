@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GoToMapGenerationScript : MonoBehaviour
 {
+    [SerializeField] GameObject errorText;
     [SerializeField] Slider sliderBlueAgents;
     [SerializeField] Slider sliderRedAgents;
     [SerializeField] Slider sliderDeserts;
@@ -26,12 +27,19 @@ public class GoToMapGenerationScript : MonoBehaviour
         lakesPercent = (int)sliderLakes.value;
         accSurfacesPercent = (int)sliderAccSurfaces.value;
 
-        PlayerPrefs.SetInt("nrOfBlueAgents", nrOfBlueAgents);
-        PlayerPrefs.SetInt("nrOfRedAgents", nrOfRedAgents);
-        PlayerPrefs.SetInt("desertsPercent", desertsPercent);
-        PlayerPrefs.SetInt("lakesPercent", lakesPercent);
-        PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);
+        if (desertsPercent + lakesPercent + accSurfacesPercent < 100) {
+            PlayerPrefs.SetInt("nrOfBlueAgents", nrOfBlueAgents);
+            PlayerPrefs.SetInt("nrOfRedAgents", nrOfRedAgents);
+            PlayerPrefs.SetInt("desertsPercent", desertsPercent);
+            PlayerPrefs.SetInt("lakesPercent", lakesPercent);
+            PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);
 
-        SceneManager.LoadScene("SceneMain");
+            SceneManager.LoadScene("SceneMain");
+        }
+        else
+        {
+            bool isActive = errorText.activeSelf;
+            errorText.SetActive(!isActive);
+        }
     }
 }

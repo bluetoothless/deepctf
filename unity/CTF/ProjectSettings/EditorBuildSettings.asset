@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneMain.unity
     guid: 75da3daa93d2fc249a984c8c1cfe39cd
-  - enabled: 1
-    path: Assets/Scenes/SceneUIFlagLocations.unity
-    guid: 3646b732a5c2ad34dbeb7e17f3b72af4
   m_configObjects: {}
