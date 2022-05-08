@@ -473,8 +473,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             goto chooseDomain;
         }
 
-        // random 3x3 space ??
-        // FOR NOW JUST 1x1 RANDOM TILE
+        // random 3x3 space 
         // MAYBE PLACE FOR BETTER ALGORITHM
 
         int choice1 = Random.Range(0, possibleBaseLocations.Count);
