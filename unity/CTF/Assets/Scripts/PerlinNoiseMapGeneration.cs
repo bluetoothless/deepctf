@@ -30,13 +30,15 @@ public class Tile
 {
     public int xCenter;
     public int yCenter;
+    public int tilesMapListIndex;
     public biomType biom = biomType.grass;
     public int domain = -1;
 
-    public Tile(int x, int y)
+    public Tile(int x, int y, int i)
     {
         xCenter = x;
         yCenter = y;
+        tilesMapListIndex = i;
     }
 
     public void changeBiom(biomType b)
@@ -45,7 +47,7 @@ public class Tile
     }
 }
 
-public class Domain
+public class Domain : IEnumerable<Tile>
 {
     public float sizeInRelationToMapBesidesLakes;
     public int domain = -1;
@@ -76,6 +78,19 @@ public class Domain
     {
         get { return tilesList[i]; }
         set { tilesList[i] = value; }
+    }
+
+    // enumerators
+    // For IEnumerable<Tile>
+    public IEnumerator<Tile> GetEnumerator()
+    {
+        return tilesList.GetEnumerator(); 
+    }
+
+    // For IEnumerable
+    IEnumerator IEnumerable.GetEnumerator() 
+    {
+        return GetEnumerator();
     }
 
 }
@@ -217,11 +232,11 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     {
         // PERLIN NOISE MAP GENERATION
 
-        for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
+        for (int current_tile_height = (height / 2 - height) + (TileScale / 2), i = 0; current_tile_height < height / 2; current_tile_height += TileScale)
         {
-            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
+            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale, i++)
             {
-                tiles.Add(new Tile(current_tile_height, current_tile_width));
+                tiles.Add(new Tile(current_tile_height, current_tile_width, i));
             }
         }
 
@@ -385,13 +400,24 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 noLakeTilesCounter += domain.Count;
             }
         }
+
+        chooseDomain:                       // GOTO
+
+        // If no domains, generate new map
+        if (noLakeDomains.Count == 0)
+        {
+            Start();
+            return;
+        }
+
         foreach (Domain domain in noLakeDomains)
         {
             domain.sizeInRelationToMapBesidesLakes = (float)domain.Count / noLakeTilesCounter;
         }
         Domain domainNow = null;
         int choice = Random.Range(0, 100);
-        float chanceSum = 0;
+        float chanceSum = 0f;
+
         foreach (Domain domain in noLakeDomains)
         {
             chanceSum += domain.Chance;
@@ -407,21 +433,61 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             domainNow = noLakeDomains[noLakeDomains.Count - 1];
         }
 
+        // Check for 3x3 possible spaces in selected domain
+        // Later, boundry tiles can be excluded from this search        -- PERFORMANCE THING
+        List<Tile> possibleBaseLocations = new List<Tile>();
+
+        foreach (Tile t in domainNow)
+        {
+            // zast¹piæ wyliczonymi sta³ymi
+            int i = t.tilesMapListIndex;
+            
+            if (((i - 99) % 100 == 0) || // for far left tiles
+                    (i % 100 == 0) ||   // for far right tiles
+                    (i >= 8900) ||      // for far up tiles 
+                    (i <= 99))          // for far down tiles
+            {
+                continue;
+            }
+            else
+            {
+                // check if 3x3 has the same domain
+                if ((tiles[i].domain == tiles[i + 1].domain) &&         // left
+                        (tiles[i].domain == tiles[i - 1].domain) &&     // right
+                        (tiles[i].domain == tiles[i + 100].domain) &&   // up
+                        (tiles[i].domain == tiles[i - 100].domain) &&   // down
+                        (tiles[i].domain == tiles[i - 101].domain) &&   // down right
+                        (tiles[i].domain == tiles[i - 99].domain) &&    // down left
+                        (tiles[i].domain == tiles[i + 101].domain) &&   // up right
+                        (tiles[i].domain == tiles[i + 99].domain))      // up left
+                {
+                    possibleBaseLocations.Add(t);
+                }
+            }
+        }
+
+        if (possibleBaseLocations.Count < 2)
+        {
+            noLakeDomains.Remove(domainNow);
+            noLakeTilesCounter -= domainNow.Count;
+            goto chooseDomain;
+        }
+
         // random 3x3 space ??
         // FOR NOW JUST 1x1 RANDOM TILE
         // MAYBE PLACE FOR BETTER ALGORITHM
 
-        int choice1 = Random.Range(0, domainNow.Count);
-        int choice2 = Random.Range(0, domainNow.Count);
+        int choice1 = Random.Range(0, possibleBaseLocations.Count);
+        int choice2 = Random.Range(0, possibleBaseLocations.Count);
         while (choice1 == choice2)
         {
             choice2 = Random.Range(0, domainNow.Count);
         }
 
         // place them
-        GameObject newBlueBase = Instantiate(blueBase, new Vector3(domainNow[choice1].xCenter, 0, domainNow[choice1].yCenter), Quaternion.identity);
+        GameObject newBlueBase = Instantiate(blueBase, new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter), Quaternion.identity);
         newBlueBase.transform.SetParent(bases.transform);
-        GameObject newRedBase = Instantiate(redBase, new Vector3(domainNow[choice2].xCenter, 0, domainNow[choice2].yCenter), Quaternion.identity);
+        GameObject newRedBase = Instantiate(redBase, new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter), Quaternion.identity);
         newRedBase.transform.SetParent(bases.transform);
     }
 
