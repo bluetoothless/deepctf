@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deadlyWaterScript : MonoBehaviour
+public class AccelerateTileScript : MonoBehaviour
 {
+    public float speedChangeModifier = 2f;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "AgentBiomCollider")
         {
-            //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Kill Agent (get back to base)");
-
+            var agentBiomCollider = other.gameObject;
+            Debug.Log("ACCELERATE!! GIVE IT SOME SPEEEEEEED!");
+            var agent = agentBiomCollider.transform.parent.gameObject;
+            agent.GetComponent<AgentMovementWSAD>().changeSpeedModifier(speedChangeModifier);
         }
     }
+
 
     // Start is called before the first frame update
     void Start()

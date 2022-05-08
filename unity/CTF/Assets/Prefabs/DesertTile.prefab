@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4899339433751073823}
   - component: {fileID: 4899339433751073820}
   - component: {fileID: -3865387701147487020}
+  - component: {fileID: 5583774107061858448}
   m_Layer: 0
   m_Name: DesertTile
   m_TagString: Untagged
@@ -97,3 +98,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 50, z: 1}
   m_Center: {x: 0, y: 25, z: 0}
+--- !u!114 &5583774107061858448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899339433751073818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c66074454f228d4280b3274228016dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
