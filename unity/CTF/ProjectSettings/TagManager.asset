@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Agent
   - ButtonGenerate
+  - AgentBiomCollider
   layers:
   - Default
   - TransparentFX

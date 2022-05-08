@@ -7,10 +7,11 @@ public class deadlyWaterScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Agent")
+        if (other.tag == "AgentBiomCollider")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Kill Agent (get back to base)");
+
         }
     }
 
