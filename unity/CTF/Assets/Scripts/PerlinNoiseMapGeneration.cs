@@ -479,16 +479,26 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         int choice1 = Random.Range(0, possibleBaseLocations.Count);
         int choice2 = Random.Range(0, possibleBaseLocations.Count);
-        while (choice1 == choice2)
+        while ((choice1 == choice2) ||
+                (Vector3.Distance(
+                    new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter),
+                    new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter)) < 4))       // minimum 4 distance between bases
         {
             choice2 = Random.Range(0, domainNow.Count);
         }
 
         // place them
         GameObject newBlueBase = Instantiate(blueBase, new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter), Quaternion.identity);
+        newBlueBase.GetComponent<BlueBaseScript>().CenterTile = possibleBaseLocations[choice1];
         newBlueBase.transform.SetParent(bases.transform);
         GameObject newRedBase = Instantiate(redBase, new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter), Quaternion.identity);
+        newRedBase.GetComponent<RedBaseScript>().CenterTile = possibleBaseLocations[choice2];
         newRedBase.transform.SetParent(bases.transform);
+    }
+
+    public List<Tile> GetTilesList()
+    {
+        return tiles;
     }
 
     void DEBUG__PrintTiles()
