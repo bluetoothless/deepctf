@@ -17,13 +17,19 @@ public class Biom
     public GameObject prefab;
     public GameObject tiles;
     public biomType type;
-    public Biom(int ch, GameObject pr, GameObject til, biomType t)
+    public Biom(int chance, GameObject prefab, GameObject tiles, biomType type)
     {
-        chance = ch;
-        prefab = pr;
-        tiles = til;
-        type = t;
+        this.chance = chance;
+        this.prefab = prefab;
+        this.tiles = tiles;
+        this.type = type;
     }
+
+    public int MaxTilesAmount(int mapSize)
+    {
+        return mapSize * chance / 100;
+    }
+    
 }
 
 public class Tile
@@ -136,8 +142,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
@@ -147,7 +151,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         sw.Stop();
         UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
-
     }
 
     // Update is called once per frame
@@ -158,64 +161,36 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     void GenerateMap()
     {
-        // PERLIN NOISE MAP GENERATION
-
-        for (int current_tile_height = (height / 2 - height) + (TileScale / 2), i = 0; current_tile_height < height / 2; current_tile_height += TileScale)
-        {
-            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale, i++)
-            {
-                tiles.Add(new Tile(current_tile_height, current_tile_width, i));
-            }
-        }
-
+        FillTilesListWithGrassTiles();
         var tilesCopy = new List<Tile>(tiles);
-
-        Biom lakes = new(lakesPercentage, lakePrefab, lakeTiles, biomType.lake);
-        Biom accelerate = new(accelerateSurfacePercentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
-        Biom desert = new(desertsPercentage, desertPrefab, desertTiles, biomType.desert);
-        var bioms = new List<Biom> { accelerate, desert, lakes };
-
-        float scale;
-        float offsetX;
-        float offsetY;
-        scale = Random.Range(2f, 3f);
+        List<Biom> bioms = CreateBiomList();
+        float scale = Random.Range(2f, 3f);
         foreach (Biom biom in bioms)
         {
             if (biom.chance == 0)
             {
                 continue;
             }
-            offsetX = Random.Range(0f, 99999f);
-            offsetY = Random.Range(0f, 99999f);
+            float offsetX = Random.Range(0f, 99999f);   // offsets for Perlin Noise Function
+            float offsetY = Random.Range(0f, 99999f);
 
-            int chanceEnhancer = -(biom.chance/3);
-            bool notEnoughTiles = true;
-
+            int chanceEnhancer = -(biom.chance/3);  // value added to chances for placing perticular biom tile
+   
+            bool notEnoughTiles = true;             // if more tiles should be placed
             while (notEnoughTiles)
             {
                 // iterating in reverse, so I can remove a tile from list(tiles) in a run time
                 for (int i = tilesCopy.Count - 1; i >= 0; i--)
                 {
-                    Tile tile = tilesCopy[i];
-
-                    float sample = Mathf.PerlinNoise(
-                        (float)tile.xCenter / height * scale + offsetX,
-                        (float)tile.yCenter / width * scale + offsetY);
-
-                    sample *= 100;
+                    // PERLIN NOISE MAP GENERATION
+                    float sample = GetPerlinNoiseSampleForTile(tilesCopy[i], scale, offsetX, offsetY) * 100;    // *100 since we need percents
 
                     if (sample < biom.chance + chanceEnhancer)
                     {
-                        // put newTile in game
-                        tile.changeBiom(biom.type);
-                        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
-                        newTile.transform.SetParent(biom.tiles.transform);
-                        // delete Tile from List, so it won't be consider in next loop
-
-                        tilesCopy.Remove(tile);
-                        // check if enough tiles already in game
-                        biom.counter++;
-                        if (biom.counter >= mapSize * biom.chance / 100)
+                        PutTileInGame(tilesCopy[i], biom);
+                        tilesCopy.RemoveAt(i);  // delete Tile from List, so it won't be consider in next loop
+                        biom.counter++;     
+                        if (biom.counter >= biom.MaxTilesAmount(mapSize))
                         {
                             notEnoughTiles = false;
                             break;
@@ -225,6 +200,40 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 chanceEnhancer += chanceEnhacerAdder;
             }
         }
+    }
+
+    void FillTilesListWithGrassTiles()
+    {
+        for (int current_tile_height = (height / 2 - height) + (TileScale / 2), i = 0; current_tile_height < height / 2; current_tile_height += TileScale)
+        {
+            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale, i++)
+            {
+                tiles.Add(new Tile(current_tile_height, current_tile_width, i));
+            }
+        }
+    }
+
+    List<Biom> CreateBiomList()
+    {
+        Biom lakes = new(lakesPercentage, lakePrefab, lakeTiles, biomType.lake);
+        Biom accelerate = new(accelerateSurfacePercentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
+        Biom desert = new(desertsPercentage, desertPrefab, desertTiles, biomType.desert);
+        return new List<Biom> { accelerate, desert, lakes };
+    }
+
+    float GetPerlinNoiseSampleForTile(Tile tile, float scale, float offsetX, float offsetY)
+    {
+        float sample = Mathf.PerlinNoise(
+                        (float)tile.xCenter / height * scale + offsetX,
+                        (float)tile.yCenter / width * scale + offsetY);
+        return sample;
+    }
+
+    void PutTileInGame(Tile tile, Biom biom)
+    {
+        tile.changeBiom(biom.type);
+        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
+        newTile.transform.SetParent(biom.tiles.transform);
     }
 
     // using FloodFill algorithm
