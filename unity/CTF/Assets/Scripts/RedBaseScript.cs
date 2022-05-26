@@ -7,16 +7,14 @@ public class RedBaseScript : MonoBehaviour
     public GameObject RedAgentPrefab;
     public int NumberOfRedAgents = 10;
     public Tile CenterTile;
-    private GameObject field;
     private GameObject redAgents;
     private List<Tile> tiles;
 
     // Start is called before the first frame update
     void Start()
     {
-        field = GameObject.Find("Field (10 x scale)");
         redAgents = GameObject.Find("RedAgents");
-        tiles = field.GetComponent<PerlinNoiseMapGeneration>().GetTilesList();
+        tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
 
     // Update is called once per frame

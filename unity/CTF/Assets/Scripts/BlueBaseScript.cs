@@ -7,16 +7,14 @@ public class BlueBaseScript : MonoBehaviour
     public GameObject BlueAgentPrefab;
     public int NumberOfBlueAgents = 10;
     public Tile CenterTile;
-    private GameObject field;
     private GameObject blueAgents;
     private List<Tile> tiles;
 
     // Start is called before the first frame update
     void Start()
     {
-        field = GameObject.Find("Field (10 x scale)");
         blueAgents = GameObject.Find("BlueAgents");
-        tiles = field.GetComponent<PerlinNoiseMapGeneration>().GetTilesList();
+        tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
 
     // Update is called once per frame

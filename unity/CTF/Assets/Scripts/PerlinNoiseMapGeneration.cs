@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public enum biomType
 {
     grass,
@@ -117,12 +118,14 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int accelerateSurfacePercentage = 10;
     public int desertsPercentage = 35;
     private int nextDomain = 0;
-    private int height;
-    private int width;
+    private static int height;
+    private static int width;
     private int TileScale;
     private int mapSize;
-    private List<Tile> tiles = new List<Tile>();
-    private List<Domain> domains = new List<Domain>();
+    private static List<Tile> tiles = new List<Tile>();
+    private static List<Domain> domains = new List<Domain>();
+    private static List<Domain> noLakeDomains = new List<Domain>();
+    private int noLakeTilesCounter = 0;
 
     public const int chanceEnhacerAdder = 5;
 
@@ -147,6 +150,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         GenerateMap();
         FindDomains();
+        FindNoLakeDomains();
         PlaceBases();
 
         sw.Stop();
@@ -188,7 +192,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                     if (sample < biom.chance + chanceEnhancer)
                     {
                         PutTileInGame(tilesCopy[i], biom);
-                        tilesCopy.RemoveAt(i);  // delete Tile from List, so it won't be consider in next loop
+                        tilesCopy.RemoveAt(i);  // delete Tile from List, so it won't be considered in next loop
                         biom.counter++;     
                         if (biom.counter >= biom.MaxTilesAmount(mapSize))
                         {
@@ -324,11 +328,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
     }
 
-    void PlaceBases()
+    void FindNoLakeDomains()
     {
-        List<Domain> noLakeDomains = new List<Domain>();
-        int noLakeTilesCounter = 0;
-        // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
         foreach (Domain domain in domains)
         {
             if (domain.tilesList[0].biom != biomType.lake)
@@ -337,15 +338,65 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 noLakeTilesCounter += domain.Count;
             }
         }
+        CheckForDomains();
+    }
 
-        chooseDomain:                       // GOTO
-
-        // If no domains, generate new map
+    // Checks if there are any domains with possibility to place flags left, if not, reloads the scene
+    void CheckForDomains()
+    {
         if (noLakeDomains.Count == 0)
         {
-            Start();
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name); // RELOAD THE SCENE
+            UnityEngine.Debug.Log("!! !!!  ! ! ! ! !!!     SCEENE RELOADED BUT GOES FURTHER!! ! !! !!!!   !! ! ! ! ! ! !!");
+            //Start();
             return;
         }
+    }
+
+    public static List<Tile> GetPossibleBaseLocationsInDomain(Domain domain)
+    {
+        List<Tile> possibleBaseLocations = new List<Tile>();
+
+        foreach (Tile t in domain)
+        {
+            // zast¹piæ wyliczonymi sta³ymi
+            int i = t.tilesMapListIndex;
+
+            if (((i - 99) % 100 == 0) || // for far left tiles
+                    (i % 100 == 0) ||   // for far right tiles
+                    (i >= 8900) ||      // for far up tiles 
+                    (i <= 99))          // for far down tiles
+            {
+                continue;
+            }
+            else
+            {
+                // check if 3x3 has the same domain
+                if ((tiles[i].domain == tiles[i + 1].domain) &&         // left
+                        (tiles[i].domain == tiles[i - 1].domain) &&     // right
+                        (tiles[i].domain == tiles[i + 100].domain) &&   // up
+                        (tiles[i].domain == tiles[i - 100].domain) &&   // down
+                        (tiles[i].domain == tiles[i - 101].domain) &&   // down right
+                        (tiles[i].domain == tiles[i - 99].domain) &&    // down left
+                        (tiles[i].domain == tiles[i + 101].domain) &&   // up right
+                        (tiles[i].domain == tiles[i + 99].domain))      // up left
+                {
+                    possibleBaseLocations.Add(t);
+                }
+            }
+        }
+
+        return possibleBaseLocations;
+    }
+
+    void PlaceBases()
+    {
+    // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
+    chooseDomain:                       // GOTO
+
+        // If no domains, generate new map
+        CheckForDomains();
 
         foreach (Domain domain in noLakeDomains)
         {
@@ -372,36 +423,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         // Check for 3x3 possible spaces in selected domain
         // Later, boundry tiles can be excluded from this search        -- PERFORMANCE THING
-        List<Tile> possibleBaseLocations = new List<Tile>();
-
-        foreach (Tile t in domainNow)
-        {
-            // zast¹piæ wyliczonymi sta³ymi
-            int i = t.tilesMapListIndex;
-            
-            if (((i - 99) % 100 == 0) || // for far left tiles
-                    (i % 100 == 0) ||   // for far right tiles
-                    (i >= 8900) ||      // for far up tiles 
-                    (i <= 99))          // for far down tiles
-            {
-                continue;
-            }
-            else
-            {
-                // check if 3x3 has the same domain
-                if ((tiles[i].domain == tiles[i + 1].domain) &&         // left
-                        (tiles[i].domain == tiles[i - 1].domain) &&     // right
-                        (tiles[i].domain == tiles[i + 100].domain) &&   // up
-                        (tiles[i].domain == tiles[i - 100].domain) &&   // down
-                        (tiles[i].domain == tiles[i - 101].domain) &&   // down right
-                        (tiles[i].domain == tiles[i - 99].domain) &&    // down left
-                        (tiles[i].domain == tiles[i + 101].domain) &&   // up right
-                        (tiles[i].domain == tiles[i + 99].domain))      // up left
-                {
-                    possibleBaseLocations.Add(t);
-                }
-            }
-        }
+        List<Tile> possibleBaseLocations = GetPossibleBaseLocationsInDomain(domainNow);
 
         if (possibleBaseLocations.Count < 2)
         {
@@ -432,8 +454,21 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         newRedBase.transform.SetParent(bases.transform);
     }
 
-    public List<Tile> GetTilesList()
+    public static List<Tile> GetTilesList()
     {
         return tiles;
+    }
+    public static int GetWidth()
+    {
+        return width;
+    }
+    public static int GetHeight()
+    {
+        return height;
+    }
+
+    public static List<Domain> GetNoLakeDomains()
+    {
+        return noLakeDomains;
     }
 }
