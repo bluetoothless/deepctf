@@ -9,6 +9,7 @@ public class PlaceFlagScript : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] GameObject incorrectPlacementText;
+    [SerializeField] string color;
 
     Vector3 position;
     Plane field = new Plane(Vector3.up, 0);
@@ -32,10 +33,7 @@ public class PlaceFlagScript : MonoBehaviour
                 {
                     Debug.Log("Place at Position: " + position);
 
-                    // Natlia zakoduj tu ¿eby ten if wiedzia³ któr¹ flage postawiæ zale¿nie od przycisku klikniêtego bo teraz zawsze postawi niebiesk¹
-
-                    var BlueBaseClicked = true;
-                    if (BlueBaseClicked)
+                    if (color == "blue")
                     {
                         PerlinNoiseMapGeneration.SetBlueBaseOnTile(GetTileFromPosition(position));
                     }

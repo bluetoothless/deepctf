@@ -484,7 +484,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public static void SetBlueBaseOnTile(Tile centerTile)
     {
         Destroy(newBlueBase);
-        newBlueBase = Instantiate(blueBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newBlueBase = Instantiate(blueBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), blueBasePrefab.transform.rotation);
         newBlueBase.GetComponent<BlueBaseScript>().CenterTile = centerTile;
         newBlueBase.transform.SetParent(basesPrefab.transform);
     }
@@ -492,7 +492,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public static void SetRedBaseOnTile(Tile centerTile)
     {
         Destroy(newRedBase);
-        newRedBase = Instantiate(redBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newRedBase = Instantiate(redBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), redBasePrefab.transform.rotation);
         newRedBase.GetComponent<RedBaseScript>().CenterTile = centerTile;
         newRedBase.transform.SetParent(basesPrefab.transform);
     }
