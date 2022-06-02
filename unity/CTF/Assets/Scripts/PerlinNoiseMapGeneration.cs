@@ -122,9 +122,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     private static int width;
     private int TileScale;
     private int mapSize;
-    private static List<Tile> tiles = new List<Tile>();
-    private static List<Domain> domains = new List<Domain>();
-    private static List<Domain> noLakeDomains = new List<Domain>();
+    private static List<Tile> tiles;
+    private static List<Domain> domains;
+    private static List<Domain> noLakeDomains;
     private int noLakeTilesCounter = 0;
 
     public const int chanceEnhacerAdder = 5;
@@ -135,6 +135,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         TileScale = (int)lakePrefab.transform.localScale.x;
         height = (int)field.transform.localScale.x * 10; // 360
         width = (int)field.transform.localScale.z * 10; // 400
+        tiles = new List<Tile>();
+        domains = new List<Domain>();
+        noLakeDomains = new List<Domain>();
         mapSize = (height * width) / (TileScale * TileScale);
         lakesPercentage = PlayerPrefs.GetInt("lakesPercent");
         accelerateSurfacePercentage = PlayerPrefs.GetInt("accSurfacesPercent");
