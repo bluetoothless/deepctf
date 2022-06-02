@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6346665276838537545}
   - component: {fileID: 2349050364387744576}
   - component: {fileID: 1698485160951486171}
+  - component: {fileID: 8330703809757014963}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -97,6 +98,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8330703809757014963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478015227920904531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b9f97cd367cae49bd2343833d0fad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownColor: blue
+  FlagInBase: {fileID: 5252642529561130191}
 --- !u!1 &6860966779638432219
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +124,7 @@ GameObject:
   - component: {fileID: 8900578224874871831}
   m_Layer: 0
   m_Name: Blue Base
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,10 +219,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+      propertyPath: m_TagString
+      value: FlagInBase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
 --- !u!4 &226773927074182735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3779873993504804493, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+  m_PrefabInstance: {fileID: 3986080333442644162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5252642529561130191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
   m_PrefabInstance: {fileID: 3986080333442644162}
   m_PrefabAsset: {fileID: 0}

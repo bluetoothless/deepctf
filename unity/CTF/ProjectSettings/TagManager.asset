@@ -7,6 +7,9 @@ TagManager:
   - Agent
   - ButtonGenerate
   - AgentBiomCollider
+  - AgentFlag
+  - FlagInBase
+  - Base
   layers:
   - Default
   - TransparentFX

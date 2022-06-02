@@ -19,17 +19,17 @@ public class AgentMovementWSAD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*        WSAD MOVEMENT
+        /*        WSAD MOVEMENT*/
         bool W = Input.GetKey(KeyCode.W);
         bool S = Input.GetKey(KeyCode.S);
         bool A = Input.GetKey(KeyCode.A);
         bool D = Input.GetKey(KeyCode.D);
-        */
         
+        /*
         bool W = true ? Random.Range(0, 10) > 1 : false;
         bool S = true ? Random.Range(0, 2) == 1 : false;
         bool A = true ? Random.Range(0, 10) > 2 : false;
-        bool D = true ? Random.Range(0, 20) > 1 : false;
+        bool D = true ? Random.Range(0, 20) > 1 : false;*/
 
         // Faster forward than back
         Rigidbody rb = GetComponent<Rigidbody>();

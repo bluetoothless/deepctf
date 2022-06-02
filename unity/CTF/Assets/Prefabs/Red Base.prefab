@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3633378164115017272}
   m_Layer: 0
   m_Name: Red Base
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 3993981511273658870}
   - component: {fileID: 5460644419025182253}
   - component: {fileID: 310442108961934850}
+  - component: {fileID: 3962613348557171158}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -145,6 +146,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3962613348557171158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192798034222055282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b9f97cd367cae49bd2343833d0fad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownColor: red
+  FlagInBase: {fileID: 2907174514783880090}
 --- !u!1001 &6335473607021318039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,8 +215,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedFlag
       objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_TagString
+      value: FlagInBase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+--- !u!1 &2907174514783880090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+  m_PrefabInstance: {fileID: 6335473607021318039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7176715748592124186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
