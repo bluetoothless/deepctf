@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public enum biomType
 {
     grass,
@@ -17,13 +18,19 @@ public class Biom
     public GameObject prefab;
     public GameObject tiles;
     public biomType type;
-    public Biom(int ch, GameObject pr, GameObject til, biomType t)
+    public Biom(int chance, GameObject prefab, GameObject tiles, biomType type)
     {
-        chance = ch;
-        prefab = pr;
-        tiles = til;
-        type = t;
+        this.chance = chance;
+        this.prefab = prefab;
+        this.tiles = tiles;
+        this.type = type;
     }
+
+    public int MaxTilesAmount(int mapSize)
+    {
+        return mapSize * chance / 100;
+    }
+    
 }
 
 public class Tile
@@ -111,115 +118,56 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int accelerateSurfacePercentage = 10;
     public int desertsPercentage = 35;
     private int nextDomain = 0;
-    private int height;
-    private int width;
+    private static GameObject blueBasePrefab;
+    private static GameObject redBasePrefab;
+    private static GameObject basesPrefab;
+    private static GameObject newBlueBase;
+    private static GameObject newRedBase;
+    private static int height;
+    private static int width;
     private int TileScale;
     private int mapSize;
-    private List<Tile> tiles = new List<Tile>();
-    private List<Domain> domains = new List<Domain>();
+    private static List<Tile> tiles;
+    private static List<Domain> domains;
+    private static List<Domain> noLakeDomains;
+    private int noLakeTilesCounter = 0;
 
     public const int chanceEnhacerAdder = 5;
 
     private void Awake()
     {
+        blueBasePrefab = blueBase;
+        redBasePrefab = redBase;
+        basesPrefab = bases;
         GameObject field = gameObject;
         TileScale = (int)lakePrefab.transform.localScale.x;
         height = (int)field.transform.localScale.x * 10; // 360
         width = (int)field.transform.localScale.z * 10; // 400
+        tiles = new List<Tile>();
+        domains = new List<Domain>();
+        noLakeDomains = new List<Domain>();
         mapSize = (height * width) / (TileScale * TileScale);
         lakesPercentage = PlayerPrefs.GetInt("lakesPercent");
         accelerateSurfacePercentage = PlayerPrefs.GetInt("accSurfacesPercent");
         desertsPercentage = PlayerPrefs.GetInt("desertsPercent");
+        newBlueBase = null;
+        newRedBase = null;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
         GenerateMap();
         FindDomains();
+        FindNoLakeDomains();
         PlaceBases();
 
         sw.Stop();
         UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
-
-        // DEBUG__PrintTiles();
-
-        /*
-        foreach (Biom biom in bioms)
-        {
-            scale = Random.Range(2f, 3f);
-            offsetX = Random.Range(0f, 99999f);
-            offsetY = Random.Range(0f, 99999f);
-
-            int i = 0;  // height counter
-            int j = 0;  // width counter
-
-            for (int current_tile_height = (height / 2 - height) + (TileScale / 2); current_tile_height < height / 2; current_tile_height += TileScale)
-            {
-                for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale)
-                {
-                    float sample = Mathf.PerlinNoise(
-                        ((float)(current_tile_height + (height / 2)) / height) * scale + offsetX,
-                        ((float)(current_tile_width + (width / 2)) / width) * scale + offsetY);
-
-                    sample *= 100;
-
-                    if (sample < biom.chance)
-                    {
-                        GameObject newTile = Instantiate(biom.prefab, new Vector3(current_tile_height, 0, current_tile_width), Quaternion.identity);
-                        newTile.transform.SetParent(biom.tiles.transform);
-                    }
-                    j++;
-                }
-                i++;
-            }
-        }
-        */
-
-
-        /*
-        for (int current_tile_height = (height/2 - height) + (TileScale/2); current_tile_height < height/2; current_tile_height += TileScale)
-        {
-            for (int current_tile_width = (width/2 - width) + (TileScale/2); current_tile_width < width/2; current_tile_width += TileScale)
-            {
-                float sample = Mathf.PerlinNoise(
-                    ((float)(current_tile_height + (height / 2)) / height) * scale + offsetX,
-                    ((float)(current_tile_width + (width / 2)) / width) * scale + offsetY);
-
-                sample *= 100;
-
-                if (sample < lakes)
-                {
-                    currentPrefab = lakePrefab;
-                    currentTiles = lakeTiles;
-                }
-                else if (sample < lakes + accelerate)
-                {
-                    currentPrefab = acceleratePrefab;
-                    currentTiles = accelerateTiles;
-                }
-                else if (sample < lakes + accelerate + desert)
-                {
-                    currentPrefab = desertPrefab;
-                    currentTiles = desertTiles;
-                }
-                else
-                {
-                    continue;
-                }
-
-                GameObject newTile = Instantiate(currentPrefab, new Vector3(current_tile_height, 0, current_tile_width), Quaternion.identity);
-                newTile.transform.SetParent(currentTiles.transform);
-            }
-        }
-        */
-
     }
 
     // Update is called once per frame
@@ -230,64 +178,36 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     void GenerateMap()
     {
-        // PERLIN NOISE MAP GENERATION
-
-        for (int current_tile_height = (height / 2 - height) + (TileScale / 2), i = 0; current_tile_height < height / 2; current_tile_height += TileScale)
-        {
-            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale, i++)
-            {
-                tiles.Add(new Tile(current_tile_height, current_tile_width, i));
-            }
-        }
-
+        FillTilesListWithGrassTiles();
         var tilesCopy = new List<Tile>(tiles);
-
-        Biom lakes = new(lakesPercentage, lakePrefab, lakeTiles, biomType.lake);
-        Biom accelerate = new(accelerateSurfacePercentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
-        Biom desert = new(desertsPercentage, desertPrefab, desertTiles, biomType.desert);
-        var bioms = new List<Biom> { accelerate, desert, lakes };
-
-        float scale;
-        float offsetX;
-        float offsetY;
-        scale = Random.Range(2f, 3f);
+        List<Biom> bioms = CreateBiomList();
+        float scale = Random.Range(2f, 3f);
         foreach (Biom biom in bioms)
         {
             if (biom.chance == 0)
             {
                 continue;
             }
-            offsetX = Random.Range(0f, 99999f);
-            offsetY = Random.Range(0f, 99999f);
+            float offsetX = Random.Range(0f, 99999f);   // offsets for Perlin Noise Function
+            float offsetY = Random.Range(0f, 99999f);
 
-            int chanceEnhancer = -(biom.chance/3);
-            bool notEnoughTiles = true;
-
+            int chanceEnhancer = -(biom.chance/3);  // value added to chances for placing perticular biom tile
+   
+            bool notEnoughTiles = true;             // if more tiles should be placed
             while (notEnoughTiles)
             {
                 // iterating in reverse, so I can remove a tile from list(tiles) in a run time
                 for (int i = tilesCopy.Count - 1; i >= 0; i--)
                 {
-                    Tile tile = tilesCopy[i];
-
-                    float sample = Mathf.PerlinNoise(
-                        (float)tile.xCenter / height * scale + offsetX,
-                        (float)tile.yCenter / width * scale + offsetY);
-
-                    sample *= 100;
+                    // PERLIN NOISE MAP GENERATION
+                    float sample = GetPerlinNoiseSampleForTile(tilesCopy[i], scale, offsetX, offsetY) * 100;    // *100 since we need percents
 
                     if (sample < biom.chance + chanceEnhancer)
                     {
-                        // put newTile in game
-                        tile.changeBiom(biom.type);
-                        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
-                        newTile.transform.SetParent(biom.tiles.transform);
-                        // delete Tile from List, so it won't be consider in next loop
-
-                        tilesCopy.Remove(tile);
-                        // check if enough tiles already in game
-                        biom.counter++;
-                        if (biom.counter >= mapSize * biom.chance / 100)
+                        PutTileInGame(tilesCopy[i], biom);
+                        tilesCopy.RemoveAt(i);  // delete Tile from List, so it won't be considered in next loop
+                        biom.counter++;     
+                        if (biom.counter >= biom.MaxTilesAmount(mapSize))
                         {
                             notEnoughTiles = false;
                             break;
@@ -297,6 +217,40 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 chanceEnhancer += chanceEnhacerAdder;
             }
         }
+    }
+
+    void FillTilesListWithGrassTiles()
+    {
+        for (int current_tile_height = (height / 2 - height) + (TileScale / 2), i = 0; current_tile_height < height / 2; current_tile_height += TileScale)
+        {
+            for (int current_tile_width = (width / 2 - width) + (TileScale / 2); current_tile_width < width / 2; current_tile_width += TileScale, i++)
+            {
+                tiles.Add(new Tile(current_tile_height, current_tile_width, i));
+            }
+        }
+    }
+
+    List<Biom> CreateBiomList()
+    {
+        Biom lakes = new(lakesPercentage, lakePrefab, lakeTiles, biomType.lake);
+        Biom accelerate = new(accelerateSurfacePercentage, acceleratePrefab, accelerateTiles, biomType.accelerate);
+        Biom desert = new(desertsPercentage, desertPrefab, desertTiles, biomType.desert);
+        return new List<Biom> { accelerate, desert, lakes };
+    }
+
+    float GetPerlinNoiseSampleForTile(Tile tile, float scale, float offsetX, float offsetY)
+    {
+        float sample = Mathf.PerlinNoise(
+                        (float)tile.xCenter / height * scale + offsetX,
+                        (float)tile.yCenter / width * scale + offsetY);
+        return sample;
+    }
+
+    void PutTileInGame(Tile tile, Biom biom)
+    {
+        tile.changeBiom(biom.type);
+        GameObject newTile = Instantiate(biom.prefab, new Vector3(tile.xCenter, 0, tile.yCenter), Quaternion.identity);
+        newTile.transform.SetParent(biom.tiles.transform);
     }
 
     // using FloodFill algorithm
@@ -387,11 +341,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
     }
 
-    void PlaceBases()
+    void FindNoLakeDomains()
     {
-        List<Domain> noLakeDomains = new List<Domain>();
-        int noLakeTilesCounter = 0;
-        // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
         foreach (Domain domain in domains)
         {
             if (domain.tilesList[0].biom != biomType.lake)
@@ -400,15 +351,65 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 noLakeTilesCounter += domain.Count;
             }
         }
+        CheckForDomains();
+    }
 
-        chooseDomain:                       // GOTO
-
-        // If no domains, generate new map
+    // Checks if there are any domains with possibility to place flags left, if not, reloads the scene
+    void CheckForDomains()
+    {
         if (noLakeDomains.Count == 0)
         {
-            Start();
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name); // RELOAD THE SCENE
+            UnityEngine.Debug.Log("!! !!!  ! ! ! ! !!!     SCEENE RELOADED BUT GOES FURTHER!! ! !! !!!!   !! ! ! ! ! ! !!");
+            //Start();
             return;
         }
+    }
+
+    public static List<Tile> GetPossibleBaseLocationsInDomain(Domain domain)
+    {
+        List<Tile> possibleBaseLocations = new List<Tile>();
+
+        foreach (Tile t in domain)
+        {
+            // zast¹piæ wyliczonymi sta³ymi
+            int i = t.tilesMapListIndex;
+
+            if (((i - 99) % 100 == 0) || // for far left tiles
+                    (i % 100 == 0) ||   // for far right tiles
+                    (i >= 8900) ||      // for far up tiles 
+                    (i <= 99))          // for far down tiles
+            {
+                continue;
+            }
+            else
+            {
+                // check if 3x3 has the same domain
+                if ((tiles[i].domain == tiles[i + 1].domain) &&         // left
+                        (tiles[i].domain == tiles[i - 1].domain) &&     // right
+                        (tiles[i].domain == tiles[i + 100].domain) &&   // up
+                        (tiles[i].domain == tiles[i - 100].domain) &&   // down
+                        (tiles[i].domain == tiles[i - 101].domain) &&   // down right
+                        (tiles[i].domain == tiles[i - 99].domain) &&    // down left
+                        (tiles[i].domain == tiles[i + 101].domain) &&   // up right
+                        (tiles[i].domain == tiles[i + 99].domain))      // up left
+                {
+                    possibleBaseLocations.Add(t);
+                }
+            }
+        }
+
+        return possibleBaseLocations;
+    }
+
+    void PlaceBases()
+    {
+    // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
+    chooseDomain:                       // GOTO
+
+        // If no domains, generate new map
+        CheckForDomains();
 
         foreach (Domain domain in noLakeDomains)
         {
@@ -435,36 +436,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
         // Check for 3x3 possible spaces in selected domain
         // Later, boundry tiles can be excluded from this search        -- PERFORMANCE THING
-        List<Tile> possibleBaseLocations = new List<Tile>();
-
-        foreach (Tile t in domainNow)
-        {
-            // zast¹piæ wyliczonymi sta³ymi
-            int i = t.tilesMapListIndex;
-            
-            if (((i - 99) % 100 == 0) || // for far left tiles
-                    (i % 100 == 0) ||   // for far right tiles
-                    (i >= 8900) ||      // for far up tiles 
-                    (i <= 99))          // for far down tiles
-            {
-                continue;
-            }
-            else
-            {
-                // check if 3x3 has the same domain
-                if ((tiles[i].domain == tiles[i + 1].domain) &&         // left
-                        (tiles[i].domain == tiles[i - 1].domain) &&     // right
-                        (tiles[i].domain == tiles[i + 100].domain) &&   // up
-                        (tiles[i].domain == tiles[i - 100].domain) &&   // down
-                        (tiles[i].domain == tiles[i - 101].domain) &&   // down right
-                        (tiles[i].domain == tiles[i - 99].domain) &&    // down left
-                        (tiles[i].domain == tiles[i + 101].domain) &&   // up right
-                        (tiles[i].domain == tiles[i + 99].domain))      // up left
-                {
-                    possibleBaseLocations.Add(t);
-                }
-            }
-        }
+        List<Tile> possibleBaseLocations = GetPossibleBaseLocationsInDomain(domainNow);
 
         if (possibleBaseLocations.Count < 2)
         {
@@ -487,95 +459,42 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
 
         // place them
-        GameObject newBlueBase = Instantiate(blueBase, new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter), Quaternion.identity);
-        newBlueBase.GetComponent<BlueBaseScript>().CenterTile = possibleBaseLocations[choice1];
-        newBlueBase.transform.SetParent(bases.transform);
-        GameObject newRedBase = Instantiate(redBase, new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter), Quaternion.identity);
-        newRedBase.GetComponent<RedBaseScript>().CenterTile = possibleBaseLocations[choice2];
-        newRedBase.transform.SetParent(bases.transform);
+        SetBlueBaseOnTile(possibleBaseLocations[choice1]);
+        SetRedBaseOnTile(possibleBaseLocations[choice2]);
     }
 
-    public List<Tile> GetTilesList()
+    public static List<Tile> GetTilesList()
     {
         return tiles;
     }
-
-    void DEBUG__PrintTiles()
+    public static int GetWidth()
     {
-        foreach (Tile t in tiles)
-        {
-            UnityEngine.Debug.Log("X:: "+t.xCenter+" Y:: "+t.yCenter+" DOMAIN::: "+t.domain);
-        }
+        return width;
+    }
+    public static int GetHeight()
+    {
+        return height;
     }
 
-
-    //      THIS IS RECURSVE SOLUTION FOR FLOOD FILL ALGORITHM
-    //      IT RESOLVED IN STACK OVERFLOW, SO IT NEEDED TO BE CHANGED TO ITERATIVE SOLUTON
-
-    /*
-    // using FloodFill algorithm
-    void FindDomains()
+    public static List<Domain> GetNoLakeDomains()
     {
-        for (int i = 0; i < tiles.Count; i++)
-        {
-            if (tiles[i].domain == -1)
-            {
-                addToDomain(i);
-                nextDomain++;
-            }
-        }
+        return noLakeDomains;
     }
 
-    void addToDomain(int index)
+    public static void SetBlueBaseOnTile(Tile centerTile)
     {
-        tiles[index].domain = nextDomain;
-        addNeighborsToDomain(index);
+        Destroy(newBlueBase);
+        newBlueBase = Instantiate(blueBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newBlueBase.GetComponent<BlueBaseScript>().CenterTile = centerTile;
+        newBlueBase.transform.SetParent(basesPrefab.transform);
     }
 
-    void addToDomainIfMatches(int index, int indexChange)
+    public static void SetRedBaseOnTile(Tile centerTile)
     {
-        if ((tiles[index].biom == biomType.lake && tiles[index + indexChange].biom == biomType.lake)
-            || (tiles[index].biom != biomType.lake && tiles[index + indexChange].biom != biomType.lake)
-            && (tiles[index + indexChange].domain == -1))
-        {
-            addToDomain(index + indexChange);
-        }
+        Destroy(newRedBase);
+        newRedBase = Instantiate(redBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newRedBase.GetComponent<RedBaseScript>().CenterTile = centerTile;
+        newRedBase.transform.SetParent(basesPrefab.transform);
     }
 
-    void addNeighborsToDomain(int startingIndex)
-    {
-        // zast¹piæ wyliczonymi sta³ymi
-
-        // for far left tiles
-        if ((startingIndex - 99) % 100 == 0)
-        {
-            addToDomainIfMatches(startingIndex, -1);
-        }
-        // for far right tiles
-        else if (startingIndex % 100 == 0) 
-        {
-            addToDomainIfMatches(startingIndex, 1);
-        }
-        else
-        {
-            addToDomainIfMatches(startingIndex, -1);
-            addToDomainIfMatches(startingIndex, 1);
-        }
-
-        // for far up tiles
-        if (startingIndex >= 8900)
-        {
-            addToDomainIfMatches(startingIndex, -100);
-        }
-        // for far down tiles
-        else if (startingIndex <= 99) 
-        {
-            addToDomainIfMatches(startingIndex, 100);
-        }
-        else
-        {
-            addToDomainIfMatches(startingIndex, -100);
-            addToDomainIfMatches(startingIndex, 100);
-        }
-    */
 }
