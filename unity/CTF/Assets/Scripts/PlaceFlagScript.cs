@@ -59,9 +59,12 @@ public class PlaceFlagScript : MonoBehaviour
         //  pos = -180/0/-200 to 180/0/200
         Tile tile = GetTileFromPosition(position);
         // check if 
-        if (Enumerable.Any(PerlinNoiseMapGeneration.GetNoLakeDomains(), d => d.domain == tile.domain))
+        var NoLakeDomains = PerlinNoiseMapGeneration.GetNoLakeDomains();
+        // what is tile.domain index in GetNoLakeDomains List (xx) and if it exists in the first place
+        int indexOfDomain = NoLakeDomains.FindIndex(d => d.domain == tile.domain);
+        if (indexOfDomain != -1)
         {
-            List<Tile> possibleBaseLocations = PerlinNoiseMapGeneration.GetPossibleBaseLocationsInDomain(PerlinNoiseMapGeneration.GetNoLakeDomains()[tile.domain]);
+            List<Tile> possibleBaseLocations = PerlinNoiseMapGeneration.GetPossibleBaseLocationsInDomain(NoLakeDomains[indexOfDomain]);
             if (Enumerable.Any(possibleBaseLocations, location => location == tile))
             {
                 Debug.Log("Can be Placed!");

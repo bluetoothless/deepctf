@@ -19,6 +19,6 @@ public class LoadSceneScript : MonoBehaviour
     }
     public void GoToMainScene()
     {
-        SceneManager.LoadScene("SceneMain");
+        SceneManager.LoadScene("SceneMain", LoadSceneMode.Single);
     }
 }
