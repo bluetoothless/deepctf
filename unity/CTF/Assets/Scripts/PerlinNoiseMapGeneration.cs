@@ -118,6 +118,11 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int accelerateSurfacePercentage = 10;
     public int desertsPercentage = 35;
     private int nextDomain = 0;
+    private static GameObject blueBasePrefab;
+    private static GameObject redBasePrefab;
+    private static GameObject basesPrefab;
+    private static GameObject newBlueBase;
+    private static GameObject newRedBase;
     private static int height;
     private static int width;
     private int TileScale;
@@ -131,6 +136,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     private void Awake()
     {
+        blueBasePrefab = blueBase;
+        redBasePrefab = redBase;
+        basesPrefab = bases;
         GameObject field = gameObject;
         TileScale = (int)lakePrefab.transform.localScale.x;
         height = (int)field.transform.localScale.x * 10; // 360
@@ -142,6 +150,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         lakesPercentage = PlayerPrefs.GetInt("lakesPercent");
         accelerateSurfacePercentage = PlayerPrefs.GetInt("accSurfacesPercent");
         desertsPercentage = PlayerPrefs.GetInt("desertsPercent");
+        newBlueBase = null;
+        newRedBase = null;
     }
 
 
@@ -449,12 +459,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
 
         // place them
-        GameObject newBlueBase = Instantiate(blueBase, new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter), Quaternion.identity);
-        newBlueBase.GetComponent<BlueBaseScript>().CenterTile = possibleBaseLocations[choice1];
-        newBlueBase.transform.SetParent(bases.transform);
-        GameObject newRedBase = Instantiate(redBase, new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter), Quaternion.identity);
-        newRedBase.GetComponent<RedBaseScript>().CenterTile = possibleBaseLocations[choice2];
-        newRedBase.transform.SetParent(bases.transform);
+        SetBlueBaseOnTile(possibleBaseLocations[choice1]);
+        SetRedBaseOnTile(possibleBaseLocations[choice2]);
     }
 
     public static List<Tile> GetTilesList()
@@ -474,4 +480,21 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     {
         return noLakeDomains;
     }
+
+    public static void SetBlueBaseOnTile(Tile centerTile)
+    {
+        Destroy(newBlueBase);
+        newBlueBase = Instantiate(blueBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newBlueBase.GetComponent<BlueBaseScript>().CenterTile = centerTile;
+        newBlueBase.transform.SetParent(basesPrefab.transform);
+    }
+
+    public static void SetRedBaseOnTile(Tile centerTile)
+    {
+        Destroy(newRedBase);
+        newRedBase = Instantiate(redBasePrefab, new Vector3(centerTile.xCenter, 0, centerTile.yCenter), Quaternion.identity);
+        newRedBase.GetComponent<RedBaseScript>().CenterTile = centerTile;
+        newRedBase.transform.SetParent(basesPrefab.transform);
+    }
+
 }

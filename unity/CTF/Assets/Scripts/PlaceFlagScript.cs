@@ -31,6 +31,18 @@ public class PlaceFlagScript : MonoBehaviour
                 if (CheckCorrectPlacement(position))
                 {
                     Debug.Log("Place at Position: " + position);
+
+                    // Natlia zakoduj tu ¿eby ten if wiedzia³ któr¹ flage postawiæ zale¿nie od przycisku klikniêtego bo teraz zawsze postawi niebiesk¹
+
+                    var BlueBaseClicked = true;
+                    if (BlueBaseClicked)
+                    {
+                        PerlinNoiseMapGeneration.SetBlueBaseOnTile(GetTileFromPosition(position));
+                    }
+                    else // red base clicked
+                    {
+                        PerlinNoiseMapGeneration.SetRedBaseOnTile(GetTileFromPosition(position));
+                    }
                 }
                 else
                 {
