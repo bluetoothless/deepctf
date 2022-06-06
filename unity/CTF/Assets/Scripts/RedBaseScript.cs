@@ -17,11 +17,6 @@ public class RedBaseScript : MonoBehaviour
         tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void OnGameStart()
     {
         // for every Agent
@@ -58,7 +53,7 @@ public class RedBaseScript : MonoBehaviour
 
     bool CheckIfCanSpawnAt(int index)
     {
-        foreach (GameObject redAgent in redAgents.transform)
+        foreach (Transform redAgent in redAgents.transform)
         {
             if (Vector3.Distance(redAgent.transform.position, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter)) < 1f)
             {

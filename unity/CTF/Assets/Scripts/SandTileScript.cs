@@ -12,7 +12,7 @@ public class SandTileScript : MonoBehaviour
             var agentBiomCollider = other.gameObject;
             Debug.Log("SAND!! Slow the Agent!");
             var agent = agentBiomCollider.transform.parent.gameObject;
-            agent.GetComponent<AgentMovementWSAD>().changeSpeedModifier(speedChangeModifier);
+            agent.GetComponent<AgentMovementWSAD>().ChangeSpeedModifier(speedChangeModifier);
         }
     }
 

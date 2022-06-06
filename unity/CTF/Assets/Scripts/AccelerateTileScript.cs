@@ -13,7 +13,7 @@ public class AccelerateTileScript : MonoBehaviour
             var agentBiomCollider = other.gameObject;
             Debug.Log("ACCELERATE!! GIVE IT SOME SPEEEEEEED!");
             var agent = agentBiomCollider.transform.parent.gameObject;
-            agent.GetComponent<AgentMovementWSAD>().changeSpeedModifier(speedChangeModifier);
+            agent.GetComponent<AgentMovementWSAD>().ChangeSpeedModifier(speedChangeModifier);
         }
     }
 

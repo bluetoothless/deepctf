@@ -16,6 +16,11 @@ public class AgentMovementWSAD : MonoBehaviour
         
     }
 
+    private void OnEnable() // is this same as onSpawn?
+    {
+        ;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -55,8 +60,13 @@ public class AgentMovementWSAD : MonoBehaviour
         //rb.angularVelocity = Vector3.zero;
     }
 
-    public void changeSpeedModifier(float newModified)
+    public void ChangeSpeedModifier(float newModified)
     {
         speedModifier = newModified;
+    }
+
+    public void Kill()
+    {
+        gameObject.SetActive(false);
     }
 }

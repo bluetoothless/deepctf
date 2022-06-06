@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c006c64deb1eac46949d09faa96fea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedAgentPrefab: {fileID: 0}
+  RedAgentPrefab: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
   NumberOfRedAgents: 10
 --- !u!1 &8192798034222055282
 GameObject:

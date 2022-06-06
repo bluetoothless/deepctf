@@ -17,17 +17,12 @@ public class BlueBaseScript : MonoBehaviour
         tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void OnGameStart()
     {
         // for every Agent
         for (int i = 0; i < NumberOfBlueAgents; i++)
         {
-            if(CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
+            if (CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
             {
                 SpawnAgentAt(CenterTile.tilesMapListIndex + 1);
             }
@@ -58,7 +53,7 @@ public class BlueBaseScript : MonoBehaviour
 
     bool CheckIfCanSpawnAt(int index)
     {
-        foreach (GameObject blueAgent in blueAgents.transform)
+        foreach (Transform blueAgent in blueAgents.transform)
         {
             if (Vector3.Distance(blueAgent.transform.position, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter)) < 1f)
             {
