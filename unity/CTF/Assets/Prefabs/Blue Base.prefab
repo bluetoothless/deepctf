@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b9f97cd367cae49bd2343833d0fad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownColor: blue
+  baseColor: blue
   FlagInBase: {fileID: 5252642529561130191}
+  EnemyFlagInBase: {fileID: 7495583676654799364}
+  OtherBase: {fileID: 0}
 --- !u!1 &6860966779638432219
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +145,7 @@ Transform:
   m_Children:
   - {fileID: 226773927074182735}
   - {fileID: 120159240460927852}
+  - {fileID: 2577504301638469764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -160,6 +163,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlueAgentPrefab: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
   NumberOfBlueAgents: 10
+--- !u!1001 &1707407276935251465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5542832838425047953}
+    m_Modifications:
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_Name
+      value: RedFlag
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_TagString
+      value: FlagInBase
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+--- !u!4 &2577504301638469764 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+  m_PrefabInstance: {fileID: 1707407276935251465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7495583676654799364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+  m_PrefabInstance: {fileID: 1707407276935251465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3986080333442644162
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deadlyWaterScript : MonoBehaviour
+public class DeadlyWaterScript : MonoBehaviour
 {
 
     private void OnTriggerEnter(Collider other)
