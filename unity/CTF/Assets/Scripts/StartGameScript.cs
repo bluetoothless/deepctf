@@ -21,6 +21,10 @@ public class StartGameScript : MonoBehaviour
         var blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
         var redBaseScript = GameObject.Find("Red Base(Clone)").GetComponent<RedBaseScript>();
 
+        GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        GameObject.Find("ButtonPlaceBlue").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        GameObject.Find("ButtonPlaceRed").GetComponent<UnityEngine.UI.Button>().interactable = false;
+
         blueBaseScript.OnGameStart();
         redBaseScript.OnGameStart();
     }

@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 3135546605716353390}
   - component: {fileID: 3289682406140434403}
   - component: {fileID: 3410422818080877209}
+  - component: {fileID: 5625546836971969834}
   m_Layer: 0
   m_Name: AgentML_RED
   m_TagString: Agent
@@ -449,6 +450,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &5625546836971969834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159207089541083966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2dc3b16832afd49b7eedf4ebe50536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: red
+  AgentFlag: {fileID: 8069095764124863977}
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +603,7 @@ GameObject:
   - component: {fileID: 8805072048399738856}
   - component: {fileID: 6152328920165536786}
   - component: {fileID: 5524910143026498290}
+  - component: {fileID: 6221721099128504488}
   m_Layer: 0
   m_Name: AgentCollider
   m_TagString: Agent
@@ -637,6 +653,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: red
   AgentFlag: {fileID: 8069095764124863977}
+--- !u!114 &6221721099128504488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110266894765807323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264e5fd66d1516c4893628c6ac97e7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7952296513853150951
 GameObject:
   m_ObjectHideFlags: 0

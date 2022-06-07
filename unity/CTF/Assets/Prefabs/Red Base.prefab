@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5542832838425047953}
   - component: {fileID: 3633378164115017272}
+  - component: {fileID: 436929667455710626}
   m_Layer: 0
   m_Name: Red Base
   m_TagString: Base
@@ -49,6 +50,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RedAgentPrefab: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
   NumberOfRedAgents: 10
+--- !u!114 &436929667455710626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860966779638432219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad025a535013264387b61a9bc83cd66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagInOtherBase: {fileID: 6506311887117712825}
+  OwnFlagInOtherBase: {fileID: 2907174514783880090}
 --- !u!1 &8192798034222055282
 GameObject:
   m_ObjectHideFlags: 0

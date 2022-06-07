@@ -113,7 +113,6 @@ MonoBehaviour:
   baseColor: blue
   FlagInBase: {fileID: 5252642529561130191}
   EnemyFlagInBase: {fileID: 7495583676654799364}
-  OtherBase: {fileID: 0}
 --- !u!1 &6860966779638432219
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5542832838425047953}
   - component: {fileID: 8900578224874871831}
+  - component: {fileID: 6608197284694961351}
   m_Layer: 0
   m_Name: Blue Base
   m_TagString: Base
@@ -163,6 +163,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlueAgentPrefab: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
   NumberOfBlueAgents: 10
+--- !u!114 &6608197284694961351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860966779638432219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad025a535013264387b61a9bc83cd66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagInOtherBase: {fileID: 7495583676654799364}
+  OwnFlagInOtherBase: {fileID: 5252642529561130191}
 --- !u!1001 &1707407276935251465
 PrefabInstance:
   m_ObjectHideFlags: 0
