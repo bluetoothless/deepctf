@@ -27,11 +27,11 @@ public class ReturnFlagScript : MonoBehaviour
         // wygrana dru¿yny
         Debug.Log("Team " + color + " wins!");
     }
-    public void returnFlagFromBase(Collider colidingObject, GameObject EnemyFlagInBase)
+    public void returnFlagFromBase(Collider collidingObject, GameObject EnemyFlagInBase)
     {
         if (FlagInOtherBase.activeSelf)// je¿eli agent dotknie nieswojej bazy, w³asna flaga jest w bazie przeciwnika, a flaga przeciwnika jest we w³asnej bzaie
         {
-            win(colidingObject.GetComponent<AgentComponentsScript>().color, EnemyFlagInBase, FlagInOtherBase);
+            win(collidingObject.GetComponent<AgentComponentsScript>().color, EnemyFlagInBase, FlagInOtherBase);
         }
         else // je¿eli agent dotknie nieswojej bazy, w³asna flaga jest w bazie przeciwnika, a flaga przeciwnika nie jest we w³asnej bazie
         {

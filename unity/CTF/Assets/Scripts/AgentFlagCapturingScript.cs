@@ -5,16 +5,20 @@ using UnityEngine;
 public class AgentFlagCapturingScript : MonoBehaviour
 {
     private GameObject OwnBase;
-    private void OnTriggerEnter(Collider colidingObject)
+    private void OnTriggerEnter(Collider collidingObject)
     {
-        if (colidingObject.tag == "Agent")
+        if (collidingObject.tag == "Agent")
         {
             GameObject agentFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag;
             if (agentFlag.activeSelf)
             {
                 string agentColor = gameObject.GetComponent<AgentComponentsScript>().color;
-                OwnBase = agentColor == "blue" ? OwnBase = GameObject.Find("Red Base(Clone)") : OwnBase = GameObject.Find("Blue Base(Clone)");
-                OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agentColor);
+                string collidingAgentColor = collidingObject.GetComponent<AgentComponentsScript>().color;
+                if (agentColor != collidingAgentColor)
+                {
+                    OwnBase = agentColor == "blue" ? GameObject.Find("Red Base(Clone)") : GameObject.Find("Blue Base(Clone)");
+                    OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agentColor);
+                }
             }
         }
     }

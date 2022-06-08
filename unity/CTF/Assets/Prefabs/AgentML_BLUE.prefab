@@ -42,7 +42,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779548464100778388}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 8621496638172786108}
   - component: {fileID: 5985009202052222548}
   - component: {fileID: 5021980797280013648}
+  - component: {fileID: 2224850581720658343}
   m_Layer: 0
   m_Name: AgentML_BLUE
   m_TagString: Agent
@@ -582,6 +583,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: blue
   AgentFlag: {fileID: 4602955158466577112}
+--- !u!65 &2224850581720658343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159207089541083966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
