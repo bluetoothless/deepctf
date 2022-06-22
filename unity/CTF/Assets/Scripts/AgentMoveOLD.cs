@@ -65,8 +65,11 @@ public class AgentMovementOLD : MonoBehaviour
         speedModifier = newModified;
     }
 
+
+
     public void Kill()
     {
+       
         gameObject.SetActive(false);
     }
 }

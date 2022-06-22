@@ -1016,6 +1016,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
+    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE (1)
