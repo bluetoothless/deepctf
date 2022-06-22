@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadlyWaterScript : MonoBehaviour
+public class deadlyWaterScript : MonoBehaviour
 {
     private GameObject OwnBase;
 
