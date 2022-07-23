@@ -2,3 +2,6 @@
 unity/CTF/UserSettings/Layouts/default-2021.dwlt
 unity/CTF/UserSettings/Layouts/default-2021.dwlt
 deepCTFenv
+deepCTFenv/Lib/
+deepCTFenv/pyvenv.cfg
+deepCTFenv/Scripts/
