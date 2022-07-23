@@ -9,15 +9,33 @@
                 "auxillary_file_paths": [
                     "results\\ppo\\My Behavior\\My Behavior-961.pt"
                 ]
+            },
+            {
+                "steps": 9124,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-9124.onnx",
+                "reward": -1000.0,
+                "creation_time": 1656087458.7810051,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-9124.pt"
+                ]
+            },
+            {
+                "steps": 12636,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-12636.onnx",
+                "reward": -1000.0,
+                "creation_time": 1658518562.7697227,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-12636.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 961,
+            "steps": 12636,
             "file_path": "results\\ppo\\My Behavior.onnx",
             "reward": -1000.0,
-            "creation_time": 1655935902.5314186,
+            "creation_time": 1658518562.7697227,
             "auxillary_file_paths": [
-                "results\\ppo\\My Behavior\\My Behavior-961.pt"
+                "results\\ppo\\My Behavior\\My Behavior-12636.pt"
             ]
         }
     },

@@ -1017,6 +1017,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
     - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_RayLength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_EndVerticalOffset
       value: 0.1
       objectReference: {fileID: 0}

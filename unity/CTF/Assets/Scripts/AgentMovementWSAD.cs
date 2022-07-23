@@ -79,9 +79,14 @@ public class AgentMovementWSAD : Agent
         speedModifier = newModified;
     }
 
+    public void AddRewardAgent(float reward)
+    {
+        AddReward(reward);
+    }
+
     public void Kill()
     {
-        AddReward(-1000f);
+        AddRewardAgent(-1000f);
         gameObject.SetActive(false);
     }
 }
