@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 199993362}
   - component: {fileID: 199993361}
   - component: {fileID: 199993360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 385718749}
   - component: {fileID: 385718748}
   - component: {fileID: 385718747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,15 +1016,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
-    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_RayLength
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_EndVerticalOffset
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: -5557906883894785665, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_StartVerticalOffset
       value: 0.1
       objectReference: {fileID: 0}
@@ -1980,6 +1980,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665289450}
   m_CullTransparentMesh: 1
+--- !u!1 &758977063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+  m_PrefabInstance: {fileID: 973558344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &859900210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2236,6 +2241,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SensorName
+      value: ObjectDetection
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_MaxRayDegrees
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RaysPerDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE (2)
@@ -2288,7 +2305,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
 --- !u!1 &1063109420
 GameObject:
@@ -3291,7 +3309,7 @@ GameObject:
   - component: {fileID: 1450140490}
   - component: {fileID: 1450140489}
   - component: {fileID: 1450140488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3523,7 +3541,7 @@ GameObject:
   - component: {fileID: 1487573628}
   - component: {fileID: 1487573627}
   - component: {fileID: 1487573626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4085,7 +4103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898109948}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4396,6 +4414,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936142082}
   m_CullTransparentMesh: 1
+--- !u!1 &1959026994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+  m_PrefabInstance: {fileID: 2051368736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997161797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,6 +4561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_RaysPerDirection
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE
@@ -4552,7 +4579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4560,7 +4587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -59.9
       objectReference: {fileID: 0}
     - target: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4590,7 +4617,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: m_GridSize.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GridSize.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CellScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CellScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AgentGameObject
+      value: 
+      objectReference: {fileID: 1959026994}
+    - target: {fileID: 0}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DebugColors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: desert
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DetectableTags.Array.data[2]
+      value: w
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DetectableTags.Array.data[3]
+      value: g
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
 --- !u!1 &2089101442
 GameObject:
@@ -4678,6 +4758,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
   m_PrefabInstance: {fileID: 973558344}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110889532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758977063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: FieldDetection
+  m_DetectableTags: []
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 70
+  m_SphereCastRadius: 0.5
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &2126380709
 GameObject:
   m_ObjectHideFlags: 0

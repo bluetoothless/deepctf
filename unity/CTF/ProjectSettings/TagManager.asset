@@ -10,14 +10,15 @@ TagManager:
   - AgentFlag
   - FlagInBase
   - Base
+  - desert
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Field
   - Water
   - UI
-  - 
+  - RayDetect
   - 
   - 
   - 
