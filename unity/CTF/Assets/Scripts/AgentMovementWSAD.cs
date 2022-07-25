@@ -46,7 +46,8 @@ public class AgentMovementWSAD : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         //jak juz zaczniemy uzywac to odkomentowac:
-       // float[,] arrRays = raysPerception();
+       // float[,] arrRays = raysPerception(); //40 floatow
+       //
     }
 
 
@@ -54,10 +55,11 @@ public class AgentMovementWSAD : Agent
     {
         int layerMask = 1 << 6;
 
-        float RayDistance = 100.0f;
-        float startDegree = -50.0f;
-        float stepDegree = 10.0f;
+        float RayDistance = 200.0f;
         int numberOfRays = 10;
+        float startDegree = -90.0f;//zawsze musi byc ujemne bo jebnie!
+        float stepDegree = -2 * startDegree / (float)numberOfRays;
+        
 
         float[,] outputArray = new float[10,4]; //10 promieni, po 4 zmienne, i,0-distance, i,1 - rodzaj, i,2 kolor, i,3 czy z flaga?
         RaycastHit hit;
