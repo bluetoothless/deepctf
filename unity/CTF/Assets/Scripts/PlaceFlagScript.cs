@@ -18,38 +18,40 @@ public class PlaceFlagScript : MonoBehaviour
 
     private void Update()
     {
-        if (buttonClicked)
+        if (!buttonClicked)
+            return;
+
+        if (!Input.GetMouseButtonDown(0)) //Input.GetMouseButtonDown(0)
+            return;
+
+        float distance;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (field.Raycast(ray, out distance))
         {
-            if (Input.GetMouseButtonDown(0)) {
-                float distance;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (field.Raycast(ray, out distance))
-                {
-                    position = ray.GetPoint(distance);
-                }
-                Debug.Log("Position: " + position);
+            position = ray.GetPoint(distance);
+        }
+        Debug.Log("Position: " + position);
 
-                if (CheckCorrectPlacement(position))
-                {
-                    Debug.Log("Place at Position: " + position);
+        if (CheckCorrectPlacement(position))
+        {
+            Debug.Log("Place at Position: " + position);
 
-                    if (color == "blue")
-                    {
-                        PerlinNoiseMapGeneration.SetBlueBaseOnTile(GetTileFromPosition(position));
-                    }
-                    else // red base clicked
-                    {
-                        PerlinNoiseMapGeneration.SetRedBaseOnTile(GetTileFromPosition(position));
-                    }
-                }
-                else
-                {
-                    incorrectPlacementText.SetActive(true);
-                }
-
-                buttonClicked = false;
+            if (color == "blue")
+            {
+                PerlinNoiseMapGeneration.SetBlueBaseOnTile(GetTileFromPosition(position));
+            }
+            else // red base clicked
+            {
+                PerlinNoiseMapGeneration.SetRedBaseOnTile(GetTileFromPosition(position));
             }
         }
+        else
+        {
+            incorrectPlacementText.SetActive(true);
+        }
+
+        buttonClicked = false;
+
     }
     public void PlaceFlag()
     {
