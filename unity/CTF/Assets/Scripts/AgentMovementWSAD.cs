@@ -59,7 +59,7 @@ public class AgentMovementWSAD : Agent
         float stepDegree = 10.0f;
         int numberOfRays = 10;
 
-        float[,] arr = new float[10,4];
+        float[,] outputArray = new float[10,4]; //10 promieni, po 4 zmienne, i,0-distance, i,1 - rodzaj, i,2 kolor, i,3 czy z flaga?
         RaycastHit hit;
         Ray ray;
         for (int i =0;i<numberOfRays;i++)
@@ -70,7 +70,7 @@ public class AgentMovementWSAD : Agent
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
                 Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
-                arr[i, 0] = hit.distance;
+                outputArray[i, 0] = hit.distance;
                 //hit.collider.gameObject.GetComponent(typeof(RayResponder));
               //  Debug.Log(RayResponder.message());
 
@@ -78,7 +78,7 @@ public class AgentMovementWSAD : Agent
             else
             {
                 Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
-                //Debug.Log("Did not Hit");
+                //Debug.Log(this.name + "Ray"+i+ "Did not Hit");
             }
 
         }
