@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4899339433751073820}
   - component: {fileID: -3865387701147487020}
   - component: {fileID: 5583774107061858448}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DesertTile
-  m_TagString: Untagged
+  m_TagString: desert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

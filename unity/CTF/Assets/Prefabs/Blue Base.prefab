@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2349050364387744576}
   - component: {fileID: 1698485160951486171}
   - component: {fileID: 8330703809757014963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5542832838425047953}
   - component: {fileID: 8900578224874871831}
   - component: {fileID: 6608197284694961351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blue Base
   m_TagString: Base
   m_Icon: {fileID: 0}
@@ -184,6 +184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5542832838425047953}
     m_Modifications:
+    - target: {fileID: 515395938615023031, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -228,9 +232,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5825031875144254557, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Name
       value: RedFlag
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_IsActive
@@ -259,6 +271,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5542832838425047953}
     m_Modifications:
+    - target: {fileID: 515395938615023031, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3779873993504804493, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -303,9 +319,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5825031875144254557, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
       propertyPath: m_Name
       value: BlueFlag
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
       propertyPath: m_IsActive

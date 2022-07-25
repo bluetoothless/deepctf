@@ -4,6 +4,8 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
+using Unity.MLAgents.Sensors;
+using UnityEngine;
 
 public class AgentMovementWSAD : Agent
 {
@@ -41,6 +43,28 @@ public class AgentMovementWSAD : Agent
 
     }
 
+    public override void CollectObservations(VectorSensor sensor)
+    {
+
+    }
+
+
+    private void raysPerception()
+    {
+        int layerMask = 1 << 6;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log(this.name + "Did Hit: " + hit.distance + hit.collider);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            //Debug.Log("Did not Hit");
+        }
+    }
+
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         bool W = Input.GetKey(KeyCode.W);
@@ -71,6 +95,9 @@ public class AgentMovementWSAD : Agent
 
 
         speedModifier = 1f;
+
+
+        raysPerception();
     }
 
 
