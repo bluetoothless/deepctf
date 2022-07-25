@@ -340,7 +340,6 @@ GameObject:
   - component: {fileID: 5625546836971969834}
   - component: {fileID: 4455159850128631616}
   - component: {fileID: 1291391321409658251}
-  - component: {fileID: -6826045870627883448}
   - component: {fileID: 7150795604652928290}
   m_Layer: 6
   m_Name: AgentML_RED
@@ -516,34 +515,6 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &-6826045870627883448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3159207089541083966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - Agent
-  - Base
-  m_RaysPerDirection: 5
-  m_MaxRayDegrees: 60
-  m_SphereCastRadius: 0.5
-  m_RayLength: 20
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 3
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0.1
-  m_EndVerticalOffset: 0.1
 --- !u!114 &7150795604652928290
 MonoBehaviour:
   m_ObjectHideFlags: 0
