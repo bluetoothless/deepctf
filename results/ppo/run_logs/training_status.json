@@ -9,21 +9,57 @@
                 "auxillary_file_paths": [
                     "results\\ppo\\My Behavior\\My Behavior-961.pt"
                 ]
+            },
+            {
+                "steps": 3265,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-3265.onnx",
+                "reward": null,
+                "creation_time": 1658621801.6986897,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-3265.pt"
+                ]
+            },
+            {
+                "steps": 3271,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-3271.onnx",
+                "reward": -1000.0,
+                "creation_time": 1658624014.6464443,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-3271.pt"
+                ]
+            },
+            {
+                "steps": 3271,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-3271.onnx",
+                "reward": null,
+                "creation_time": 1658624064.9199204,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-3271.pt"
+                ]
+            },
+            {
+                "steps": 4748,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-4748.onnx",
+                "reward": -1000.0,
+                "creation_time": 1658697661.3515155,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-4748.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 961,
+            "steps": 4748,
             "file_path": "results\\ppo\\My Behavior.onnx",
             "reward": -1000.0,
-            "creation_time": 1655935902.5314186,
+            "creation_time": 1658697661.3515155,
             "auxillary_file_paths": [
-                "results\\ppo\\My Behavior\\My Behavior-961.pt"
+                "results\\ppo\\My Behavior\\My Behavior-4748.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.29.0",
-        "torch_version": "1.11.0+cpu"
+        "torch_version": "1.12.0+cpu"
     }
 }
