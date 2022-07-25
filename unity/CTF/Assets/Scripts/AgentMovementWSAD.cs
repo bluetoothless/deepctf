@@ -5,7 +5,6 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
 using Unity.MLAgents.Sensors;
-using UnityEngine;
 
 public class AgentMovementWSAD : Agent
 {
@@ -46,11 +45,12 @@ public class AgentMovementWSAD : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-
+        //jak juz zaczniemy uzywac to odkomentowac:
+       // float[,] arrRays = raysPerception();
     }
 
 
-    private void raysPerception()
+    private float[,] raysPerception()
     {
         int layerMask = 1 << 6;
 
@@ -82,6 +82,7 @@ public class AgentMovementWSAD : Agent
             }
 
         }
+        return outputArray;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -115,7 +116,7 @@ public class AgentMovementWSAD : Agent
 
         speedModifier = 1f;
 
-
+        //dla widzenia promieni
         raysPerception();
     }
 
