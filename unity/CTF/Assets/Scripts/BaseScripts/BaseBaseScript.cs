@@ -2,25 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueBaseScript : MonoBehaviour
+public abstract class BaseBaseScript : MonoBehaviour
 {
-    public GameObject BlueAgentPrefab;
-    public int NumberOfBlueAgents = 10;
+
+    public GameObject AgentPrefab;
+    public int NumberOfAgents = 10;
     public Tile CenterTile;
-    private GameObject blueAgents;
+    private GameObject Agents;
     private List<Tile> tiles;
+    private bool isRed;
 
     // Start is called before the first frame update
     void Start()
     {
-        blueAgents = GameObject.Find("BlueAgents");
+
+        Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
         tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
 
     public void OnGameStart()
     {
         // for every Agent
-        for (int i = 0; i < NumberOfBlueAgents; i++)
+        for (int i = 0; i < NumberOfAgents; i++)
         {
             if (CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
             {
@@ -45,21 +48,27 @@ public class BlueBaseScript : MonoBehaviour
         }
     }
 
-    void SpawnAgentAt(int index)
+    public void SpawnAgentAt(int index)
     {
-        GameObject newBlueAgent = Instantiate(BlueAgentPrefab, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter), Quaternion.identity);
-        newBlueAgent.transform.SetParent(blueAgents.transform);
+        GameObject agent = Instantiate(AgentPrefab, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter), Quaternion.identity);
+        agent.transform.SetParent(Agents.transform);
     }
 
     bool CheckIfCanSpawnAt(int index)
     {
-        foreach (Transform blueAgent in blueAgents.transform)
+        foreach (Transform agent in Agents.transform)
         {
-            if (Vector3.Distance(blueAgent.transform.position, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter)) < 1f)
+            if (Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter)) < 1f)
             {
                 return false;
             }
         }
         return true;
     }
+
+    public void setIsRed(bool isRed=true)
+    {
+        this.isRed = isRed;
+    }
+
 }
