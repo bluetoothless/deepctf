@@ -13,6 +13,7 @@ public class AgentMovementWSAD : Agent
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
     private float speedModifier = 1f;
+   
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
@@ -52,16 +53,34 @@ public class AgentMovementWSAD : Agent
     private void raysPerception()
     {
         int layerMask = 1 << 6;
+
+        float RayDistance = 100.0f;
+        float startDegree = -50.0f;
+        float stepDegree = 10.0f;
+        int numberOfRays = 10;
+
+        float[,] arr = new float[10,4];
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        Ray ray;
+        for (int i =0;i<numberOfRays;i++)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log(this.name + "Did Hit: " + hit.distance + hit.collider);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            //Debug.Log("Did not Hit");
+           ray  = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree+stepDegree*i, 0) * Vector3.forward));
+
+            if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
+            {
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+                Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
+                arr[i, 0] = hit.distance;
+                //hit.collider.gameObject.GetComponent(typeof(RayResponder));
+              //  Debug.Log(RayResponder.message());
+
+            }
+            else
+            {
+                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+                //Debug.Log("Did not Hit");
+            }
+
         }
     }
 
