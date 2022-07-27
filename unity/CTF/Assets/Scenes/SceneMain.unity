@@ -1016,18 +1016,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_RayLength
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_EndVerticalOffset
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_StartVerticalOffset
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE (1)
@@ -2120,6 +2108,7 @@ GameObject:
   - component: {fileID: 965307790}
   - component: {fileID: 965307794}
   - component: {fileID: 965307795}
+  - component: {fileID: 965307796}
   m_Layer: 0
   m_Name: Field (10 x scale)
   m_TagString: Untagged
@@ -2234,6 +2223,23 @@ MonoBehaviour:
   lakesPercentage: 20
   accelerateSurfacePercentage: 10
   desertsPercentage: 35
+--- !u!114 &965307796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965307788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592e7fec45e7744468c27b276771c90f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameWon: 0
+  flagCaptured: 0
+  flagRetrievedFromAgent: 0
+  gameLost: 0
+  agentDead: 0
 --- !u!1001 &973558344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2241,18 +2247,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_SensorName
-      value: ObjectDetection
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_MaxRayDegrees
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_RaysPerDirection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE (2)
@@ -4414,11 +4408,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936142082}
   m_CullTransparentMesh: 1
---- !u!1 &1959026994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
-  m_PrefabInstance: {fileID: 2051368736}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997161797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,10 +4550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 636833182}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_RaysPerDirection
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE
@@ -4616,58 +4601,6 @@ PrefabInstance:
     - target: {fileID: 3160991633920138480, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_GridSize.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_GridSize.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_ShowGizmos
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_CellScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_CellScale.z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AgentGameObject
-      value: 
-      objectReference: {fileID: 1959026994}
-    - target: {fileID: 0}
-      propertyPath: m_ColliderMask.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DebugColors.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DetectableTags.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DetectableTags.Array.data[0]
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DetectableTags.Array.data[1]
-      value: desert
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DetectableTags.Array.data[2]
-      value: w
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_DetectableTags.Array.data[3]
-      value: g
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
