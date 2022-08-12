@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 
 [Serializable]
-public class RewardValuesScript
+public class RewardValuesScript:MonoBehaviour
 {
     public float gameWon;
     public float flagCaptured;
