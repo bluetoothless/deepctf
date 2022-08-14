@@ -8,6 +8,7 @@ public class FlagCapturingScript : MonoBehaviour
     [SerializeField] GameObject FlagInBase;
     [SerializeField] GameObject EnemyFlagInBase;
     private GameObject OtherBase;
+    private RewardValuesScript rewardValues;
 
     private void passTheFlag(GameObject object1, GameObject object2) {
         bool isActive = object1.activeSelf;
@@ -15,14 +16,24 @@ public class FlagCapturingScript : MonoBehaviour
         isActive = object2.activeSelf;
         object2.SetActive(!isActive);
     }
-    private void win (string color, GameObject object1, GameObject object2)
+    private void win (string color, GameObject object1, GameObject object2, GameObject collidingAgent)
     {
         bool isActive = object1.activeSelf;
         object1.SetActive(!isActive);
         isActive = object2.activeSelf;
         object2.SetActive(!isActive);
-        // wygrana drużyny
+        // team wins
         Debug.Log("Team " + color + " wins!");
+        if (color == "blue")
+        {
+            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+        }
+        else
+        {
+            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+        }
     }
 
     private void OnTriggerEnter(Collider collidingObject)
@@ -34,79 +45,44 @@ public class FlagCapturingScript : MonoBehaviour
             else
                 OtherBase = GameObject.Find("Blue Base(Clone)");
 
-            GameObject AgentFlag = collidingObject.GetComponent<AgentComponentsScript>().AgentFlag;
-            bool agentColorEqualsBaseColor = collidingObject.GetComponent<AgentComponentsScript>().color == baseColor;
+            var collidingAgent = collidingObject.gameObject.transform.parent.gameObject;
+
+            GameObject AgentFlag = collidingAgent.GetComponent<AgentComponentsScript>().AgentFlag;
+            bool agentColorEqualsBaseColor = collidingAgent.GetComponent<AgentComponentsScript>().color == baseColor;
             bool agentHoldsEnemyFlag = AgentFlag.activeSelf;
-            
+
+            rewardValues = collidingAgent.GetComponent<RewardValuesScript>();
+            rewardValues.getRewardValues();
 
             if (agentColorEqualsBaseColor)
             {
                 if (!agentHoldsEnemyFlag) 
-                    return;
+                    return; 
 
-                if (FlagInBase.activeSelf) // jeżeli agent dotknie swojej bazy, trzyma flagę przeciwnika, a flaga jest w bazie
+                if (FlagInBase.activeSelf) // if the agent touches own base, holds enemy's flag, and own flag is in own base
                 {
-                    win(collidingObject.GetComponent<AgentComponentsScript>().color, AgentFlag, FlagInBase);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagDelivered"]);
+                    win(collidingAgent.GetComponent<AgentComponentsScript>().color, AgentFlag, FlagInBase, collidingAgent);
                 }
-                else // jeżeli agent dotknie swojej bazy, trzyma flagę przeciwnika, a flagi nie ma w bazie
+                else                       // if the agent touches own base, holds enemy's flag, and own flag is not in own base
                 {
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagDelivered"]);
                     passTheFlag(EnemyFlagInBase, AgentFlag);
                 }
             }
             else
             {
-                if (!AgentFlag.activeSelf && FlagInBase.activeSelf) // jeżeli agent dotknie nieswojej bazy, nie trzyma flagi przeciwnika, a flaga przeciwnika jest w bazie
+                if (!AgentFlag.activeSelf && FlagInBase.activeSelf) // if the agent touches enemy's base, does not hold enemy's flag, and enemy's flag is in enemy's base
                 {
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagCaptured"]);
                     passTheFlag(FlagInBase, AgentFlag);
                 }
-                else if (EnemyFlagInBase.activeSelf) 
+                else if (EnemyFlagInBase.activeSelf)                // if the agent touches enemy's base, and own flag is in enemy's base
                 {
-                    OtherBase.GetComponent<ReturnFlagScript>().returnFlagFromBase(collidingObject, EnemyFlagInBase);
-                    /*if (FlagInOtherBase.activeSelf)// jeżeli agent dotknie nieswojej bazy, własna flaga jest w bazie przeciwnika, a flaga przeciwnika jest we własnej bzaie
-                    {
-                        win(collidingObject.GetComponent<AgentComponentsScript>().color, EnemyFlagInBase, FlagInOtherBase);
-                    }
-                    else // jeżeli agent dotknie nieswojej bazy, własna flaga jest w bazie przeciwnika, a flaga przeciwnika nie jest we własnej bazie
-                    {
-                        passTheFlag(EnemyFlagInBase, FlagInOtherBase);
-                    }*/
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagCaptured"]);
+                    OtherBase.GetComponent<ReturnFlagScript>().returnFlagFromBase(collidingAgent, EnemyFlagInBase);
                 }
             }
-
-
-            /*
-            //je�li agent dotknie nieswojej bazy, nie trzyma flagi przeciwnika, a flaga przeciwnika jest w bazie 
-            if (collidingObject.GetComponent<AgentComponentsScript>().color != baseColor && AgentFlag.activeSelf == false && FlagInBase.activeSelf == true)
-            {
-                bool isActive = FlagInBase.activeSelf;
-                FlagInBase.SetActive(!isActive);
-                isActive = AgentFlag.activeSelf;
-                AgentFlag.SetActive(!isActive);
-            }
-            //je�li agent dotknie nieswojej bazy, a w�asna flaga jest w bazie 
-            else if (collidingObject.GetComponent<AgentComponentsScript>().color != baseColor && AgentFlag.activeSelf == false && EnemyFlagInBase.activeSelf == true)
-            {
-                bool isActive = EnemyFlagInBase.activeSelf;
-                EnemyFlagInBase.SetActive(!isActive);
-                isActive = FlagInBase.activeSelf;
-                FlagInBase.SetActive(!isActive);
-            }
-            // je�li agent dotknie swojej bazy, trzyma flag� przeciwnika, a flagi nie ma w bazie
-            else if (collidingObject.GetComponent<AgentComponentsScript>().color == baseColor && AgentFlag.activeSelf == true && FlagInBase.activeSelf == false)
-            {
-                bool isActive = EnemyFlagInBase.activeSelf;
-                EnemyFlagInBase.SetActive(!isActive);
-                isActive = AgentFlag.activeSelf;
-                AgentFlag.SetActive(!isActive);
-            }
-            // je�li agent dotknie swojej bazy, trzyma flag� przeciwnika, a flaga jest w bazie
-            else if (collidingObject.GetComponent<AgentComponentsScript>().color == baseColor && AgentFlag.activeSelf == true && FlagInBase.activeSelf == true)
-            {
-                bool isActive = AgentFlag.activeSelf;
-                AgentFlag.SetActive(!isActive);
-                // wygrana dru�yny
-                Debug.Log("Team " + collidingObject.GetComponent<AgentComponentsScript>().color + " wins!");
-            }*/
         }
     }
 }

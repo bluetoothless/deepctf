@@ -20,7 +20,7 @@ public class deadlyWaterScript : MonoBehaviour
             {
                 string agentColor = agent.GetComponent<AgentComponentsScript>().color;
                 OwnBase = agentColor == "blue" ? OwnBase = GameObject.Find("Red Base(Clone)") : OwnBase = GameObject.Find("Blue Base(Clone)");
-                OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agentColor);
+                OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agent);
             }
 
             agent.GetComponent<AgentMovementWSAD>().Kill();

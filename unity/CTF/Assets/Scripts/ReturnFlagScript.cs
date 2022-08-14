@@ -6,6 +6,7 @@ public class ReturnFlagScript : MonoBehaviour
 {
     [SerializeField] GameObject FlagInOtherBase;
     [SerializeField] GameObject OwnFlagInOtherBase;
+    private RewardValuesScript rewardValues;
     private void passTheFlag(GameObject object1, GameObject object2)
     {
         bool isActive = object1.activeSelf;
@@ -13,37 +14,56 @@ public class ReturnFlagScript : MonoBehaviour
         isActive = object2.activeSelf;
         object2.SetActive(!isActive);
     }
-    private void win(string color, GameObject object1, GameObject object2)
+    private void win(GameObject agent, GameObject object1, GameObject object2)
     {
         passTheFlag(object1, object2);
-        // wygrana dru¿yny
+        // team wins
+        string color = agent.GetComponent<AgentComponentsScript>().color;
         Debug.Log("Team " + color + " wins!");
+        Reward(agent, color);
     }
-    private void win(string agentColor, GameObject object1)
+    private void win(GameObject object1, GameObject agent)
     {
+        string agentColor = agent.GetComponent<AgentComponentsScript>().color;
         string color = agentColor == "blue" ? "red" : "blue";
         bool isActive = object1.activeSelf;
         object1.SetActive(!isActive);
-        // wygrana dru¿yny
+        // team wins
         Debug.Log("Team " + color + " wins!");
+        Reward(agent, color);
     }
-    public void returnFlagFromBase(Collider collidingObject, GameObject EnemyFlagInBase)
+    private void Reward(GameObject agent, string color)
     {
-        if (FlagInOtherBase.activeSelf)// je¿eli agent dotknie nieswojej bazy, w³asna flaga jest w bazie przeciwnika, a flaga przeciwnika jest we w³asnej bzaie
+        if (color == "blue")
         {
-            win(collidingObject.GetComponent<AgentComponentsScript>().color, EnemyFlagInBase, FlagInOtherBase);
+            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
         }
-        else // je¿eli agent dotknie nieswojej bazy, w³asna flaga jest w bazie przeciwnika, a flaga przeciwnika nie jest we w³asnej bazie
+        else
+        {
+            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+        }
+    }
+    public void returnFlagFromBase(GameObject collidingAgent, GameObject EnemyFlagInBase)
+    {
+        if (FlagInOtherBase.activeSelf) // if the agent touches enemy's base, own flag is in enemy's base, and enemy's flag is in own base
+        {
+            win(collidingAgent, EnemyFlagInBase, FlagInOtherBase);
+        }
+        else                            // if the agent touches enemy's base, own flag is in enemy's base, and enemy's flag is not in own base
         {
             passTheFlag(EnemyFlagInBase, OwnFlagInOtherBase);
         }
     }
 
-    public void returnFlagFromAgent(GameObject agentFlag, string agentColor)
+    public void returnFlagFromAgent(GameObject agentFlag, GameObject agentWithFlag)
     {
         if (FlagInOtherBase.activeSelf)
         {
-            win(agentColor, FlagInOtherBase);
+            rewardValues = agentWithFlag.GetComponent<RewardValuesScript>();
+            rewardValues.getRewardValues();
+            win(FlagInOtherBase, agentWithFlag);
         }
         else
         {

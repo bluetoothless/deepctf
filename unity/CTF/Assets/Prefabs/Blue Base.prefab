@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8953ffe14970ed46b6415b5ab0253dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlueAgentPrefab: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
-  NumberOfBlueAgents: 10
+  AgentPrefab: {fileID: 0}
+  NumberOfAgents: 10
 --- !u!114 &6608197284694961351
 MonoBehaviour:
   m_ObjectHideFlags: 0

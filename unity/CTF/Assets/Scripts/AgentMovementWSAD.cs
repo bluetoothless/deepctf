@@ -13,6 +13,14 @@ public class AgentMovementWSAD : Agent
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
     private float speedModifier = 1f;
+    public GameObject[] agents;
+    private List<GameObject> teamBlue = new List<GameObject>{};
+    private List<GameObject> teamRed = new List<GameObject>{};
+
+    void Start()
+    {
+        GetTeams();
+    }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
@@ -111,9 +119,73 @@ public class AgentMovementWSAD : Agent
         AddReward(reward);
     }
 
+    public void AddRewardTeam(float reward, string color)
+    {
+        if (color == "blue")
+        {
+            foreach (GameObject agent in teamBlue)
+            {
+                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
+            }
+        }
+        else
+        {
+            foreach (GameObject agent in teamRed)
+            {
+                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
+            }
+        }
+    }
+
     public void Kill()
     {
-        AddRewardAgent(-1000f);
+        var rewardValues = gameObject.GetComponent<RewardValuesScript>();
+        rewardValues.getRewardValues();
+        AddRewardAgent(rewardValues.rewards["agentDead"]);
         gameObject.SetActive(false);
+
+        CheckIfLost();
+    }
+
+    private void CheckIfLost()
+    {
+        bool aliveAgents = false;
+        Transform parent = gameObject.transform.parent;
+
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            GameObject agent = parent.GetChild(i).gameObject;
+            if (agent.activeSelf)
+            {
+                aliveAgents = true;
+            }
+        }
+
+        if (!aliveAgents) // if all agents from team died
+        {
+            var rewardValues = gameObject.GetComponent<RewardValuesScript>();
+            rewardValues.getRewardValues();
+            if (gameObject.GetComponent<AgentComponentsScript>().color == "blue")
+            {
+                AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+                AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            }
+            else
+            {
+                AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+                AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+            }
+        }
+    }
+    private void GetTeams()
+    {
+        Transform agents = gameObject.transform.parent.transform.parent;
+        Transform redAgents = agents.GetChild(0);
+        Transform blueAgents = agents.GetChild(1);
+        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
+        {
+            teamRed.Add(redAgents.GetChild(i).gameObject);
+            teamBlue.Add(blueAgents.GetChild(i).gameObject);
+        }
     }
 }

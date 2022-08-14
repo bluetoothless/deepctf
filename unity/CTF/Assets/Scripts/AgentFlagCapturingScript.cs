@@ -16,8 +16,15 @@ public class AgentFlagCapturingScript : MonoBehaviour
                 string collidingAgentColor = collidingObject.GetComponent<AgentComponentsScript>().color;
                 if (agentColor != collidingAgentColor)
                 {
+                    var agent = gameObject.gameObject.transform.parent.gameObject;
+                    var collidingAgent = collidingObject.gameObject.transform.parent.gameObject;
+                    var rewardValues = agent.GetComponent<RewardValuesScript>();
+                    rewardValues.getRewardValues();
+                    agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagStolenFromAgent"]);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagRetrievedFromAgent"]);
+
                     OwnBase = agentColor == "blue" ? GameObject.Find("Red Base(Clone)") : GameObject.Find("Blue Base(Clone)");
-                    OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agentColor);
+                    OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agent);
                 }
             }
         }
