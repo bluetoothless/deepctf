@@ -39,8 +39,6 @@ public class AgentMovementWSAD : Agent
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
         }
-
-
     }
 
     public override void CollectObservations(VectorSensor sensor)

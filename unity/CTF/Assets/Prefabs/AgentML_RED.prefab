@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 4455159850128631616}
   - component: {fileID: 1291391321409658251}
   - component: {fileID: 7150795604652928290}
+  - component: {fileID: 581016215649020880}
   m_Layer: 6
   m_Name: AgentML_RED
   m_TagString: Agent
@@ -529,6 +530,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
+--- !u!114 &581016215649020880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159207089541083966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307262267592f4e499b852c4836ccd5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BiomEyePrefab: {fileID: 4516443651460601700, guid: 2d928eb7b84174e408329dc2a5f7ecbe, type: 3}
+  lengthBetweenEyes: 1.5
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
