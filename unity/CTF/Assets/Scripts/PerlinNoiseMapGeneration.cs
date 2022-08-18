@@ -173,7 +173,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void GenerateMap()
@@ -191,8 +191,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             float offsetX = Random.Range(0f, 99999f);   // offsets for Perlin Noise Function
             float offsetY = Random.Range(0f, 99999f);
 
-            int chanceEnhancer = -(biom.chance/3);  // value added to chances for placing perticular biom tile
-   
+            int chanceEnhancer = -(biom.chance / 3);  // value added to chances for placing perticular biom tile
+
             bool notEnoughTiles = true;             // if more tiles should be placed
             while (notEnoughTiles)
             {
@@ -206,7 +206,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                     {
                         PutTileInGame(tilesCopy[i], biom);
                         tilesCopy.RemoveAt(i);  // delete Tile from List, so it won't be considered in next loop
-                        biom.counter++;     
+                        biom.counter++;
                         if (biom.counter >= biom.MaxTilesAmount(mapSize))
                         {
                             notEnoughTiles = false;
@@ -283,7 +283,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
                 somethingAdded = false;
                 domains.Add(domain);       // add list of tiles that have the same domain, to domains list
                 nextDomain++;
-            }        
+            }
         }
     }
 
@@ -314,7 +314,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             addToQueueIfMatches(queue, startingIndex, -1);
         }
         // for far right tiles
-        else if (startingIndex % 100 == 0) 
+        else if (startingIndex % 100 == 0)
         {
             addToQueueIfMatches(queue, startingIndex, 1);
         }
@@ -330,7 +330,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             addToQueueIfMatches(queue, startingIndex, -100);
         }
         // for far down tiles
-        else if (startingIndex <= 99) 
+        else if (startingIndex <= 99)
         {
             addToQueueIfMatches(queue, startingIndex, 100);
         }
@@ -403,12 +403,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         return possibleBaseLocations;
     }
 
-    void PlaceBases()
-    {
-    // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
-    chooseDomain:                       // GOTO
 
-        // If no domains, generate new map
+    private Domain IfNoDomainsGenerateNewMap()
+    {
         CheckForDomains();
 
         foreach (Domain domain in noLakeDomains)
@@ -434,6 +431,65 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
             domainNow = noLakeDomains[noLakeDomains.Count - 1];
         }
 
+        return domainNow;
+    }
+
+    private int GetChoice2(Domain domainNow,List<Tile> possibleBaseLocations,int choice1)
+    {
+        int choice2 = Random.Range(0, possibleBaseLocations.Count);
+
+        while ((choice1 == choice2) ||
+                (Vector3.Distance(
+                    new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter),
+                    new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter)) < 4))       // minimum 4 distance between bases
+        {
+            choice2 = Random.Range(0, domainNow.Count);
+        }
+        return choice2;
+    }
+
+    void PlaceBases()
+    {
+        Domain domainNow;
+        List<Tile> possibleBaseLocations;
+
+        while (true)
+        {
+            // If no domains, generate new map
+            domainNow = IfNoDomainsGenerateNewMap(); // other function name?
+
+            // Check for 3x3 possible spaces in selected domain
+            // Later, boundry tiles can be excluded from this search        -- PERFORMANCE THING
+            possibleBaseLocations = GetPossibleBaseLocationsInDomain(domainNow);
+
+            if(!(possibleBaseLocations.Count < 2))
+                break;
+
+            noLakeDomains.Remove(domainNow);
+            noLakeTilesCounter -= domainNow.Count;
+
+        }
+
+        // random 3x3 space 
+        // MAYBE PLACE FOR BETTER ALGORITHM
+
+        int choice1 = Random.Range(0, possibleBaseLocations.Count);
+        int choice2 = GetChoice2(domainNow, possibleBaseLocations, choice1);
+
+        // place them
+        SetBlueBaseOnTile(possibleBaseLocations[choice1]);
+        SetRedBaseOnTile(possibleBaseLocations[choice2]);
+
+    }
+
+    void PlaceBases2()
+    {
+    // CHOOSE WHAT DOMAIN TO PLACE BASES INTO
+    chooseDomain:                       // GOTO
+
+        // If no domains, generate new map
+        Domain domainNow = IfNoDomainsGenerateNewMap();
+
         // Check for 3x3 possible spaces in selected domain
         // Later, boundry tiles can be excluded from this search        -- PERFORMANCE THING
         List<Tile> possibleBaseLocations = GetPossibleBaseLocationsInDomain(domainNow);
@@ -449,15 +505,8 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         // MAYBE PLACE FOR BETTER ALGORITHM
 
         int choice1 = Random.Range(0, possibleBaseLocations.Count);
-        int choice2 = Random.Range(0, possibleBaseLocations.Count);
-        while ((choice1 == choice2) ||
-                (Vector3.Distance(
-                    new Vector3(possibleBaseLocations[choice1].xCenter, 0, possibleBaseLocations[choice1].yCenter),
-                    new Vector3(possibleBaseLocations[choice2].xCenter, 0, possibleBaseLocations[choice2].yCenter)) < 4))       // minimum 4 distance between bases
-        {
-            choice2 = Random.Range(0, domainNow.Count);
-        }
-
+        int choice2 = GetChoice2(domainNow, possibleBaseLocations, choice1);
+                    
         // place them
         SetBlueBaseOnTile(possibleBaseLocations[choice1]);
         SetRedBaseOnTile(possibleBaseLocations[choice2]);

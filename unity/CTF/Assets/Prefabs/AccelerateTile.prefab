@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 87814148511554142}
   m_Layer: 3
   m_Name: AccelerateTile
-  m_TagString: Untagged
+  m_TagString: accelerate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,4 +110,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b92304adb12a44cba52db1dc76b4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedChangeModifier: 2

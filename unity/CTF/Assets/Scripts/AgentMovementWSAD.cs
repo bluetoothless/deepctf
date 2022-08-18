@@ -5,7 +5,6 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
 using Unity.MLAgents.Sensors;
-using UnityEngine;
 
 public class AgentMovementWSAD : Agent
 {
@@ -33,7 +32,7 @@ public class AgentMovementWSAD : Agent
             case 1: //do przodu
                 rb.AddForce(transform.rotation * Vector3.forward * forwardSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
                 break;
-            case 2: //do ty³u
+            case 2: //do tyï¿½u
                 rb.AddForce(transform.rotation * Vector3.back * backSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
                 break;
         }
@@ -47,30 +46,50 @@ public class AgentMovementWSAD : Agent
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
         }
-
-
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-
+        //jak juz zaczniemy uzywac to odkomentowac:
+       // float[,] arrRays = raysPerception(); //40 floatow
+       //
     }
 
 
-    private void raysPerception()
+    private float[,] raysPerception()
     {
         int layerMask = 1 << 6;
+
+        float RayDistance = 200.0f;
+        int numberOfRays = 10;
+        float startDegree = -90.0f;//zawsze musi byc ujemne bo jebnie!
+        float stepDegree = -2 * startDegree / (float)numberOfRays;
+        
+
+        float[,] outputArray = new float[10,4]; //10 promieni, po 4 zmienne, i,0-distance, i,1 - rodzaj, i,2 kolor, i,3 czy z flaga?
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        Ray ray;
+        for (int i =0;i<numberOfRays;i++)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log(this.name + "Did Hit: " + hit.distance + hit.collider);
+           ray  = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree+stepDegree*i, 0) * Vector3.forward));
+
+            if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
+            {
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+                // Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
+                outputArray[i, 0] = hit.distance;
+                //hit.collider.gameObject.GetComponent(typeof(RayResponder));
+                //Debug.Log(RayResponder.message());
+
+            }
+            else
+            {
+                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+                //Debug.Log(this.name + "Ray"+i+ "Did not Hit");
+            }
+
         }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            //Debug.Log("Did not Hit");
-        }
+        return outputArray;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -104,7 +123,7 @@ public class AgentMovementWSAD : Agent
 
         speedModifier = 1f;
 
-
+        //dla widzenia promieni
         raysPerception();
     }
 
