@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2831228448811541041}
   m_Layer: 3
   m_Name: LakeTile
-  m_TagString: Untagged
+  m_TagString: lake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

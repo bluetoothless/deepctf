@@ -39,8 +39,6 @@ public class AgentMovementWSAD : Agent
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
         }
-
-
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -71,10 +69,10 @@ public class AgentMovementWSAD : Agent
             if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
-                Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
+                // Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
                 outputArray[i, 0] = hit.distance;
                 //hit.collider.gameObject.GetComponent(typeof(RayResponder));
-              //  Debug.Log(RayResponder.message());
+                //Debug.Log(RayResponder.message());
 
             }
             else
