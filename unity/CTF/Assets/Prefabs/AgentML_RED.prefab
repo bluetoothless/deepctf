@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 4455159850128631616}
   - component: {fileID: 1291391321409658251}
   - component: {fileID: 7150795604652928290}
-  - component: {fileID: 581016215649020880}
   m_Layer: 6
   m_Name: AgentML_RED
   m_TagString: Agent
@@ -370,6 +369,7 @@ Transform:
   - {fileID: 8805072048399738856}
   - {fileID: 3315085542493178811}
   - {fileID: 2610861803081535337}
+  - {fileID: 3950180031001334404}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -530,20 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &581016215649020880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3159207089541083966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307262267592f4e499b852c4836ccd5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BiomEyePrefab: {fileID: 4516443651460601700, guid: 2d928eb7b84174e408329dc2a5f7ecbe, type: 3}
-  lengthBetweenEyes: 1.5
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,4 +912,66 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9202055241139047437, guid: c4275a38216ca5c43a3bff26203182ad, type: 3}
   m_PrefabInstance: {fileID: 1175276383322554852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2870549665012652587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3160991633920138480}
+    m_Modifications:
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_Name
+      value: BiomSensors
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+--- !u!4 &3950180031001334404 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+  m_PrefabInstance: {fileID: 2870549665012652587}
   m_PrefabAsset: {fileID: 0}

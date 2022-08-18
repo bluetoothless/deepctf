@@ -459,7 +459,6 @@ GameObject:
   - component: {fileID: 2224850581720658343}
   - component: {fileID: 1291391321409658251}
   - component: {fileID: -2509039496142268469}
-  - component: {fileID: 2915413870087437550}
   m_Layer: 6
   m_Name: AgentML_BLUE
   m_TagString: Agent
@@ -488,6 +487,7 @@ Transform:
   - {fileID: 7104399464880995381}
   - {fileID: 1768790348142297362}
   - {fileID: 8367811760509010008}
+  - {fileID: 4434945626473933555}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -574,7 +574,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &5021980797280013648
 MonoBehaviour:
@@ -648,20 +648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &2915413870087437550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3159207089541083966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307262267592f4e499b852c4836ccd5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BiomEyePrefab: {fileID: 4516443651460601700, guid: 2d928eb7b84174e408329dc2a5f7ecbe, type: 3}
-  lengthBetweenEyes: 1.5
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +814,68 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3209925197351723612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3160991633920138480}
+    m_Modifications:
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_Name
+      value: BiomSensors
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+--- !u!4 &4434945626473933555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+  m_PrefabInstance: {fileID: 3209925197351723612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4635540099200618197
 PrefabInstance:
   m_ObjectHideFlags: 0

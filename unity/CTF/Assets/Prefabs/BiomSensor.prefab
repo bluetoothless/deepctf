@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6734560937162030860}
   - component: {fileID: 2287354204576031576}
-  m_Layer: 6
-  m_Name: biom eye
+  - component: {fileID: 7848747385710132690}
+  m_Layer: 2
+  m_Name: BiomSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +47,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7848747385710132690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516443651460601700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8d611d62ab7134ba844bce55e8184d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7666437899064689204
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +70,7 @@ GameObject:
   - component: {fileID: 3742410659704874265}
   - component: {fileID: 8698292340514398604}
   - component: {fileID: 1893789326883330534}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,8 @@ TagManager:
   - FlagInBase
   - Base
   - desert
+  - lake
+  - accelerate
   layers:
   - Default
   - TransparentFX
