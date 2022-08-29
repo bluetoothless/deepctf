@@ -8,6 +8,7 @@ using Unity.MLAgents.Sensors;
 
 public class AgentMovementWSAD : Agent
 {
+    private readonly int stepsUntilGameOver = 100000; // 10.000 steps: 41s-67s;      15.000 steps: 1min-1min 40s      20.000 steps: 1min 7s-6min 40s     100.000 steps: 5min 34s-16min 41s
     public float rotateSpeed = 180f;
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
@@ -15,6 +16,7 @@ public class AgentMovementWSAD : Agent
     public GameObject[] agents;
     private List<GameObject> teamBlue = new List<GameObject>{};
     private List<GameObject> teamRed = new List<GameObject>{};
+    public static int numberOfSteps = 0;
 
     void Start()
     {
@@ -45,6 +47,17 @@ public class AgentMovementWSAD : Agent
             case 2: // w prawo
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
+        }
+
+        numberOfSteps++;
+        if (numberOfSteps == stepsUntilGameOver)
+        {
+            Debug.Log("Game ran for too long!");
+            var rewardValues = gameObject.GetComponent<RewardValuesScript>();
+            rewardValues.getRewardValues();
+            AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+            AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+            EndEpisodeForAllAgents();
         }
     }
 
@@ -186,16 +199,35 @@ public class AgentMovementWSAD : Agent
             rewardValues.getRewardValues();
             if (gameObject.GetComponent<AgentComponentsScript>().color == "blue")
             {
+                Debug.Log("Team red wins!");
                 AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
                 AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+                EndEpisodeForAllAgents();
             }
             else
             {
+                Debug.Log("Team blue wins!");
                 AddRewardTeam(rewardValues.rewards["gameLost"], "red");
                 AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+                EndEpisodeForAllAgents();
             }
         }
     }
+
+    public void EndEpisodeForAllAgents()
+    {
+        Transform agents = gameObject.transform.parent.transform.parent;
+        Transform redAgents = agents.GetChild(0);
+        Transform blueAgents = agents.GetChild(1);
+        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
+        {
+            var redAgent = redAgents.GetChild(i).gameObject;
+            var blueAgent = blueAgents.GetChild(i).gameObject;
+            redAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
+            blueAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
+        }
+    }
+
     private void GetTeams()
     {
         Transform agents = gameObject.transform.parent.transform.parent;

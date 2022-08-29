@@ -28,11 +28,13 @@ public class FlagCapturingScript : MonoBehaviour
         {
             collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
             collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
         }
         else
         {
             collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
             collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
         }
     }
 

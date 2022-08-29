@@ -38,11 +38,13 @@ public class ReturnFlagScript : MonoBehaviour
         {
             agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
             agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+            agent.GetComponent<AgentMovementWSAD>().EndEpisode();
         }
         else
         {
             agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
             agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            agent.GetComponent<AgentMovementWSAD>().EndEpisode();
         }
     }
     public void returnFlagFromBase(GameObject collidingAgent, GameObject EnemyFlagInBase)
