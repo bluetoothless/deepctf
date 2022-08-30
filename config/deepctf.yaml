@@ -1,0 +1,11 @@
+behaviors:
+  BehaviorPPO:
+    trainer_type: ppo
+    # Trainer configurations common to all trainers
+    max_steps: 10000
+    time_horizon: 64
+    summary_freq: 1000
+    keep_checkpoints: 5
+    checkpoint_interval: 10000
+    threaded: false
+    init_path: null

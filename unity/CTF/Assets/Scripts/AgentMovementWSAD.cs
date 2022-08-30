@@ -153,9 +153,9 @@ public class AgentMovementWSAD : Agent
         speedModifier = 1f;
 
         //dla widzenia promieni
-        raysPerception();
-        BiomEyesScript bes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
-        bes.GetBiomSensors();
+       // raysPerception();
+        //BiomEyesScript bes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
+        //bes.GetBiomSensors();
     }
 
 
