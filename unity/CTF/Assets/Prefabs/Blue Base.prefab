@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2349050364387744576}
   - component: {fileID: 1698485160951486171}
   - component: {fileID: 8330703809757014963}
+  - component: {fileID: 1543418755093946614}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
@@ -113,6 +114,21 @@ MonoBehaviour:
   baseColor: blue
   FlagInBase: {fileID: 5252642529561130191}
   EnemyFlagInBase: {fileID: 7495583676654799364}
+--- !u!114 &1543418755093946614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478015227920904531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  type: 2
+  isFlag: 1
 --- !u!1 &6860966779638432219
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +140,7 @@ GameObject:
   - component: {fileID: 5542832838425047953}
   - component: {fileID: 8900578224874871831}
   - component: {fileID: 6608197284694961351}
+  - component: {fileID: -5931418696858863176}
   m_Layer: 6
   m_Name: Blue Base
   m_TagString: Base
@@ -177,6 +194,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlagInOtherBase: {fileID: 7495583676654799364}
   OwnFlagInOtherBase: {fileID: 5252642529561130191}
+--- !u!114 &-5931418696858863176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860966779638432219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  type: 2
+  isFlag: 1
 --- !u!1001 &1707407276935251465
 PrefabInstance:
   m_ObjectHideFlags: 0
