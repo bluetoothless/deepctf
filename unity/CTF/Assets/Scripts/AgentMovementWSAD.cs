@@ -8,7 +8,6 @@ using Unity.MLAgents.Sensors;
 
 public class AgentMovementWSAD : Agent
 {
-    private readonly int stepsUntilGameOver = 100000; // 10.000 steps: 41s-67s;      15.000 steps: 1min-1min 40s      20.000 steps: 1min 7s-6min 40s     100.000 steps: 5min 34s-16min 41s
     public float rotateSpeed = 180f;
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
@@ -16,7 +15,6 @@ public class AgentMovementWSAD : Agent
     public GameObject[] agents;
     private List<GameObject> teamBlue = new List<GameObject>{};
     private List<GameObject> teamRed = new List<GameObject>{};
-    public static int numberOfSteps = 0;
 
     void Start()
     {
@@ -48,17 +46,6 @@ public class AgentMovementWSAD : Agent
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
         }
-
-        numberOfSteps++;
-        if (numberOfSteps == stepsUntilGameOver)
-        {
-            Debug.Log("Game ran for too long!");
-            var rewardValues = gameObject.GetComponent<RewardValuesScript>();
-            rewardValues.getRewardValues();
-            AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-            AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-            EndEpisodeForAllAgents();
-        }
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -75,7 +62,7 @@ public class AgentMovementWSAD : Agent
 
         float RayDistance = 200.0f;
         int numberOfRays = 10;
-        float startDegree = -90.0f;//zawsze musi byc ujemne bo jebnie!
+        float startDegree = -90.0f;//zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
 

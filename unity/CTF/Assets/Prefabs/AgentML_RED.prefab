@@ -439,7 +439,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 10000
   rotateSpeed: 180
   forwardSpeed: 600
   backSpeed: 450
