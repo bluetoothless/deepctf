@@ -92,7 +92,8 @@ public class AgentMovementWSAD : Agent
         return outputArray;
     }
 
-    public override void Heuristic(in ActionBuffers actionsOut)
+    //public override void Heuristic(in ActionBuffers actionsOut)
+    public void FixedUpdate()
     {
         bool W = Input.GetKey(KeyCode.W);
         bool S = Input.GetKey(KeyCode.S);

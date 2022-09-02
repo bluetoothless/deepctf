@@ -11,6 +11,7 @@ public abstract class BaseBaseScript : MonoBehaviour
     private GameObject Agents;
     private List<Tile> tiles;
     private bool isRed;
+    private float agentSpawnHeight = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public abstract class BaseBaseScript : MonoBehaviour
 
     public void SpawnAgentAt(int index)
     {
-        GameObject agent = Instantiate(AgentPrefab, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter), Quaternion.identity);
+        GameObject agent = Instantiate(AgentPrefab, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter), Quaternion.identity);
         agent.transform.SetParent(Agents.transform);
     }
 
@@ -58,7 +59,7 @@ public abstract class BaseBaseScript : MonoBehaviour
     {
         foreach (Transform agent in Agents.transform)
         {
-            if (Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, 0, tiles[index].yCenter)) < 1f)
+            if (Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter)) < 1f)
             {
                 return false;
             }

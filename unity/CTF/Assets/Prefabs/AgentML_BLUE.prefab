@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 7577925535276625970}
   m_Layer: 6
   m_Name: AgentML_BLUE
-  m_TagString: Agent
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

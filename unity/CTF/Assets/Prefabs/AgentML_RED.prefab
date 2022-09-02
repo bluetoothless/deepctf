@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 8106018239458126509}
   m_Layer: 6
   m_Name: AgentML_RED
-  m_TagString: Agent
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
