@@ -561,6 +561,7 @@ MonoBehaviour:
   rotateSpeed: 180
   forwardSpeed: 600
   backSpeed: 450
+  AiTrainerMode: 0
   agents: []
 --- !u!54 &5985009202052222548
 Rigidbody:

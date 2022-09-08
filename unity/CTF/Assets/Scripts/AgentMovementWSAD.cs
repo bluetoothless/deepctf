@@ -11,6 +11,7 @@ public class AgentMovementWSAD : Agent
     public float rotateSpeed = 180f;
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
+    public bool AiTrainerMode = false;
     private float speedModifier = 1f;
     public GameObject[] agents;
     private List<GameObject> teamBlue = new List<GameObject>{};
@@ -19,6 +20,7 @@ public class AgentMovementWSAD : Agent
     void Start()
     {
         GetTeams();
+        // AiTrainer.SetTransform(transform);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -95,6 +97,14 @@ public class AgentMovementWSAD : Agent
     //public override void Heuristic(in ActionBuffers actionsOut)
     public void FixedUpdate()
     {
+        if (AiTrainerMode)
+            AiTrainer.Run();
+        else
+            Walking();
+    }
+
+    public void Walking()
+    {
         bool W = Input.GetKey(KeyCode.W);
         bool S = Input.GetKey(KeyCode.S);
         bool A = Input.GetKey(KeyCode.A);
@@ -123,11 +133,9 @@ public class AgentMovementWSAD : Agent
 
 
         speedModifier = 1f;
-
         //dla widzenia promieni
         raysPerception();
     }
-
 
     public void ChangeSpeedModifier(float newModified)
     {

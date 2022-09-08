@@ -1016,6 +1016,10 @@ PrefabInstance:
       value: AgentML_BLUE (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -1675,6 +1679,10 @@ PrefabInstance:
       value: AgentML_RED (WSAD)
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -2119,6 +2127,10 @@ PrefabInstance:
       value: AgentML_BLUE (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -2199,6 +2211,10 @@ PrefabInstance:
     - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_Name
       value: AgentML_RED (WSAD) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_TagString
@@ -2378,6 +2394,10 @@ PrefabInstance:
     - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_Name
       value: AgentML_RED (WSAD) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
       propertyPath: m_TagString
@@ -4642,6 +4662,10 @@ PrefabInstance:
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_Name
       value: AgentML_BLUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3159207089541083966, guid: 4f6e0367058853740bdec53a32b6a710, type: 3}
       propertyPath: m_TagString
