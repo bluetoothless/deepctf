@@ -89,10 +89,15 @@ public class AgentMovementWSAD : Agent
             if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
-                // Debug.Log(this.name + "Ray"+i+ "Did Hit: " + hit.collider.gameObject+" in distance: " + +hit.distance);
+                rayResponseComponent rayrespond = hit.collider.gameObject.GetComponent<rayResponseComponent>();
+                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance);
+                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
                 outputArray[i, 0] = hit.distance;
-                //hit.collider.gameObject.GetComponent(typeof(RayResponder));
-                //Debug.Log(RayResponder.message());
+
+                outputArray[i, 1] = rayrespond.type;
+                float col = rayrespond.color;
+                outputArray[i, 2] = col;
+                outputArray[i, 3] = rayrespond.isFlag;
 
             }
             else
@@ -138,7 +143,9 @@ public class AgentMovementWSAD : Agent
         speedModifier = 1f;
 
         //dla widzenia promieni
-        raysPerception();
+       // raysPerception();
+        //BiomEyesScript bes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
+        //bes.GetBiomSensors();
     }
 
 
