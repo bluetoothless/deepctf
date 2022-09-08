@@ -16,6 +16,8 @@ public class AgentMovementWSAD : Agent
     private List<GameObject> teamBlue = new List<GameObject>{};
     private List<GameObject> teamRed = new List<GameObject>{};
 
+    private int numberOfRays = 10;
+
     void Start()
     {
         GetTeams();
@@ -51,7 +53,7 @@ public class AgentMovementWSAD : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         float[,] arrRays = raysPerception(); //40 floatow
-        for (int i = 0; i < 10; i++) //numberofrays! todo
+        for (int i = 0; i < numberOfRays; i++)
         {
             for(int j = 0; j < 4; j++)
             {
@@ -72,7 +74,7 @@ public class AgentMovementWSAD : Agent
         int layerMask = 1 << 6;
 
         float RayDistance = 200.0f;
-        int numberOfRays = 10;
+
         float startDegree = -90.0f;//zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
