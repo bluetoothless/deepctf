@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2864444449535022433}
   - component: {fileID: 3327920939755854093}
   - component: {fileID: 5993220987441759994}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AgentCollider
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085727533915072475}
   - component: {fileID: 5286248446162821665}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: BiomCollider
   m_TagString: AgentBiomCollider
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 3161212135575723252}
   - component: {fileID: 3145606122305425596}
   - component: {fileID: 3135421786222817274}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 3161485092504299668}
   - component: {fileID: 3146298850993625032}
   - component: {fileID: 3135561449248429280}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 3161493255891664584}
   - component: {fileID: 3144678954970769966}
   - component: {fileID: 3134710428031249178}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 1291391321409658251}
   - component: {fileID: -2509039496142268469}
   - component: {fileID: 7577925535276625970}
+  - component: {fileID: 8045516428891579794}
   m_Layer: 6
   m_Name: AgentML_BLUE
   m_TagString: Untagged
@@ -619,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 84
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -628,7 +629,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: ccf0257ff139c564e85dd863edc6501b, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -663,6 +664,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592e7fec45e7744468c27b276771c90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8045516428891579794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159207089541083966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  type: 1
+  isFlag: 0
 --- !u!1 &3159220377413354350
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +690,7 @@ GameObject:
   - component: {fileID: 3160999055629802862}
   - component: {fileID: 3144793074358902064}
   - component: {fileID: 3135130284630710144}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Headband
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +773,7 @@ GameObject:
   - component: {fileID: 1768790348142297362}
   - component: {fileID: 3180175202740360164}
   - component: {fileID: 1920575603450553026}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DEBUG FORWARD NOSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,6 +900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BiomSensors
       objectReference: {fileID: 0}
+    - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
 --- !u!4 &4434945626473933555 stripped
@@ -900,7 +920,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 515395938615023031, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_RootOrder
@@ -960,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5825031875144254557, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Name
@@ -968,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_IsActive
