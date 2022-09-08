@@ -12,12 +12,9 @@ public abstract class BaseBaseScript : MonoBehaviour
     private GameObject Agents;
     private List<Tile> tiles;
     private bool isRed;
-<<<<<<< Updated upstream
-
-=======
     private float agentSpawnHeight = 2.5f;
     public SimpleMultiAgentGroup m_AgentGroup;
->>>>>>> Stashed changes
+
     // Start is called before the first frame update
     void Start()
     {
