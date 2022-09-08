@@ -55,7 +55,7 @@ public abstract class BaseBaseScript : MonoBehaviour
         agent.transform.SetParent(Agents.transform);
     }
 
-    bool CheckIfCanSpawnAt(int index)
+    public bool CheckIfCanSpawnAt(int index)
     {
         foreach (Transform agent in Agents.transform)
         {

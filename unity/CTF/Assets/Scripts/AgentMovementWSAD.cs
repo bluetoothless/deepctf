@@ -20,7 +20,9 @@ public class AgentMovementWSAD : Agent
     void Start()
     {
         GetTeams();
-        // AiTrainer.SetTransform(transform);
+        //AiTrainer.Spawn(teamBlue);
+        // Potrzebujemy to wywołać nie w agentach, ale potrzebujemy wtedy gdzie indziej listy agentów, np. można je zrobić i trzymać w jakimś GameManager, stworzymy wtedy listy po blueBaseScript.OnGameStart(); i redBaseScript.OnGameStart();
+        // w OnGameStart
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -114,7 +116,7 @@ public class AgentMovementWSAD : Agent
     public void FixedUpdate()
     {
         if (AiTrainerMode)
-            AiTrainer.Run();
+            AiTrainer.Run(transform);
         else
             Walking();
     }
