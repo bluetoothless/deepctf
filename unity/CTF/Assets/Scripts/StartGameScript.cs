@@ -27,5 +27,7 @@ public class StartGameScript : MonoBehaviour
 
         blueBaseScript.OnGameStart();
         redBaseScript.OnGameStart();
+
+        AiTrainer.Spawn();
     }
 }

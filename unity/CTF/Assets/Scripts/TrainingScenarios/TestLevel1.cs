@@ -9,9 +9,9 @@ public class TestLevel1 : TestLevel
         return;
     }
 
-    public override void Spawn(List<GameObject> team)
+    public override void Spawn()
     {
-        foreach (var agent in team)
+        foreach (var agent in GameManager.BlueAgents)
         {
             agent.transform.position = new Vector3(agent.transform.position.x, 20, agent.transform.position.z);
         }

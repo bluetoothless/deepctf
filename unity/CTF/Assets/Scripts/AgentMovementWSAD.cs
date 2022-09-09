@@ -14,13 +14,11 @@ public class AgentMovementWSAD : Agent
     public bool AiTrainerMode = false;
     private float speedModifier = 1f;
     public GameObject[] agents;
-    private List<GameObject> teamBlue = new List<GameObject>{};
-    private List<GameObject> teamRed = new List<GameObject>{};
 
     void Start()
     {
-        GetTeams();
-        AiTrainer.Spawn(teamBlue);
+        // GetTeams();
+        // AiTrainer.Spawn();
         // Potrzebujemy to wywołać nie w agentach, ale potrzebujemy wtedy gdzie indziej listy agentów, np. można je zrobić i trzymać w jakimś GameManager, stworzymy wtedy listy po blueBaseScript.OnGameStart(); i redBaseScript.OnGameStart();
         // w OnGameStart
     }
@@ -171,14 +169,14 @@ public class AgentMovementWSAD : Agent
     {
         if (color == "blue")
         {
-            foreach (GameObject agent in teamBlue)
+            foreach (GameObject agent in GameManager.BlueAgents)
             {
                 agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
             }
         }
         else
         {
-            foreach (GameObject agent in teamRed)
+            foreach (GameObject agent in GameManager.RedAgents)
             {
                 agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
             }
@@ -192,11 +190,20 @@ public class AgentMovementWSAD : Agent
         AddRewardAgent(rewardValues.rewards["agentDead"]);
         gameObject.SetActive(false);
 
+        if (gameObject.GetComponent<AgentComponentsScript>().color == "red")
+        {
+            GameManager.RemoveRedAgent(gameObject);
+        }
+        else
+        {
+            GameManager.RemoveBlueAgent(gameObject);
+        }
         CheckIfLost();
     }
 
     private void CheckIfLost()
     {
+        /*
         bool aliveAgents = false;
         Transform parent = gameObject.transform.parent;
 
@@ -208,12 +215,15 @@ public class AgentMovementWSAD : Agent
                 aliveAgents = true;
             }
         }
-
+        */
+        bool isRed = gameObject.GetComponent<AgentComponentsScript>().color == "red";
+        bool aliveAgents = isRed ? GameManager.IsAnyRed() : GameManager.IsAnyBlue();
+        // if (!aliveAgents) // if all agents from team died
         if (!aliveAgents) // if all agents from team died
         {
             var rewardValues = gameObject.GetComponent<RewardValuesScript>();
             rewardValues.getRewardValues();
-            if (gameObject.GetComponent<AgentComponentsScript>().color == "blue")
+            if (!isRed)
             {
                 Debug.Log("Team red wins!");
                 AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
@@ -244,7 +254,7 @@ public class AgentMovementWSAD : Agent
         }
     }
 
-    private void GetTeams()
+    /*private void GetTeams()
     {
         Transform agents = gameObject.transform.parent.transform.parent;
         Transform redAgents = agents.GetChild(0);
@@ -253,6 +263,7 @@ public class AgentMovementWSAD : Agent
         {
             teamRed.Add(redAgents.GetChild(i).gameObject);
             teamBlue.Add(blueAgents.GetChild(i).gameObject);
+
         }
-    }
+    }*/
 }

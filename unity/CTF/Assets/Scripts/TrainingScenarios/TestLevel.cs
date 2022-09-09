@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class TestLevel
 {
     public virtual void Run(Transform t) {}
-    public virtual void Spawn(List<GameObject> team) {}
+    public virtual void Spawn() {}
 }

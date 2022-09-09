@@ -60,8 +60,8 @@ public static class AiTrainer
         level[test_id].Run(t);
     }
 
-    public static void Spawn(List<GameObject> team)
+    public static void Spawn()
     {
-        level[test_id].Spawn(team);
+        level[test_id].Spawn();
     }
 }
