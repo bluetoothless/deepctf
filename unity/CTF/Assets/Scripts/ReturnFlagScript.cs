@@ -36,14 +36,14 @@ public class ReturnFlagScript : MonoBehaviour
     {
         if (color == "blue")
         {
-            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
             agent.GetComponent<AgentMovementWSAD>().EndEpisode();
         }
         else
         {
-            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-            agent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "red");
             agent.GetComponent<AgentMovementWSAD>().EndEpisode();
         }
     }

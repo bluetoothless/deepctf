@@ -167,24 +167,6 @@ public class AgentMovementWSAD : Agent
         AddReward(reward);
     }
 
-    public void AddRewardTeam(float reward, string color)
-    {
-        if (color == "blue")
-        {
-            foreach (GameObject agent in GameManager.BlueAgents)
-            {
-                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
-            }
-        }
-        else
-        {
-            foreach (GameObject agent in GameManager.RedAgents)
-            {
-                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
-            }
-        }
-    }
-
     public void Kill()
     {
         var rewardValues = gameObject.GetComponent<RewardValuesScript>();
@@ -228,21 +210,24 @@ public class AgentMovementWSAD : Agent
             if (!isRed)
             {
                 Debug.Log("Team red wins!");
-                AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-                AddRewardTeam(rewardValues.rewards["gameWon"], "red");
-                EndEpisodeForAllAgents();
+                GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+                GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+                GameManager.blueAgentGroup.EndGroupEpisode();
+                GameManager.redAgentGroup.EndGroupEpisode();
+
             }
             else
             {
                 Debug.Log("Team blue wins!");
-                AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-                AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-                EndEpisodeForAllAgents();
+                GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+                GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+                GameManager.blueAgentGroup.EndGroupEpisode();
+                GameManager.redAgentGroup.EndGroupEpisode();
             }
         }
     }
 
-    public void EndEpisodeForAllAgents()
+    /*public void EndEpisodeForAllAgents()
     {
         Transform agents = gameObject.transform.parent.transform.parent;
         Transform redAgents = agents.GetChild(0);
@@ -256,7 +241,7 @@ public class AgentMovementWSAD : Agent
         }
     }
 
-    /*private void GetTeams()
+    private void GetTeams()
     {
         Transform agents = gameObject.transform.parent.transform.parent;
         Transform redAgents = agents.GetChild(0);

@@ -26,15 +26,17 @@ public class FlagCapturingScript : MonoBehaviour
         Debug.Log("Team " + color + " wins!");
         if (color == "blue")
         {
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
+            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "red");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
+            GameManager.blueAgentGroup.EndGroupEpisode();
+            GameManager.redAgentGroup.EndGroupEpisode();
         }
         else
         {
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
-            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
+            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
+            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            GameManager.blueAgentGroup.EndGroupEpisode();
+            GameManager.redAgentGroup.EndGroupEpisode();
         }
     }
 
