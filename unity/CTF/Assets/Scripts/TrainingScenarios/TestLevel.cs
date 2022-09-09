@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class TestLevel
 {
-    public virtual void Run(Transform t) {}
+    public abstract (bool, bool, bool, bool) Run();
     public virtual void Spawn() {}
 }

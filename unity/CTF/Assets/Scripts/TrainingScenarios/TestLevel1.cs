@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class TestLevel1 : TestLevel
 {
-    public override void Run(Transform t)
+    public override (bool, bool, bool, bool) Run()
     {
-        return;
+        bool W = false;
+        bool S = false;
+        bool A = false;
+        bool D = false;
+        return (W, S, A, D);
     }
 
     public override void Spawn()

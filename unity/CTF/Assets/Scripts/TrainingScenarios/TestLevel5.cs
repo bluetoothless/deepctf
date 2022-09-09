@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class TestLevel5 : TestLevel
 {
-    public override void Run(Transform t)
+    public override (bool, bool, bool, bool) Run()
     {
-        t.position = new Vector3(t.position.x, 20, t.position.z);
+        bool W = false;
+        bool S = false;
+        bool A = false;
+        bool D = false;
+        return (W, S, A, D);
     }
 }
