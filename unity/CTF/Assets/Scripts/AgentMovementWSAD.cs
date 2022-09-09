@@ -20,7 +20,7 @@ public class AgentMovementWSAD : Agent
     void Start()
     {
         GetTeams();
-        //AiTrainer.Spawn(teamBlue);
+        AiTrainer.Spawn(teamBlue);
         // Potrzebujemy to wywołać nie w agentach, ale potrzebujemy wtedy gdzie indziej listy agentów, np. można je zrobić i trzymać w jakimś GameManager, stworzymy wtedy listy po blueBaseScript.OnGameStart(); i redBaseScript.OnGameStart();
         // w OnGameStart
     }

@@ -13,10 +13,6 @@ public static class AiTrainer
                                            new TestLevel2(), new TestLevel3(),
                                            new TestLevel4(), new TestLevel5()};
 
-    // LEVEL 0 zmieniæ na 1-5
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //!!!!!!!!!!!!!!!!!!!!!
-
     public static void SetPercentages(ref int lakesPercentage, ref int accelerateSurfacePercentage, ref int desertsPercentage)
     {
         switch (variant_id)
@@ -42,7 +38,7 @@ public static class AiTrainer
                 desertsPercentage = 0;
                 for (int i = 0; i < 90; i++)
                 {
-                    switch (Random.Range(0, 3))
+                    switch (Random.Range(0, 4))
                     {
                         case 1:
                             lakesPercentage++;
