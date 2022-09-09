@@ -32,6 +32,8 @@ public class StartGameScript : MonoBehaviour
         redBaseScript.OnGameStart();
 
         redAgentGroup = redBaseScript.m_AgentGroup;
-        blueAgentGroup = blueBaseScript.m_AgentGroup;
+        blueAgentGroup = blueBaseScript.m_AgentGroup; 
+
+        AiTrainer.Spawn();
     }
 }

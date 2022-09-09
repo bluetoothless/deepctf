@@ -55,10 +55,18 @@ public abstract class BaseBaseScript : MonoBehaviour
     {
         GameObject agent = Instantiate(AgentPrefab, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter), Quaternion.identity);
         agent.transform.SetParent(Agents.transform);
+        if (isRed)
+        {
+            GameManager.AddRedAgent(agent);
+        }
+        else
+        {
+            GameManager.AddBlueAgent(agent);
+        }
         m_AgentGroup.RegisterAgent(agent.GetComponent<AgentMovementWSAD>());
     }
 
-    bool CheckIfCanSpawnAt(int index)
+    public bool CheckIfCanSpawnAt(int index)
     {
         foreach (Transform agent in Agents.transform)
         {
