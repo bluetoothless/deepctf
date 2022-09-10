@@ -14,6 +14,8 @@ public class AgentMovementWSAD : Agent
     private float speedModifier = 1f;
     public GameObject[] agents;
 
+    private int numberOfRays = 10;
+
     void Start()
     {
         // GetTeams();
@@ -52,7 +54,7 @@ public class AgentMovementWSAD : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         float[,] arrRays = raysPerception(); //40 floatow
-        for (int i = 0; i < 10; i++) //numberofrays! todo
+        for (int i = 0; i < numberOfRays; i++)
         {
             for(int j = 0; j < 4; j++)
             {
@@ -73,7 +75,7 @@ public class AgentMovementWSAD : Agent
         int layerMask = 1 << 6;
 
         float RayDistance = 200.0f;
-        int numberOfRays = 10;
+
         float startDegree = -90.0f;//zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
@@ -89,8 +91,7 @@ public class AgentMovementWSAD : Agent
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
                 rayResponseComponent rayrespond = hit.collider.gameObject.GetComponent<rayResponseComponent>();
-                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance);
-                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
+                //Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
                 outputArray[i, 0] = hit.distance;
 
                 outputArray[i, 1] = rayrespond.type;
@@ -109,8 +110,8 @@ public class AgentMovementWSAD : Agent
         return outputArray;
     }
 
-    //public override void Heuristic(in ActionBuffers actionsOut)
-    public void FixedUpdate()
+    public override void Heuristic(in ActionBuffers actionsOut)
+    //public void FixedUpdate()
     {
         bool W, S, A, D;
         if (AiTrainer.GetAITrainerMode())
@@ -160,105 +161,8 @@ public class AgentMovementWSAD : Agent
         AddReward(reward);
     }
 
-    public void AddRewardTeam(float reward, string color)
+    public override void OnEpisodeBegin()
     {
-        if (color == "blue")
-        {
-            foreach (GameObject agent in GameManager.BlueAgents)
-            {
-                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
-            }
-        }
-        else
-        {
-            foreach (GameObject agent in GameManager.RedAgents)
-            {
-                agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(reward);
-            }
-        }
+        Debug.Log("EPISODE BEGIN");
     }
-
-    public void Kill()
-    {
-        var rewardValues = gameObject.GetComponent<RewardValuesScript>();
-        rewardValues.getRewardValues();
-        AddRewardAgent(rewardValues.rewards["agentDead"]);
-        gameObject.SetActive(false);
-
-        if (gameObject.GetComponent<AgentComponentsScript>().color == "red")
-        {
-            GameManager.RemoveRedAgent(gameObject);
-        }
-        else
-        {
-            GameManager.RemoveBlueAgent(gameObject);
-        }
-        CheckIfLost();
-    }
-
-    private void CheckIfLost()
-    {
-        /*
-        bool aliveAgents = false;
-        Transform parent = gameObject.transform.parent;
-
-        for (int i = 0; i < parent.childCount; i++)
-        {
-            GameObject agent = parent.GetChild(i).gameObject;
-            if (agent.activeSelf)
-            {
-                aliveAgents = true;
-            }
-        }
-        */
-        bool isRed = gameObject.GetComponent<AgentComponentsScript>().color == "red";
-        bool aliveAgents = isRed ? GameManager.IsAnyRed() : GameManager.IsAnyBlue();
-        // if (!aliveAgents) // if all agents from team died
-        if (!aliveAgents) // if all agents from team died
-        {
-            var rewardValues = gameObject.GetComponent<RewardValuesScript>();
-            rewardValues.getRewardValues();
-            if (!isRed)
-            {
-                Debug.Log("Team red wins!");
-                AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-                AddRewardTeam(rewardValues.rewards["gameWon"], "red");
-                EndEpisodeForAllAgents();
-            }
-            else
-            {
-                Debug.Log("Team blue wins!");
-                AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-                AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-                EndEpisodeForAllAgents();
-            }
-        }
-    }
-
-    public void EndEpisodeForAllAgents()
-    {
-        Transform agents = gameObject.transform.parent.transform.parent;
-        Transform redAgents = agents.GetChild(0);
-        Transform blueAgents = agents.GetChild(1);
-        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
-        {
-            var redAgent = redAgents.GetChild(i).gameObject;
-            var blueAgent = blueAgents.GetChild(i).gameObject;
-            redAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
-            blueAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
-        }
-    }
-
-    /*private void GetTeams()
-    {
-        Transform agents = gameObject.transform.parent.transform.parent;
-        Transform redAgents = agents.GetChild(0);
-        Transform blueAgents = agents.GetChild(1);
-        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
-        {
-            teamRed.Add(redAgents.GetChild(i).gameObject);
-            teamBlue.Add(blueAgents.GetChild(i).gameObject);
-
-        }
-    }*/
 }

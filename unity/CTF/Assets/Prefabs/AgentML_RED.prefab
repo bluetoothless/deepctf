@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 4455159850128631616}
   - component: {fileID: 1291391321409658251}
   - component: {fileID: 7150795604652928290}
-  - component: {fileID: 8106018239458126509}
   - component: {fileID: -1618675756046196519}
   m_Layer: 6
   m_Name: AgentML_RED
@@ -440,7 +439,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 10000
+  MaxStep: 0
   rotateSpeed: 180
   forwardSpeed: 600
   backSpeed: 450
@@ -514,7 +513,7 @@ MonoBehaviour:
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
-  TeamId: 0
+  TeamId: 1
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_DeterministicInference: 0
@@ -533,18 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &8106018239458126509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3159207089541083966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592e7fec45e7744468c27b276771c90f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1618675756046196519
 MonoBehaviour:
   m_ObjectHideFlags: 0

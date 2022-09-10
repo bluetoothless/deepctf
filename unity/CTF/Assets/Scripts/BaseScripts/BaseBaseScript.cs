@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
 
 public abstract class BaseBaseScript : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public abstract class BaseBaseScript : MonoBehaviour
     private List<Tile> tiles;
     private bool isRed;
     private float agentSpawnHeight = 2.5f;
+    public SimpleMultiAgentGroup m_AgentGroup;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        m_AgentGroup = new SimpleMultiAgentGroup();
         Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
         tiles = PerlinNoiseMapGeneration.GetTilesList();
     }
@@ -61,6 +63,7 @@ public abstract class BaseBaseScript : MonoBehaviour
         {
             GameManager.AddBlueAgent(agent);
         }
+        m_AgentGroup.RegisterAgent(agent.GetComponent<AgentMovementWSAD>());
     }
 
     public bool CheckIfCanSpawnAt(int index)

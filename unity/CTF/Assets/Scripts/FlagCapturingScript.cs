@@ -8,7 +8,6 @@ public class FlagCapturingScript : MonoBehaviour
     [SerializeField] GameObject FlagInBase;
     [SerializeField] GameObject EnemyFlagInBase;
     private GameObject OtherBase;
-    private RewardValuesScript rewardValues;
 
     private void passTheFlag(GameObject object1, GameObject object2) {
         bool isActive = object1.activeSelf;
@@ -26,15 +25,17 @@ public class FlagCapturingScript : MonoBehaviour
         Debug.Log("Team " + color + " wins!");
         if (color == "blue")
         {
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+            GameManager.blueAgentGroup.EndGroupEpisode();
+            GameManager.redAgentGroup.EndGroupEpisode();
         }
         else
         {
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-            collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardTeam(rewardValues.rewards["gameWon"], "red");
-            collidingAgent.GetComponent<AgentMovementWSAD>().EndEpisodeForAllAgents();
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+            GameManager.blueAgentGroup.EndGroupEpisode();
+            GameManager.redAgentGroup.EndGroupEpisode();
         }
     }
 
@@ -53,8 +54,7 @@ public class FlagCapturingScript : MonoBehaviour
             bool agentColorEqualsBaseColor = collidingAgent.GetComponent<AgentComponentsScript>().color == baseColor;
             bool agentHoldsEnemyFlag = AgentFlag.activeSelf;
 
-            rewardValues = collidingAgent.GetComponent<RewardValuesScript>();
-            rewardValues.getRewardValues();
+            RewardValuesScript.getRewardValues();
 
             if (agentColorEqualsBaseColor)
             {
@@ -63,12 +63,12 @@ public class FlagCapturingScript : MonoBehaviour
 
                 if (FlagInBase.activeSelf) // if the agent touches own base, holds enemy's flag, and own flag is in own base
                 {
-                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagDelivered"]);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagDelivered"]);
                     win(collidingAgent.GetComponent<AgentComponentsScript>().color, AgentFlag, FlagInBase, collidingAgent);
                 }
                 else                       // if the agent touches own base, holds enemy's flag, and own flag is not in own base
                 {
-                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagDelivered"]);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagDelivered"]);
                     passTheFlag(EnemyFlagInBase, AgentFlag);
                 }
             }
@@ -76,12 +76,12 @@ public class FlagCapturingScript : MonoBehaviour
             {
                 if (!AgentFlag.activeSelf && FlagInBase.activeSelf) // if the agent touches enemy's base, does not hold enemy's flag, and enemy's flag is in enemy's base
                 {
-                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagCaptured"]);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagCaptured"]);
                     passTheFlag(FlagInBase, AgentFlag);
                 }
                 else if (EnemyFlagInBase.activeSelf)                // if the agent touches enemy's base, and own flag is in enemy's base
                 {
-                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(rewardValues.rewards["flagCaptured"]);
+                    collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagCaptured"]);
                     OtherBase.GetComponent<ReturnFlagScript>().returnFlagFromBase(collidingAgent, EnemyFlagInBase);
                 }
             }
