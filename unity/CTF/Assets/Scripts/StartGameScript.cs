@@ -30,7 +30,7 @@ public class StartGameScript : MonoBehaviour
         redBaseScript.OnGameStart();
 
         GameManager.redAgentGroup = redBaseScript.m_AgentGroup;
-        GameManager.blueAgentGroup = blueBaseScript.m_AgentGroup; 
+        GameManager.blueAgentGroup = blueBaseScript.m_AgentGroup;
 
         AiTrainer.Spawn();
     }

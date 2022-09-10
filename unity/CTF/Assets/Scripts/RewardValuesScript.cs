@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 
 [Serializable]
-public class RewardValuesScript : MonoBehaviour
+public static class RewardValuesScript
 {
-    public Dictionary<string, float> rewards;
+    public static Dictionary<string, float> rewards;
 
-    public void saveRewardValues()
+    public static void saveRewardValues()
     {
         var path = Application.dataPath + "/Rewards.txt";
         StreamReader reader = new StreamReader(path);
@@ -29,7 +29,7 @@ public class RewardValuesScript : MonoBehaviour
         
     }
 
-    public void getRewardValues()
+    public static void getRewardValues()
     {
         saveRewardValues();
 
