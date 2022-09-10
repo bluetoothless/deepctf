@@ -6,7 +6,7 @@ public class ReturnFlagScript : MonoBehaviour
 {
     [SerializeField] GameObject FlagInOtherBase;
     [SerializeField] GameObject OwnFlagInOtherBase;
-    private RewardValuesScript rewardValues;
+
     private void passTheFlag(GameObject object1, GameObject object2)
     {
         bool isActive = object1.activeSelf;
@@ -36,14 +36,14 @@ public class ReturnFlagScript : MonoBehaviour
     {
         if (color == "blue")
         {
-            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-            agent.GetComponent<AgentMovementWSAD>().EndEpisode();
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+            agent.GetComponent<AgentMovementWSAD>().EndEpisode(); //TODO ENDEPISODE
         }
         else
         {
-            GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-            GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "red");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
             agent.GetComponent<AgentMovementWSAD>().EndEpisode();
         }
     }
@@ -63,8 +63,7 @@ public class ReturnFlagScript : MonoBehaviour
     {
         if (FlagInOtherBase.activeSelf)
         {
-            rewardValues = agentWithFlag.GetComponent<RewardValuesScript>();
-            rewardValues.getRewardValues();
+            RewardValuesScript.getRewardValues();
             win(FlagInOtherBase, agentWithFlag);
         }
         else

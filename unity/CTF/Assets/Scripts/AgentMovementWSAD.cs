@@ -91,8 +91,7 @@ public class AgentMovementWSAD : Agent
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
                 rayResponseComponent rayrespond = hit.collider.gameObject.GetComponent<rayResponseComponent>();
-                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance);
-                Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
+                //Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
                 outputArray[i, 0] = hit.distance;
 
                 outputArray[i, 1] = rayrespond.type;
@@ -111,8 +110,8 @@ public class AgentMovementWSAD : Agent
         return outputArray;
     }
 
-    //public override void Heuristic(in ActionBuffers actionsOut)
-    public void FixedUpdate()
+    public override void Heuristic(in ActionBuffers actionsOut)
+    //public void FixedUpdate()
     {
         bool W, S, A, D;
         if (AiTrainer.GetAITrainerMode())
@@ -160,66 +159,6 @@ public class AgentMovementWSAD : Agent
     public void AddRewardAgent(float reward)
     {
         AddReward(reward);
-    }
-
-    public void Kill()
-    {
-        var rewardValues = gameObject.GetComponent<RewardValuesScript>();
-        rewardValues.getRewardValues();
-        AddRewardAgent(rewardValues.rewards["agentDead"]);
-        gameObject.SetActive(false);
-
-        if (gameObject.GetComponent<AgentComponentsScript>().color == "red")
-        {
-            GameManager.RemoveRedAgent(gameObject);
-        }
-        else
-        {
-            GameManager.RemoveBlueAgent(gameObject);
-        }
-        CheckIfLost();
-    }
-
-    private void CheckIfLost()
-    {
-        /*
-        bool aliveAgents = false;
-        Transform parent = gameObject.transform.parent;
-
-        for (int i = 0; i < parent.childCount; i++)
-        {
-            GameObject agent = parent.GetChild(i).gameObject;
-            if (agent.activeSelf)
-            {
-                aliveAgents = true;
-            }
-        }
-        */
-        bool isRed = gameObject.GetComponent<AgentComponentsScript>().color == "red";
-        bool aliveAgents = isRed ? GameManager.IsAnyRed() : GameManager.IsAnyBlue();
-        // if (!aliveAgents) // if all agents from team died
-        if (!aliveAgents) // if all agents from team died
-        {
-            var rewardValues = gameObject.GetComponent<RewardValuesScript>();
-            rewardValues.getRewardValues();
-            if (!isRed)
-            {
-                Debug.Log("Team red wins!");
-                GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "blue");
-                GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "red");
-                GameManager.blueAgentGroup.EndGroupEpisode();
-                GameManager.redAgentGroup.EndGroupEpisode();
-
-            }
-            else
-            {
-                Debug.Log("Team blue wins!");
-                GameManager.AddRewardTeam(rewardValues.rewards["gameLost"], "red");
-                GameManager.AddRewardTeam(rewardValues.rewards["gameWon"], "blue");
-                GameManager.blueAgentGroup.EndGroupEpisode();
-                GameManager.redAgentGroup.EndGroupEpisode();
-            }
-        }
     }
 
     /*public void EndEpisodeForAllAgents()

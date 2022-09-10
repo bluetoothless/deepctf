@@ -57,6 +57,53 @@ public static class GameManager
         }
     }
 
+    public static void Kill(GameObject agent)
+    {
+        RewardValuesScript.getRewardValues();
+        agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["agentDead"]);
+        agent.SetActive(false);
+        string color = agent.GetComponent<AgentComponentsScript>().color;
+
+        if (color == "red")
+        {
+            RemoveRedAgent(agent);
+        }
+        else
+        {
+            RemoveBlueAgent(agent);
+        }
+        CheckIfLost(color);
+    }
+
+    private static void CheckIfLost(string color)
+    {
+        bool isRed = color == "red";
+        bool aliveAgents = isRed ? GameManager.IsAnyRed() : GameManager.IsAnyBlue();
+       
+        if (!aliveAgents) // if all agents from team died
+        {
+
+            RewardValuesScript.getRewardValues();
+            if (!isRed)
+            {
+                Debug.Log("Team red wins!");
+                AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
+                AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+                blueAgentGroup.EndGroupEpisode();
+                redAgentGroup.EndGroupEpisode();
+
+            }
+            else
+            {
+                Debug.Log("Team blue wins!");
+                AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
+                AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+                blueAgentGroup.EndGroupEpisode();
+                redAgentGroup.EndGroupEpisode();
+            }
+        }
+    }
+
     /*
     public static void AddRewardTeam(float reward, string color)
     { 
