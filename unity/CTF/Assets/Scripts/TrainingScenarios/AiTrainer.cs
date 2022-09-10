@@ -4,10 +4,11 @@ using UnityEngine;
 
 public static class AiTrainer
 {
-    public enum FIELD_TYPE { EMPTY, GRASS, GRASS_ACCELERATE_DESERT, GRASS_WATER, RANDOM_FIELD};
+    public enum FIELD_TYPE { DEFAULT, GRASS, GRASS_ACCELERATE_DESERT, GRASS_WATER, RANDOM_FIELD};
 
-    public static int test_id = 1; // test level form 0 to 5
-    public static FIELD_TYPE variant_id = FIELD_TYPE.RANDOM_FIELD; // test level form 0 to 3
+    public static bool AITrainerMode = GameObject.Find("Agents").GetComponent<AgentsComponents>().AiTrainerMode;
+    public static int test_id = 2; // test level form 0 to 5
+    public static FIELD_TYPE variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS; // test level form 0 to 3
     private static List<TestLevel> level = new List<TestLevel>() {
                                            new TestLevel0(), new TestLevel1(),
                                            new TestLevel2(), new TestLevel3(),
@@ -52,16 +53,26 @@ public static class AiTrainer
                     }
                 }
                 return;
+            default:
+                return;
         }
     }
 
-    public static void Run(Transform t)
+    public static (bool, bool, bool, bool) Run()
     {
-        level[test_id].Run(t);
+        return level[test_id].Run();
     }
 
     public static void Spawn()
     {
+        if (!AITrainerMode)
+           return;
+
         level[test_id].Spawn();
+    }
+
+    public static bool GetAITrainerMode()
+    {
+        return AITrainerMode;
     }
 }

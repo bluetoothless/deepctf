@@ -11,7 +11,6 @@ public class AgentMovementWSAD : Agent
     public float rotateSpeed = 180f;
     public float forwardSpeed = 600f;
     public float backSpeed = 450f;
-    public bool AiTrainerMode = false;
     private float speedModifier = 1f;
     public GameObject[] agents;
 
@@ -115,25 +114,21 @@ public class AgentMovementWSAD : Agent
     //public override void Heuristic(in ActionBuffers actionsOut)
     public void FixedUpdate()
     {
-        if (AiTrainerMode)
-            AiTrainer.Run(transform);
+        bool W, S, A, D;
+        if (AiTrainer.GetAITrainerMode())
+            (W, S, A, D) = AiTrainer.Run();
         else
-            Walking();
+        {
+            W = Input.GetKey(KeyCode.W);
+            S = Input.GetKey(KeyCode.S);
+            A = Input.GetKey(KeyCode.A);
+            D = Input.GetKey(KeyCode.D);
+        }
+        Walking(W, S, A, D);
     }
 
-    public void Walking()
+    public void Walking(bool W, bool S, bool A, bool D)
     {
-        bool W = Input.GetKey(KeyCode.W);
-        bool S = Input.GetKey(KeyCode.S);
-        bool A = Input.GetKey(KeyCode.A);
-        bool D = Input.GetKey(KeyCode.D);
-
-        /*
-        bool W = true ? Random.Range(0, 10) > 1 : false;
-        bool S = true ? Random.Range(0, 2) == 1 : false;
-        bool A = true ? Random.Range(0, 10) > 2 : false;
-        bool D = true ? Random.Range(0, 20) > 1 : false;*/
-
         // Faster forward than back
         Rigidbody rb = GetComponent<Rigidbody>();
         if (W)
