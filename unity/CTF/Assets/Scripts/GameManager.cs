@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.MLAgents;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
@@ -23,11 +24,13 @@ public static class GameManager
     public static void RemoveRedAgent(GameObject agent)
     {
         RedAgents.Remove(agent);
+        GameObject.Destroy(agent);
     }
 
     public static void RemoveBlueAgent(GameObject agent)
     {
         BlueAgents.Remove(agent);
+        GameObject.Destroy(agent);
     }
 
     public static bool IsAnyRed()
@@ -89,8 +92,7 @@ public static class GameManager
                 Debug.Log("Team red wins!");
                 AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
                 AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
-                blueAgentGroup.EndGroupEpisode();
-                redAgentGroup.EndGroupEpisode();
+                EndEpisode();
 
             }
             else
@@ -98,10 +100,36 @@ public static class GameManager
                 Debug.Log("Team blue wins!");
                 AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
                 AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
-                blueAgentGroup.EndGroupEpisode();
-                redAgentGroup.EndGroupEpisode();
+                EndEpisode();
             }
         }
+    }
+
+    public static void EndEpisode()
+    {
+        List<GameObject> tmp = new List<GameObject> { };
+        foreach (GameObject agent in RedAgents)
+        {
+            tmp.Add(agent);   
+        }
+        RedAgents.Clear();
+
+        foreach (GameObject agent in BlueAgents)
+        {
+            tmp.Add(agent);
+        }
+        BlueAgents.Clear();
+        foreach (GameObject agent in tmp)
+        {
+            GameObject.Destroy(agent);
+        }
+        blueAgentGroup.EndGroupEpisode();
+        redAgentGroup.EndGroupEpisode();
+        //Odtad nowa mapa i start gry
+        Scene sceneMain = SceneManager.GetActiveScene();
+        GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
+        StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
+        startGameScript.StartGame();
     }
 
     /*

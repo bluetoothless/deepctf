@@ -161,30 +161,8 @@ public class AgentMovementWSAD : Agent
         AddReward(reward);
     }
 
-    /*public void EndEpisodeForAllAgents()
+    public override void OnEpisodeBegin()
     {
-        Transform agents = gameObject.transform.parent.transform.parent;
-        Transform redAgents = agents.GetChild(0);
-        Transform blueAgents = agents.GetChild(1);
-        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
-        {
-            var redAgent = redAgents.GetChild(i).gameObject;
-            var blueAgent = blueAgents.GetChild(i).gameObject;
-            redAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
-            blueAgent.GetComponent<AgentMovementWSAD>().EndEpisode();
-        }
+        Debug.Log("EPISODE BEGIN");
     }
-
-    private void GetTeams()
-    {
-        Transform agents = gameObject.transform.parent.transform.parent;
-        Transform redAgents = agents.GetChild(0);
-        Transform blueAgents = agents.GetChild(1);
-        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
-        {
-            teamRed.Add(redAgents.GetChild(i).gameObject);
-            teamBlue.Add(blueAgents.GetChild(i).gameObject);
-
-        }
-    }*/
 }
