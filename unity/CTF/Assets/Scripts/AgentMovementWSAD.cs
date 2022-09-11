@@ -53,22 +53,22 @@ public class AgentMovementWSAD : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        float[,] arrRays = raysPerception(); //40 floatow
+        float[,] arrRays = raysPerception(); //60 floatow
         for (int i = 0; i < numberOfRays; i++)
         {
-            for(int j = 0; j < 4; j++)
+            for (int j = 0; j < 6; j++)
             {
                 sensor.AddObservation(arrRays[i,j]);
             }
-
          }
-        BiomEyesScript bes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
-        int[] arint = bes.GetBiomSensors();
-        for (int i =0; i<arint.Length;i++){
-             sensor.AddObservation((float)arint[i]);
+        BiomEyesScript biomEyes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
+        int[] arrint = biomEyes.GetBiomSensors();
+        for (int i = 0; i < arrint.Length; i++){ //44 biomEyes * 4 inputy
+            int[] biomEye = { 0, 0, 0, 0 }; //0-nic/inne, 1-accelerate, 2-desert, 3-lake
+            biomEye[arrint[i]] = 1;
+            sensor.AddObservation((float)arrint[i]);
         }
     }
-
 
     private float[,] raysPerception()
     {
@@ -80,10 +80,10 @@ public class AgentMovementWSAD : Agent
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
 
-        float[,] outputArray = new float[10,4]; //10 promieni, po 4 zmienne, i,0-distance, i,1 - rodzaj, i,2 kolor, i,3 czy z flaga?
+        float[,] outputArray = new float[10,6]; //10 promieni, po 6 zmiennych, i,0-odwrotność dystansu, i,1-agent, i,2-baza, i,3-ściana, i,4-kolor, i,5-czy z flagą?
         RaycastHit hit;
         Ray ray;
-        for (int i =0;i<numberOfRays;i++)
+        for (int i = 0; i < numberOfRays; i++)
         {
            ray  = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree+stepDegree*i, 0) * Vector3.forward));
 
@@ -92,12 +92,25 @@ public class AgentMovementWSAD : Agent
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
                 rayResponseComponent rayrespond = hit.collider.gameObject.GetComponent<rayResponseComponent>();
                 //Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
-                outputArray[i, 0] = hit.distance;
-
-                outputArray[i, 1] = rayrespond.type;
+                outputArray[i, 0] = Normalize(Inverse(hit.distance));
+                outputArray[i, 1] = 0;
+                outputArray[i, 2] = 0;
+                outputArray[i, 3] = 0;
+                switch (rayrespond.type)
+                {
+                    case 1:
+                        outputArray[i, 1] = 1;
+                        break;
+                    case 2:
+                        outputArray[i, 2] = 1;
+                        break;
+                    case 3:
+                        outputArray[i, 3] = 1;
+                        break;
+                }
                 float col = rayrespond.color;
-                outputArray[i, 2] = col;
-                outputArray[i, 3] = rayrespond.isFlag;
+                outputArray[i, 4] = col;
+                outputArray[i, 5] = rayrespond.isFlag;
 
             }
             else
@@ -108,6 +121,25 @@ public class AgentMovementWSAD : Agent
 
         }
         return outputArray;
+    }
+
+    private float Inverse(float distance)
+    {
+        float inverse = 0;
+        if (distance != 0) { 
+            inverse = 1 / distance;
+        }
+        return inverse;
+    }
+
+    private float Normalize(float inverseDistance)
+    {
+        /*
+        scaledValue = (rawValue - min) / (max - min);
+        => => =>                                                max = ???
+        return inverseDistance/max;
+         */
+        return inverseDistance;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
