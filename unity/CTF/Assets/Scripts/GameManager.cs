@@ -131,11 +131,13 @@ public static class GameManager
 
     private static void ResetScene()
     {
-        Debug.Log("ResetScene()");
-        Scene sceneMain = SceneManager.GetActiveScene();
-        GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
-        StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
-        startGameScript.StartGame();
+        ////Debug.Log("ResetScene()");
+        ////Scene sceneMain = SceneManager.GetActiveScene();
+        ////GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
+        ////StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
+        ////startGameScript.StartGame();
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name); // reload the scene
     }
 
     private static void Ending()
