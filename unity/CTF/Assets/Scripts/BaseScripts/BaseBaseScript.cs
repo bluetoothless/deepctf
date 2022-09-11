@@ -7,7 +7,7 @@ public abstract class BaseBaseScript : MonoBehaviour
 {
 
     public GameObject AgentPrefab;
-    public int NumberOfAgents = 10;
+    public int NumberOfAgents = 4;
     public Tile CenterTile;
     private GameObject Agents;
     private List<Tile> tiles;
@@ -15,19 +15,23 @@ public abstract class BaseBaseScript : MonoBehaviour
     private float agentSpawnHeight = 2.5f;
     public SimpleMultiAgentGroup m_AgentGroup;
 
+
     // Start is called before the first frame update
     void Start()
     {
         m_AgentGroup = new SimpleMultiAgentGroup();
         Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
         tiles = PerlinNoiseMapGeneration.GetTilesList();
-    }
 
+    }
     public void OnGameStart()
     {
+
+        Debug.Log("OGS: spawning egants");
         // for every Agent
         for (int i = 0; i < NumberOfAgents; i++)
         {
+            Debug.Log("OGS: trying spawn agent no "+i);
             if (CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
             {
                 SpawnAgentAt(CenterTile.tilesMapListIndex + 1);
@@ -46,7 +50,8 @@ public abstract class BaseBaseScript : MonoBehaviour
             }
             else
             {
-                new WaitForSeconds(1);                                          // wait 1 second
+                Debug.Log("OGS: can't spawn");
+                //new WaitForSeconds(1);                                          // wait 1 second
             }
         }
     }
@@ -68,9 +73,11 @@ public abstract class BaseBaseScript : MonoBehaviour
 
     public bool CheckIfCanSpawnAt(int index)
     {
+        Debug.Log("CICS: "+index);
         foreach (Transform agent in Agents.transform)
         {
-            if (Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter)) < 1f)
+            Debug.Log("CICS: " + index + " " + agent + " at " + agent.transform.position);
+            if (agent.gameObject.activeSelf && Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter)) < 1f)
             {
                 return false;
             }

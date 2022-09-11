@@ -132,6 +132,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     private static List<Domain> noLakeDomains;
     private int noLakeTilesCounter = 0;
 
+    private int steps = -1;
+    public int maxSteps;
+
     public const int chanceEnhacerAdder = 5;
 
     private void Awake()
@@ -175,7 +178,20 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (steps == -1)
+        {
+            GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
+        }
+        if(steps%100==0)
+        {
+            UnityEngine.Debug.Log("Steps:" + steps);
+        }
+        if(steps>maxSteps)
+        {
+            steps = 0;
+            GameManager.EndMaxSteps();
+        }
+        steps++;
     }
 
     void GenerateMap()

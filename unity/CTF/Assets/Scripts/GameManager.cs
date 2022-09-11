@@ -107,10 +107,44 @@ public static class GameManager
 
     public static void EndEpisode()
     {
+        Debug.Log("EE");
+        Ending();
+        Debug.Log("EE: EGE blue");
+        blueAgentGroup.EndGroupEpisode();
+        Debug.Log("EE: EGE red");
+        redAgentGroup.EndGroupEpisode();
+        //Odtad nowa mapa i start gry
+        ResetScene();
+
+    }
+
+    public static void EndMaxSteps()
+    {
+        Debug.Log("EndMaxSteps");
+        Ending();
+        Debug.Log("EMS: GPI blue");
+        blueAgentGroup.GroupEpisodeInterrupted();
+        Debug.Log("EMS: GPI  red");
+        redAgentGroup.GroupEpisodeInterrupted();
+        ResetScene();
+    }
+
+    private static void ResetScene()
+    {
+        Debug.Log("ResetScene()");
+        Scene sceneMain = SceneManager.GetActiveScene();
+        GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
+        StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
+        startGameScript.StartGame();
+    }
+
+    private static void Ending()
+    {
+        Debug.Log("E: Clearing Lists");
         List<GameObject> tmp = new List<GameObject> { };
         foreach (GameObject agent in RedAgents)
         {
-            tmp.Add(agent);   
+            tmp.Add(agent);
         }
         RedAgents.Clear();
 
@@ -119,17 +153,12 @@ public static class GameManager
             tmp.Add(agent);
         }
         BlueAgents.Clear();
+        Debug.Log("E: Destroying agents");
         foreach (GameObject agent in tmp)
         {
+            agent.SetActive(false);
             GameObject.Destroy(agent);
         }
-        blueAgentGroup.EndGroupEpisode();
-        redAgentGroup.EndGroupEpisode();
-        //Odtad nowa mapa i start gry
-        Scene sceneMain = SceneManager.GetActiveScene();
-        GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
-        StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
-        startGameScript.StartGame();
     }
 
     /*

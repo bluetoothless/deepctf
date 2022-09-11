@@ -25,7 +25,7 @@ public class TileBaseScript : MonoBehaviour
         }
 
         var agentBiomCollider = other.gameObject;
-        Debug.Log(logMessage);
+        //Debug.Log(logMessage);
         var agent = agentBiomCollider.transform.parent.gameObject;
         agent.GetComponent<AgentMovementWSAD>().ChangeSpeedModifier(speedChangeModifier);
     }

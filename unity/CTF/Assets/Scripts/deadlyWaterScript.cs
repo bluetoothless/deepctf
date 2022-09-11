@@ -11,7 +11,7 @@ public class deadlyWaterScript : MonoBehaviour
         if (other.tag == "AgentBiomCollider")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Kill Agent (get back to base)");
+            Debug.Log("Kill Agent");
             var agentBiomCollider = other.gameObject;
             var agent = agentBiomCollider.transform.parent.gameObject;
 

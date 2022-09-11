@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgentPrefab: {fileID: 3159207089541083966, guid: bc654aaf7e0fc5749ba607c83b983ca9, type: 3}
-  NumberOfAgents: 10
+  NumberOfAgents: 4
 --- !u!114 &436929667455710626
 MonoBehaviour:
   m_ObjectHideFlags: 0

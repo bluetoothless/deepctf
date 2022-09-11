@@ -19,6 +19,7 @@ public class StartGameScript : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("SG: ");
         var blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
         var redBaseScript = GameObject.Find("Red Base(Clone)").GetComponent<RedBaseScript>();
 
@@ -26,7 +27,9 @@ public class StartGameScript : MonoBehaviour
         GameObject.Find("ButtonPlaceBlue").GetComponent<UnityEngine.UI.Button>().interactable = false;
         GameObject.Find("ButtonPlaceRed").GetComponent<UnityEngine.UI.Button>().interactable = false;
 
+        Debug.Log("SG: blue on game start");
         blueBaseScript.OnGameStart();
+        Debug.Log("SG: red on game start");
         redBaseScript.OnGameStart();
 
         GameManager.redAgentGroup = redBaseScript.m_AgentGroup;

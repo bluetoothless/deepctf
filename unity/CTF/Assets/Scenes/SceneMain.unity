@@ -2064,6 +2064,8 @@ MonoBehaviour:
   lakesPercentage: 20
   accelerateSurfacePercentage: 10
   desertsPercentage: 35
+  steps: 0
+  maxSteps: 2500
 --- !u!1 &1063109420
 GameObject:
   m_ObjectHideFlags: 0
