@@ -15,6 +15,7 @@ public class AgentMovementWSAD : Agent
     public GameObject[] agents;
 
     private int numberOfRays = 10;
+    private float RayDistance = 200.0f;
 
     void Start()
     {
@@ -64,18 +65,16 @@ public class AgentMovementWSAD : Agent
         BiomEyesScript biomEyes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
         int[] arrint = biomEyes.GetBiomSensors();
         for (int i = 0; i < arrint.Length; i++){ //44 biomEyes * 4 inputy
-            int[] biomEye = { 0, 0, 0, 0 }; //0-nic/inne, 1-accelerate, 2-desert, 3-lake
+            float[] biomEye = { 0, 0, 0, 0 }; //0-nic/inne, 1-accelerate, 2-desert, 3-lake
             biomEye[arrint[i]] = 1;
-            sensor.AddObservation((float)arrint[i]);
+            for(int j=0; j < biomEye.Length;j++)
+                sensor.AddObservation(biomEye[j]);
         }
     }
 
     private float[,] raysPerception()
     {
         int layerMask = 1 << 6;
-
-        float RayDistance = 200.0f;
-
         float startDegree = -90.0f;//zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
@@ -125,11 +124,7 @@ public class AgentMovementWSAD : Agent
 
     private float Inverse(float distance)
     {
-        float inverse = 0;
-        if (distance != 0) { 
-            inverse = 1 / distance;
-        }
-        return inverse;
+        return RayDistance - distance;
     }
 
     private float Normalize(float inverseDistance)
