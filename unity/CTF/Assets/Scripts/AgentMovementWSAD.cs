@@ -54,6 +54,9 @@ public class AgentMovementWSAD : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+
+        bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;
+        sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
         float[,] arrRays = raysPerception(); //60 floatow
         for (int i = 0; i < numberOfRays; i++)
         {
