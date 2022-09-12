@@ -1,0 +1,65 @@
+{
+    "DeepCTFv1": {
+        "checkpoints": [
+            {
+                "steps": 499964,
+                "file_path": "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-499964.onnx",
+                "reward": null,
+                "creation_time": 1662965839.8283172,
+                "auxillary_file_paths": [
+                    "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-499964.pt"
+                ]
+            },
+            {
+                "steps": 549968,
+                "file_path": "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-549968.onnx",
+                "reward": null,
+                "creation_time": 1662966361.8399396,
+                "auxillary_file_paths": [
+                    "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-549968.pt"
+                ]
+            },
+            {
+                "steps": 599956,
+                "file_path": "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-599956.onnx",
+                "reward": null,
+                "creation_time": 1662966888.7878337,
+                "auxillary_file_paths": [
+                    "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-599956.pt"
+                ]
+            },
+            {
+                "steps": 649944,
+                "file_path": "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-649944.onnx",
+                "reward": null,
+                "creation_time": 1662967422.3925364,
+                "auxillary_file_paths": [
+                    "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-649944.pt"
+                ]
+            },
+            {
+                "steps": 681560,
+                "file_path": "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-681560.onnx",
+                "reward": null,
+                "creation_time": 1662967748.5739331,
+                "auxillary_file_paths": [
+                    "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-681560.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 681560,
+            "file_path": "results\\deepCTFlvl0\\DeepCTFv1.onnx",
+            "reward": null,
+            "creation_time": 1662967748.5739331,
+            "auxillary_file_paths": [
+                "results\\deepCTFlvl0\\DeepCTFv1\\DeepCTFv1-681560.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}
