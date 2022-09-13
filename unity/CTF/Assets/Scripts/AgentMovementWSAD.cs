@@ -29,22 +29,30 @@ public class AgentMovementWSAD : Agent
     {
         var forwardAxis = actionBuffers.DiscreteActions[0];
         var rotateAxis = actionBuffers.DiscreteActions[1];
-
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        //// IF NOT HEURESTIC??
+        //// IF NOT HEURESTIC??
+        //// IF NOT HEURESTIC??
+        //// IF NOT HEURESTIC??
         Rigidbody rb = GetComponent<Rigidbody>();
         switch (forwardAxis)
         {
-            case 1: //do przodu
-                rb.AddForce(transform.rotation * Vector3.forward * forwardSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
-                break;
-            case 2: //do ty�u
+            case 0: // do tylu
                 rb.AddForce(transform.rotation * Vector3.back * backSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
+                break;
+            case 1: // brak akcji
+                break;
+            case 2: // do przodu
+                rb.AddForce(transform.rotation * Vector3.forward * forwardSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
                 break;
         }
 
         switch (rotateAxis)
         {
-            case 1: //w lewo
+            case 0: // w lewo
                 transform.Rotate(0, -rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
+                break;
+            case 1: // brak rotacji
                 break;
             case 2: // w prawo
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
@@ -55,7 +63,7 @@ public class AgentMovementWSAD : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
 
-        bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;
+        bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
         float[,] arrRays = raysPerception(); //60 floatow
         for (int i = 0; i < numberOfRays; i++)
@@ -70,7 +78,7 @@ public class AgentMovementWSAD : Agent
         for (int i = 0; i < arrint.Length; i++){ //44 biomEyes * 4 inputy
             float[] biomEye = { 0, 0, 0, 0 }; //0-nic/inne, 1-accelerate, 2-desert, 3-lake
             biomEye[arrint[i]] = 1;
-            for(int j=0; j < biomEye.Length;j++)
+            for(int j=0; j < biomEye.Length; j++)
                 sensor.AddObservation(biomEye[j]);
         }
     }

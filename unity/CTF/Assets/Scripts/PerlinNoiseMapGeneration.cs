@@ -184,11 +184,11 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
         if(steps%100==0)
         {
-            UnityEngine.Debug.Log("Steps:" + steps);
+            ;// UnityEngine.Debug.Log("Steps:" + steps);
         }
         if(steps>maxSteps)
         {
-            steps = 0;
+            steps = 0;  // kompletnie useless
             GameManager.EndMaxSteps();
         }
         steps++;

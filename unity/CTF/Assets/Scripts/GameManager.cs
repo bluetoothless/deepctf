@@ -120,11 +120,11 @@ public static class GameManager
 
     public static void EndMaxSteps()
     {
-        Debug.Log("EndMaxSteps");
+        //Debug.Log("EndMaxSteps");
         Ending();
-        Debug.Log("EMS: GPI blue");
+       // Debug.Log("EMS: GPI blue");
         blueAgentGroup.GroupEpisodeInterrupted();
-        Debug.Log("EMS: GPI  red");
+        //Debug.Log("EMS: GPI  red");
         redAgentGroup.GroupEpisodeInterrupted();
         ResetScene();
     }
@@ -142,7 +142,7 @@ public static class GameManager
 
     private static void Ending()
     {
-        Debug.Log("E: Clearing Lists");
+        //Debug.Log("E: Clearing Lists");
         List<GameObject> tmp = new List<GameObject> { };
         foreach (GameObject agent in RedAgents)
         {
@@ -155,7 +155,7 @@ public static class GameManager
             tmp.Add(agent);
         }
         BlueAgents.Clear();
-        Debug.Log("E: Destroying agents");
+        //Debug.Log("E: Destroying agents");
         foreach (GameObject agent in tmp)
         {
             agent.SetActive(false);
