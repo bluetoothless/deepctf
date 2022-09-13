@@ -24,6 +24,7 @@ public static class RewardValuesScript
             writer.WriteLine("flagRetrievedFromAgent:" + 50.0f);
             writer.WriteLine("flagStolenFromAgent:" + -50.0f);
             writer.WriteLine("agentDead:" + -1000.0f);
+            writer.WriteLine("agentCloseToFlag:" + 10.0f);
             writer.Close();
         }
         

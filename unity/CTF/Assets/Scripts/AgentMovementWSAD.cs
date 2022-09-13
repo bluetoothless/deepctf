@@ -17,12 +17,54 @@ public class AgentMovementWSAD : Agent
     private int numberOfRays = 10;
     private float RayDistance = 500.0f;
 
+    private GameObject ownBase;
+    private GameObject enemyBase;
+
     void Start()
     {
+
+        if (gameObject.GetComponent<AgentComponentsScript>().color == "blue")
+        {
+            enemyBase = GameObject.Find("Red Base(Clone)");
+            ownBase = GameObject.Find("Blue Base(Clone)");
+        }
+        else
+        {
+            enemyBase = GameObject.Find("Blue Base(Clone)");
+            ownBase = GameObject.Find("Red Base(Clone)");
+        }
+
         // GetTeams();
         // AiTrainer.Spawn();
         // Potrzebujemy to wywołać nie w agentach, ale potrzebujemy wtedy gdzie indziej listy agentów, np. można je zrobić i trzymać w jakimś GameManager, stworzymy wtedy listy po blueBaseScript.OnGameStart(); i redBaseScript.OnGameStart();
         // w OnGameStart
+    }
+
+    private void FixedUpdate()
+    {
+        RewardValuesScript.getRewardValues();
+        if (GameManager.steps % 200 == 0 && GameManager.steps != 0)
+        {
+            float distance;
+            if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
+            {
+                distance = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+            }
+            else
+            {
+                distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
+            }
+            float reward = FlagDistanceReward(distance);
+            AddRewardAgent(reward);
+            UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+        }
+    }
+
+    private float FlagDistanceReward(float distance)
+    {
+        float max = RewardValuesScript.rewards["agentCloseToFlag"];
+        float y = -distance * max / 400 + max;
+        return y > 0 ? y : 0;
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)

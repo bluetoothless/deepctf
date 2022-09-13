@@ -10,6 +10,7 @@ public static class GameManager
     public static List<GameObject> BlueAgents = new List<GameObject> { };
     public static SimpleMultiAgentGroup redAgentGroup;
     public static SimpleMultiAgentGroup blueAgentGroup;
+    public static int steps = -1;
 
     public static void AddRedAgent(GameObject agent)
     {
