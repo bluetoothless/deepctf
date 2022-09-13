@@ -27,6 +27,11 @@ public class AgentMovementWSAD : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
+        if(gameObject.GetComponent<BehaviorParameters>().BehaviorType.ToString() == "HeuristicOnly")
+        {
+            return;
+        }
+
         var forwardAxis = actionBuffers.DiscreteActions[0];
         var rotateAxis = actionBuffers.DiscreteActions[1];
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
