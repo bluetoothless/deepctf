@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1663091674",
+        "python_version": "3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 18:58:18) [MSC v.1900 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\Kacper\\Documents\\GitHub\\deepctf\\deepCTFenv\\Scripts\\mlagents-learn",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.12.1+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1663091687"
+    },
+    "total": 13.570285599999998,
+    "count": 1,
+    "self": 0.005746099999999643,
+    "children": {
+        "run_training.setup": {
+            "total": 0.2591517000000003,
+            "count": 1,
+            "self": 0.2591517000000003
+        },
+        "TrainerController.start_learning": {
+            "total": 13.305387799999998,
+            "count": 1,
+            "self": 0.000510699999999531,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 13.304859100000002,
+                    "count": 1,
+                    "self": 13.304859100000002
+                },
+                "trainer_threads": {
+                    "total": 2.3999999996249244e-06,
+                    "count": 1,
+                    "self": 2.3999999996249244e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 1.559999999756201e-05,
+                    "count": 1,
+                    "self": 1.559999999756201e-05
+                }
+            }
+        }
+    }
+}

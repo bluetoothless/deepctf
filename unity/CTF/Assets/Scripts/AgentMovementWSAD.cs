@@ -15,7 +15,7 @@ public class AgentMovementWSAD : Agent
     public GameObject[] agents;
 
     private int numberOfRays = 10;
-    private float RayDistance = 200.0f;
+    private float RayDistance = 500.0f;
 
     void Start()
     {

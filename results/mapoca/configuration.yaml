@@ -34,9 +34,9 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
     init_path: null
-    keep_checkpoints: 5
-    checkpoint_interval: 50000
-    max_steps: 1000000
+    keep_checkpoints: 10
+    checkpoint_interval: 300000
+    max_steps: 1000000000000000
     time_horizon: 64
     summary_freq: 50000
     threaded: false
