@@ -15,17 +15,11 @@ public abstract class BaseBaseScript : MonoBehaviour
     private float agentSpawnHeight = 2.5f;
     public SimpleMultiAgentGroup m_AgentGroup;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_AgentGroup = new SimpleMultiAgentGroup();
-        Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
-        tiles = PerlinNoiseMapGeneration.GetTilesList();
-
-    }
     public void OnGameStart()
     {
+        Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
+        m_AgentGroup = new SimpleMultiAgentGroup();
+        tiles = PerlinNoiseMapGeneration.GetTilesList();
 
         Debug.Log("OGS: spawning egants");
         // for every Agent

@@ -76,11 +76,7 @@ public class AgentMovementWSAD : Agent
 
         var forwardAxis = actionBuffers.DiscreteActions[0];
         var rotateAxis = actionBuffers.DiscreteActions[1];
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////
-        //// IF NOT HEURESTIC??
-        //// IF NOT HEURESTIC??
-        //// IF NOT HEURESTIC??
-        //// IF NOT HEURESTIC??
+
         Rigidbody rb = GetComponent<Rigidbody>();
         switch (forwardAxis)
         {
@@ -187,12 +183,7 @@ public class AgentMovementWSAD : Agent
 
     private float Normalize(float inverseDistance)
     {
-        /*
-        scaledValue = (rawValue - min) / (max - min);
-        => => =>                                                max = ???
-        return inverseDistance/max;
-         */
-        return inverseDistance;
+        return inverseDistance/RayDistance;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

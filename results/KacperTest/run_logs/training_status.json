@@ -1,0 +1,29 @@
+{
+    "DeepCTFv1": {
+        "checkpoints": [
+            {
+                "steps": 10584,
+                "file_path": "results\\KacperTest\\DeepCTFv1\\DeepCTFv1-10584.onnx",
+                "reward": 38.031227588653564,
+                "creation_time": 1663101709.6136036,
+                "auxillary_file_paths": [
+                    "results\\KacperTest\\DeepCTFv1\\DeepCTFv1-10584.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10584,
+            "file_path": "results\\KacperTest\\DeepCTFv1.onnx",
+            "reward": 38.031227588653564,
+            "creation_time": 1663101709.6136036,
+            "auxillary_file_paths": [
+                "results\\KacperTest\\DeepCTFv1\\DeepCTFv1-10584.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}

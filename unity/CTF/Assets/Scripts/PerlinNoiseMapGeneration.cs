@@ -131,7 +131,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     private static List<Domain> domains;
     private static List<Domain> noLakeDomains;
     private int noLakeTilesCounter = 0;
-
     public int maxSteps;
 
     public const int chanceEnhacerAdder = 5;
@@ -170,6 +169,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         FindNoLakeDomains();
         PlaceBases();
 
+        GameManager.MapGenerated = true;
         sw.Stop();
         UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
     }
@@ -179,6 +179,10 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     {
         if (GameManager.steps == -1)
         {
+            if(!GameManager.MapGenerated)
+            {
+                return;
+            }
             GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
         }
         if(GameManager.steps % 100==0)
@@ -187,8 +191,9 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         }
         if(GameManager.steps > maxSteps)
         {
-            GameManager.steps = 0;  // kompletnie useless
+            GameManager.steps = -1;
             GameManager.EndMaxSteps();
+            return;
         }
         GameManager.steps++;
     }

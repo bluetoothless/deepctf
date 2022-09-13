@@ -11,6 +11,7 @@ public static class GameManager
     public static SimpleMultiAgentGroup redAgentGroup;
     public static SimpleMultiAgentGroup blueAgentGroup;
     public static int steps = -1;
+    public static bool MapGenerated = false;
 
     public static void AddRedAgent(GameObject agent)
     {
@@ -159,6 +160,8 @@ public static class GameManager
         //Debug.Log("E: Destroying agents");
         foreach (GameObject agent in tmp)
         {
+            if (agent == null)
+                continue;
             agent.SetActive(false);
             GameObject.Destroy(agent);
         }
