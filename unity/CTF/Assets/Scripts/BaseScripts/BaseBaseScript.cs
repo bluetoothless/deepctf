@@ -56,7 +56,7 @@ public abstract class BaseBaseScript : MonoBehaviour
                 //new WaitForSeconds(1);                                          // wait 1 second
             }
         }
-        isBaseSet = false;
+        isBaseSet = true;
     }
 
     public void SpawnAgentAt(int index)

@@ -61,7 +61,7 @@ public class BiomEyesScript : MonoBehaviour
     public int[] GetBiomSensors()
     {
         int[] sensors = new int[Eyes.Count];
-        Debug.Log("BIOMEYES GBS():" + Eyes.Count);
+        //Debug.Log("BIOMEYES GBS():" + Eyes.Count);
         for (int i = 0; i < Eyes.Count; i++)
         {
             sensors[i] = Eyes[i].GetComponent<BiomCollider>().getBiomTag();

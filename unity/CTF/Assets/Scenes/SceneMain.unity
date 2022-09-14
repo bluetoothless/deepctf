@@ -2064,6 +2064,7 @@ MonoBehaviour:
   lakesPercentage: 20
   accelerateSurfacePercentage: 10
   desertsPercentage: 35
+  isMapSet: 0
 --- !u!1 &1063109420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671480c7dc53ad14eace6215aabe0c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiTrainerMode: 0
+  AiTrainerMode: 1
 --- !u!1 &1374191025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,7 +4345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ab22dd96188e14083fe6867f3f271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSteps: 1000
+  steps: -1
+  maxSteps: 2000
+  NumberOfAgents: 4
 --- !u!4 &2015781864
 Transform:
   m_ObjectHideFlags: 0

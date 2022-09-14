@@ -57,7 +57,7 @@ public class EnvController : MonoBehaviour
     private void  ActuallizeIsEverythingSet()
     {
         isEverythingSet = false;
-        if (!mapGenerator.isMapSet)
+        while(!mapGenerator.isMapSet)
         {
             Debug.LogError("Map is not set yet!");
             return;
@@ -69,14 +69,14 @@ public class EnvController : MonoBehaviour
         }
         for(int i=0;i<NumberOfAgents;i++)
         {
-            if(!GameManager.RedAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
-            {
-                Debug.LogError("RedAgents["+i+"] is not set yet!");
-                return;
-            }
             if (!GameManager.BlueAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
             {
                 Debug.LogError("BlueAgents[" + i + "] is not set yet!");
+                return;
+            }
+            if (!GameManager.RedAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
+            {
+                Debug.LogError("RedAgents["+i+"] is not set yet!");
                 return;
             }
         }
@@ -91,10 +91,10 @@ public class EnvController : MonoBehaviour
 
     void FixedUpdate()
     {
-        while(!isEverythingSet)
+        while(!isEverythingSet  && steps != -1)
         {
+            //Debug.LogError("Not Everything set");
             ActuallizeIsEverythingSet();
-            //return;
         }
 
         if (steps % 100 == 0)
