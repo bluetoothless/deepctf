@@ -23,7 +23,7 @@ public class deadlyWaterScript : MonoBehaviour
                 OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agent);
             }
 
-            GameManager.Kill(agent);
+            GameManager.EnvContr.Kill(agent);
         }
     }
 }
