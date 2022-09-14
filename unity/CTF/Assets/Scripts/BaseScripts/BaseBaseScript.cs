@@ -15,10 +15,15 @@ public abstract class BaseBaseScript : MonoBehaviour
     private float agentSpawnHeight = 2.5f;
     public SimpleMultiAgentGroup m_AgentGroup;
 
+    void Awake()
+    {
+        m_AgentGroup = new SimpleMultiAgentGroup();
+    }
+
+
     public void OnGameStart()
     {
         Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
-        m_AgentGroup = new SimpleMultiAgentGroup();
         tiles = PerlinNoiseMapGeneration.GetTilesList();
 
         Debug.Log("OGS: spawning egants");

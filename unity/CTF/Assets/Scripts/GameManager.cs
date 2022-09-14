@@ -10,8 +10,9 @@ public static class GameManager
     public static List<GameObject> BlueAgents = new List<GameObject> { };
     public static SimpleMultiAgentGroup redAgentGroup;
     public static SimpleMultiAgentGroup blueAgentGroup;
-    public static int steps = -1;
-    public static bool MapGenerated = false;
+
+    public static EnvController EnvContr;
+
 
     public static void AddRedAgent(GameObject agent)
     {

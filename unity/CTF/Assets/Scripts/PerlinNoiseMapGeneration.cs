@@ -131,7 +131,6 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     private static List<Domain> domains;
     private static List<Domain> noLakeDomains;
     private int noLakeTilesCounter = 0;
-    public int maxSteps;
 
     public const int chanceEnhacerAdder = 5;
 
@@ -159,44 +158,20 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Stopwatch sw = new Stopwatch();
-        sw.Start();
 
+    }
+
+    public void StartAndGeneration()
+    {
         AiTrainer.SetPercentages(ref lakesPercentage, ref accelerateSurfacePercentage, ref desertsPercentage);
 
         GenerateMap();
         FindDomains();
         FindNoLakeDomains();
         PlaceBases();
-
-        GameManager.MapGenerated = true;
-        sw.Stop();
-        UnityEngine.Debug.Log("Seconds = " + sw.Elapsed);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (GameManager.steps == -1)
-        {
-            if(!GameManager.MapGenerated)
-            {
-                return;
-            }
-            GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
-        }
-        if(GameManager.steps % 100==0)
-        {
-            UnityEngine.Debug.Log("Steps:" + GameManager.steps);
-        }
-        if(GameManager.steps > maxSteps)
-        {
-            GameManager.steps = -1;
-            GameManager.EndMaxSteps();
-            return;
-        }
-        GameManager.steps++;
-    }
 
     void GenerateMap()
     {

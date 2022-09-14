@@ -17,8 +17,7 @@ public class BiomEyesScript : MonoBehaviour
                                        { 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0 },
                                        { 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0 }};
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int halfLength = eyes.GetLength(0) / 2;
 
@@ -32,6 +31,13 @@ public class BiomEyesScript : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+ 
     }
 
     public void SpawnBiomEyeAt(int x, int y)
@@ -55,6 +61,7 @@ public class BiomEyesScript : MonoBehaviour
     public int[] GetBiomSensors()
     {
         int[] sensors = new int[Eyes.Count];
+        Debug.Log("BIOMEYES GBS():" + Eyes.Count);
         for (int i = 0; i < Eyes.Count; i++)
         {
             sensors[i] = Eyes[i].GetComponent<BiomCollider>().getBiomTag();

@@ -43,7 +43,7 @@ public class AgentMovementWSAD : Agent
     private void FixedUpdate()
     {
         RewardValuesScript.getRewardValues();
-        if (GameManager.steps % 200 == 0 && GameManager.steps != 0)
+        if (GameManager.EnvContr.GetSteps() % 200 == 0 && GameManager.EnvContr.GetSteps() != 0)
         {
             float distance;
             if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
@@ -117,7 +117,9 @@ public class AgentMovementWSAD : Agent
             }
          }
         BiomEyesScript biomEyes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
+        //Debug.Log("BIOMEYES:" + biomEyes);
         int[] arrint = biomEyes.GetBiomSensors();
+       // Debug.Log("BIOMEYES array:" + arrint+ arrint.Length);
         for (int i = 0; i < arrint.Length; i++){ //44 biomEyes * 4 inputy
             float[] biomEye = { 0, 0, 0, 0 }; //0-nic/inne, 1-accelerate, 2-desert, 3-lake
             biomEye[arrint[i]] = 1;
