@@ -10,9 +10,13 @@ public static class GameManager
     public static List<GameObject> BlueAgents = new List<GameObject> { };
     public static SimpleMultiAgentGroup redAgentGroup;
     public static SimpleMultiAgentGroup blueAgentGroup;
+    public static BaseBaseScript blueBaseScript;
+    public static BaseBaseScript redBaseScript;
+
 
     public static EnvController EnvContr;
 
+  
 
     public static void AddRedAgent(GameObject agent)
     {

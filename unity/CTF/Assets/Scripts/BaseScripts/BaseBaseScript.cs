@@ -7,7 +7,6 @@ public abstract class BaseBaseScript : MonoBehaviour
 {
 
     public GameObject AgentPrefab;
-    public int NumberOfAgents = 4;
     public Tile CenterTile;
     private GameObject Agents;
     private List<Tile> tiles;
@@ -15,8 +14,12 @@ public abstract class BaseBaseScript : MonoBehaviour
     private float agentSpawnHeight = 2.5f;
     public SimpleMultiAgentGroup m_AgentGroup;
 
+    [HideInInspector]
+    public bool isBaseSet;
+
     void Awake()
     {
+        isBaseSet = false;
         m_AgentGroup = new SimpleMultiAgentGroup();
     }
 
@@ -28,7 +31,7 @@ public abstract class BaseBaseScript : MonoBehaviour
 
         Debug.Log("OGS: spawning egants");
         // for every Agent
-        for (int i = 0; i < NumberOfAgents; i++)
+        for (int i = 0; i < GameManager.EnvContr.NumberOfAgents; i++)
         {
             Debug.Log("OGS: trying spawn agent no "+i);
             if (CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
@@ -53,6 +56,7 @@ public abstract class BaseBaseScript : MonoBehaviour
                 //new WaitForSeconds(1);                                          // wait 1 second
             }
         }
+        isBaseSet = false;
     }
 
     public void SpawnAgentAt(int index)

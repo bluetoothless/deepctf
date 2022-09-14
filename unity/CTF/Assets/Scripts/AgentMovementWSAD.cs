@@ -20,6 +20,14 @@ public class AgentMovementWSAD : Agent
     private GameObject ownBase;
     private GameObject enemyBase;
 
+    [HideInInspector]
+    public bool isAgentSet;
+
+    void Awake()
+    {
+        isAgentSet = false;
+    }
+
     void Start()
     {
 
@@ -33,11 +41,7 @@ public class AgentMovementWSAD : Agent
             enemyBase = GameObject.Find("Blue Base(Clone)");
             ownBase = GameObject.Find("Red Base(Clone)");
         }
-
-        // GetTeams();
-        // AiTrainer.Spawn();
-        // Potrzebujemy to wywołać nie w agentach, ale potrzebujemy wtedy gdzie indziej listy agentów, np. można je zrobić i trzymać w jakimś GameManager, stworzymy wtedy listy po blueBaseScript.OnGameStart(); i redBaseScript.OnGameStart();
-        // w OnGameStart
+        isAgentSet = true;
     }
 
     private void FixedUpdate()

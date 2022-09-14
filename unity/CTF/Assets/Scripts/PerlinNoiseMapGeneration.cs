@@ -134,8 +134,12 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     public const int chanceEnhacerAdder = 5;
 
+    [HideInInspector]
+    public bool isMapSet;
+
     private void Awake()
     {
+        isMapSet = false;
         blueBasePrefab = blueBase;
         redBasePrefab = redBase;
         basesPrefab = bases;
@@ -169,6 +173,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         FindDomains();
         FindNoLakeDomains();
         PlaceBases();
+        isMapSet = true;
     }
 
     // Update is called once per frame

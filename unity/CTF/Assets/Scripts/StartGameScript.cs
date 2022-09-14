@@ -20,23 +20,15 @@ public class StartGameScript : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("SG: ");
-        var blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
-        var redBaseScript = GameObject.Find("Red Base(Clone)").GetComponent<RedBaseScript>();
-
-        Debug.Log("SA: bases " + redBaseScript + blueBaseScript);
 
         GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().interactable = false;
         GameObject.Find("ButtonPlaceBlue").GetComponent<UnityEngine.UI.Button>().interactable = false;
         GameObject.Find("ButtonPlaceRed").GetComponent<UnityEngine.UI.Button>().interactable = false;
 
-        GameManager.redAgentGroup = redBaseScript.m_AgentGroup;
-        GameManager.blueAgentGroup = blueBaseScript.m_AgentGroup;
-        Debug.Log("SA: AGROUPS " + redBaseScript.m_AgentGroup+ blueBaseScript.m_AgentGroup);
-
         Debug.Log("SG: blue on game start");
-        blueBaseScript.OnGameStart();
+        GameManager.blueBaseScript.OnGameStart();
         Debug.Log("SG: red on game start");
-        redBaseScript.OnGameStart();
+        GameManager.redBaseScript.OnGameStart();
 
         AiTrainer.Spawn();
     }

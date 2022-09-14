@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class EnvController : MonoBehaviour
 {
-    public static int steps = -1;
+    [HideInInspector]
+    public int steps = -1;
     public int maxSteps;
+
+    public int NumberOfAgents = 4;
 
     private PerlinNoiseMapGeneration mapGenerator;
 
-    private int errorBrakAgentowCounter = 0;
+    private bool isEverythingSet;
+
+    void Awake()//false dla testow czy initialize wszystko
+    {
+        isEverythingSet = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,18 +26,61 @@ public class EnvController : MonoBehaviour
         GameManager.EnvContr = this;
 
         mapGenerator = transform.GetChild(3).GetComponent<PerlinNoiseMapGeneration>(); 
-        if(mapGenerator == null)
+        while(mapGenerator == null)
         {
             Debug.LogError("mapGenerator is empty!");
         }
         mapGenerator.StartAndGeneration(); // use AITRAINER, PLACES BASES AND TILES
 
+        BaseBaseScript blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
+        BaseBaseScript redBaseScript = GameObject.Find("Red Base(Clone)").GetComponent<RedBaseScript>();
+
+        while(blueBaseScript == null || redBaseScript == null)
+        {
+            Debug.LogError("xBaseScripts is empty is empty!");
+        }
+
+        GameManager.redBaseScript = redBaseScript;
+        GameManager.blueBaseScript = blueBaseScript;
+        GameManager.redAgentGroup = redBaseScript.m_AgentGroup;
+        GameManager.blueAgentGroup = blueBaseScript.m_AgentGroup;
+
+
         StartGameScript SGS = transform.GetChild(7).GetChild(0).GetChild(0).GetChild(3).GetComponent<StartGameScript>();
-        if (mapGenerator == null)
+        while(mapGenerator == null)
         {
             Debug.LogError("StartGameScript SGS is empty!");
         }
         SGS.StartGame(); //StartGameScript! SET AgentGroup in GameManager, set buttons, BaseScript.OnGameStart(), AiTrainer.Spawn()->move BlueAgents Up;
+    }
+
+    private void  ActuallizeIsEverythingSet()
+    {
+        isEverythingSet = false;
+        if (!mapGenerator.isMapSet)
+        {
+            Debug.LogError("Map is not set yet!");
+            return;
+        }
+        if (!GameManager.redBaseScript.isBaseSet || !GameManager.blueBaseScript.isBaseSet)
+        {
+            Debug.LogError("xBase is not set yet!");
+            return;
+        }
+        for(int i=0;i<NumberOfAgents;i++)
+        {
+            if(!GameManager.RedAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
+            {
+                Debug.LogError("RedAgents["+i+"] is not set yet!");
+                return;
+            }
+            if (!GameManager.BlueAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
+            {
+                Debug.LogError("BlueAgents[" + i + "] is not set yet!");
+                return;
+            }
+        }
+        isEverythingSet = true;
     }
 
     // Update is called once per frame
@@ -40,14 +91,12 @@ public class EnvController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!GameManager.isAny())
+        while(!isEverythingSet)
         {
-            errorBrakAgentowCounter++;
-            if (errorBrakAgentowCounter > 20)
-            {
-                Debug.LogError("ERROR KURWAA: brak agentów, steps: " + steps);
-            }
+            ActuallizeIsEverythingSet();
+            //return;
         }
+
         if (steps % 100 == 0)
         {
             UnityEngine.Debug.Log("Steps:" + steps);
