@@ -55,8 +55,8 @@ env_settings:
   restarts_rate_limit_n: 1
   restarts_rate_limit_period_s: 60
 engine_settings:
-  width: 84
-  height: 84
+  width: 1920
+  height: 1080
   quality_level: 5
   time_scale: 20
   target_frame_rate: -1
