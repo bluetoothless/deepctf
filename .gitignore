@@ -6,3 +6,5 @@ deepCTFenv/Lib/
 deepCTFenv/pyvenv.cfg
 deepCTFenv/Scripts/
 unity/CTF/Assets/ML-Agents/Timers/SceneMain_timers.json
+unity/CTF/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+unity/CTF/UserSettings/EditorUserSettings.asset
