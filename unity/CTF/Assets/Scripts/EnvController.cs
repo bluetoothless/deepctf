@@ -95,11 +95,13 @@ public class EnvController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!isEverythingSet  && steps != -1)
+        while(!isEverythingSet  && steps != -1)
         {
             //Debug.LogError("Not Everything set");
             UpdateIsEverythingSet();
-            return;
+            if (GameManager.IsSpectatorMode) { 
+                return;
+            }
         }
 
         if (steps % 100 == 0)
