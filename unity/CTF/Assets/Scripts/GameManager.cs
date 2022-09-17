@@ -13,10 +13,9 @@ public static class GameManager
     public static BaseBaseScript blueBaseScript;
     public static BaseBaseScript redBaseScript;
 
+    public static bool IsSpectatorMode = false;
 
     public static EnvController EnvContr;
-
-  
 
     public static void AddRedAgent(GameObject agent)
     {

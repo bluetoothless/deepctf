@@ -5,7 +5,6 @@ using Unity.MLAgents;
 
 public abstract class BaseBaseScript : MonoBehaviour
 {
-
     public GameObject AgentPrefab;
     public Tile CenterTile;
     private GameObject Agents;

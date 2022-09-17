@@ -5,6 +5,7 @@ using Unity.MLAgents;
 
 public class StartGameScript : MonoBehaviour
 {
+    public bool buttonClickedManualy = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +32,10 @@ public class StartGameScript : MonoBehaviour
         GameManager.redBaseScript.OnGameStart();
 
         AiTrainer.Spawn();
+    }
+
+    public void Clicked()
+    {
+        buttonClickedManualy = true;
     }
 }

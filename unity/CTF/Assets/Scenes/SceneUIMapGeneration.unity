@@ -3314,7 +3314,6 @@ GameObject:
   - component: {fileID: 1159818522}
   - component: {fileID: 1159818523}
   - component: {fileID: 1159818524}
-  - component: {fileID: 1159818525}
   m_Layer: 5
   m_Name: SliderDensityDeserts
   m_TagString: Untagged
@@ -3412,18 +3411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1159818523}
   sliderText: {fileID: 1344644398}
---- !u!114 &1159818525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159818521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81c934b6b86bd547ba39aa4f85fa24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1211738702
 GameObject:
   m_ObjectHideFlags: 0

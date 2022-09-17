@@ -51,32 +51,36 @@ public class EnvController : MonoBehaviour
         {
             Debug.LogError("StartGameScript SGS is empty!");
         }
-        SGS.StartGame(); //StartGameScript! SET AgentGroup in GameManager, set buttons, BaseScript.OnGameStart(), AiTrainer.Spawn()->move BlueAgents Up;
+
+        if (!GameManager.IsSpectatorMode)
+        {
+            SGS.StartGame(); //StartGameScript! SET AgentGroup in GameManager, set buttons, BaseScript.OnGameStart(), AiTrainer.Spawn()->move BlueAgents Up;
+        }
     }
 
-    private void  ActuallizeIsEverythingSet()
+    private void  UpdateIsEverythingSet()
     {
         isEverythingSet = false;
         while(!mapGenerator.isMapSet)
         {
-            Debug.LogError("Map is not set yet!");
+            Debug.Log("Map is not set yet!");
             return;
         }
         if (!GameManager.redBaseScript.isBaseSet || !GameManager.blueBaseScript.isBaseSet)
         {
-            Debug.LogError("xBase is not set yet!");
+            Debug.Log("xBase is not set yet!");
             return;
         }
         for(int i=0;i<NumberOfAgents;i++)
         {
             if (!GameManager.BlueAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
             {
-                Debug.LogError("BlueAgents[" + i + "] is not set yet!");
+                Debug.Log("BlueAgents[" + i + "] is not set yet!");
                 return;
             }
             if (!GameManager.RedAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
             {
-                Debug.LogError("RedAgents["+i+"] is not set yet!");
+                Debug.Log("RedAgents["+i+"] is not set yet!");
                 return;
             }
         }
@@ -91,10 +95,11 @@ public class EnvController : MonoBehaviour
 
     void FixedUpdate()
     {
-        while(!isEverythingSet  && steps != -1)
+        if(!isEverythingSet  && steps != -1)
         {
             //Debug.LogError("Not Everything set");
-            ActuallizeIsEverythingSet();
+            UpdateIsEverythingSet();
+            return;
         }
 
         if (steps % 100 == 0)
@@ -170,7 +175,6 @@ public class EnvController : MonoBehaviour
         GameManager.redAgentGroup.EndGroupEpisode();
         //Odtad nowa mapa i start gry
         ResetScene();
-
     }
 
     public void EndMaxSteps()
@@ -191,8 +195,15 @@ public class EnvController : MonoBehaviour
         ////GameObject interfaceCamera = sceneMain.GetRootGameObjects()[7].gameObject;
         ////StartGameScript startGameScript = interfaceCamera.GetComponentInChildren<StartGameScript>();
         ////startGameScript.StartGame();
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name); // reload the scene
+        if (!GameManager.IsSpectatorMode)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name); // reload the scene
+        }
+        else
+        {
+            Debug.Log("Game Over: Tie, time ran out");
+        }
     }
 
     private void Ending()
