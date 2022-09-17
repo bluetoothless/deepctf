@@ -14,7 +14,7 @@ public class AgentMovementWSAD : Agent
     private float speedModifier = 1f;
     public GameObject[] agents;
 
-    private int numberOfRays = 10;
+    private int numberOfRays = 17;
     private float RayDistance = 500.0f;
 
     private GameObject ownBase;
@@ -112,7 +112,7 @@ public class AgentMovementWSAD : Agent
 
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
-        float[,] arrRays = raysPerception(); //60 floatow
+        float[,] arrRays = raysPerception(); //17 rays * 6 variables = 102 floats
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -139,7 +139,7 @@ public class AgentMovementWSAD : Agent
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         
 
-        float[,] outputArray = new float[10,6]; //10 promieni, po 6 zmiennych, i,0-odwrotność dystansu, i,1-agent, i,2-baza, i,3-ściana, i,4-kolor, i,5-czy z flagą?
+        float[,] outputArray = new float[numberOfRays,6]; //17 promieni, po 6 zmiennych, i,0-odwrotność dystansu, i,1-agent, i,2-baza, i,3-ściana, i,4-kolor, i,5-czy z flagą?
         RaycastHit hit;
         Ray ray;
         for (int i = 0; i < numberOfRays; i++)

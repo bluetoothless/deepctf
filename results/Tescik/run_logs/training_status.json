@@ -1,0 +1,29 @@
+{
+    "DeepCTFv1": {
+        "checkpoints": [
+            {
+                "steps": 4516,
+                "file_path": "results\\Tescik\\DeepCTFv1\\DeepCTFv1-4516.onnx",
+                "reward": 66.42528638243675,
+                "creation_time": 1663433494.0898693,
+                "auxillary_file_paths": [
+                    "results\\Tescik\\DeepCTFv1\\DeepCTFv1-4516.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4516,
+            "file_path": "results\\Tescik\\DeepCTFv1.onnx",
+            "reward": 66.42528638243675,
+            "creation_time": 1663433494.0898693,
+            "auxillary_file_paths": [
+                "results\\Tescik\\DeepCTFv1\\DeepCTFv1-4516.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}
