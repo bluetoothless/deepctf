@@ -27,12 +27,14 @@ public class FlagCapturingScript : MonoBehaviour
         {
             GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
             GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+            GameManager.EnvContr.textBlueWin.SetActive(true);
             GameManager.EnvContr.EndEpisode();
         }
         else
         {
             GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
             GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+            GameManager.EnvContr.textRedWin.SetActive(true);
             GameManager.EnvContr.EndEpisode();
         }
     }
