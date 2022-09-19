@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdownListComponent: {fileID: 900770282}
-  sliderNrOfEnvInstances: {fileID: 0}
+  sliderNrOfEnvInstances: {fileID: 962017016}
 --- !u!1 &425111871
 GameObject:
   m_ObjectHideFlags: 0
