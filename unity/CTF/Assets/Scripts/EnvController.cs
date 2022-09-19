@@ -11,6 +11,10 @@ public class EnvController : MonoBehaviour
 
     public int NumberOfAgents = 4;
 
+    public GameObject textBlueWin;
+    public GameObject textRedWin;
+    public GameObject textTie;
+
     private PerlinNoiseMapGeneration mapGenerator;
 
     private bool isEverythingSet;
@@ -52,8 +56,12 @@ public class EnvController : MonoBehaviour
             Debug.LogError("StartGameScript SGS is empty!");
         }
 
+
         if (!GameManager.IsSpectatorMode)
         {
+            textRedWin.SetActive(false);
+            textBlueWin.SetActive(false);
+            textTie.SetActive(false);
             SGS.StartGame(); //StartGameScript! SET AgentGroup in GameManager, set buttons, BaseScript.OnGameStart(), AiTrainer.Spawn()->move BlueAgents Up;
         }
     }
@@ -154,6 +162,7 @@ public class EnvController : MonoBehaviour
                 Debug.Log("Team red wins!");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+                textRedWin.SetActive(true);
                 EndEpisode();
 
             }
@@ -162,6 +171,7 @@ public class EnvController : MonoBehaviour
                 Debug.Log("Team blue wins!");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+                textBlueWin.SetActive(true);
                 EndEpisode();
             }
         }
@@ -181,6 +191,11 @@ public class EnvController : MonoBehaviour
 
     public void EndMaxSteps()
     {
+        if (!textRedWin.activeSelf && !textBlueWin.activeSelf)
+        {
+            Debug.Log("Game Over: Tie, time ran out");
+            textTie.SetActive(true);
+        }
         //Debug.Log("EndMaxSteps");
         Ending();
         // Debug.Log("EMS: GPI blue");
@@ -201,10 +216,6 @@ public class EnvController : MonoBehaviour
         {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name); // reload the scene
-        }
-        else
-        {
-            Debug.Log("Game Over: Tie, time ran out");
         }
     }
 
