@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ public static class RewardValuesScript
             writer.WriteLine("flagStolenFromAgent:" + -50.0f);
             writer.WriteLine("agentDead:" + -1000.0f);
             writer.WriteLine("agentCloseToFlag:" + 10.0f);
+            writer.WriteLine("agentTouchesAgentSameColor:" + -10.0f);
+            writer.WriteLine("agentTouchesWall:" + -10.0f);
             writer.Close();
         }
         
@@ -48,7 +51,7 @@ public static class RewardValuesScript
         foreach (string line in lines)
         {
             string[] pair = line.Split(':');
-            readRewards.Add(pair[0], float.Parse(pair[1]));
+            readRewards.Add(pair[0], float.Parse(pair[1], CultureInfo.InvariantCulture));
         }
         reader.Close();
         rewards = readRewards;

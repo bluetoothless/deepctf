@@ -2344,9 +2344,9 @@ MonoBehaviour:
   blueBase: {fileID: 6860966779638432219, guid: fb4ac725296dca140a7e67eef8a80b53, type: 3}
   redBase: {fileID: 6860966779638432219, guid: 18535bbd782d2a94b90931c1fd04f60f, type: 3}
   bases: {fileID: 1552363250}
-  lakesPercentage: 20
+  lakesPercentage: 5
   accelerateSurfacePercentage: 10
-  desertsPercentage: 35
+  desertsPercentage: 0
   isMapSet: 0
 --- !u!1 &1063109420
 GameObject:
@@ -4292,7 +4292,7 @@ GameObject:
   - component: {fileID: 1898109948}
   m_Layer: 6
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

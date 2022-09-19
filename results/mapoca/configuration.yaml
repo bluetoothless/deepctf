@@ -1,6 +1,6 @@
 default_settings: null
 behaviors:
-  DeepCTFv1:
+  DeepCTFvK:
     trainer_type: poca
     hyperparameters:
       batch_size: 500
@@ -19,8 +19,8 @@ behaviors:
       num_layers: 2
       vis_encode_type: simple
       memory: 
-        memory_size: 128
-        sequence_length: 64
+        memory_size: 256
+        sequence_length: 128
       goal_conditioning_type: hyper
       deterministic: false
     reward_signals:
@@ -36,11 +36,11 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
     init_path: null
-    keep_checkpoints: 2
-    checkpoint_interval: 100000
-    max_steps: 4500000
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    max_steps: 10000000
     time_horizon: 64
-    summary_freq: 50000
+    summary_freq: 10000
     threaded: false
     self_play: null
     behavioral_cloning: null

@@ -1,8 +1,0 @@
-gameWon:1000
-gameLost:-1000
-flagCaptured:50
-flagDelivered:50
-flagRetrievedFromAgent:50
-flagStolenFromAgent:-50
-agentDead:-1000
-agentCloseToFlag:10

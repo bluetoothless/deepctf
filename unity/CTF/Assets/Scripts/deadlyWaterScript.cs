@@ -26,4 +26,9 @@ public class deadlyWaterScript : MonoBehaviour
             GameManager.EnvContr.Kill(agent);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        OnTriggerEnter(other);
+    }
 }
