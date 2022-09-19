@@ -21,6 +21,11 @@ public class EnvController : MonoBehaviour
 
     void Awake()//false dla testow czy initialize wszystko
     {
+        if (GameManager.IsSpectatorMode)
+        {
+            NumberOfAgents = PlayerPrefs.GetInt("nrOfAgents");
+            maxSteps = PlayerPrefs.GetInt("episodeLength");
+        }
         isEverythingSet = false;
     }
 

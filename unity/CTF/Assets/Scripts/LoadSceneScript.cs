@@ -13,7 +13,7 @@ public class LoadSceneScript : MonoBehaviour
     public void LearningModeSelected()
     {
         GameManager.IsSpectatorMode = false;
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("SceneUILearningOptions");
     }
     public void GoToMainMenu()
     {
