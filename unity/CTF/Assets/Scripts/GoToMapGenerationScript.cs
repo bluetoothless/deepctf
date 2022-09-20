@@ -8,28 +8,28 @@ using UnityEngine.UI;
 public class GoToMapGenerationScript : MonoBehaviour
 {
     [SerializeField] GameObject errorText;
-    [SerializeField] Slider sliderBlueAgents;
-    [SerializeField] Slider sliderRedAgents;
+    [SerializeField] Slider sliderNrOfAgents;
+    [SerializeField] Slider sliderEpisodeLength;
     [SerializeField] Slider sliderDeserts;
     [SerializeField] Slider sliderLakes;
     [SerializeField] Slider sliderAccSurfaces;
 
-    private int nrOfBlueAgents;
-    private int nrOfRedAgents;
+    private int nrOfAgents;
+    private int episodeLength;
     private int desertsPercent;
     private int lakesPercent;
     private int accSurfacesPercent;
     public void PassParametersAndChangeScene()
     {
-        nrOfBlueAgents = (int)sliderBlueAgents.value;
-        nrOfRedAgents = (int)sliderRedAgents.value;
+        nrOfAgents = (int)sliderNrOfAgents.value;
+        episodeLength = (int)sliderEpisodeLength.value;
         desertsPercent = (int)sliderDeserts.value;
         lakesPercent = (int)sliderLakes.value;
         accSurfacesPercent = (int)sliderAccSurfaces.value;
 
         if (desertsPercent + lakesPercent + accSurfacesPercent < 100) {
-            PlayerPrefs.SetInt("nrOfBlueAgents", nrOfBlueAgents);
-            PlayerPrefs.SetInt("nrOfRedAgents", nrOfRedAgents);
+            PlayerPrefs.SetInt("nrOfAgents", nrOfAgents);
+            PlayerPrefs.SetInt("episodeLength", episodeLength);
             PlayerPrefs.SetInt("desertsPercent", desertsPercent);
             PlayerPrefs.SetInt("lakesPercent", lakesPercent);
             PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);

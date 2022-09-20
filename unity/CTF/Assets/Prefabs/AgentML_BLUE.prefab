@@ -578,7 +578,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!114 &5021980797280013648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 556c2f3f40f3e914a96e18e01f2d262b, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: a06b371139cb96245a64a9707f6e64d3, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 1
   m_BehaviorName: DeepCTFv1
