@@ -53,6 +53,27 @@ public class AgentMovementWSAD : Agent
 
     private void FixedUpdate()
     {
+        FixUpdDistanceStandard();
+    }
+
+    private void FixUpdDistanceStandard()
+    {
+        RewardValuesScript.getRewardValues();
+        float distance;
+        if (GameManager.EnvContr.GetSteps() % 200 == 0 && GameManager.EnvContr.GetSteps() != 0)
+        {
+            if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
+            {
+                distance = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+            }
+            else
+            {
+                distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
+            }
+            float reward = FlagDistanceReward(distance);
+            AddRewardAgent(reward);
+            UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+        }
         
     }
 
