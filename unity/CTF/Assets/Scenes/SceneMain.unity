@@ -4359,7 +4359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steps: -1
-  maxSteps: 2000
+  maxSteps: 1000
   NumberOfAgents: 4
 --- !u!4 &2015781864
 Transform:
