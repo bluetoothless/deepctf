@@ -1,0 +1,1012 @@
+Mono path[0] = 'C:/Users/Kacper/Documents/GitHub/deepctf/BuildLowRewards/CTF_Data/Managed'
+Mono config path = 'C:/Users/Kacper/Documents/GitHub/deepctf/BuildLowRewards/MonoBleedingEdge/etc'
+Initialize engine version: 2021.3.1f1 (3b70a0754835)
+[Subsystems] Discovering subsystems at path C:/Users/Kacper/Documents/GitHub/deepctf/BuildLowRewards/CTF_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.222 seconds
+ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader GUI/Text Shader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader TextMeshPro/Mobile/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+UnloadTime: 0.974700 ms
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 3422
+OGS: trying spawn agent no 1
+CICS: 3422
+CICS: 3422 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3420
+CICS: 3420 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+OGS: trying spawn agent no 2
+CICS: 3422
+CICS: 3422 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3420
+CICS: 3420 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3420 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -118.00)
+CICS: 3521
+CICS: 3521 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3521 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -118.00)
+OGS: trying spawn agent no 3
+CICS: 3422
+CICS: 3422 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3420
+CICS: 3420 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3420 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -118.00)
+CICS: 3521
+CICS: 3521 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3521 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -118.00)
+CICS: 3521 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-38.00, 2.50, -114.00)
+CICS: 3321
+CICS: 3321 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -110.00)
+CICS: 3321 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-42.00, 2.50, -118.00)
+CICS: 3321 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-38.00, 2.50, -114.00)
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 2663
+OGS: trying spawn agent no 1
+CICS: 2663
+CICS: 2663 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2661
+CICS: 2661 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+OGS: trying spawn agent no 2
+CICS: 2663
+CICS: 2663 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2661
+CICS: 2661 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2661 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 46.00)
+CICS: 2762
+CICS: 2762 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2762 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 46.00)
+OGS: trying spawn agent no 3
+CICS: 2663
+CICS: 2663 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2661
+CICS: 2661 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2661 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 46.00)
+CICS: 2762
+CICS: 2762 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2762 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 46.00)
+CICS: 2762 AgentML_RED(Clone) (UnityEngine.Transform) at (-70.00, 2.50, 50.00)
+CICS: 2562
+CICS: 2562 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 54.00)
+CICS: 2562 AgentML_RED(Clone) (UnityEngine.Transform) at (-74.00, 2.50, 46.00)
+CICS: 2562 AgentML_RED(Clone) (UnityEngine.Transform) at (-70.00, 2.50, 50.00)
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+Steps:0
+ERROR: Shader TextMeshPro/Sprite shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader UI/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04731667
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04536764
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04618166
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04648582
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,055262
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05333047
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05093613
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04440217
+Steps:200
+Steps:300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04731667
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04536764
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04618166
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04648582
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06518958
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05310368
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06809646
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03625282
+Steps:400
+Steps:500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04731667
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04536764
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04618166
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04648582
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07516406
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04607147
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03060394
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04652115
+Steps:600
+Steps:700
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04731667
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04536764
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04618166
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04648582
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07189214
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0485518
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03943415
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05634909
+Steps:800
+Steps:900
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04731667
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04536764
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04618166
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04648582
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0775031
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05465893
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06422647
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07851408
+Steps:1000
+Team red wins!
+EE
+EE: EGE blue
+EE: EGE red
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 14.067800 ms
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 2137.
+Total: 3.806100 ms (FindLiveObjects: 0.166300 ms CreateObjectMapping: 0.172400 ms MarkObjects: 3.330700 ms  DeleteObjects: 0.135900 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 1445
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 1445
+CICS: 1445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1443
+CICS: 1443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 1445
+CICS: 1445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1443
+CICS: 1443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -26.00)
+CICS: 1544
+CICS: 1544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -26.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 1445
+CICS: 1445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1443
+CICS: 1443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -26.00)
+CICS: 1544
+CICS: 1544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -26.00)
+CICS: 1544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-118.00, 2.50, -22.00)
+CICS: 1344
+CICS: 1344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -18.00)
+CICS: 1344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-122.00, 2.50, -26.00)
+CICS: 1344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-118.00, 2.50, -22.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 507
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 507
+CICS: 507 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 505
+CICS: 505 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 507
+CICS: 507 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 505
+CICS: 505 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 505 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -178.00)
+CICS: 606
+CICS: 606 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 606 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -178.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 507
+CICS: 507 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 505
+CICS: 505 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 505 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -178.00)
+CICS: 606
+CICS: 606 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 606 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -178.00)
+CICS: 606 AgentML_RED(Clone) (UnityEngine.Transform) at (-154.00, 2.50, -174.00)
+CICS: 406
+CICS: 406 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -170.00)
+CICS: 406 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -178.00)
+CICS: 406 AgentML_RED(Clone) (UnityEngine.Transform) at (-154.00, 2.50, -174.00)
+EPISODE BEGIN
+Steps:0
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04753772
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04946805
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04831152
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04867717
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04491984
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05063489
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04745312
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04816089
+Steps:200
+Steps:300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04753772
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04946805
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04831152
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04867717
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06380899
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05083883
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04667492
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05927669
+Steps:400
+Steps:500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04753772
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04946805
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04831152
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04867717
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0620619
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04903752
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04854712
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07384279
+Steps:600
+Steps:700
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04753772
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04946805
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04831152
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04867717
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07666627
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04734445
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05190351
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07908975
+Steps:800
+Steps:900
+Team red wins!
+EE
+EE: EGE blue
+EE: EGE red
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.647600 ms
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2137.
+Total: 5.766400 ms (FindLiveObjects: 2.199100 ms CreateObjectMapping: 0.199900 ms MarkObjects: 3.314900 ms  DeleteObjects: 0.051900 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 351
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 351
+CICS: 351 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 349
+CICS: 349 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 351
+CICS: 351 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 349
+CICS: 349 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 349 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, -2.00)
+CICS: 450
+CICS: 450 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 450 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, -2.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 351
+CICS: 351 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 349
+CICS: 349 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 349 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, -2.00)
+CICS: 450
+CICS: 450 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 450 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, -2.00)
+CICS: 450 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-162.00, 2.50, 2.00)
+CICS: 250
+CICS: 250 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, 6.00)
+CICS: 250 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-166.00, 2.50, -2.00)
+CICS: 250 AgentML_BLUE(Clone) (UnityEngine.Transform) at (-162.00, 2.50, 2.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 5075
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 5075
+CICS: 5075 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5073
+CICS: 5073 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 5075
+CICS: 5075 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5073
+CICS: 5073 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5073 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 94.00)
+CICS: 5174
+CICS: 5174 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5174 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 94.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 5075
+CICS: 5075 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5073
+CICS: 5073 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5073 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 94.00)
+CICS: 5174
+CICS: 5174 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 5174 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 94.00)
+CICS: 5174 AgentML_RED(Clone) (UnityEngine.Transform) at (26.00, 2.50, 98.00)
+CICS: 4974
+CICS: 4974 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 102.00)
+CICS: 4974 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, 94.00)
+CICS: 4974 AgentML_RED(Clone) (UnityEngine.Transform) at (26.00, 2.50, 98.00)
+EPISODE BEGIN
+Steps:0
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,01834577
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0618345
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05389453
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03562449
+Steps:200
+Steps:300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03432218
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03602852
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07626991
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03162663
+Steps:400
+Steps:500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03913334
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0382508
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07630744
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04908003
+Steps:600
+Steps:700
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05092035
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03926421
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07797614
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07389605
+Steps:800
+Steps:900
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03570707
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04490609
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07877672
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07890194
+Steps:1000
+Steps:1100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05554356
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0420559
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07265572
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07873163
+Steps:1200
+Steps:1300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06966022
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03319628
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07043865
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07715949
+Steps:1400
+Steps:1500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05616619
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04451733
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07696898
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04678121
+Steps:1600
+Steps:1700
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03803573
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03713043
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03830012
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03688156
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06301563
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05368461
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05300659
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04276657
+Steps:1800
+Steps:1900
+Team red wins!
+EE
+EE: EGE blue
+EE: EGE red
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.294600 ms
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2137.
+Total: 1.884700 ms (FindLiveObjects: 0.206200 ms CreateObjectMapping: 0.076500 ms MarkObjects: 1.564800 ms  DeleteObjects: 0.036600 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 6194
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 6194
+CICS: 6194 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6192
+CICS: 6192 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 6194
+CICS: 6194 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6192
+CICS: 6192 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6192 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 170.00)
+CICS: 6293
+CICS: 6293 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6293 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 170.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 6194
+CICS: 6194 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6192
+CICS: 6192 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6192 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 170.00)
+CICS: 6293
+CICS: 6293 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6293 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 170.00)
+CICS: 6293 AgentML_BLUE(Clone) (UnityEngine.Transform) at (70.00, 2.50, 174.00)
+CICS: 6093
+CICS: 6093 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 178.00)
+CICS: 6093 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, 170.00)
+CICS: 6093 AgentML_BLUE(Clone) (UnityEngine.Transform) at (70.00, 2.50, 174.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 6495
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 6495
+CICS: 6495 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6493
+CICS: 6493 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 6495
+CICS: 6495 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6493
+CICS: 6493 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6493 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 174.00)
+CICS: 6594
+CICS: 6594 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6594 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 174.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 6495
+CICS: 6495 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6493
+CICS: 6493 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6493 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 174.00)
+CICS: 6594
+CICS: 6594 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6594 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 174.00)
+CICS: 6594 AgentML_RED(Clone) (UnityEngine.Transform) at (82.00, 2.50, 178.00)
+CICS: 6394
+CICS: 6394 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 182.00)
+CICS: 6394 AgentML_RED(Clone) (UnityEngine.Transform) at (78.00, 2.50, 174.00)
+CICS: 6394 AgentML_RED(Clone) (UnityEngine.Transform) at (82.00, 2.50, 178.00)
+EPISODE BEGIN
+Steps:0
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07533095
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,075
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07561821
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07481541
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07637904
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07934057
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06929341
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07921867
+Steps:200
+Team red wins!
+EE
+EE: EGE blue
+EE: EGE red
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.159300 ms
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2137.
+Total: 2.784300 ms (FindLiveObjects: 0.225100 ms CreateObjectMapping: 0.197600 ms MarkObjects: 2.335100 ms  DeleteObjects: 0.026000 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 5911
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 5911
+CICS: 5911 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5909
+CICS: 5909 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 5911
+CICS: 5911 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5909
+CICS: 5909 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5909 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -162.00)
+CICS: 6010
+CICS: 6010 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 6010 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -162.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 5911
+CICS: 5911 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5909
+CICS: 5909 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5909 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -162.00)
+CICS: 6010
+CICS: 6010 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 6010 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -162.00)
+CICS: 6010 AgentML_BLUE(Clone) (UnityEngine.Transform) at (62.00, 2.50, -158.00)
+CICS: 5810
+CICS: 5810 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -154.00)
+CICS: 5810 AgentML_BLUE(Clone) (UnityEngine.Transform) at (58.00, 2.50, -162.00)
+CICS: 5810 AgentML_BLUE(Clone) (UnityEngine.Transform) at (62.00, 2.50, -158.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 8728
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 8728
+CICS: 8728 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8726
+CICS: 8726 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 8728
+CICS: 8728 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8726
+CICS: 8726 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8726 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -94.00)
+CICS: 8827
+CICS: 8827 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8827 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -94.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 8728
+CICS: 8728 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8726
+CICS: 8726 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8726 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -94.00)
+CICS: 8827
+CICS: 8827 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8827 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -94.00)
+CICS: 8827 AgentML_RED(Clone) (UnityEngine.Transform) at (174.00, 2.50, -90.00)
+CICS: 8627
+CICS: 8627 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -86.00)
+CICS: 8627 AgentML_RED(Clone) (UnityEngine.Transform) at (170.00, 2.50, -94.00)
+CICS: 8627 AgentML_RED(Clone) (UnityEngine.Transform) at (174.00, 2.50, -90.00)
+EPISODE BEGIN
+Steps:0
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05399
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05296446
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05416358
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05281176
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05700527
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06611562
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06078424
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06540373
+Steps:200
+Steps:300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05399
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05296446
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05416358
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05281176
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06042339
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06419557
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06317417
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06460045
+Steps:400
+Steps:500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05399
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05296446
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05416358
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05281176
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05135457
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06069321
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06500035
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05643839
+Steps:600
+Steps:700
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05399
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05296446
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05416358
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05281176
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05977467
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05801826
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,06273411
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05415639
+Steps:800
+Steps:900
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05399
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05296446
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05416358
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05281176
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07303347
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,07280952
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0696427
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,05541069
+Steps:1000
+Team red wins!
+EE
+EE: EGE blue
+EE: EGE red
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.090000 ms
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2137.
+Total: 2.731000 ms (FindLiveObjects: 0.159800 ms CreateObjectMapping: 0.187200 ms MarkObjects: 2.362800 ms  DeleteObjects: 0.020700 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 5003
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 5003
+CICS: 5003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5001
+CICS: 5001 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 5003
+CICS: 5003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5001
+CICS: 5001 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5001 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -194.00)
+CICS: 5102
+CICS: 5102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -194.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 5003
+CICS: 5003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5001
+CICS: 5001 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5001 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -194.00)
+CICS: 5102
+CICS: 5102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 5102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -194.00)
+CICS: 5102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (26.00, 2.50, -190.00)
+CICS: 4902
+CICS: 4902 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -186.00)
+CICS: 4902 AgentML_BLUE(Clone) (UnityEngine.Transform) at (22.00, 2.50, -194.00)
+CICS: 4902 AgentML_BLUE(Clone) (UnityEngine.Transform) at (26.00, 2.50, -190.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 737
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 737
+CICS: 737 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 735
+CICS: 735 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 737
+CICS: 737 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 735
+CICS: 735 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 735 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -58.00)
+CICS: 836
+CICS: 836 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 836 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -58.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 737
+CICS: 737 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 735
+CICS: 735 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 735 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -58.00)
+CICS: 836
+CICS: 836 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 836 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -58.00)
+CICS: 836 AgentML_RED(Clone) (UnityEngine.Transform) at (-146.00, 2.50, -54.00)
+CICS: 636
+CICS: 636 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -50.00)
+CICS: 636 AgentML_RED(Clone) (UnityEngine.Transform) at (-150.00, 2.50, -58.00)
+CICS: 636 AgentML_RED(Clone) (UnityEngine.Transform) at (-146.00, 2.50, -54.00)
+EPISODE BEGIN
+Steps:0
+Steps:100
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0365742
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533905
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533592
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03658571
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0401805
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04027273
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03843752
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03743479
+Steps:200
+Steps:300
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0365742
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533905
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533592
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03658571
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04559042
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04409399
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04898423
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03605267
+Steps:400
+Steps:500
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,0365742
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533905
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03533592
+AgentML_BLUE(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03658571
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,036536
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03517467
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,03831327
+AgentML_RED(Clone) (UnityEngine.GameObject) ::: NAGRODA 0,04752225
+Steps:600
+Unable to save timers to file C:/Users/Kacper/Documents/GitHub/deepctf/BuildLowRewards/CTF_Data\ML-Agents\Timers\SceneMain_timers.json
+Setting up 2 worker threads for Enlighten.
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [16.0 KB-32.0 KB]: 354 frames, [128.0 KB-256.0 KB]: 5 frames, [2.0 MB-4.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 4.0 MB
+      Peak Allocated Bytes 2.1 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 276 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 111.3 KB
+      Overflow Count 25
+    [ALLOC_TEMP_Background Job.Worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 392 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 2
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 3
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 392 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 392 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 1667
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [4.0 MB-8.0 MB]: 360 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 6.6 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 360 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 18.0 MB
+      Peak Large allocation bytes 16.0 MB
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 2
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 4
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_GFX_MAIN]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 360 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 108.4 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Peak usage frame count: [32.0 KB-64.0 KB]: 360 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 42.0 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 28
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Peak usage frame count: [0.5 MB-1.0 MB]: 358 frames, [1.0 MB-2.0 MB]: 2 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 1.0 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Peak usage frame count: [0.5 MB-1.0 MB]: 360 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 0.7 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_TYPETREE_MAIN]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 360 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.6 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 360 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 5.4 KB
+      Peak Large allocation bytes 0 B

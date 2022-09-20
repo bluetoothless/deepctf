@@ -1,0 +1,83 @@
+{
+    "DeepCTFvK": {
+        "checkpoints": [
+            {
+                "steps": 499992,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-499992.onnx",
+                "reward": null,
+                "creation_time": 1663636099.9853523,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-499992.pt"
+                ]
+            },
+            {
+                "steps": 999960,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-999960.onnx",
+                "reward": null,
+                "creation_time": 1663641648.199556,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-999960.pt"
+                ]
+            },
+            {
+                "steps": 1499972,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-1499972.onnx",
+                "reward": 0.2855680341599509,
+                "creation_time": 1663647377.9929166,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-1499972.pt"
+                ]
+            },
+            {
+                "steps": 1999968,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-1999968.onnx",
+                "reward": 0.372012575622648,
+                "creation_time": 1663653180.0720277,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-1999968.pt"
+                ]
+            },
+            {
+                "steps": 2499940,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-2499940.onnx",
+                "reward": 0.308181454311125,
+                "creation_time": 1663659122.802665,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-2499940.pt"
+                ]
+            },
+            {
+                "steps": 2999940,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-2999940.onnx",
+                "reward": 0.4387429775670171,
+                "creation_time": 1663672399.3975124,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-2999940.pt"
+                ]
+            },
+            {
+                "steps": 3352048,
+                "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-3352048.onnx",
+                "reward": 0.288080827522208,
+                "creation_time": 1663676903.4449108,
+                "auxillary_file_paths": [
+                    "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-3352048.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3352048,
+            "file_path": "results\\BigMem_LowRewards_20_09\\DeepCTFvK.onnx",
+            "reward": 0.288080827522208,
+            "creation_time": 1663676903.4449108,
+            "auxillary_file_paths": [
+                "results\\BigMem_LowRewards_20_09\\DeepCTFvK\\DeepCTFvK-3352048.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}
