@@ -13,6 +13,7 @@ TagManager:
   - desert
   - lake
   - accelerate
+  - Wall
   layers:
   - Default
   - TransparentFX
