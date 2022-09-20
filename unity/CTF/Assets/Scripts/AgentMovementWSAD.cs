@@ -23,6 +23,9 @@ public class AgentMovementWSAD : Agent
     [HideInInspector]
     public bool isAgentSet;
 
+    private float latestdistanceOwn;
+    private float latestdistanceEnemy;
+
     void Awake()
     {
         isAgentSet = false;
@@ -41,10 +44,19 @@ public class AgentMovementWSAD : Agent
             enemyBase = GameObject.Find("Blue Base(Clone)");
             ownBase = GameObject.Find("Red Base(Clone)");
         }
+
+        latestdistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+        latestdistanceEnemy = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+
         isAgentSet = true;
     }
 
     private void FixedUpdate()
+    {
+        
+    }
+
+    private void FixUpdDistanceRewardsCloserBetter()
     {
         RewardValuesScript.getRewardValues();
         if (GameManager.EnvContr.GetSteps() % 200 == 0 && GameManager.EnvContr.GetSteps() != 0)
@@ -53,14 +65,40 @@ public class AgentMovementWSAD : Agent
             if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
             {
                 distance = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+                if (distance < latestdistanceOwn)
+                {
+                    float reward = FlagDistanceReward(distance);
+                    AddRewardAgent(reward);
+                    UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+                }
+                else
+                {
+                    float reward = -0.5f * FlagDistanceReward(distance);
+                    AddRewardAgent(reward);
+                    UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+                }
             }
             else
             {
                 distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
+                if (distance < latestdistanceEnemy)
+                {
+                    float reward = FlagDistanceReward(distance);
+                    AddRewardAgent(reward);
+                    UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+                }
+                else
+                {
+                    float reward = -0.5f * FlagDistanceReward(distance);
+                    AddRewardAgent(reward);
+                    UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+                }
             }
-            float reward = FlagDistanceReward(distance);
-            AddRewardAgent(reward);
-            UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
+
+
+            latestdistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+            latestdistanceEnemy = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+
         }
     }
 
