@@ -4766,7 +4766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steps: -1
-  maxSteps: 2000
+  maxSteps: 1000
   NumberOfAgents: 4
   textBlueWin: {fileID: 480137644}
   textRedWin: {fileID: 116804941}

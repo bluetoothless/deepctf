@@ -8,7 +8,7 @@ public static class AiTrainer
 
     public static bool AITrainerMode = GameObject.Find("Agents").GetComponent<AgentsComponents>().AiTrainerMode;
     public static int test_id = 0; // test level form 0 to 5
-    public static FIELD_TYPE variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS; // test level form 0 to 3
+    public static FIELD_TYPE variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS_WATER; // test level form 0 to 3
     private static List<TestLevel> level = new List<TestLevel>() {
                                            new TestLevel0(), new TestLevel1(),
                                            new TestLevel2(), new TestLevel3(),
