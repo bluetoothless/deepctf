@@ -23,8 +23,12 @@ public class AgentMovementWSAD : Agent
     [HideInInspector]
     public bool isAgentSet;
 
-    private float latestdistanceOwn;
-    private float latestdistanceEnemy;
+    private float latestDistanceOwn;
+    private float latestDistanceEnemy;
+    private bool latestPurposeWasEnemyFlag;
+    private int decisionPeriod;
+
+    public bool weGotFlag = false;
 
     void Awake()
     {
@@ -45,15 +49,19 @@ public class AgentMovementWSAD : Agent
             ownBase = GameObject.Find("Red Base(Clone)");
         }
 
-        latestdistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
-        latestdistanceEnemy = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+        latestDistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+        latestDistanceEnemy = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
+        latestPurposeWasEnemyFlag = true;
+        decisionPeriod = gameObject.GetComponent<DecisionRequester>().DecisionPeriod;
 
         isAgentSet = true;
     }
 
     private void FixedUpdate()
     {
-        FixUpdDistanceStandard();
+        // FixUpdDistanceStandard();
+        if (!weGotFlag || gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)    // jeśli moja drużyna nie ma flagi lub ja mam flagę
+            DistanceRewardKacpraPoKonsultacji();
     }
 
     private void FixUpdDistanceStandard()
@@ -86,7 +94,7 @@ public class AgentMovementWSAD : Agent
             if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
             {
                 distance = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
-                if (distance < latestdistanceOwn)
+                if (distance < latestDistanceOwn)
                 {
                     float reward = FlagDistanceReward(distance);
                     AddRewardAgent(reward);
@@ -102,7 +110,7 @@ public class AgentMovementWSAD : Agent
             else
             {
                 distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
-                if (distance < latestdistanceEnemy)
+                if (distance < latestDistanceEnemy)
                 {
                     float reward = FlagDistanceReward(distance);
                     AddRewardAgent(reward);
@@ -117,17 +125,68 @@ public class AgentMovementWSAD : Agent
             }
 
 
-            latestdistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
-            latestdistanceEnemy = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+            latestDistanceOwn = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+            latestDistanceEnemy = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
 
         }
+    }
+
+    private void DistanceRewardKacpraPoKonsultacji()
+    {
+        RewardValuesScript.getRewardValues();
+        float distanceOwnNow = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
+        float distanceEnemyNow = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
+
+        // MOŻLIWE ŻE LEPIEJ WYJDZIE JAK CO 5 STEPÓW BĘDZIE (CZY RACZEJ CO TYLE ILE MAMY decision interval (u nas chyba 5))
+        if (GameManager.EnvContr.GetSteps() % decisionPeriod == 0 && GameManager.EnvContr.GetSteps() != 0)
+        {
+            if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
+            {
+                if (!weGotFlag) // jeśli jeszcze nie wiemy że mamy flage, musze powiedzieć o tym kompanom
+                    GameManager.EnvContr.TeamGotFlag(gameObject.GetComponent<AgentComponentsScript>().color);
+
+                if (latestPurposeWasEnemyFlag)  // ten if jest żeby po zdobyciu flagi nie miał od razu kary z rozpędu za oddalanie się od swojej flagi i miał szansę się wycofać
+                {
+                    latestDistanceOwn = distanceOwnNow;
+                    latestDistanceEnemy = distanceEnemyNow;
+                    latestPurposeWasEnemyFlag = false;
+                    return;
+                }
+                AddFlagDistanceRewardBasedOnDistanceDifference(distanceOwnNow, latestDistanceOwn);
+            }
+            else
+            {
+                if (weGotFlag) // jeśli jeszcze nie wiemy że straciliśmy flage, musze powiedzieć o tym kompanom
+                    GameManager.EnvContr.TeamLostFlag(gameObject.GetComponent<AgentComponentsScript>().color);
+
+                if (!latestPurposeWasEnemyFlag)  // ten if jest żeby po straceniu flagi nie miał od razu kary z rozpędu za oddalanie się od flagi wroga i miał szansę się wycofać
+                {
+                    latestDistanceOwn = distanceOwnNow;
+                    latestDistanceEnemy = distanceEnemyNow;
+                    latestPurposeWasEnemyFlag = true;
+                    return;
+                }
+                AddFlagDistanceRewardBasedOnDistanceDifference(distanceEnemyNow, latestDistanceEnemy);
+            }
+        }
+        latestDistanceOwn = distanceOwnNow;
+        latestDistanceEnemy = distanceEnemyNow;
     }
 
     private float FlagDistanceReward(float distance)
     {
         float max = RewardValuesScript.rewards["agentCloseToFlag"];
-        float y = -distance * max / 400 + max;
+        float y = (-distance * max / 400) + max;
         return y > 0 ? y : 0;
+    }
+
+    private void AddFlagDistanceRewardBasedOnDistanceDifference(float distanceNow, float lastestDistance)
+    {
+        float maxReward = RewardValuesScript.rewards["agentCloseToFlag"];
+        float distanceDifference = lastestDistance - distanceNow;
+        float reward = maxReward * distanceDifference;
+        Debug.Log("Distance Difference = " + distanceDifference + "  Reward = " + reward);
+        AddRewardAgent(reward);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)

@@ -100,10 +100,32 @@ public class EnvController : MonoBehaviour
         isEverythingSet = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TeamGotFlag(string color)
     {
-        
+        List<GameObject> team;
+        if (color == "red")
+            team = GameManager.RedAgents;
+        else
+            team = GameManager.BlueAgents;
+
+        foreach (GameObject agent in team)
+        {
+            agent.GetComponent<AgentMovementWSAD>().weGotFlag = true;
+        }
+    }
+
+    public void TeamLostFlag(string color)
+    {
+        List<GameObject> team;
+        if (color == "red")
+            team = GameManager.RedAgents;
+        else
+            team = GameManager.BlueAgents;
+
+        foreach (GameObject agent in team)
+        {
+            agent.GetComponent<AgentMovementWSAD>().weGotFlag = false;
+        }
     }
 
     void FixedUpdate()
