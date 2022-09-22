@@ -19,6 +19,7 @@ public class deadlyWaterScript : MonoBehaviour
             if (agentFlag.activeSelf)
             {
                 string agentColor = agent.GetComponent<AgentComponentsScript>().color;
+                GameManager.EnvContr.TeamLostFlag(agentColor);
                 OwnBase = agentColor == "blue" ? OwnBase = GameObject.Find("Red Base(Clone)") : OwnBase = GameObject.Find("Blue Base(Clone)");
                 OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agent);
             }

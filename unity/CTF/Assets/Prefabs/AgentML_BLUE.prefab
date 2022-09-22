@@ -579,7 +579,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &5021980797280013648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Model: {fileID: 5022602860645237092, guid: a06b371139cb96245a64a9707f6e64d3, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 1
-  m_BehaviorName: DeepCTFv2
+  m_BehaviorName: DeepCTFvBLUE
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
