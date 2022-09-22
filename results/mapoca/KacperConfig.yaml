@@ -36,8 +36,13 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
     init_path: null
+<<<<<<< HEAD
     keep_checkpoints: 2
     checkpoint_interval: 100000
+=======
+    keep_checkpoints: 4
+    checkpoint_interval: 500000
+>>>>>>> fddd098f (1000 steps without water - learned)
     max_steps: 49000000
     time_horizon: 64
     summary_freq: 10000

@@ -511,7 +511,11 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
+<<<<<<< HEAD
   m_Model: {fileID: 5022602860645237092, guid: f5e76aaf859e7bb41813f44941a1fe47, type: 3}
+=======
+  m_Model: {fileID: 5022602860645237092, guid: 43650cdc18601bd48b54e828790f7879, type: 3}
+>>>>>>> fddd098f (1000 steps without water - learned)
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DeepCTFv2
