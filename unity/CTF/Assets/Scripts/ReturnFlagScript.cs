@@ -36,15 +36,15 @@ public class ReturnFlagScript : MonoBehaviour
     {
         if (color == "blue")
         {
-            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
-            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "red");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "blue");
             GameManager.EnvContr.textBlueWin.SetActive(true);
             GameManager.EnvContr.EndEpisode();
         }
         else
         {
-            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
-            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "blue");
+            GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "red");
             GameManager.EnvContr.textRedWin.SetActive(true);
             GameManager.EnvContr.EndEpisode();
         }
