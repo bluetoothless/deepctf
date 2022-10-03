@@ -230,7 +230,8 @@ public class AgentMovementWSAD : Agent
 
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
-        float[,] arrRays = raysPerception(); //17 rays * 6 variables = 102 floats
+        //agents+walls
+        float[,] arrRays = raysPerception(6); //17 rays * 6 variables = 102 floats
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -238,6 +239,15 @@ public class AgentMovementWSAD : Agent
                 sensor.AddObservation(arrRays[i,j]);
             }
          }
+        //base+walls
+        float[,] arrRaysbase = raysPerception(7); //17 rays * 6 variables = 102 floats
+        for (int i = 0; i < numberOfRays; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                sensor.AddObservation(arrRaysbase[i, j]);
+            }
+        }
         BiomEyesScript biomEyes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
         //Debug.Log("BIOMEYES:" + biomEyes);
         int[] arrint = biomEyes.GetBiomSensors();
@@ -250,9 +260,9 @@ public class AgentMovementWSAD : Agent
         }
     }
 
-    private float[,] raysPerception()
+    private float[,] raysPerception(int layerShift)
     {
-        int layerMask = 1 << 6;
+        int layerMask = (1 << 8) | (1 << layerShift);
         float startDegree = -90.0f;//zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
         

@@ -1,0 +1,10 @@
+gameWon:1
+gameLost:-1
+flagCaptured:0.25
+flagDelivered:0.75
+flagRetrievedFromAgent:0.5
+flagStolenFromAgent:-0.5
+agentDead:-1
+agentCloseToFlag:0.05
+agentTouchesAgentSameColor:-0.01
+agentTouchesWall:-0.05
