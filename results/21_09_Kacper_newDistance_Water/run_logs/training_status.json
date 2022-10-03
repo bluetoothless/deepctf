@@ -1,0 +1,56 @@
+{
+    "DeepCTFv2": {
+        "checkpoints": [
+            {
+                "steps": 3599963,
+                "file_path": "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3599963.onnx",
+                "reward": 0.40869881535348085,
+                "creation_time": 1663814177.0719557,
+                "auxillary_file_paths": [
+                    "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3599963.pt"
+                ]
+            },
+            {
+                "steps": 3906160,
+                "file_path": "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3906160.onnx",
+                "reward": 2.544584431499243,
+                "creation_time": 1663818770.3949988,
+                "auxillary_file_paths": [
+                    "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3906160.pt"
+                ]
+            },
+            {
+                "steps": 3999966,
+                "file_path": "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3999966.onnx",
+                "reward": 1.1848238129168749,
+                "creation_time": 1663832807.0262775,
+                "auxillary_file_paths": [
+                    "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-3999966.pt"
+                ]
+            },
+            {
+                "steps": 4178459,
+                "file_path": "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-4178459.onnx",
+                "reward": null,
+                "creation_time": 1663835419.263704,
+                "auxillary_file_paths": [
+                    "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-4178459.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4178459,
+            "file_path": "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2.onnx",
+            "reward": null,
+            "creation_time": 1663835419.263704,
+            "auxillary_file_paths": [
+                "results\\21_09_Kacper_newDistance_Water\\DeepCTFv2\\DeepCTFv2-4178459.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}
