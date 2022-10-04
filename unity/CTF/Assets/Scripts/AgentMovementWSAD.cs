@@ -203,7 +203,7 @@ public class AgentMovementWSAD : Agent
         float maxRewardTeam = RewardValuesScript.rewards["agentCloseToFlag_team"];
         float rewardTeam = maxRewardTeam * distanceDifference;
         GameManager.AddRewardTeam(rewardTeam, gameObject.GetComponent<AgentComponentsScript>().color);
-        Debug.Log("Team reward for distance: " + rewardTeam);
+        //Debug.Log("Team reward for distance: " + rewardTeam);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
