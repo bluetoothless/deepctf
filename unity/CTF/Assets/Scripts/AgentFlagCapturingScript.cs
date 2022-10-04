@@ -21,6 +21,8 @@ public class AgentFlagCapturingScript : MonoBehaviour
                     RewardValuesScript.getRewardValues();
                     agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagStolenFromAgent"]);
                     collidingAgent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["flagRetrievedFromAgent"]);
+                    GameManager.AddRewardTeam(RewardValuesScript.rewards["flagStolenFromAgent_team"], agentColor);
+                    GameManager.AddRewardTeam(RewardValuesScript.rewards["flagRetrievedFromAgent_team"], collidingAgentColor);
 
                     OwnBase = agentColor == "blue" ? GameObject.Find("Red Base(Clone)") : GameObject.Find("Blue Base(Clone)");
                     OwnBase.GetComponent<ReturnFlagScript>().returnFlagFromAgent(agentFlag, agent);

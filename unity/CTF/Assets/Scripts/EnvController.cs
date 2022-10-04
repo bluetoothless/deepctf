@@ -159,10 +159,11 @@ public class EnvController : MonoBehaviour
 
     public void Kill(GameObject agent)
     {
+        string color = agent.GetComponent<AgentComponentsScript>().color;
         RewardValuesScript.getRewardValues();
         agent.GetComponent<AgentMovementWSAD>().AddRewardAgent(RewardValuesScript.rewards["agentDead"]);
+        GameManager.AddRewardTeam(RewardValuesScript.rewards["agentDead_team"], color);
         agent.SetActive(false);
-        string color = agent.GetComponent<AgentComponentsScript>().color;
 
         if (color == "red")
         {
@@ -187,8 +188,8 @@ public class EnvController : MonoBehaviour
             if (!isRed)
             {
                 Debug.Log("Team red wins!");
-                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "blue");
-                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "red");
+                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "blue");
+                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "red");
                 textRedWin.SetActive(true);
                 EndEpisode();
 
@@ -196,8 +197,8 @@ public class EnvController : MonoBehaviour
             else
             {
                 Debug.Log("Team blue wins!");
-                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost"], "red");
-                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon"], "blue");
+                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "red");
+                GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "blue");
                 textBlueWin.SetActive(true);
                 EndEpisode();
             }

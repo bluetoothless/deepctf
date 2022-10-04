@@ -18,16 +18,24 @@ public static class RewardValuesScript
         if (text == "")
         {
             StreamWriter writer = new StreamWriter(path, true);
-            writer.WriteLine("gameWon:" + 1000.0f);
-            writer.WriteLine("gameLost:" + -1000.0f);
-            writer.WriteLine("flagCaptured:" + 50.0f);
-            writer.WriteLine("flagDelivered:" + 50.0f);
-            writer.WriteLine("flagRetrievedFromAgent:" + 50.0f);
-            writer.WriteLine("flagStolenFromAgent:" + -50.0f);
-            writer.WriteLine("agentDead:" + -1000.0f);
-            writer.WriteLine("agentCloseToFlag:" + 10.0f);
-            writer.WriteLine("agentTouchesAgentSameColor:" + -10.0f);
-            writer.WriteLine("agentTouchesWall:" + -10.0f);
+            writer.WriteLine("gameWon_team:" + 1.0f);
+            writer.WriteLine("gameLost_team:" + -1.0f);
+            writer.WriteLine("flagCaptured:" + 0.35f);
+            writer.WriteLine("flagCaptured_team:" + 0.35f);
+            writer.WriteLine("flagDelivered:" + 0.8f);
+            writer.WriteLine("flagDelivered_team:" + 0.8f);
+            writer.WriteLine("flagRetrievedFromAgent:" + 0.5f);
+            writer.WriteLine("flagRetrievedFromAgent_team:" + 0.5f);
+            writer.WriteLine("flagStolenFromAgent:" + -0.5f);
+            writer.WriteLine("flagStolenFromAgent_team:" + -0.5f);
+            writer.WriteLine("agentDead:" + -1.0f);
+            writer.WriteLine("agentDead_team:" + -1.0f);
+            writer.WriteLine("agentCloseToFlag:" + 0.03f);
+            writer.WriteLine("agentCloseToFlag_team:" + 0.03f);
+            writer.WriteLine("agentTouchesAgentSameColor:" + -0.001f);
+            writer.WriteLine("agentTouchesAgentSameColor_team:" + -0.001f);
+            writer.WriteLine("agentTouchesWall:" + -0.01f);
+            writer.WriteLine("agentTouchesWall_team:" + -0.01f);
             writer.Close();
         }
         

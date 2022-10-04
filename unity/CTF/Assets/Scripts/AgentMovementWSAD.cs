@@ -78,8 +78,10 @@ public class AgentMovementWSAD : Agent
             {
                 distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
             }
-            float reward = FlagDistanceReward(distance);
-            AddRewardAgent(reward);
+            var reward = FlagDistanceReward(distance);
+            AddRewardAgent(reward[0]);
+
+            GameManager.AddRewardTeam(reward[1], gameObject.GetComponent<AgentComponentsScript>().color);
             UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
         }
         
@@ -96,14 +98,16 @@ public class AgentMovementWSAD : Agent
                 distance = Vector3.Distance(gameObject.transform.position, ownBase.transform.position);
                 if (distance < latestDistanceOwn)
                 {
-                    float reward = FlagDistanceReward(distance);
-                    AddRewardAgent(reward);
+                    var reward = FlagDistanceReward(distance);
+                    AddRewardAgent(reward[0]);
+                    GameManager.AddRewardTeam(reward[1], gameObject.GetComponent<AgentComponentsScript>().color);
                     UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
                 }
                 else
                 {
-                    float reward = -0.5f * FlagDistanceReward(distance);
-                    AddRewardAgent(reward);
+                    var reward = FlagDistanceReward(distance);
+                    AddRewardAgent(-0.5f * reward[0]);
+                    GameManager.AddRewardTeam(-0.5f * reward[1], gameObject.GetComponent<AgentComponentsScript>().color);
                     UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
                 }
             }
@@ -112,14 +116,16 @@ public class AgentMovementWSAD : Agent
                 distance = Vector3.Distance(gameObject.transform.position, enemyBase.transform.position);
                 if (distance < latestDistanceEnemy)
                 {
-                    float reward = FlagDistanceReward(distance);
-                    AddRewardAgent(reward);
+                    var reward = FlagDistanceReward(distance);
+                    AddRewardAgent(reward[0]);
+                    GameManager.AddRewardTeam(reward[1], gameObject.GetComponent<AgentComponentsScript>().color);
                     UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
                 }
                 else
                 {
-                    float reward = -0.5f * FlagDistanceReward(distance);
-                    AddRewardAgent(reward);
+                    var reward = FlagDistanceReward(distance);
+                    AddRewardAgent(-0.5f * reward[0]);
+                    GameManager.AddRewardTeam(-0.5f * reward[1], gameObject.GetComponent<AgentComponentsScript>().color);
                     UnityEngine.Debug.Log(gameObject.ToString() + " ::: NAGRODA " + reward);
                 }
             }
@@ -173,11 +179,17 @@ public class AgentMovementWSAD : Agent
         latestDistanceEnemy = distanceEnemyNow;
     }
 
-    private float FlagDistanceReward(float distance)
+    private float[] FlagDistanceReward(float distance)
     {
         float max = RewardValuesScript.rewards["agentCloseToFlag"];
+        float maxTeam = RewardValuesScript.rewards["agentCloseToFlag_team"];
+
         float y = (-distance * max / 400) + max;
-        return y > 0 ? y : 0;
+        float yTeam = (-distance * maxTeam / 400) + maxTeam;
+
+        y = y > 0 ? y : 0;
+        yTeam = yTeam > 0 ? yTeam : 0;
+        return new float[] { y, yTeam };
     }
 
     private void AddFlagDistanceRewardBasedOnDistanceDifference(float distanceNow, float lastestDistance)
@@ -187,6 +199,11 @@ public class AgentMovementWSAD : Agent
         float reward = maxReward * distanceDifference;
         Debug.Log("Distance Difference = " + distanceDifference + "  Reward = " + reward);
         AddRewardAgent(reward);
+
+        float maxRewardTeam = RewardValuesScript.rewards["agentCloseToFlag_team"];
+        float rewardTeam = maxRewardTeam * distanceDifference;
+        GameManager.AddRewardTeam(rewardTeam, gameObject.GetComponent<AgentComponentsScript>().color);
+        Debug.Log("Team reward for distance: " + rewardTeam);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
