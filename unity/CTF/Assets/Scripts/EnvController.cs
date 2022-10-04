@@ -100,31 +100,53 @@ public class EnvController : MonoBehaviour
         isEverythingSet = true;
     }
 
-    public void TeamGotFlag(string color)
+    public void TeamGotEnemyFlag(string color)
     {
-        List<GameObject> team;
+        List<GameObject> team, enemyTeam;
         if (color == "red")
+        {
             team = GameManager.RedAgents;
+            enemyTeam = GameManager.BlueAgents;
+        }
         else
+        {
             team = GameManager.BlueAgents;
+            enemyTeam = GameManager.RedAgents;
+        }
 
         foreach (GameObject agent in team)
         {
-            agent.GetComponent<AgentMovementWSAD>().weGotFlag = true;
+            agent.GetComponent<AgentMovementWSAD>().weGotEnemyFlag = true;
+        }
+
+        foreach (GameObject agent in enemyTeam)
+        {
+            agent.GetComponent<AgentMovementWSAD>().weGotOurFlag = false;
         }
     }
 
-    public void TeamLostFlag(string color)
+    public void TeamLostEnemyFlag(string color)
     {
-        List<GameObject> team;
+         List<GameObject> team, enemyTeam;
         if (color == "red")
+        {
             team = GameManager.RedAgents;
+            enemyTeam = GameManager.BlueAgents;
+        }
         else
+        {
             team = GameManager.BlueAgents;
+            enemyTeam = GameManager.RedAgents;
+        }
 
         foreach (GameObject agent in team)
         {
-            agent.GetComponent<AgentMovementWSAD>().weGotFlag = false;
+            agent.GetComponent<AgentMovementWSAD>().weGotEnemyFlag = false;
+        }
+
+        foreach (GameObject agent in enemyTeam)
+        {
+            agent.GetComponent<AgentMovementWSAD>().weGotOurFlag = true;
         }
     }
 

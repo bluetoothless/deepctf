@@ -14,7 +14,7 @@ public class AgentMovementWSAD : Agent
     private float speedModifier = 1f;
     public GameObject[] agents;
 
-    private int numberOfRays = 17;
+    private int numberOfRays = 25;
     private float RayDistance = 500.0f;
 
     private GameObject ownBase;
@@ -28,7 +28,8 @@ public class AgentMovementWSAD : Agent
     private bool latestPurposeWasEnemyFlag;
     private int decisionPeriod;
 
-    public bool weGotFlag = false;
+    public bool weGotEnemyFlag = false;
+    public bool weGotOurFlag = true;
 
     void Awake()
     {
@@ -60,7 +61,7 @@ public class AgentMovementWSAD : Agent
     private void FixedUpdate()
     {
         // FixUpdDistanceStandard();
-        if (!weGotFlag || gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)    // jeśli moja drużyna nie ma flagi lub ja mam flagę
+        if (!weGotEnemyFlag || gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)    // jeśli moja drużyna nie ma flagi przeciwnika lub ja mam flagę przeciwnika
             DistanceRewardKacpraPoKonsultacji();
     }
 
@@ -148,8 +149,8 @@ public class AgentMovementWSAD : Agent
         {
             if (gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)
             {
-                if (!weGotFlag) // jeśli jeszcze nie wiemy że mamy flage, musze powiedzieć o tym kompanom
-                    GameManager.EnvContr.TeamGotFlag(gameObject.GetComponent<AgentComponentsScript>().color);
+                if (!weGotEnemyFlag) // jeśli jeszcze nie wiemy że mamy flage przeciwnika, musze powiedzieć o tym kompanom, a wrogom o tym że stracili swoją
+                    GameManager.EnvContr.TeamGotEnemyFlag(gameObject.GetComponent<AgentComponentsScript>().color);
 
                 if (latestPurposeWasEnemyFlag)  // ten if jest żeby po zdobyciu flagi nie miał od razu kary z rozpędu za oddalanie się od swojej flagi i miał szansę się wycofać
                 {
@@ -162,8 +163,8 @@ public class AgentMovementWSAD : Agent
             }
             else
             {
-                if (weGotFlag) // jeśli jeszcze nie wiemy że straciliśmy flage, musze powiedzieć o tym kompanom
-                    GameManager.EnvContr.TeamLostFlag(gameObject.GetComponent<AgentComponentsScript>().color);
+                if (weGotEnemyFlag) // jeśli jeszcze nie wiemy że straciliśmy flage przeciwnika, musze powiedzieć o tym kompanom, a wrogom o tym że już odzyskali swoją
+                    GameManager.EnvContr.TeamLostEnemyFlag(gameObject.GetComponent<AgentComponentsScript>().color);
 
                 if (!latestPurposeWasEnemyFlag)  // ten if jest żeby po straceniu flagi nie miał od razu kary z rozpędu za oddalanie się od flagi wroga i miał szansę się wycofać
                 {
@@ -248,7 +249,7 @@ public class AgentMovementWSAD : Agent
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
         //agents+walls
-        float[,] arrRays = raysPerception(6); //17 rays * 6 variables = 102 floats
+        float[,] arrRays = raysPerception(6); //17 rays * 6 variables = 102 floats //25 * 6 = 150
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -257,7 +258,7 @@ public class AgentMovementWSAD : Agent
             }
          }
         //base+walls
-        float[,] arrRaysbase = raysPerception(7); //17 rays * 6 variables = 102 floats
+        float[,] arrRaysbase = raysPerception(7); //17 rays * 6 variables = 102 floats //25 * 6 = 150
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -275,6 +276,9 @@ public class AgentMovementWSAD : Agent
             for(int j=0; j < biomEye.Length; j++)
                 sensor.AddObservation(biomEye[j]);
         }
+
+        sensor.AddObservation(weGotOurFlag ? 1.0f : 0.0f);
+        sensor.AddObservation(weGotEnemyFlag ? 1.0f : 0.0f);
     }
 
     private float[,] raysPerception(int layerShift)
