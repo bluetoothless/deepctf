@@ -60,9 +60,12 @@ public class AgentMovementWSAD : Agent
 
     private void FixedUpdate()
     {
+        RewardValuesScript.getRewardValues();
+        AddRewardAgent(RewardValuesScript.rewards["agentTimeRewardForNothing"]);
         // FixUpdDistanceStandard();
         if (!weGotEnemyFlag || gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)    // jeśli moja drużyna nie ma flagi przeciwnika lub ja mam flagę przeciwnika
             DistanceRewardKacpraPoKonsultacji();
+
     }
 
     private void FixUpdDistanceStandard()

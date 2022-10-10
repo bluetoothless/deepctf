@@ -16,3 +16,4 @@ agentTouchesAgentSameColor:-0,001
 agentTouchesAgentSameColor_team:-0,001
 agentTouchesWall:-0,01
 agentTouchesWall_team:-0,01
+agentTimeRewardForNothing:-0,001

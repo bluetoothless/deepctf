@@ -36,6 +36,7 @@ public static class RewardValuesScript
             writer.WriteLine("agentTouchesAgentSameColor_team:" + -0.001f);
             writer.WriteLine("agentTouchesWall:" + -0.01f);
             writer.WriteLine("agentTouchesWall_team:" + -0.01f);
+            writer.WriteLine("agentTimeRewardForNothing:" + -0.001f);
             writer.Close();
         }
         

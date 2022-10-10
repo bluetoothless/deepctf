@@ -1,0 +1,47 @@
+{
+    "DeepCTFv2": {
+        "checkpoints": [
+            {
+                "steps": 299980,
+                "file_path": "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-299980.onnx",
+                "reward": 30.25,
+                "creation_time": 1665140164.1557934,
+                "auxillary_file_paths": [
+                    "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-299980.pt"
+                ]
+            },
+            {
+                "steps": 599980,
+                "file_path": "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-599980.onnx",
+                "reward": 11.666666666666666,
+                "creation_time": 1665145151.4356937,
+                "auxillary_file_paths": [
+                    "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-599980.pt"
+                ]
+            },
+            {
+                "steps": 896232,
+                "file_path": "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-896232.onnx",
+                "reward": null,
+                "creation_time": 1665150021.9967875,
+                "auxillary_file_paths": [
+                    "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-896232.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 896232,
+            "file_path": "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2.onnx",
+            "reward": null,
+            "creation_time": 1665150021.9967875,
+            "auxillary_file_paths": [
+                "results\\TheBigOne-06-10-no-closeness-reward\\DeepCTFv2\\DeepCTFv2-896232.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}

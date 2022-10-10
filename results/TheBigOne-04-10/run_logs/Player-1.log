@@ -1,0 +1,4132 @@
+Mono path[0] = 'C:/Users/Kacper/Documents/GitHub/deepctf/KacperBuild-05-10/CTF_Data/Managed'
+Mono config path = 'C:/Users/Kacper/Documents/GitHub/deepctf/KacperBuild-05-10/MonoBleedingEdge/etc'
+Initialize engine version: 2021.3.1f1 (3b70a0754835)
+[Subsystems] Discovering subsystems at path C:/Users/Kacper/Documents/GitHub/deepctf/KacperBuild-05-10/CTF_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.318 seconds
+ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader GUI/Text Shader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader TextMeshPro/Mobile/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+UnloadTime: 1.067900 ms
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 6104
+OGS: trying spawn agent no 1
+CICS: 6104
+CICS: 6104 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6102
+CICS: 6102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+OGS: trying spawn agent no 2
+CICS: 6104
+CICS: 6104 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6102
+CICS: 6102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -190.00)
+CICS: 6203
+CICS: 6203 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6203 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -190.00)
+OGS: trying spawn agent no 3
+CICS: 6104
+CICS: 6104 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6102
+CICS: 6102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6102 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -190.00)
+CICS: 6203
+CICS: 6203 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6203 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -190.00)
+CICS: 6203 AgentML_BLUE(Clone) (UnityEngine.Transform) at (70.00, 2.50, -186.00)
+CICS: 6003
+CICS: 6003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -182.00)
+CICS: 6003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (66.00, 2.50, -190.00)
+CICS: 6003 AgentML_BLUE(Clone) (UnityEngine.Transform) at (70.00, 2.50, -186.00)
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 4948
+OGS: trying spawn agent no 1
+CICS: 4948
+CICS: 4948 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4946
+CICS: 4946 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+OGS: trying spawn agent no 2
+CICS: 4948
+CICS: 4948 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4946
+CICS: 4946 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4946 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -14.00)
+CICS: 5047
+CICS: 5047 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 5047 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -14.00)
+OGS: trying spawn agent no 3
+CICS: 4948
+CICS: 4948 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4946
+CICS: 4946 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4946 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -14.00)
+CICS: 5047
+CICS: 5047 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 5047 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -14.00)
+CICS: 5047 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, -10.00)
+CICS: 4847
+CICS: 4847 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -6.00)
+CICS: 4847 AgentML_RED(Clone) (UnityEngine.Transform) at (18.00, 2.50, -14.00)
+CICS: 4847 AgentML_RED(Clone) (UnityEngine.Transform) at (22.00, 2.50, -10.00)
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+EPISODE BEGIN
+Steps:0
+Distance Difference = 0,1530914  Reward = 0
+Distance Difference = -0,1537781  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4459534  Reward = 0
+Distance Difference = 0,1072083  Reward = 0
+Distance Difference = 0,38591  Reward = 0
+Distance Difference = -0,06951904  Reward = 0
+Distance Difference = 3,051758E-05  Reward = 0
+Distance Difference = -6,103516E-05  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01924133  Reward = 0
+Distance Difference = -0,216217  Reward = 0
+Distance Difference = 0,03108215  Reward = 0
+Distance Difference = -0,2857208  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4039917  Reward = 0
+Distance Difference = -0,1195831  Reward = 0
+Distance Difference = 0,471405  Reward = 0
+Distance Difference = -0,1199341  Reward = 0
+ERROR: Shader TextMeshPro/Sprite shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader UI/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1544952  Reward = 0
+Distance Difference = -0,6615601  Reward = 0
+Distance Difference = 0,6480713  Reward = 0
+Distance Difference = -0,7760925  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05070496  Reward = 0
+Distance Difference = 0,228241  Reward = 0
+Distance Difference = 0,2574921  Reward = 0
+Distance Difference = -0,9229279  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6920471  Reward = 0
+Distance Difference = 0,08285522  Reward = 0
+Distance Difference = -0,5489655  Reward = 0
+Distance Difference = -0,3748169  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2751312  Reward = 0
+Distance Difference = -0,6540375  Reward = 0
+Distance Difference = 0,2965088  Reward = 0
+Distance Difference = 0,3768311  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8117676  Reward = 0
+Distance Difference = -0,9246216  Reward = 0
+Distance Difference = 0,6416779  Reward = 0
+Distance Difference = -0,554245  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3257141  Reward = 0
+Distance Difference = 0,112915  Reward = 0
+Distance Difference = 0,2541809  Reward = 0
+Distance Difference = -0,9412994  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1222382  Reward = 0
+Distance Difference = -0,60466  Reward = 0
+Distance Difference = 0,09231567  Reward = 0
+Distance Difference = -0,3795624  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1080322  Reward = 0
+Distance Difference = 0,2203979  Reward = 0
+Distance Difference = 0,02462769  Reward = 0
+Distance Difference = -0,6795197  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03141785  Reward = 0
+Distance Difference = -0,4310608  Reward = 0
+Distance Difference = 0,4729156  Reward = 0
+Distance Difference = -0,01080322  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01896667  Reward = 0
+Distance Difference = 0,2872772  Reward = 0
+Distance Difference = 0,1846771  Reward = 0
+Distance Difference = -0,004302979  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1918488  Reward = 0
+Distance Difference = 0,1076813  Reward = 0
+Distance Difference = 0,06463623  Reward = 0
+Distance Difference = 0,3784027  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1171875  Reward = 0
+Distance Difference = 0,1060486  Reward = 0
+Distance Difference = 0,01451111  Reward = 0
+Distance Difference = -0,4314575  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04380798  Reward = 0
+Distance Difference = 0,03948975  Reward = 0
+Distance Difference = 0,2881317  Reward = 0
+Distance Difference = -0,7030945  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01399231  Reward = 0
+Distance Difference = 0,01251221  Reward = 0
+Distance Difference = -0,2640839  Reward = 0
+Distance Difference = -0,7425842  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,132843  Reward = 0
+Distance Difference = 0,3477478  Reward = 0
+Distance Difference = -0,104248  Reward = 0
+Distance Difference = -0,684845  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1825256  Reward = 0
+Distance Difference = 0,4008636  Reward = 0
+Distance Difference = -0,03610229  Reward = 0
+Distance Difference = -0,4701385  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05592346  Reward = 0
+Distance Difference = -0,4648743  Reward = 0
+Distance Difference = -0,3149261  Reward = 0
+Distance Difference = -0,3889771  Reward = 0
+Steps:100
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,02438354  Reward = 0
+Distance Difference = 0,1169434  Reward = 0
+Distance Difference = -0,1291809  Reward = 0
+Distance Difference = -0,3872833  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,008880615  Reward = 0
+Distance Difference = 0,3484955  Reward = 0
+Distance Difference = -0,04824829  Reward = 0
+Distance Difference = -0,16539  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2055054  Reward = 0
+Distance Difference = 0,5797119  Reward = 0
+Distance Difference = -0,01390076  Reward = 0
+Distance Difference = 0,1727295  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,08192444  Reward = 0
+Distance Difference = -0,4068146  Reward = 0
+Distance Difference = -0,5789337  Reward = 0
+Distance Difference = 0,06445313  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2770844  Reward = 0
+Distance Difference = 0,2184143  Reward = 0
+Distance Difference = 0,2358093  Reward = 0
+Distance Difference = -0,08598328  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5970459  Reward = 0
+Distance Difference = 0,3290405  Reward = 0
+Distance Difference = 0,08491516  Reward = 0
+Distance Difference = -0,1666718  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2366486  Reward = 0
+Distance Difference = 0,02085876  Reward = 0
+Distance Difference = 0,5410004  Reward = 0
+Distance Difference = -0,32341  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2614441  Reward = 0
+Distance Difference = 0,07853699  Reward = 0
+Distance Difference = -0,4163971  Reward = 0
+Distance Difference = 0,1301117  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4771729  Reward = 0
+Distance Difference = 0,02882385  Reward = 0
+Distance Difference = -0,6819458  Reward = 0
+Distance Difference = 0,243866  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1913147  Reward = 0
+Distance Difference = -0,4816284  Reward = 0
+Distance Difference = 0,1009216  Reward = 0
+Distance Difference = -0,04911804  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4540558  Reward = 0
+Distance Difference = -0,7868958  Reward = 0
+Distance Difference = 0,5133362  Reward = 0
+Distance Difference = -0,07493591  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3093262  Reward = 0
+Distance Difference = 0,1568909  Reward = 0
+Distance Difference = -0,4282532  Reward = 0
+Distance Difference = -0,07528687  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1188202  Reward = 0
+Distance Difference = 0,5921021  Reward = 0
+Distance Difference = -0,7610779  Reward = 0
+Distance Difference = -0,07666016  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,322052  Reward = 0
+Distance Difference = -0,46875  Reward = 0
+Distance Difference = -0,9618835  Reward = 0
+Distance Difference = -0,03277588  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5043945  Reward = 0
+Distance Difference = -0,5216675  Reward = 0
+Distance Difference = -1,055481  Reward = 0
+Distance Difference = -0,01220703  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2905273  Reward = 0
+Distance Difference = 0,3182068  Reward = 0
+Distance Difference = -1,093292  Reward = 0
+Distance Difference = -0,0700531  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01254272  Reward = 0
+Distance Difference = 0,1187439  Reward = 0
+Distance Difference = -0,4460144  Reward = 0
+Distance Difference = -0,127243  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,09333801  Reward = 0
+Distance Difference = -0,6580811  Reward = 0
+Distance Difference = -0,8877106  Reward = 0
+Distance Difference = -0,1588898  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02818298  Reward = 0
+Distance Difference = 0,2629089  Reward = 0
+Distance Difference = 0,165329  Reward = 0
+Distance Difference = -0,2052307  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2823486  Reward = 0
+Distance Difference = 0,5818481  Reward = 0
+Distance Difference = 0,6036987  Reward = 0
+Distance Difference = 0,003997803  Reward = 0
+Steps:200
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2418518  Reward = 0
+Distance Difference = 0,6090088  Reward = 0
+Distance Difference = 0,2381592  Reward = 0
+Distance Difference = 0,0005950928  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5219421  Reward = 0
+Distance Difference = -0,06762695  Reward = 0
+Distance Difference = -0,6011658  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,8393555  Reward = 0
+Distance Difference = -0,2455444  Reward = 0
+Distance Difference = 0,2899017  Reward = 0
+Distance Difference = -0,2421112  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9581299  Reward = 0
+Distance Difference = -0,2393341  Reward = 0
+Distance Difference = 0,1076202  Reward = 0
+Distance Difference = 0,08468628  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,09166  Reward = 0
+Distance Difference = -0,1627197  Reward = 0
+Distance Difference = 0,5674438  Reward = 0
+Distance Difference = -0,3085632  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,170837  Reward = 0
+Distance Difference = 0,234436  Reward = 0
+Distance Difference = -0,469574  Reward = 0
+Distance Difference = 0,138031  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,204178  Reward = 0
+Distance Difference = -0,132782  Reward = 0
+Distance Difference = 0,3424072  Reward = 0
+Distance Difference = 0,0504303  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,0176239  Reward = 0
+Distance Difference = -0,2828217  Reward = 0
+Distance Difference = 0,129303  Reward = 0
+Distance Difference = 0,4064941  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5074463  Reward = 0
+Distance Difference = -0,4947052  Reward = 0
+Distance Difference = -0,5980072  Reward = 0
+Distance Difference = 0,158905  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2001953  Reward = 0
+Distance Difference = -0,6873016  Reward = 0
+Distance Difference = 0,2763367  Reward = 0
+Distance Difference = 0,05622864  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6084595  Reward = 0
+Distance Difference = -0,8180389  Reward = 0
+Distance Difference = 0,1012726  Reward = 0
+Distance Difference = -0,6647339  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9387054  Reward = 0
+Distance Difference = -0,3290405  Reward = 0
+Distance Difference = -0,4984436  Reward = 0
+Distance Difference = -0,9279785  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1583252  Reward = 0
+Distance Difference = 0,4986267  Reward = 0
+Distance Difference = -0,5890656  Reward = 0
+Distance Difference = -1,036545  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,611618  Reward = 0
+Distance Difference = -0,1708069  Reward = 0
+Distance Difference = -0,1024475  Reward = 0
+Distance Difference = 0,1132355  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9258881  Reward = 0
+Distance Difference = -0,06317139  Reward = 0
+Distance Difference = -0,003082275  Reward = 0
+Distance Difference = 0,5708313  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1627197  Reward = 0
+Distance Difference = -0,2641602  Reward = 0
+Distance Difference = 0,1025848  Reward = 0
+Distance Difference = -0,4694519  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6227417  Reward = 0
+Distance Difference = -0,1991425  Reward = 0
+Distance Difference = -0,11026  Reward = 0
+Distance Difference = -0,1822357  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9450531  Reward = 0
+Distance Difference = -0,08309937  Reward = 0
+Distance Difference = -0,2016144  Reward = 0
+Distance Difference = 0,4557037  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1556702  Reward = 0
+Distance Difference = -0,04728699  Reward = 0
+Distance Difference = -0,0859375  Reward = 0
+Distance Difference = -0,5178528  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6419678  Reward = 0
+Distance Difference = -0,02153015  Reward = 0
+Distance Difference = -0,2246246  Reward = 0
+Distance Difference = -0,9181824  Reward = 0
+Steps:300
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2541504  Reward = 0
+Distance Difference = -0,2084045  Reward = 0
+Distance Difference = -0,08131409  Reward = 0
+Distance Difference = -1,102631  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4305725  Reward = 0
+Distance Difference = -0,4054565  Reward = 0
+Distance Difference = -0,05145264  Reward = 0
+Distance Difference = -0,4468689  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6927338  Reward = 0
+Distance Difference = -0,6873932  Reward = 0
+Distance Difference = -0,03511047  Reward = 0
+Distance Difference = 0,3060913  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3690491  Reward = 0
+Distance Difference = 0,1592102  Reward = 0
+Distance Difference = 0,2214966  Reward = 0
+Distance Difference = -0,5192108  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,8358917  Reward = 0
+Distance Difference = -0,5795288  Reward = 0
+Distance Difference = 0,3285828  Reward = 0
+Distance Difference = 0,3193054  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,064575  Reward = 0
+Distance Difference = 0,2800446  Reward = 0
+Distance Difference = 0,1277618  Reward = 0
+Distance Difference = -0,5748291  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,125931  Reward = 0
+Distance Difference = 0,1027832  Reward = 0
+Distance Difference = -0,2012329  Reward = 0
+Distance Difference = -0,2264252  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4563751  Reward = 0
+Distance Difference = -0,4862213  Reward = 0
+Distance Difference = -0,5511932  Reward = 0
+Distance Difference = -0,08062744  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2460022  Reward = 0
+Distance Difference = 0,1952057  Reward = 0
+Distance Difference = 0,2241211  Reward = 0
+Distance Difference = -0,7235718  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6122284  Reward = 0
+Distance Difference = -0,5670776  Reward = 0
+Distance Difference = 0,08097839  Reward = 0
+Distance Difference = -1,012787  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2437744  Reward = 0
+Distance Difference = -0,8929138  Reward = 0
+Distance Difference = -0,6827545  Reward = 0
+Distance Difference = 0,124939  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6351471  Reward = 0
+Distance Difference = -0,3611298  Reward = 0
+Distance Difference = -0,9996643  Reward = 0
+Distance Difference = -0,639801  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,795639  Reward = 0
+Distance Difference = 0,25  Reward = 0
+Distance Difference = -1,13121  Reward = 0
+Distance Difference = -0,2540283  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8445435  Reward = 0
+Distance Difference = 0,499588  Reward = 0
+Distance Difference = -1,170288  Reward = 0
+Distance Difference = -0,09249878  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8638916  Reward = 0
+Distance Difference = -0,1571198  Reward = 0
+Distance Difference = -1,10437  Reward = 0
+Distance Difference = -0,7506409  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3478394  Reward = 0
+Distance Difference = 0,194046  Reward = 0
+Distance Difference = -1,076279  Reward = 0
+Distance Difference = -1,006744  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6599121  Reward = 0
+Distance Difference = -0,2791138  Reward = 0
+Distance Difference = -1,151962  Reward = 0
+Distance Difference = -1,132599  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7636566  Reward = 0
+Distance Difference = 0,003509521  Reward = 0
+Distance Difference = -1,185562  Reward = 0
+Distance Difference = -1,175293  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8348236  Reward = 0
+Distance Difference = -0,1387787  Reward = 0
+Distance Difference = -1,197464  Reward = 0
+Distance Difference = -0,4772034  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3359528  Reward = 0
+Distance Difference = -0,05656433  Reward = 0
+Distance Difference = -1,21254  Reward = 0
+Distance Difference = -0,8174744  Reward = 0
+Steps:400
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1268311  Reward = 0
+Distance Difference = 0,3702545  Reward = 0
+Distance Difference = -1,158661  Reward = 0
+Distance Difference = -0,3294067  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6484833  Reward = 0
+Distance Difference = 0,6392822  Reward = 0
+Distance Difference = -1,084442  Reward = 0
+Distance Difference = -0,1247253  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9358673  Reward = 0
+Distance Difference = -0,451416  Reward = 0
+Distance Difference = -0,441864  Reward = 0
+Distance Difference = 0,4355164  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,932373  Reward = 0
+Distance Difference = 0,3429413  Reward = 0
+Distance Difference = -0,171936  Reward = 0
+Distance Difference = -0,4207153  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3746033  Reward = 0
+Distance Difference = 0,6432037  Reward = 0
+Distance Difference = -0,05889893  Reward = 0
+Distance Difference = -0,8265686  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5089722  Reward = 0
+Distance Difference = 0,7307129  Reward = 0
+Distance Difference = -0,3937073  Reward = 0
+Distance Difference = 0,1977234  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1999054  Reward = 0
+Distance Difference = 0,2918701  Reward = 0
+Distance Difference = -0,3392029  Reward = 0
+Distance Difference = 0,06988525  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3003845  Reward = 0
+Distance Difference = -0,362793  Reward = 0
+Distance Difference = -0,2167664  Reward = 0
+Distance Difference = -0,6701355  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3987579  Reward = 0
+Distance Difference = 0,2050781  Reward = 0
+Distance Difference = -0,09393311  Reward = 0
+Distance Difference = -0,9926453  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1551361  Reward = 0
+Distance Difference = 0,5418701  Reward = 0
+Distance Difference = -0,2333374  Reward = 0
+Distance Difference = -1,108429  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7005157  Reward = 0
+Distance Difference = -0,3974609  Reward = 0
+Distance Difference = -0,09759521  Reward = 0
+Distance Difference = 0,07427979  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9721375  Reward = 0
+Distance Difference = 0,1972504  Reward = 0
+Distance Difference = -0,1455994  Reward = 0
+Distance Difference = 0,5193481  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3917084  Reward = 0
+Distance Difference = 0,4241638  Reward = 0
+Distance Difference = -0,06201172  Reward = 0
+Distance Difference = -0,4410095  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,8738861  Reward = 0
+Distance Difference = -0,2951813  Reward = 0
+Distance Difference = -0,4494629  Reward = 0
+Distance Difference = -0,8962708  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,052307  Reward = 0
+Distance Difference = 0,09144592  Reward = 0
+Distance Difference = -0,7780151  Reward = 0
+Distance Difference = -0,3608093  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,081024  Reward = 0
+Distance Difference = 0,03392029  Reward = 0
+Distance Difference = -0,3171387  Reward = 0
+Distance Difference = -0,8084412  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,003852844  Reward = 0
+Distance Difference = -0,03939819  Reward = 0
+Distance Difference = -0,660675  Reward = 0
+Distance Difference = -0,3250732  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,00138092  Reward = 0
+Distance Difference = -0,05197144  Reward = 0
+Distance Difference = -0,7330933  Reward = 0
+Distance Difference = -0,7956543  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3815002  Reward = 0
+Distance Difference = 0,0927124  Reward = 0
+Distance Difference = -0,5809937  Reward = 0
+Distance Difference = -0,3198853  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3620453  Reward = 0
+Distance Difference = 0,03425598  Reward = 0
+Distance Difference = -0,2402344  Reward = 0
+Distance Difference = -0,7953796  Reward = 0
+Steps:500
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1397018  Reward = 0
+Distance Difference = -0,02555847  Reward = 0
+Distance Difference = -0,04995728  Reward = 0
+Distance Difference = 0,1373291  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6365204  Reward = 0
+Distance Difference = 0,1786652  Reward = 0
+Distance Difference = 0,1168213  Reward = 0
+Distance Difference = 0,04760742  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1752777  Reward = 0
+Distance Difference = -0,3840179  Reward = 0
+Distance Difference = 0,2870789  Reward = 0
+Distance Difference = -0,6368103  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4537735  Reward = 0
+Distance Difference = -0,1526642  Reward = 0
+Distance Difference = 0,008758545  Reward = 0
+Distance Difference = -0,9299622  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1811981  Reward = 0
+Distance Difference = 0,3938751  Reward = 0
+Distance Difference = 0,06576538  Reward = 0
+Distance Difference = -1,049652  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4655991  Reward = 0
+Distance Difference = -0,4481812  Reward = 0
+Distance Difference = -0,269043  Reward = 0
+Distance Difference = -1,140594  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5881424  Reward = 0
+Distance Difference = -0,1759491  Reward = 0
+Distance Difference = -0,5246887  Reward = 0
+Distance Difference = -0,4636536  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7035217  Reward = 0
+Distance Difference = 0,4486847  Reward = 0
+Distance Difference = -0,6424255  Reward = 0
+Distance Difference = 0,2752686  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2850952  Reward = 0
+Distance Difference = 0,1734161  Reward = 0
+Distance Difference = -0,610199  Reward = 0
+Distance Difference = 0,5735474  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1078186  Reward = 0
+Distance Difference = -0,5408936  Reward = 0
+Distance Difference = -0,07003784  Reward = 0
+Distance Difference = -0,3196106  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5773621  Reward = 0
+Distance Difference = -0,9260101  Reward = 0
+Distance Difference = -0,1594238  Reward = 0
+Distance Difference = -0,6087036  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2272034  Reward = 0
+Distance Difference = -0,3742065  Reward = 0
+Distance Difference = -0,1997681  Reward = 0
+Distance Difference = 0,1613464  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5879364  Reward = 0
+Distance Difference = -0,8506165  Reward = 0
+Distance Difference = -0,4436951  Reward = 0
+Distance Difference = 0,05450439  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2327728  Reward = 0
+Distance Difference = -0,3416595  Reward = 0
+Distance Difference = -0,5665894  Reward = 0
+Distance Difference = 0,009857178  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6194916  Reward = 0
+Distance Difference = -0,8558502  Reward = 0
+Distance Difference = -0,09912109  Reward = 0
+Distance Difference = -0,6643372  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2515717  Reward = 0
+Distance Difference = -0,3436737  Reward = 0
+Distance Difference = -0,003173828  Reward = 0
+Distance Difference = 0,2301025  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6034241  Reward = 0
+Distance Difference = -0,8568115  Reward = 0
+Distance Difference = -0,002624512  Reward = 0
+Distance Difference = 0,08291626  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7862396  Reward = 0
+Distance Difference = 0,1864777  Reward = 0
+Distance Difference = 0,06848145  Reward = 0
+Distance Difference = 0,5519104  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3947296  Reward = 0
+Distance Difference = -0,6354523  Reward = 0
+Distance Difference = 0,0743103  Reward = 0
+Distance Difference = -0,3851624  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3722839  Reward = 0
+Distance Difference = -0,9777527  Reward = 0
+Distance Difference = 0,2827454  Reward = 0
+Distance Difference = -0,7654419  Reward = 0
+Steps:600
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5638428  Reward = 0
+Distance Difference = 0,1405334  Reward = 0
+Distance Difference = 0,3682251  Reward = 0
+Distance Difference = -0,3092041  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9406891  Reward = 0
+Distance Difference = 0,5892029  Reward = 0
+Distance Difference = 0,167511  Reward = 0
+Distance Difference = 0,4077759  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,107925  Reward = 0
+Distance Difference = -0,4621735  Reward = 0
+Distance Difference = 0,05636597  Reward = 0
+Distance Difference = 0,6912842  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,0892334  Reward = 0
+Distance Difference = -0,8640442  Reward = 0
+Distance Difference = 0,01449585  Reward = 0
+Distance Difference = 0,2750244  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6769867  Reward = 0
+Distance Difference = -1,06218  Reward = 0
+Distance Difference = 0,08816528  Reward = 0
+Distance Difference = -0,6019592  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2687531  Reward = 0
+Distance Difference = -1,147858  Reward = 0
+Distance Difference = -0,07568359  Reward = 0
+Distance Difference = -0,9154053  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7994461  Reward = 0
+Distance Difference = -0,4663391  Reward = 0
+Distance Difference = -0,2565918  Reward = 0
+Distance Difference = -0,3693848  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,022659  Reward = 0
+Distance Difference = 0,3356781  Reward = 0
+Distance Difference = -0,3582764  Reward = 0
+Distance Difference = -0,5376587  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,108322  Reward = 0
+Distance Difference = 0,6705322  Reward = 0
+Distance Difference = -0,2994385  Reward = 0
+Distance Difference = 0,05697632  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,144836  Reward = 0
+Distance Difference = 0,2660522  Reward = 0
+Distance Difference = -0,3912659  Reward = 0
+Distance Difference = 0,02627563  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,150742  Reward = 0
+Distance Difference = 0,6413879  Reward = 0
+Distance Difference = -0,4535522  Reward = 0
+Distance Difference = -0,01083374  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,184296  Reward = 0
+Distance Difference = -0,3945313  Reward = 0
+Distance Difference = -0,37854  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,208328  Reward = 0
+Distance Difference = -0,1534119  Reward = 0
+Distance Difference = -0,2556763  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,196877  Reward = 0
+Distance Difference = -0,5917206  Reward = 0
+Distance Difference = -0,09887695  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01023102  Reward = 0
+Distance Difference = -0,9052124  Reward = 0
+Distance Difference = 0,0579834  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,00378418  Reward = 0
+Distance Difference = -1,078583  Reward = 0
+Distance Difference = -0,213562  Reward = 0
+Distance Difference = 0,493866  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5342865  Reward = 0
+Distance Difference = -1,151062  Reward = 0
+Distance Difference = 0,4109497  Reward = 0
+Distance Difference = 0,7284851  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2090683  Reward = 0
+Distance Difference = -0,4680481  Reward = 0
+Distance Difference = 0,6707153  Reward = 0
+Distance Difference = -0,4176636  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,07307434  Reward = 0
+Distance Difference = 0,3457336  Reward = 0
+Distance Difference = -0,04025269  Reward = 0
+Distance Difference = 0,3518372  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01617432  Reward = 0
+Distance Difference = 0,6780396  Reward = 0
+Distance Difference = 0,3882446  Reward = 0
+Distance Difference = 0,6629333  Reward = 0
+Steps:700
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,816864  Reward = 0
+Distance Difference = 0,5591431  Reward = 0
+Distance Difference = -0,4461975  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5327377  Reward = 0
+Distance Difference = 0,8596802  Reward = 0
+Distance Difference = 0,6195068  Reward = 0
+Distance Difference = -0,172699  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2085266  Reward = 0
+Distance Difference = 0,3452454  Reward = 0
+Distance Difference = 0,633667  Reward = 0
+Distance Difference = -0,05825806  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,627861  Reward = 0
+Distance Difference = 0,6620636  Reward = 0
+Distance Difference = 0,628418  Reward = 0
+Distance Difference = -0,692627  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9573593  Reward = 0
+Distance Difference = -0,3925323  Reward = 0
+Distance Difference = 0,5169983  Reward = 0
+Distance Difference = 0,1218872  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,053772  Reward = 0
+Distance Difference = 0,2958069  Reward = 0
+Distance Difference = 0,09243774  Reward = 0
+Distance Difference = 0,005950928  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,120567  Reward = 0
+Distance Difference = 0,4634552  Reward = 0
+Distance Difference = 0,02770996  Reward = 0
+Distance Difference = 0,02984619  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,147423  Reward = 0
+Distance Difference = 0,182663  Reward = 0
+Distance Difference = 0,03344727  Reward = 0
+Distance Difference = 0,5321045  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4631958  Reward = 0
+Distance Difference = -0,4595337  Reward = 0
+Distance Difference = 0,0111084  Reward = 0
+Distance Difference = -0,4987793  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1796722  Reward = 0
+Distance Difference = 0,2133026  Reward = 0
+Distance Difference = 0,00378418  Reward = 0
+Distance Difference = -0,1987915  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7903023  Reward = 0
+Distance Difference = 0,5326691  Reward = 0
+Distance Difference = 0,342041  Reward = 0
+Distance Difference = -0,3991089  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3161049  Reward = 0
+Distance Difference = -0,4378662  Reward = 0
+Distance Difference = -0,0446167  Reward = 0
+Distance Difference = 0,4103088  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1178398  Reward = 0
+Distance Difference = -0,8397369  Reward = 0
+Distance Difference = 0,105896  Reward = 0
+Distance Difference = -0,5270081  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7316208  Reward = 0
+Distance Difference = 0,1517792  Reward = 0
+Distance Difference = 0,04711914  Reward = 0
+Distance Difference = -0,1368408  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,01984  Reward = 0
+Distance Difference = -0,5941162  Reward = 0
+Distance Difference = -0,00680542  Reward = 0
+Distance Difference = -0,04147339  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,134621  Reward = 0
+Distance Difference = -0,9410858  Reward = 0
+Distance Difference = -0,07339478  Reward = 0
+Distance Difference = -0,2045288  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 1,188431  Reward = 0
+Distance Difference = -1,108887  Reward = 0
+Distance Difference = 0,0619812  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4823761  Reward = 0
+Distance Difference = -1,177521  Reward = 0
+Distance Difference = 0,02258301  Reward = 0
+Distance Difference = -0,2780762  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1873703  Reward = 0
+Distance Difference = -1,207153  Reward = 0
+Distance Difference = 0,02386475  Reward = 0
+Distance Difference = -0,1874084  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7150497  Reward = 0
+Distance Difference = -1,20578  Reward = 0
+Distance Difference = 0,02664185  Reward = 0
+Distance Difference = -0,1098633  Reward = 0
+Steps:800
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9014034  Reward = 0
+Distance Difference = -1,218719  Reward = 0
+Distance Difference = 0,1024475  Reward = 0
+Distance Difference = 0,4881287  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9158516  Reward = 0
+Distance Difference = -1,20401  Reward = 0
+Distance Difference = 0,01992798  Reward = 0
+Distance Difference = -0,4668274  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3397236  Reward = 0
+Distance Difference = -1,111298  Reward = 0
+Distance Difference = -0,04345703  Reward = 0
+Distance Difference = -0,1385498  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1245441  Reward = 0
+Distance Difference = -1,07074  Reward = 0
+Distance Difference = 0,03460693  Reward = 0
+Distance Difference = 0,07192993  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1807861  Reward = 0
+Distance Difference = -1,145477  Reward = 0
+Distance Difference = -0,1050415  Reward = 0
+Distance Difference = 0,4095459  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05308723  Reward = 0
+Distance Difference = -0,466156  Reward = 0
+Distance Difference = -0,03106689  Reward = 0
+Distance Difference = -0,2186584  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01626396  Reward = 0
+Distance Difference = -0,9074402  Reward = 0
+Distance Difference = -0,0001525879  Reward = 0
+Distance Difference = 0,01498413  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,003648758  Reward = 0
+Distance Difference = -1,093201  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2128296  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08294678  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08184814  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6777954  Reward = 0
+Distance Difference = -0,4034424  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,9824524  Reward = 0
+Distance Difference = -0,6631165  Reward = 0
+Distance Difference = 0,4046936  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4014893  Reward = 0
+Distance Difference = -1,028992  Reward = 0
+Distance Difference = 0,4441223  Reward = 0
+Distance Difference = -0,4944153  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4923115  Reward = 0
+Distance Difference = -0,9871216  Reward = 0
+Distance Difference = 0,9014282  Reward = 0
+Distance Difference = 0,3329163  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3306522  Reward = 0
+Distance Difference = -0,9014587  Reward = 0
+Distance Difference = 0,3626404  Reward = 0
+Distance Difference = 0,6726685  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,124094  Reward = 0
+Distance Difference = -0,3685608  Reward = 0
+Distance Difference = -0,3093262  Reward = 0
+Distance Difference = 0,7999268  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6327171  Reward = 0
+Distance Difference = -0,5585938  Reward = 0
+Distance Difference = -0,4773865  Reward = 0
+Distance Difference = -0,2893677  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2564507  Reward = 0
+Distance Difference = -0,7292786  Reward = 0
+Distance Difference = 0,2655029  Reward = 0
+Distance Difference = -0,1115417  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4717197  Reward = 0
+Distance Difference = -0,8164063  Reward = 0
+Distance Difference = 0,7129822  Reward = 0
+Distance Difference = 0,1615601  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2300472  Reward = 0
+Distance Difference = -0,8496704  Reward = 0
+Distance Difference = 0,9017944  Reward = 0
+Distance Difference = 0,06195068  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5697136  Reward = 0
+Distance Difference = -0,3479309  Reward = 0
+Distance Difference = -0,08602905  Reward = 0
+Distance Difference = -0,2390137  Reward = 0
+Steps:900
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,265295  Reward = 0
+Distance Difference = -0,8344727  Reward = 0
+Distance Difference = 0,619812  Reward = 0
+Distance Difference = -0,3856201  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5450268  Reward = 0
+Distance Difference = 0,1762695  Reward = 0
+Distance Difference = 0,9124756  Reward = 0
+Distance Difference = -0,3457031  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3069  Reward = 0
+Distance Difference = 0,5547791  Reward = 0
+Distance Difference = -0,08453369  Reward = 0
+Distance Difference = -0,2363586  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1144295  Reward = 0
+Distance Difference = -0,2974854  Reward = 0
+Distance Difference = 0,4913025  Reward = 0
+Distance Difference = -0,03616333  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5735817  Reward = 0
+Distance Difference = -0,116272  Reward = 0
+Distance Difference = 0,7255249  Reward = 0
+Distance Difference = -0,3111572  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7679291  Reward = 0
+Distance Difference = 0,4297791  Reward = 0
+Distance Difference = -0,04153442  Reward = 0
+Distance Difference = -0,5416565  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,851429  Reward = 0
+Distance Difference = -0,471344  Reward = 0
+Distance Difference = -0,3414001  Reward = 0
+Distance Difference = -0,6463318  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8867493  Reward = 0
+Distance Difference = 0,2015076  Reward = 0
+Distance Difference = -0,1355896  Reward = 0
+Distance Difference = -0,6980591  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3569069  Reward = 0
+Distance Difference = 0,3368225  Reward = 0
+Distance Difference = 0,2926941  Reward = 0
+Distance Difference = -0,8059692  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5415077  Reward = 0
+Distance Difference = 0,3792114  Reward = 0
+Distance Difference = -0,06912231  Reward = 0
+Distance Difference = -0,9851685  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2112236  Reward = 0
+Distance Difference = -0,3478088  Reward = 0
+Distance Difference = -0,02575684  Reward = 0
+Distance Difference = -1,065369  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4228668  Reward = 0
+Distance Difference = 0,3362122  Reward = 0
+Distance Difference = -0,102478  Reward = 0
+Distance Difference = -0,9766235  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1652336  Reward = 0
+Distance Difference = 0,1275024  Reward = 0
+Distance Difference = -0,04675293  Reward = 0
+Distance Difference = -0,936676  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6014633  Reward = 0
+Distance Difference = -0,5885315  Reward = 0
+Distance Difference = -0,0173645  Reward = 0
+Distance Difference = -1,000366  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2372551  Reward = 0
+Distance Difference = -0,7619629  Reward = 0
+Distance Difference = 0,3329163  Reward = 0
+Distance Difference = -1,029388  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,624939  Reward = 0
+Distance Difference = -0,3088379  Reward = 0
+Distance Difference = 0,1305237  Reward = 0
+Distance Difference = -0,9793701  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4529495  Reward = 0
+Distance Difference = -0,7719421  Reward = 0
+Distance Difference = -0,2643127  Reward = 0
+Distance Difference = -0,3998718  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,9023705  Reward = 0
+Distance Difference = -0,3108215  Reward = 0
+Distance Difference = -0,1021118  Reward = 0
+Distance Difference = -0,5514526  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3627052  Reward = 0
+Distance Difference = 0,4038391  Reward = 0
+Distance Difference = -0,03381348  Reward = 0
+Distance Difference = -0,4179688  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,8156548  Reward = 0
+Distance Difference = 0,6512146  Reward = 0
+Distance Difference = -0,005126953  Reward = 0
+Distance Difference = -0,3614502  Reward = 0
+Steps:1000
+Game Over: Tie, time ran out
+Steps:0
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 12.811500 ms
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 2151.
+Total: 2.776700 ms (FindLiveObjects: 0.167900 ms CreateObjectMapping: 0.102700 ms MarkObjects: 2.467500 ms  DeleteObjects: 0.038100 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 5445
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 5445
+CICS: 5445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5443
+CICS: 5443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 5445
+CICS: 5445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5443
+CICS: 5443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -26.00)
+CICS: 5544
+CICS: 5544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -26.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 5445
+CICS: 5445 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5443
+CICS: 5443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5443 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -26.00)
+CICS: 5544
+CICS: 5544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -26.00)
+CICS: 5544 AgentML_BLUE(Clone) (UnityEngine.Transform) at (42.00, 2.50, -22.00)
+CICS: 5344
+CICS: 5344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -18.00)
+CICS: 5344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (38.00, 2.50, -26.00)
+CICS: 5344 AgentML_BLUE(Clone) (UnityEngine.Transform) at (42.00, 2.50, -22.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 531
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 531
+CICS: 531 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 529
+CICS: 529 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 531
+CICS: 531 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 529
+CICS: 529 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 529 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -82.00)
+CICS: 630
+CICS: 630 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 630 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -82.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 531
+CICS: 531 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 529
+CICS: 529 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 529 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -82.00)
+CICS: 630
+CICS: 630 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 630 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -82.00)
+CICS: 630 AgentML_RED(Clone) (UnityEngine.Transform) at (-154.00, 2.50, -78.00)
+CICS: 430
+CICS: 430 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -74.00)
+CICS: 430 AgentML_RED(Clone) (UnityEngine.Transform) at (-158.00, 2.50, -82.00)
+CICS: 430 AgentML_RED(Clone) (UnityEngine.Transform) at (-154.00, 2.50, -78.00)
+EPISODE BEGIN
+Steps:0
+Distance Difference = -0,04724121  Reward = 0
+Distance Difference = 0,04017639  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,06222534  Reward = 0
+Distance Difference = -0,1199341  Reward = 0
+Distance Difference = 0,01042175  Reward = 0
+Distance Difference = -0,1082153  Reward = 0
+Distance Difference = -1,525879E-05  Reward = 0
+Distance Difference = 1,525879E-05  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,07507324  Reward = 0
+Distance Difference = 0,02449036  Reward = 0
+Distance Difference = 0,04927063  Reward = 0
+Distance Difference = -0,0246582  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3769989  Reward = 0
+Distance Difference = 0,2781219  Reward = 0
+Distance Difference = -0,0440979  Reward = 0
+Distance Difference = 0,08996582  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,678772  Reward = 0
+Distance Difference = 0,3295441  Reward = 0
+Distance Difference = 0,2310791  Reward = 0
+Distance Difference = -0,2285767  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7073669  Reward = 0
+Distance Difference = 0,3674469  Reward = 0
+Distance Difference = 0,1352997  Reward = 0
+Distance Difference = -0,4960785  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3585358  Reward = 0
+Distance Difference = 0,3253174  Reward = 0
+Distance Difference = 0,1504822  Reward = 0
+Distance Difference = -0,6005707  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,02139282  Reward = 0
+Distance Difference = 0,2714081  Reward = 0
+Distance Difference = 0,3684387  Reward = 0
+Distance Difference = -0,2913208  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1208801  Reward = 0
+Distance Difference = 0,2395172  Reward = 0
+Distance Difference = -0,1246643  Reward = 0
+Distance Difference = 0,04968262  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,0712738  Reward = 0
+Distance Difference = -0,07798767  Reward = 0
+Distance Difference = -0,3089905  Reward = 0
+Distance Difference = 0,01998901  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,194519  Reward = 0
+Distance Difference = -0,3817902  Reward = 0
+Distance Difference = -0,3917084  Reward = 0
+Distance Difference = 0,00402832  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3786926  Reward = 0
+Distance Difference = -0,04309082  Reward = 0
+Distance Difference = -0,6934204  Reward = 0
+Distance Difference = 0,208847  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8308258  Reward = 0
+Distance Difference = 0,03459167  Reward = 0
+Distance Difference = -0,5426941  Reward = 0
+Distance Difference = 3,051758E-05  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3632202  Reward = 0
+Distance Difference = -0,5184784  Reward = 0
+Distance Difference = 0,1460724  Reward = 0
+Distance Difference = -0,2679749  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1195831  Reward = 0
+Distance Difference = -0,4639587  Reward = 0
+Distance Difference = 0,1316376  Reward = 0
+Distance Difference = -0,4459534  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05747986  Reward = 0
+Distance Difference = 0,1816711  Reward = 0
+Distance Difference = -0,2015228  Reward = 0
+Distance Difference = -0,2490997  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0006866455  Reward = 0
+Distance Difference = 0,7806854  Reward = 0
+Distance Difference = 0,2803955  Reward = 0
+Distance Difference = 0,4300842  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1654816  Reward = 0
+Distance Difference = 0,3961334  Reward = 0
+Distance Difference = 0,1875916  Reward = 0
+Distance Difference = 0,4339142  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4832916  Reward = 0
+Distance Difference = 0,2201843  Reward = 0
+Distance Difference = -0,4076538  Reward = 0
+Distance Difference = 0,1671295  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08041382  Reward = 0
+Distance Difference = 0,5866394  Reward = 0
+Distance Difference = -0,6429749  Reward = 0
+Distance Difference = 0,05554199  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6813202  Reward = 0
+Distance Difference = 0,8080444  Reward = 0
+Distance Difference = -0,1692505  Reward = 0
+Distance Difference = 0,285965  Reward = 0
+Steps:100
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6269989  Reward = 0
+Distance Difference = 0,5741272  Reward = 0
+Distance Difference = -0,00213623  Reward = 0
+Distance Difference = 0,3683167  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08818054  Reward = 0
+Distance Difference = 0,1452484  Reward = 0
+Distance Difference = -0,4750519  Reward = 0
+Distance Difference = 0,4167938  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04397583  Reward = 0
+Distance Difference = 0,02024841  Reward = 0
+Distance Difference = -0,4279022  Reward = 0
+Distance Difference = 0,6784363  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 4,577637E-05  Reward = 0
+Distance Difference = -0,07615662  Reward = 0
+Distance Difference = -0,4389648  Reward = 0
+Distance Difference = 0,4978943  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2281647  Reward = 0
+Distance Difference = -0,04347229  Reward = 0
+Distance Difference = -0,6734161  Reward = 0
+Distance Difference = 0,456131  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5993805  Reward = 0
+Distance Difference = -0,03849792  Reward = 0
+Distance Difference = -0,7617188  Reward = 0
+Distance Difference = 0,4429932  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,7840271  Reward = 0
+Distance Difference = -0,3208618  Reward = 0
+Distance Difference = -0,8011169  Reward = 0
+Distance Difference = 0,4386444  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5802612  Reward = 0
+Distance Difference = -0,06466675  Reward = 0
+Distance Difference = -0,5684052  Reward = 0
+Distance Difference = 0,6556244  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2284546  Reward = 0
+Distance Difference = 0,3487091  Reward = 0
+Distance Difference = -0,2250977  Reward = 0
+Distance Difference = -0,002883911  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1208344  Reward = 0
+Distance Difference = 0,3736115  Reward = 0
+Distance Difference = 0,2557526  Reward = 0
+Distance Difference = -0,3376465  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,111908  Reward = 0
+Distance Difference = 0,1870728  Reward = 0
+Distance Difference = 0,3040009  Reward = 0
+Distance Difference = 0,09460449  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1407318  Reward = 0
+Distance Difference = 0,1682587  Reward = 0
+Distance Difference = 0,1690979  Reward = 0
+Distance Difference = -0,01568604  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03178406  Reward = 0
+Distance Difference = 0,1260681  Reward = 0
+Distance Difference = 0,08508301  Reward = 0
+Distance Difference = -0,2763672  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2191467  Reward = 0
+Distance Difference = 0,1312866  Reward = 0
+Distance Difference = 0,02102661  Reward = 0
+Distance Difference = 0,1546936  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0874939  Reward = 0
+Distance Difference = 0,1051941  Reward = 0
+Distance Difference = -0,04541016  Reward = 0
+Distance Difference = 0,583374  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4528503  Reward = 0
+Distance Difference = 0,1500854  Reward = 0
+Distance Difference = -0,2432251  Reward = 0
+Distance Difference = 0,7620544  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,09671021  Reward = 0
+Distance Difference = 0,756546  Reward = 0
+Distance Difference = -0,3546753  Reward = 0
+Distance Difference = 0,8331604  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01475525  Reward = 0
+Distance Difference = 1,030701  Reward = 0
+Distance Difference = -0,2990417  Reward = 0
+Distance Difference = 0,2736359  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4204865  Reward = 0
+Distance Difference = 1,149307  Reward = 0
+Distance Difference = -0,2348785  Reward = 0
+Distance Difference = 0,03691101  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5137329  Reward = 0
+Distance Difference = 0,5501251  Reward = 0
+Distance Difference = 0,1694183  Reward = 0
+Distance Difference = 0,4495392  Reward = 0
+Steps:200
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1107635  Reward = 0
+Distance Difference = -0,3026428  Reward = 0
+Distance Difference = 0,4795227  Reward = 0
+Distance Difference = 0,6899414  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03182983  Reward = 0
+Distance Difference = -0,6608276  Reward = 0
+Distance Difference = 0,689682  Reward = 0
+Distance Difference = 0,7397461  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02584839  Reward = 0
+Distance Difference = -0,02896118  Reward = 0
+Distance Difference = 0,4835968  Reward = 0
+Distance Difference = -0,2375183  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01741028  Reward = 0
+Distance Difference = -0,2754974  Reward = 0
+Distance Difference = 0,1911163  Reward = 0
+Distance Difference = -0,3458099  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1373901  Reward = 0
+Distance Difference = -0,05558777  Reward = 0
+Distance Difference = 0,09928894  Reward = 0
+Distance Difference = -0,1524811  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2354889  Reward = 0
+Distance Difference = 0,06939697  Reward = 0
+Distance Difference = 0,08512878  Reward = 0
+Distance Difference = 0,3039856  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3765259  Reward = 0
+Distance Difference = 0,4765778  Reward = 0
+Distance Difference = 0,1695709  Reward = 0
+Distance Difference = 0,453186  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1463165  Reward = 0
+Distance Difference = 0,6522369  Reward = 0
+Distance Difference = 0,3623047  Reward = 0
+Distance Difference = 0,3840332  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4039307  Reward = 0
+Distance Difference = 0,3973999  Reward = 0
+Distance Difference = 0,5979309  Reward = 0
+Distance Difference = 0,1462402  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2362518  Reward = 0
+Distance Difference = 0,1552277  Reward = 0
+Distance Difference = 0,5597839  Reward = 0
+Distance Difference = 0,3102417  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4191895  Reward = 0
+Distance Difference = 0,05592346  Reward = 0
+Distance Difference = 0,258316  Reward = 0
+Distance Difference = 0,5875854  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,398468  Reward = 0
+Distance Difference = 0,09744263  Reward = 0
+Distance Difference = 0,1556702  Reward = 0
+Distance Difference = 0,7398529  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1312408  Reward = 0
+Distance Difference = 0,05015564  Reward = 0
+Distance Difference = 0,1513519  Reward = 0
+Distance Difference = 0,7598572  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2922058  Reward = 0
+Distance Difference = -0,03234863  Reward = 0
+Distance Difference = 0,07359314  Reward = 0
+Distance Difference = 0,8057251  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1129761  Reward = 0
+Distance Difference = -0,0229187  Reward = 0
+Distance Difference = -0,04316711  Reward = 0
+Distance Difference = 0,7671814  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06846619  Reward = 0
+Distance Difference = -0,009048462  Reward = 0
+Distance Difference = -0,116806  Reward = 0
+Distance Difference = 0,2666626  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,07580566  Reward = 0
+Distance Difference = 0,01574707  Reward = 0
+Distance Difference = 0,06312561  Reward = 0
+Distance Difference = 0,07321167  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1116638  Reward = 0
+Distance Difference = 0,01916504  Reward = 0
+Distance Difference = -0,03102112  Reward = 0
+Distance Difference = 0,2298126  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1237793  Reward = 0
+Distance Difference = 0,006149292  Reward = 0
+Distance Difference = -0,1077881  Reward = 0
+Distance Difference = 0,08390808  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05921936  Reward = 0
+Distance Difference = -0,02738953  Reward = 0
+Distance Difference = -0,1082764  Reward = 0
+Distance Difference = 0,2390442  Reward = 0
+Steps:300
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1092987  Reward = 0
+Distance Difference = -0,241745  Reward = 0
+Distance Difference = -0,1189575  Reward = 0
+Distance Difference = 0,0191803  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2346191  Reward = 0
+Distance Difference = -0,1375275  Reward = 0
+Distance Difference = -0,3198395  Reward = 0
+Distance Difference = -0,2135773  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1117249  Reward = 0
+Distance Difference = 0,04386902  Reward = 0
+Distance Difference = -0,0372467  Reward = 0
+Distance Difference = 0,1318207  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02026367  Reward = 0
+Distance Difference = -0,1289673  Reward = 0
+Distance Difference = 0,3990936  Reward = 0
+Distance Difference = 0,2817841  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1177826  Reward = 0
+Distance Difference = -0,08416748  Reward = 0
+Distance Difference = 0,3770599  Reward = 0
+Distance Difference = 0,1049042  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1459351  Reward = 0
+Distance Difference = 0,19133  Reward = 0
+Distance Difference = 0,164032  Reward = 0
+Distance Difference = 0,03114319  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3916626  Reward = 0
+Distance Difference = 0,396698  Reward = 0
+Distance Difference = -0,06596375  Reward = 0
+Distance Difference = 0,2587738  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2005463  Reward = 0
+Distance Difference = 0,144928  Reward = 0
+Distance Difference = 0,05183411  Reward = 0
+Distance Difference = 0,6009674  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,05253601  Reward = 0
+Distance Difference = -0,2160645  Reward = 0
+Distance Difference = 0,3809357  Reward = 0
+Distance Difference = 0,463028  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02905273  Reward = 0
+Distance Difference = -0,2360229  Reward = 0
+Distance Difference = 0,1981201  Reward = 0
+Distance Difference = 0,1804199  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01211548  Reward = 0
+Distance Difference = -0,05340576  Reward = 0
+Distance Difference = -0,02565002  Reward = 0
+Distance Difference = 0,06278992  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1535187  Reward = 0
+Distance Difference = 0,05462646  Reward = 0
+Distance Difference = 0,2531128  Reward = 0
+Distance Difference = 0,01367188  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4595032  Reward = 0
+Distance Difference = 0,01942444  Reward = 0
+Distance Difference = 0,1803589  Reward = 0
+Distance Difference = 0,210083  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,6833344  Reward = 0
+Distance Difference = -0,04425049  Reward = 0
+Distance Difference = 0,07196045  Reward = 0
+Distance Difference = 0,3092346  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8188019  Reward = 0
+Distance Difference = -0,0189209  Reward = 0
+Distance Difference = 0,01954651  Reward = 0
+Distance Difference = 0,3742828  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,8627319  Reward = 0
+Distance Difference = -0,1316986  Reward = 0
+Distance Difference = 0,1186981  Reward = 0
+Distance Difference = 0,683609  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5903931  Reward = 0
+Distance Difference = 0,0131073  Reward = 0
+Distance Difference = 0,3451233  Reward = 0
+Distance Difference = 0,5416412  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2295227  Reward = 0
+Distance Difference = 0,06758118  Reward = 0
+Distance Difference = -0,1332397  Reward = 0
+Distance Difference = 0,4884567  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3114014  Reward = 0
+Distance Difference = 0,0027771  Reward = 0
+Distance Difference = -0,5551147  Reward = 0
+Distance Difference = 0,4595795  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01622009  Reward = 0
+Distance Difference = 0,09872437  Reward = 0
+Distance Difference = -0,1163788  Reward = 0
+Distance Difference = 0,4341125  Reward = 0
+Steps:400
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,130661  Reward = 0
+Distance Difference = -0,05786133  Reward = 0
+Distance Difference = 0,6177521  Reward = 0
+Distance Difference = 0,06281281  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,04850769  Reward = 0
+Distance Difference = -0,5908508  Reward = 0
+Distance Difference = 0,3165283  Reward = 0
+Distance Difference = -0,3205719  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2008667  Reward = 0
+Distance Difference = -0,3022614  Reward = 0
+Distance Difference = 0,2345428  Reward = 0
+Distance Difference = 0,1196136  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1428528  Reward = 0
+Distance Difference = -0,2198944  Reward = 0
+Distance Difference = 0,4444885  Reward = 0
+Distance Difference = 0,2949219  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1410522  Reward = 0
+Distance Difference = -0,4265289  Reward = 0
+Distance Difference = 0,1715393  Reward = 0
+Distance Difference = 0,1098328  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2003632  Reward = 0
+Distance Difference = 0,09207153  Reward = 0
+Distance Difference = 0,05735779  Reward = 0
+Distance Difference = 0,3082352  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2182617  Reward = 0
+Distance Difference = 0,2662964  Reward = 0
+Distance Difference = 0,3761292  Reward = 0
+Distance Difference = 0,6601944  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1558228  Reward = 0
+Distance Difference = 0,36203  Reward = 0
+Distance Difference = 0,8736572  Reward = 0
+Distance Difference = 0,8055573  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1365662  Reward = 0
+Distance Difference = 0,08001709  Reward = 0
+Distance Difference = 1,076096  Reward = 0
+Distance Difference = 0,5792007  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2246399  Reward = 0
+Distance Difference = -0,04833984  Reward = 0
+Distance Difference = 0,5180054  Reward = 0
+Distance Difference = -0,04344177  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01307678  Reward = 0
+Distance Difference = -0,01603699  Reward = 0
+Distance Difference = 0,3050995  Reward = 0
+Distance Difference = -0,06964111  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5834045  Reward = 0
+Distance Difference = -0,05891418  Reward = 0
+Distance Difference = 0,8297424  Reward = 0
+Distance Difference = -0,09738922  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,565918  Reward = 0
+Distance Difference = -0,06298828  Reward = 0
+Distance Difference = 0,9887543  Reward = 0
+Distance Difference = -0,09099579  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2233582  Reward = 0
+Distance Difference = -0,1859436  Reward = 0
+Distance Difference = 0,7110748  Reward = 0
+Distance Difference = 0,1697464  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1843109  Reward = 0
+Distance Difference = -0,4936676  Reward = 0
+Distance Difference = 0,6417847  Reward = 0
+Distance Difference = 0,2567673  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3265991  Reward = 0
+Distance Difference = -0,7097168  Reward = 0
+Distance Difference = 0,9002228  Reward = 0
+Distance Difference = 0,2521667  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1227264  Reward = 0
+Distance Difference = -0,1843719  Reward = 0
+Distance Difference = 0,9876251  Reward = 0
+Distance Difference = 0,2157745  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03746033  Reward = 0
+Distance Difference = 0,6218567  Reward = 0
+Distance Difference = 1,08577  Reward = 0
+Distance Difference = 0,151413  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3269806  Reward = 0
+Distance Difference = 0,3270416  Reward = 0
+Distance Difference = 0,5238953  Reward = 0
+Distance Difference = -0,1077652  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4300385  Reward = 0
+Distance Difference = -0,1190033  Reward = 0
+Distance Difference = 0,3168488  Reward = 0
+Distance Difference = -0,0585556  Reward = 0
+Steps:500
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1669617  Reward = 0
+Distance Difference = -0,3006744  Reward = 0
+Distance Difference = 0,8213654  Reward = 0
+Distance Difference = 0,18647  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05731201  Reward = 0
+Distance Difference = -0,01731873  Reward = 0
+Distance Difference = 0,6750793  Reward = 0
+Distance Difference = 0,3151321  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,12146  Reward = 0
+Distance Difference = 0,6804047  Reward = 0
+Distance Difference = 0,2681732  Reward = 0
+Distance Difference = 0,01359558  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1477966  Reward = 0
+Distance Difference = 0,9994659  Reward = 0
+Distance Difference = 0,4686584  Reward = 0
+Distance Difference = -0,06599426  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,05654907  Reward = 0
+Distance Difference = 1,107178  Reward = 0
+Distance Difference = 0,5368958  Reward = 0
+Distance Difference = -0,1303558  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1575928  Reward = 0
+Distance Difference = 1,053513  Reward = 0
+Distance Difference = 0,2102509  Reward = 0
+Distance Difference = -0,3834991  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4768066  Reward = 0
+Distance Difference = 0,882431  Reward = 0
+Distance Difference = 0,07373047  Reward = 0
+Distance Difference = -0,4101944  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5247498  Reward = 0
+Distance Difference = 0,8961334  Reward = 0
+Distance Difference = 0,3874207  Reward = 0
+Distance Difference = -0,2327728  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2345581  Reward = 0
+Distance Difference = 0,670166  Reward = 0
+Distance Difference = 0,2317734  Reward = 0
+Distance Difference = 0,282547  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1072083  Reward = 0
+Distance Difference = 0,2663422  Reward = 0
+Distance Difference = -0,1593475  Reward = 0
+Distance Difference = 0,03419495  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2046967  Reward = 0
+Distance Difference = 0,4433441  Reward = 0
+Distance Difference = -0,05293274  Reward = 0
+Distance Difference = -0,03608704  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,167572  Reward = 0
+Distance Difference = 0,5235596  Reward = 0
+Distance Difference = -0,008422852  Reward = 0
+Distance Difference = 0,1730042  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06045532  Reward = 0
+Distance Difference = 0,5427704  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2567139  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1049805  Reward = 0
+Distance Difference = 0,8813629  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3847351  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3069  Reward = 0
+Distance Difference = 1,071091  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5061035  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1256866  Reward = 0
+Distance Difference = 0,7939148  Reward = 0
+Distance Difference = 0,3632965  Reward = 0
+Distance Difference = 0,6451263  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01994324  Reward = 0
+Distance Difference = 0,3176498  Reward = 0
+Distance Difference = 0,2276382  Reward = 0
+Distance Difference = 0,6352234  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04951477  Reward = 0
+Distance Difference = -0,1148148  Reward = 0
+Distance Difference = 0,1889648  Reward = 0
+Distance Difference = 0,6768646  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1567535  Reward = 0
+Distance Difference = -0,4500961  Reward = 0
+Distance Difference = 0,7627716  Reward = 0
+Distance Difference = 0,6116257  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05711365  Reward = 0
+Distance Difference = -0,377594  Reward = 0
+Distance Difference = 0,3838959  Reward = 0
+Distance Difference = 0,5315018  Reward = 0
+Steps:600
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0007171631  Reward = 0
+Distance Difference = 0,116684  Reward = 0
+Distance Difference = 0,2421494  Reward = 0
+Distance Difference = 0,3448944  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5649261  Reward = 0
+Distance Difference = 0,7031174  Reward = 0
+Distance Difference = 0,07685089  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04344177  Reward = 0
+Distance Difference = 0,279541  Reward = 0
+Distance Difference = 0,9473419  Reward = 0
+Distance Difference = -0,09564209  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0001220703  Reward = 0
+Distance Difference = 0,1727524  Reward = 0
+Distance Difference = 1,064796  Reward = 0
+Distance Difference = -0,1953888  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2554092  Reward = 0
+Distance Difference = 1,152138  Reward = 0
+Distance Difference = -0,2725754  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1569366  Reward = 0
+Distance Difference = 0,0627594  Reward = 0
+Distance Difference = 1,195892  Reward = 0
+Distance Difference = -0,02809906  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1121521  Reward = 0
+Distance Difference = -0,04080963  Reward = 0
+Distance Difference = 0,568634  Reward = 0
+Distance Difference = 0,2492218  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04634094  Reward = 0
+Distance Difference = 0,02320099  Reward = 0
+Distance Difference = -0,02679443  Reward = 0
+Distance Difference = 0,3972168  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0001068115  Reward = 0
+Distance Difference = 0,02838898  Reward = 0
+Distance Difference = 0,3278427  Reward = 0
+Distance Difference = 0,7457199  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03894043  Reward = 0
+Distance Difference = 0,2036896  Reward = 0
+Distance Difference = 0,3589783  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,04267883  Reward = 0
+Distance Difference = -0,2687759  Reward = 0
+Distance Difference = 0,1314774  Reward = 0
+Distance Difference = -0,05993652  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0001220703  Reward = 0
+Distance Difference = -0,1620483  Reward = 0
+Distance Difference = 0,2526398  Reward = 0
+Distance Difference = -0,01385498  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1245422  Reward = 0
+Distance Difference = 0,3666077  Reward = 0
+Distance Difference = -0,2517395  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2082291  Reward = 0
+Distance Difference = 0,4341965  Reward = 0
+Distance Difference = -0,3272171  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2410278  Reward = 0
+Distance Difference = -0,07050323  Reward = 0
+Distance Difference = 0,168457  Reward = 0
+Distance Difference = -0,1245651  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3060303  Reward = 0
+Distance Difference = -0,03256989  Reward = 0
+Distance Difference = -0,2025528  Reward = 0
+Distance Difference = 0,2384491  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2108307  Reward = 0
+Distance Difference = 0,02082062  Reward = 0
+Distance Difference = -0,6162872  Reward = 0
+Distance Difference = 0,1759491  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7907715  Reward = 0
+Distance Difference = 0,003379822  Reward = 0
+Distance Difference = -0,5022507  Reward = 0
+Distance Difference = 0,06772614  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2484589  Reward = 0
+Distance Difference = -0,1987076  Reward = 0
+Distance Difference = -0,1960678  Reward = 0
+Distance Difference = 0,1151199  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,629425  Reward = 0
+Distance Difference = -0,11689  Reward = 0
+Distance Difference = 0,2517395  Reward = 0
+Distance Difference = 0,04150391  Reward = 0
+Steps:700
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,519516  Reward = 0
+Distance Difference = 0,352829  Reward = 0
+Distance Difference = 0,6444092  Reward = 0
+Distance Difference = 0,2825775  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4432373  Reward = 0
+Distance Difference = 0,5675735  Reward = 0
+Distance Difference = 0,6131363  Reward = 0
+Distance Difference = 0,3189621  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5644226  Reward = 0
+Distance Difference = 0,1223297  Reward = 0
+Distance Difference = 0,3723831  Reward = 0
+Distance Difference = 0,3790436  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3651428  Reward = 0
+Distance Difference = -0,2390213  Reward = 0
+Distance Difference = 0,03692627  Reward = 0
+Distance Difference = 0,3380737  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3213654  Reward = 0
+Distance Difference = -0,08737183  Reward = 0
+Distance Difference = -0,1919937  Reward = 0
+Distance Difference = 0,01353455  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1231232  Reward = 0
+Distance Difference = 0,1725769  Reward = 0
+Distance Difference = -0,3131943  Reward = 0
+Distance Difference = 0,03850555  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,0809021  Reward = 0
+Distance Difference = 0,04600525  Reward = 0
+Distance Difference = -0,08995819  Reward = 0
+Distance Difference = 0,07074738  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02406311  Reward = 0
+Distance Difference = -0,1090622  Reward = 0
+Distance Difference = 0,1177139  Reward = 0
+Distance Difference = 0,1056442  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,322876  Reward = 0
+Distance Difference = -0,0424881  Reward = 0
+Distance Difference = -0,08171082  Reward = 0
+Distance Difference = 0,2429962  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,265976  Reward = 0
+Distance Difference = -0,2928391  Reward = 0
+Distance Difference = -0,3926849  Reward = 0
+Distance Difference = 0,1881866  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1239624  Reward = 0
+Distance Difference = -0,3536987  Reward = 0
+Distance Difference = -0,09576416  Reward = 0
+Distance Difference = 0,06832123  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,09829712  Reward = 0
+Distance Difference = -0,2641525  Reward = 0
+Distance Difference = 0,01811218  Reward = 0
+Distance Difference = 0,1213684  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06037903  Reward = 0
+Distance Difference = -0,2898407  Reward = 0
+Distance Difference = -0,3612671  Reward = 0
+Distance Difference = 0,009727478  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,005004883  Reward = 0
+Distance Difference = -0,1167374  Reward = 0
+Distance Difference = -0,5561905  Reward = 0
+Distance Difference = -0,1164398  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,02766418  Reward = 0
+Distance Difference = 0,1123581  Reward = 0
+Distance Difference = -0,4357758  Reward = 0
+Distance Difference = 0,1142197  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,04615784  Reward = 0
+Distance Difference = 0,157402  Reward = 0
+Distance Difference = -0,3833313  Reward = 0
+Distance Difference = 0,2615356  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,0255127  Reward = 0
+Distance Difference = -0,1443558  Reward = 0
+Distance Difference = -0,4806824  Reward = 0
+Distance Difference = 0,2209396  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05116272  Reward = 0
+Distance Difference = -0,12957  Reward = 0
+Distance Difference = -0,4120865  Reward = 0
+Distance Difference = 0,1640625  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08349609  Reward = 0
+Distance Difference = -0,01311493  Reward = 0
+Distance Difference = -0,3173523  Reward = 0
+Distance Difference = 0,3138809  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1512451  Reward = 0
+Distance Difference = -0,0949707  Reward = 0
+Distance Difference = 0,1000977  Reward = 0
+Distance Difference = 0,2795143  Reward = 0
+Steps:800
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1554108  Reward = 0
+Distance Difference = -0,3420486  Reward = 0
+Distance Difference = 0,08393097  Reward = 0
+Distance Difference = 0,1045418  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1448517  Reward = 0
+Distance Difference = -0,3434448  Reward = 0
+Distance Difference = 0,09059906  Reward = 0
+Distance Difference = 0,03611374  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2852631  Reward = 0
+Distance Difference = 0,09802246  Reward = 0
+Distance Difference = 0,189827  Reward = 0
+Distance Difference = -0,3072205  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3505249  Reward = 0
+Distance Difference = 0,6052399  Reward = 0
+Distance Difference = 0,2907715  Reward = 0
+Distance Difference = -0,4384575  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1730957  Reward = 0
+Distance Difference = 0,5304108  Reward = 0
+Distance Difference = 0,3150482  Reward = 0
+Distance Difference = -0,4283638  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1247101  Reward = 0
+Distance Difference = -0,05189514  Reward = 0
+Distance Difference = 0,3257599  Reward = 0
+Distance Difference = -0,3903046  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1536255  Reward = 0
+Distance Difference = 0,08615112  Reward = 0
+Distance Difference = 0,5048294  Reward = 0
+Distance Difference = -0,4380569  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1728973  Reward = 0
+Distance Difference = 0,1154785  Reward = 0
+Distance Difference = 0,2377853  Reward = 0
+Distance Difference = -0,4602585  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,09623718  Reward = 0
+Distance Difference = 0,1074448  Reward = 0
+Distance Difference = -0,04963684  Reward = 0
+Distance Difference = -0,1840057  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01531982  Reward = 0
+Distance Difference = 0,2740707  Reward = 0
+Distance Difference = -0,280632  Reward = 0
+Distance Difference = -0,06604004  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1467133  Reward = 0
+Distance Difference = 0,4032516  Reward = 0
+Distance Difference = -0,02050781  Reward = 0
+Distance Difference = 0,2361908  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,03282166  Reward = 0
+Distance Difference = 0,2154999  Reward = 0
+Distance Difference = 0,04333496  Reward = 0
+Distance Difference = -0,01305389  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3933258  Reward = 0
+Distance Difference = 0,1837006  Reward = 0
+Distance Difference = -0,1827393  Reward = 0
+Distance Difference = -0,7050629  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,200119  Reward = 0
+Distance Difference = 0,145195  Reward = 0
+Distance Difference = -0,06639862  Reward = 0
+Distance Difference = -0,9896622  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06266785  Reward = 0
+Distance Difference = -0,3789139  Reward = 0
+Distance Difference = 0,3173218  Reward = 0
+Distance Difference = -0,7526169  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1336975  Reward = 0
+Distance Difference = -0,6464615  Reward = 0
+Distance Difference = 0,4559708  Reward = 0
+Distance Difference = -0,026474  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05752563  Reward = 0
+Distance Difference = -0,7201462  Reward = 0
+Distance Difference = 0,1768112  Reward = 0
+Distance Difference = 0,516098  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01127625  Reward = 0
+Distance Difference = -0,8007584  Reward = 0
+Distance Difference = 0,06047058  Reward = 0
+Distance Difference = 0,1029892  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,003005981  Reward = 0
+Distance Difference = -0,5822449  Reward = 0
+Distance Difference = 0,3710251  Reward = 0
+Distance Difference = -0,6740494  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1873932  Reward = 0
+Distance Difference = 0,1321259  Reward = 0
+Distance Difference = 0,2200394  Reward = 0
+Distance Difference = -0,6289139  Reward = 0
+Steps:900
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2580566  Reward = 0
+Distance Difference = 0,7737045  Reward = 0
+Distance Difference = -0,1676941  Reward = 0
+Distance Difference = 0,001960754  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,09840393  Reward = 0
+Distance Difference = 1,041985  Reward = 0
+Distance Difference = -0,05576324  Reward = 0
+Distance Difference = 0,2156982  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03117371  Reward = 0
+Distance Difference = 1,154137  Reward = 0
+Distance Difference = -0,2389145  Reward = 0
+Distance Difference = -0,107872  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,048172  Reward = 0
+Distance Difference = 1,201012  Reward = 0
+Distance Difference = -0,04823303  Reward = 0
+Distance Difference = -0,2377167  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,06253052  Reward = 0
+Distance Difference = 1,220566  Reward = 0
+Distance Difference = 0,2003174  Reward = 0
+Distance Difference = -0,302475  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,08851624  Reward = 0
+Distance Difference = 0,5800171  Reward = 0
+Distance Difference = -0,1480789  Reward = 0
+Distance Difference = -0,1654587  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3299866  Reward = 0
+Distance Difference = 0,3205719  Reward = 0
+Distance Difference = 0,02825928  Reward = 0
+Distance Difference = 0,1191101  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4999847  Reward = 0
+Distance Difference = 0,820076  Reward = 0
+Distance Difference = 0,06993866  Reward = 0
+Distance Difference = 0,2122116  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7145996  Reward = 0
+Distance Difference = 1,024239  Reward = 0
+Distance Difference = -0,3238068  Reward = 0
+Distance Difference = 0,2703934  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,7247162  Reward = 0
+Distance Difference = 1,107346  Reward = 0
+Distance Difference = -0,2647629  Reward = 0
+Distance Difference = -0,1091461  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5523529  Reward = 0
+Distance Difference = 1,173553  Reward = 0
+Distance Difference = -0,08207703  Reward = 0
+Distance Difference = -0,5883789  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5741272  Reward = 0
+Distance Difference = 0,5627747  Reward = 0
+Distance Difference = -0,236908  Reward = 0
+Distance Difference = -0,2811356  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5848389  Reward = 0
+Distance Difference = -0,3080673  Reward = 0
+Distance Difference = -0,1152496  Reward = 0
+Distance Difference = 0,05574799  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,231308  Reward = 0
+Distance Difference = -0,6633606  Reward = 0
+Distance Difference = -0,06118011  Reward = 0
+Distance Difference = 0,1730576  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,4535675  Reward = 0
+Distance Difference = -0,1769333  Reward = 0
+Distance Difference = 0,03421783  Reward = 0
+Distance Difference = -0,0545578  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2677002  Reward = 0
+Distance Difference = 0,5530777  Reward = 0
+Distance Difference = 0,0326767  Reward = 0
+Distance Difference = -0,04149628  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3575745  Reward = 0
+Distance Difference = 0,5451279  Reward = 0
+Distance Difference = 0,04893494  Reward = 0
+Distance Difference = -0,009078979  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3856812  Reward = 0
+Distance Difference = 0,5053787  Reward = 0
+Distance Difference = 0,06758881  Reward = 0
+Distance Difference = -0,03863525  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3825531  Reward = 0
+Distance Difference = 0,6352081  Reward = 0
+Distance Difference = -0,2207565  Reward = 0
+Distance Difference = -0,2371368  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6630707  Reward = 0
+Distance Difference = 0,2749405  Reward = 0
+Distance Difference = -0,3449707  Reward = 0
+Distance Difference = -0,4560928  Reward = 0
+Steps:1000
+Game Over: Tie, time ran out
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Steps:0
+UnloadTime: 3.182300 ms
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2151.
+Total: 3.383400 ms (FindLiveObjects: 0.240300 ms CreateObjectMapping: 0.078100 ms MarkObjects: 3.041200 ms  DeleteObjects: 0.023300 ms)
+
+SG: 
+SG: blue on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 6588
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 6588
+CICS: 6588 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6586
+CICS: 6586 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 6588
+CICS: 6588 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6586
+CICS: 6586 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6586 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 146.00)
+CICS: 6687
+CICS: 6687 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6687 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 146.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 6588
+CICS: 6588 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6586
+CICS: 6586 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6586 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 146.00)
+CICS: 6687
+CICS: 6687 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6687 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 146.00)
+CICS: 6687 AgentML_BLUE(Clone) (UnityEngine.Transform) at (86.00, 2.50, 150.00)
+CICS: 6487
+CICS: 6487 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 154.00)
+CICS: 6487 AgentML_BLUE(Clone) (UnityEngine.Transform) at (82.00, 2.50, 146.00)
+CICS: 6487 AgentML_BLUE(Clone) (UnityEngine.Transform) at (86.00, 2.50, 150.00)
+EPISODE BEGIN
+SG: red on game start
+OGS: spawning egants
+OGS: trying spawn agent no 0
+CICS: 3776
+EPISODE BEGIN
+OGS: trying spawn agent no 1
+CICS: 3776
+CICS: 3776 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3774
+CICS: 3774 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 2
+CICS: 3776
+CICS: 3776 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3774
+CICS: 3774 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3774 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 98.00)
+CICS: 3875
+CICS: 3875 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3875 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 98.00)
+EPISODE BEGIN
+OGS: trying spawn agent no 3
+CICS: 3776
+CICS: 3776 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3774
+CICS: 3774 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3774 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 98.00)
+CICS: 3875
+CICS: 3875 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3875 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 98.00)
+CICS: 3875 AgentML_RED(Clone) (UnityEngine.Transform) at (-26.00, 2.50, 102.00)
+CICS: 3675
+CICS: 3675 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 106.00)
+CICS: 3675 AgentML_RED(Clone) (UnityEngine.Transform) at (-30.00, 2.50, 98.00)
+CICS: 3675 AgentML_RED(Clone) (UnityEngine.Transform) at (-26.00, 2.50, 102.00)
+EPISODE BEGIN
+Steps:0
+Distance Difference = -0,06743622  Reward = 0
+Distance Difference = 0,05670929  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,09436035  Reward = 0
+Distance Difference = 0,0716095  Reward = 0
+Distance Difference = 0,1834106  Reward = 0
+Distance Difference = 0,02859497  Reward = 0
+Distance Difference = -2,288818E-05  Reward = 0
+Distance Difference = 7,629395E-06  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06169128  Reward = 0
+Distance Difference = -0,03865051  Reward = 0
+Distance Difference = 0,01621246  Reward = 0
+Distance Difference = -0,04883575  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1677094  Reward = 0
+Distance Difference = -0,02338409  Reward = 0
+Distance Difference = 0,387085  Reward = 0
+Distance Difference = 0,1511917  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,08631134  Reward = 0
+Distance Difference = 0,00655365  Reward = 0
+Distance Difference = 0,622612  Reward = 0
+Distance Difference = 0,08044434  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05989075  Reward = 0
+Distance Difference = -0,004951477  Reward = 0
+Distance Difference = 0,3174057  Reward = 0
+Distance Difference = -0,00138092  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,05673218  Reward = 0
+Distance Difference = 0,003456116  Reward = 0
+Distance Difference = 0,5613937  Reward = 0
+Distance Difference = 0,08370972  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,03620911  Reward = 0
+Distance Difference = 0,05020142  Reward = 0
+Distance Difference = 0,6515121  Reward = 0
+Distance Difference = 0,02876282  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01248932  Reward = 0
+Distance Difference = -0,04137421  Reward = 0
+Distance Difference = 0,01559448  Reward = 0
+Distance Difference = -0,01483154  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3194885  Reward = 0
+Distance Difference = 0,01804352  Reward = 0
+Distance Difference = 0,2657166  Reward = 0
+Distance Difference = 0,07453156  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1706848  Reward = 0
+Distance Difference = 0,1443329  Reward = 0
+Distance Difference = 0,3642578  Reward = 0
+Distance Difference = 0,05583191  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06348419  Reward = 0
+Distance Difference = 0,0684433  Reward = 0
+Distance Difference = 0,1442261  Reward = 0
+Distance Difference = 0,0475769  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1305847  Reward = 0
+Distance Difference = -0,2440491  Reward = 0
+Distance Difference = -0,08581543  Reward = 0
+Distance Difference = 0,0160141  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1408463  Reward = 0
+Distance Difference = -0,006286621  Reward = 0
+Distance Difference = -0,01113892  Reward = 0
+Distance Difference = -0,08000946  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1690979  Reward = 0
+Distance Difference = 0,1741867  Reward = 0
+Distance Difference = 0,1343155  Reward = 0
+Distance Difference = 0,04856873  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1286011  Reward = 0
+Distance Difference = -0,1592331  Reward = 0
+Distance Difference = 0,05119324  Reward = 0
+Distance Difference = 0,02431488  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,347702  Reward = 0
+Distance Difference = 0,06741333  Reward = 0
+Distance Difference = -0,1471329  Reward = 0
+Distance Difference = 0,06907654  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,06293488  Reward = 0
+Distance Difference = 0,2512436  Reward = 0
+Distance Difference = -0,3644028  Reward = 0
+Distance Difference = -0,08742523  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1527634  Reward = 0
+Distance Difference = 0,2530365  Reward = 0
+Distance Difference = -0,4200134  Reward = 0
+Distance Difference = -0,006690979  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1001663  Reward = 0
+Distance Difference = -0,1620712  Reward = 0
+Distance Difference = -0,5507278  Reward = 0
+Distance Difference = 0,07897949  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,03301239  Reward = 0
+Distance Difference = -0,1083069  Reward = 0
+Distance Difference = -0,2797928  Reward = 0
+Distance Difference = 0,01224518  Reward = 0
+Steps:100
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1001205  Reward = 0
+Distance Difference = 0,04402924  Reward = 0
+Distance Difference = -0,5602798  Reward = 0
+Distance Difference = 0,1947021  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,06743622  Reward = 0
+Distance Difference = 0,1007462  Reward = 0
+Distance Difference = -0,8526077  Reward = 0
+Distance Difference = -0,1544189  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02511597  Reward = 0
+Distance Difference = 0,02170563  Reward = 0
+Distance Difference = -1,015717  Reward = 0
+Distance Difference = -0,3896179  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,01600647  Reward = 0
+Distance Difference = -0,005142212  Reward = 0
+Distance Difference = -1,141403  Reward = 0
+Distance Difference = -0,212326  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,02835083  Reward = 0
+Distance Difference = 0,0633316  Reward = 0
+Distance Difference = -0,0001449585  Reward = 0
+Distance Difference = 0,04804993  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,3512726  Reward = 0
+Distance Difference = 0,02794647  Reward = 0
+Distance Difference = 0,3870468  Reward = 0
+Distance Difference = -0,1791611  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,506218  Reward = 0
+Distance Difference = -0,3019867  Reward = 0
+Distance Difference = 0,07701874  Reward = 0
+Distance Difference = -0,09746552  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,5261307  Reward = 0
+Distance Difference = -0,1840057  Reward = 0
+Distance Difference = 0,4240189  Reward = 0
+Distance Difference = -0,2342072  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2838669  Reward = 0
+Distance Difference = -0,06852722  Reward = 0
+Distance Difference = -0,2791443  Reward = 0
+Distance Difference = -0,1455536  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1139069  Reward = 0
+Distance Difference = -0,01969147  Reward = 0
+Distance Difference = 0,01633453  Reward = 0
+Distance Difference = -0,0567627  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,04056549  Reward = 0
+Distance Difference = -0,6253815  Reward = 0
+Distance Difference = 0,01686096  Reward = 0
+Distance Difference = 0,4196854  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3434525  Reward = 0
+Distance Difference = 0,09885406  Reward = 0
+Distance Difference = 0,04163361  Reward = 0
+Distance Difference = -0,3654785  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,5156403  Reward = 0
+Distance Difference = 0,4849472  Reward = 0
+Distance Difference = 0,001586914  Reward = 0
+Distance Difference = 0,1705017  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2612686  Reward = 0
+Distance Difference = 0,5214767  Reward = 0
+Distance Difference = 0,04143524  Reward = 0
+Distance Difference = 0,1200333  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,531662  Reward = 0
+Distance Difference = 0,3706055  Reward = 0
+Distance Difference = -0,05039978  Reward = 0
+Distance Difference = 0,03915405  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,6244202  Reward = 0
+Distance Difference = 0,220726  Reward = 0
+Distance Difference = -0,02187347  Reward = 0
+Distance Difference = 0,005447388  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,1200485  Reward = 0
+Distance Difference = -0,03792572  Reward = 0
+Distance Difference = -0,1026917  Reward = 0
+Distance Difference = -0,1471176  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2173615  Reward = 0
+Distance Difference = -0,06031799  Reward = 0
+Distance Difference = -0,06652832  Reward = 0
+Distance Difference = -0,08891296  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4398422  Reward = 0
+Distance Difference = -0,04097748  Reward = 0
+Distance Difference = 0,4353104  Reward = 0
+Distance Difference = -0,386673  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,2972336  Reward = 0
+Distance Difference = -0,1505814  Reward = 0
+Distance Difference = 0,8246155  Reward = 0
+Distance Difference = -0,2173462  Reward = 0
+Steps:200
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,2110672  Reward = 0
+Distance Difference = -0,3854599  Reward = 0
+Distance Difference = -0,01485443  Reward = 0
+Distance Difference = -0,084198  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,477478  Reward = 0
+Distance Difference = -0,2145996  Reward = 0
+Distance Difference = -0,4661255  Reward = 0
+Distance Difference = 0,1907349  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,4858551  Reward = 0
+Distance Difference = 0,2759171  Reward = 0
+Distance Difference = 0,2449341  Reward = 0
+Distance Difference = 0,09791565  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = -0,09762573  Reward = 0
+Distance Difference = 0,1673737  Reward = 0
+Distance Difference = 0,5662689  Reward = 0
+Distance Difference = 0,03439331  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1524353  Reward = 0
+Distance Difference = -0,3312759  Reward = 0
+Distance Difference = 0,6712036  Reward = 0
+Distance Difference = -0,2296295  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,3369904  Reward = 0
+Distance Difference = -0,504837  Reward = 0
+Distance Difference = 0,03974152  Reward = 0
+Distance Difference = 0,0788269  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1660233  Reward = 0
+Distance Difference = -0,2639084  Reward = 0
+Distance Difference = -0,02023315  Reward = 0
+Distance Difference = 0,0528717  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,09983063  Reward = 0
+Distance Difference = -0,1041336  Reward = 0
+Distance Difference = 0,4980392  Reward = 0
+Distance Difference = 0,3232574  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,02812195  Reward = 0
+Distance Difference = -0,4310532  Reward = 0
+Distance Difference = 0,2755508  Reward = 0
+Distance Difference = 0,1798859  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1006012  Reward = 0
+Distance Difference = -0,2492371  Reward = 0
+Distance Difference = 0,4072113  Reward = 0
+Distance Difference = 0,2818298  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,1153259  Reward = 0
+Distance Difference = -0,09542847  Reward = 0
+Distance Difference = 0,1893692  Reward = 0
+Distance Difference = 0,2920914  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,0742569  Reward = 0
+Distance Difference = -0,03038025  Reward = 0
+Distance Difference = -0,09591675  Reward = 0
+Distance Difference = 0,1441803  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0  Reward = 0
+Distance Difference = 0,01329803  Reward = 0
+Distance Difference = -0,003067017  Reward = 0
+Distance Difference = -0,3428497  Reward = 0
+Distance Difference = -0,4044418  Reward = 0
+Setting up 2 worker threads for Enlighten.
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [16.0 KB-32.0 KB]: 135 frames, [128.0 KB-256.0 KB]: 2 frames, [2.0 MB-4.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 4.0 MB
+      Peak Allocated Bytes 2.1 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 282 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 111.0 KB
+      Overflow Count 13
+    [ALLOC_TEMP_Background Job.Worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 424 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 2
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 3
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 424 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 392 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 1815
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [4.0 MB-8.0 MB]: 138 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 7.0 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 138 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 18.0 MB
+      Peak Large allocation bytes 16.0 MB
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 2
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 4
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_GFX_MAIN]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 138 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 108.4 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Peak usage frame count: [32.0 KB-64.0 KB]: 138 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 42.0 KB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 28
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Peak usage frame count: [0.5 MB-1.0 MB]: 135 frames, [1.0 MB-2.0 MB]: 3 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 1.0 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Peak usage frame count: [0.5 MB-1.0 MB]: 138 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 0.8 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 1.2 MB
+    [ALLOC_TYPETREE_MAIN]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 138 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.6 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 138 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 5.4 KB
+      Peak Large allocation bytes 0 B
