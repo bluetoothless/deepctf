@@ -406,9 +406,10 @@ public class AgentMovementWSAD : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         bool W, S, A, D;
-        if (-1==1//AiTrainer.GetAITrainerMode())
-            )
+        if (AiTrainer.GetAITrainerMode())
+        {
             (W, S, A, D) = AiTrainer.Run();
+        }
         else
         {
             W = Input.GetKey(KeyCode.W);
