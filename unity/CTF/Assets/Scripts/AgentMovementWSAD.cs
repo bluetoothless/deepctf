@@ -14,7 +14,7 @@ public class AgentMovementWSAD : Agent
     private float speedModifier = 1f;
     public GameObject[] agents;
 
-    private int numberOfRays = 25;
+    private int numberOfRays = 24;
     private float RayDistance = 500.0f;
 
     private GameObject ownBase;
@@ -253,13 +253,13 @@ public class AgentMovementWSAD : Agent
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
         // walls
-        float[] arrRaysWalls = raysPerceptionWalls(6); // 25 rays * 1 variables = 25
+        float[] arrRaysWalls = raysPerceptionWalls(6); // 24 rays * 1 variables = 24
         for (int i = 0; i < numberOfRays; i++)
         {
             sensor.AddObservation(arrRaysWalls[i]);
          }
         // agents
-        float[,] arrRaysAgents = raysPerceptionAgents(7); // 25 rays * 4 variables = 100
+        float[,] arrRaysAgents = raysPerceptionAgents(7); // 24 rays * 4 variables = 96
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < arrRaysAgents.GetLength(1); j++)
@@ -268,7 +268,7 @@ public class AgentMovementWSAD : Agent
             }
         }
         // bases
-        float[,] arrRaysBases = raysPerceptionBases(8); // 25 rays * 5 variables = 125
+        float[,] arrRaysBases = raysPerceptionBases(8); // 24 rays * 5 variables = 120
         for (int i = 0; i < numberOfRays; i++)
         {
             for (int j = 0; j < arrRaysBases.GetLength(1); j++)
@@ -306,7 +306,7 @@ public class AgentMovementWSAD : Agent
 
             if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
             {
-                string hittedColor = hit.collider.gameObject.name == "Blue Base" ? "blue" : "red";  // CZY TO DZIAŁA?? NIE SPRAWDZANE !!!!!!!!!!!
+                string hittedColor = hit.collider.gameObject.transform.parent.name == "Blue Base(Clone)" ? "blue" : "red";  // CZY TO DZIAŁA?? NIE SPRAWDZANE !!!!!!!!!!!
                 outputArray[i, 0] = Normalize(Inverse(hit.distance));
                 outputArray[i, 1] = 1; // 1 bo znalazł bazę
                 outputArray[i, 2] = hittedColor == gameObject.GetComponent<AgentComponentsScript>().color ? 1.0f : -1.0f; // wroga baza -1 / swoja baza 1
@@ -321,12 +321,12 @@ public class AgentMovementWSAD : Agent
                     outputArray[i, 4] = hit.collider.gameObject.transform.parent.gameObject.transform.Find("BlueFlag").gameObject.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma wrogą flagę, 0 jak nie ma
                 }
                 
-                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+                //Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
             }
             else
             {
                 // tablice od inicjalizacji są wypełnione 0
-                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+                ;//Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
             }
 
         }
@@ -381,12 +381,12 @@ public class AgentMovementWSAD : Agent
             if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
             {
                 outputArray[i] = Normalize(Inverse(hit.distance));
-                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+                //Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
             }
             else
             {
                 // tablice od inicjalizacji są wypełnione 0
-                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+                ;// Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
             }
 
         }
@@ -406,9 +406,10 @@ public class AgentMovementWSAD : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         bool W, S, A, D;
-        if (-1==1//AiTrainer.GetAITrainerMode())
-            )
+        if (AiTrainer.GetAITrainerMode())
+        {
             (W, S, A, D) = AiTrainer.Run();
+        }
         else
         {
             W = Input.GetKey(KeyCode.W);

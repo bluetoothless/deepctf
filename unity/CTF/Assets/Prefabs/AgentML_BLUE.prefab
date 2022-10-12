@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2864444449535022433}
   - component: {fileID: 3327920939755854093}
   - component: {fileID: 5993220987441759994}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: AgentCollider
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085727533915072475}
   - component: {fileID: 5286248446162821665}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: BiomCollider
   m_TagString: AgentBiomCollider
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153027265382818960}
   - component: {fileID: 3141410133879742764}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: AgentCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 3161212135575723252}
   - component: {fileID: 3145606122305425596}
   - component: {fileID: 3135421786222817274}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 3161485092504299668}
   - component: {fileID: 3146298850993625032}
   - component: {fileID: 3135561449248429280}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 3161493255891664584}
   - component: {fileID: 3144678954970769966}
   - component: {fileID: 3134710428031249178}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 429
+    VectorObservationSize: 419
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 3160999055629802862}
   - component: {fileID: 3144793074358902064}
   - component: {fileID: 3135130284630710144}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: Headband
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 1768790348142297362}
   - component: {fileID: 3180175202740360164}
   - component: {fileID: 1920575603450553026}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: DEBUG FORWARD NOSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
@@ -893,7 +893,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 515395938615023031, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_RootOrder
@@ -953,7 +953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5825031875144254557, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Name
@@ -961,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9202055241139047437, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
       propertyPath: m_IsActive
