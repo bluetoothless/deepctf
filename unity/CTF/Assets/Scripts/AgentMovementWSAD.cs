@@ -31,6 +31,10 @@ public class AgentMovementWSAD : Agent
     public bool weGotEnemyFlag = false;
     public bool weGotOurFlag = true;
 
+
+
+    private float Reward__Delete_it = 0;
+
     void Awake()
     {
         isAgentSet = false;
@@ -60,9 +64,12 @@ public class AgentMovementWSAD : Agent
 
     private void FixedUpdate()
     {
+        RewardValuesScript.getRewardValues();
+        AddRewardAgent(RewardValuesScript.rewards["agentTimeRewardForNothing"]);
         // FixUpdDistanceStandard();
         if (!weGotEnemyFlag || gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf)    // jeśli moja drużyna nie ma flagi przeciwnika lub ja mam flagę przeciwnika
             DistanceRewardKacpraPoKonsultacji();
+
     }
 
     private void FixUpdDistanceStandard()
@@ -199,6 +206,8 @@ public class AgentMovementWSAD : Agent
         float distanceDifference = lastestDistance - distanceNow;
         float reward = maxReward * distanceDifference;
         Debug.Log("Distance Difference = " + distanceDifference + "  Reward = " + reward);
+        Reward__Delete_it += reward;
+        Debug.Log("TOTAL DISTANCE REW. = " + Reward__Delete_it);
         AddRewardAgent(reward);
 
         float maxRewardTeam = RewardValuesScript.rewards["agentCloseToFlag_team"];
@@ -209,11 +218,6 @@ public class AgentMovementWSAD : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        if(gameObject.GetComponent<BehaviorParameters>().BehaviorType.ToString() == "HeuristicOnly")
-        {
-            return;
-        }
-
         var forwardAxis = actionBuffers.DiscreteActions[0];
         var rotateAxis = actionBuffers.DiscreteActions[1];
 
@@ -241,29 +245,35 @@ public class AgentMovementWSAD : Agent
                 transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
                 break;
         }
+        speedModifier = 1f;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
-        //agents+walls
-        float[,] arrRays = raysPerception(6); //17 rays * 6 variables = 102 floats //25 * 6 = 150
+        // walls
+        float[] arrRaysWalls = raysPerceptionWalls(6); // 25 rays * 1 variables = 25
         for (int i = 0; i < numberOfRays; i++)
         {
-            for (int j = 0; j < 6; j++)
-            {
-                sensor.AddObservation(arrRays[i,j]);
-            }
+            sensor.AddObservation(arrRaysWalls[i]);
          }
-        //base+walls
-        float[,] arrRaysbase = raysPerception(7); //17 rays * 6 variables = 102 floats //25 * 6 = 150
+        // agents
+        float[,] arrRaysAgents = raysPerceptionAgents(7); // 25 rays * 4 variables = 100
         for (int i = 0; i < numberOfRays; i++)
         {
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < arrRaysAgents.GetLength(1); j++)
             {
-                sensor.AddObservation(arrRaysbase[i, j]);
+                sensor.AddObservation(arrRaysAgents[i, j]);
+            }
+        }
+        // bases
+        float[,] arrRaysBases = raysPerceptionBases(8); // 25 rays * 5 variables = 125
+        for (int i = 0; i < numberOfRays; i++)
+        {
+            for (int j = 0; j < arrRaysBases.GetLength(1); j++)
+            {
+                sensor.AddObservation(arrRaysBases[i, j]);
             }
         }
         BiomEyesScript biomEyes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
@@ -281,50 +291,102 @@ public class AgentMovementWSAD : Agent
         sensor.AddObservation(weGotEnemyFlag ? 1.0f : 0.0f);
     }
 
-    private float[,] raysPerception(int layerShift)
+    private float[,] raysPerceptionBases(int layerShift)
     {
-        int layerMask = (1 << 8) | (1 << layerShift);
-        float startDegree = -90.0f;//zawsze musi byc ujemne!
+        int layerMask = 1 << layerShift;
+        float startDegree = -90.0f; //zawsze musi byc ujemne!
         float stepDegree = -2 * startDegree / (float)numberOfRays;
-        
 
-        float[,] outputArray = new float[numberOfRays,6]; //17 promieni, po 6 zmiennych, i,0-odwrotność dystansu, i,1-agent, i,2-baza, i,3-ściana, i,4-kolor, i,5-czy z flagą?
+        float[,] outputArray = new float[numberOfRays, 5]; //25 promieni, 5 zmiennych, 0-odwrotność dystansu 1-agent/baza 2-kolor(wróg(-1)/swój(1)) 3-czy ma swoją flagę 4-czy ma wrogą flagę
         RaycastHit hit;
         Ray ray;
         for (int i = 0; i < numberOfRays; i++)
         {
-           ray  = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree+stepDegree*i, 0) * Vector3.forward));
+            ray = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree + stepDegree * i, 0) * Vector3.forward));
 
             if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
             {
-                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
-                rayResponseComponent rayrespond = hit.collider.gameObject.GetComponent<rayResponseComponent>();
-                //Debug.Log(this.name + "Ray" + i + "Did Hit: " + hit.collider.gameObject + " in distance: " + hit.distance + "|" + rayrespond.type + rayrespond.color + rayrespond.isFlag);
+                string hittedColor = hit.collider.gameObject.name == "Blue Base" ? "blue" : "red";  // CZY TO DZIAŁA?? NIE SPRAWDZANE !!!!!!!!!!!
                 outputArray[i, 0] = Normalize(Inverse(hit.distance));
-                outputArray[i, 1] = 0;
-                outputArray[i, 2] = 0;
-                outputArray[i, 3] = 0;
-                switch (rayrespond.type)
+                outputArray[i, 1] = 1; // 1 bo znalazł bazę
+                outputArray[i, 2] = hittedColor == gameObject.GetComponent<AgentComponentsScript>().color ? 1.0f : -1.0f; // wroga baza -1 / swoja baza 1
+                if (gameObject.GetComponent<AgentComponentsScript>().color == "blue")
                 {
-                    case 1:
-                        outputArray[i, 1] = 1;
-                        break;
-                    case 2:
-                        outputArray[i, 2] = 1;
-                        break;
-                    case 3:
-                        outputArray[i, 3] = 1;
-                        break;
+                    outputArray[i, 3] = hit.collider.gameObject.transform.parent.gameObject.transform.Find("BlueFlag").gameObject.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma swoją flagę, 0 jak nie ma
+                    outputArray[i, 4] = hit.collider.gameObject.transform.parent.gameObject.transform.Find("RedFlag").gameObject.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma wrogą flagę, 0 jak nie ma
                 }
-                float col = rayrespond.color;
-                outputArray[i, 4] = col;
-                outputArray[i, 5] = rayrespond.isFlag;
-
+                else
+                {
+                    outputArray[i, 3] = hit.collider.gameObject.transform.parent.gameObject.transform.Find("RedFlag").gameObject.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma swoją flagę, 0 jak nie ma
+                    outputArray[i, 4] = hit.collider.gameObject.transform.parent.gameObject.transform.Find("BlueFlag").gameObject.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma wrogą flagę, 0 jak nie ma
+                }
+                
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
             }
             else
             {
+                // tablice od inicjalizacji są wypełnione 0
                 Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
-                //Debug.Log(this.name + "Ray"+i+ "Did not Hit");
+            }
+
+        }
+        return outputArray;
+    }
+
+    private float[,] raysPerceptionAgents(int layerShift)
+    {
+        int layerMask = 1 << layerShift;
+        float startDegree = -90.0f; //zawsze musi byc ujemne!
+        float stepDegree = -2 * startDegree / (float)numberOfRays;
+
+        float[,] outputArray = new float[numberOfRays, 4]; //25 promieni, 4 zmienne, 0-odwrotność dystansu 1-agent/baza 2-kolor(wróg(-1)/swój(1)) 3-czy ma flage
+        RaycastHit hit;
+        Ray ray;
+        for (int i = 0; i < numberOfRays; i++)
+        {
+            ray = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree + stepDegree * i, 0) * Vector3.forward));
+
+            if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
+            {
+                string hittedColor = hit.collider.gameObject.GetComponent<AgentComponentsScript>().color;
+                outputArray[i, 0] = Normalize(Inverse(hit.distance));
+                outputArray[i, 1] = 1; // 1 bo znalazł agenta
+                outputArray[i, 2] = hittedColor == gameObject.GetComponent<AgentComponentsScript>().color ? 1.0f : -1.0f; // wróg -1 / swój 1
+                outputArray[i, 3] = hit.collider.gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma flagę, 0 jak nie ma
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+            }
+            else
+            {
+                // tablice od inicjalizacji są wypełnione 0
+                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+            }
+
+        }
+        return outputArray;
+    }
+
+    private float[] raysPerceptionWalls(int layerShift)
+    {
+        int layerMask = 1 << layerShift;
+        float startDegree = -90.0f; //zawsze musi byc ujemne!
+        float stepDegree = -2 * startDegree / (float)numberOfRays;
+
+        float[] outputArray = new float[numberOfRays]; //25 promieni, 1 zmienna, 0-odwrotność dystansu
+        RaycastHit hit;
+        Ray ray;
+        for (int i = 0; i < numberOfRays; i++)
+        {
+            ray = new Ray(transform.position, transform.TransformDirection(Quaternion.Euler(0, startDegree + stepDegree * i, 0) * Vector3.forward));
+
+            if (Physics.Raycast(ray, out hit, RayDistance, layerMask))
+            {
+                outputArray[i] = Normalize(Inverse(hit.distance));
+                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+            }
+            else
+            {
+                // tablice od inicjalizacji są wypełnione 0
+                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
             }
 
         }
@@ -342,10 +404,10 @@ public class AgentMovementWSAD : Agent
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
-    //public void FixedUpdate()
     {
         bool W, S, A, D;
-        if (AiTrainer.GetAITrainerMode())
+        if (-1==1//AiTrainer.GetAITrainerMode())
+            )
             (W, S, A, D) = AiTrainer.Run();
         else
         {
@@ -354,32 +416,21 @@ public class AgentMovementWSAD : Agent
             A = Input.GetKey(KeyCode.A);
             D = Input.GetKey(KeyCode.D);
         }
-        Walking(W, S, A, D);
-    }
-
-    public void Walking(bool W, bool S, bool A, bool D)
-    {
-        // Faster forward than back
-        Rigidbody rb = GetComponent<Rigidbody>();
+        var forwardaction = 1;//staniewmiejscu
         if (W)
-            rb.AddForce(transform.rotation * Vector3.forward * forwardSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
+            forwardaction = 2;//do przodu
         else if (S)
-            rb.AddForce(transform.rotation * Vector3.back * backSpeed * Time.deltaTime * speedModifier, ForceMode.VelocityChange);
-        else
-            rb.velocity = Vector3.zero;
+            forwardaction = 0;//dotylu
 
-
+        actionsOut.DiscreteActions.Array[0] = forwardaction;
+        var turnaction = 1;//staniewmiejscu
         if (A)
-            transform.Rotate(0, -rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
-        if (D)
-            transform.Rotate(0, rotateSpeed * Time.deltaTime * speedModifier, 0, Space.World);
+            turnaction = 0;
+        else if (D)
+            turnaction = 2;
 
+        actionsOut.DiscreteActions.Array[1] = turnaction;
 
-        speedModifier = 1f;
-        //dla widzenia promieni
-       // raysPerception();
-        //BiomEyesScript bes = (BiomEyesScript)GetComponentInChildren(typeof(BiomEyesScript));
-        //bes.GetBiomSensors();
     }
 
     public void ChangeSpeedModifier(float newModified)
