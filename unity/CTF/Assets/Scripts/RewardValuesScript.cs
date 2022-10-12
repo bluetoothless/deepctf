@@ -11,7 +11,7 @@ public static class RewardValuesScript
 
     public static void saveRewardValues()
     {
-        var path = Application.dataPath + "/Rewards.txt";
+        var path = Application.streamingAssetsPath + "/Rewards.txt";
         StreamReader reader = new StreamReader(path);
         var text = reader.ReadToEnd();
         reader.Close();
@@ -46,7 +46,7 @@ public static class RewardValuesScript
         saveRewardValues();
 
         List<string> lines = new List<string>();
-        string path = Application.dataPath + "/Rewards.txt";
+        string path = Application.streamingAssetsPath + "/Rewards.txt";
         StreamReader reader = new StreamReader(path);
 
         string oneLine;
