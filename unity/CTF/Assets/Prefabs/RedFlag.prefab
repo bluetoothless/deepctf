@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2162504754773904319}
   - component: {fileID: 5373657466903726710}
   - component: {fileID: 4859999364012883406}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2239701864065092698}
   - component: {fileID: 9191705128565203805}
   - component: {fileID: 7729882285852695637}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FlagStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3779873993504804493}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RedFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

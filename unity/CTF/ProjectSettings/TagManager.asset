@@ -21,9 +21,9 @@ TagManager:
   - Field
   - Water
   - UI
-  - RayDetect
-  - 
-  - 
+  - RayDetectWall
+  - RayDetectAgent
+  - RayDetectBase
   - 
   - 
   - 

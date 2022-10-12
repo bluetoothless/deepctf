@@ -400,7 +400,6 @@ GameObject:
   - component: {fileID: 199993362}
   - component: {fileID: 199993361}
   - component: {fileID: 199993360}
-  - component: {fileID: 199993363}
   m_Layer: 6
   m_Name: Wall1
   m_TagString: Untagged
@@ -486,21 +485,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199993358}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &199993363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199993358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  type: 3
-  isFlag: 0
 --- !u!1 &207409614
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +888,6 @@ GameObject:
   - component: {fileID: 385718749}
   - component: {fileID: 385718748}
   - component: {fileID: 385718747}
-  - component: {fileID: 385718750}
   m_Layer: 6
   m_Name: Wall4
   m_TagString: Untagged
@@ -990,21 +973,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385718745}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &385718750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385718745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  type: 3
-  isFlag: 0
 --- !u!1 &388659640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,7 +3054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671480c7dc53ad14eace6215aabe0c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiTrainerMode: 1
+  AiTrainerMode: 0
 --- !u!1 &1374191025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3300,6 @@ GameObject:
   - component: {fileID: 1450140490}
   - component: {fileID: 1450140489}
   - component: {fileID: 1450140488}
-  - component: {fileID: 1450140491}
   m_Layer: 6
   m_Name: Wall3
   m_TagString: Untagged
@@ -3418,21 +3385,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450140486}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1450140491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450140486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  type: 3
-  isFlag: 0
 --- !u!1 &1469421438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3532,6 @@ GameObject:
   - component: {fileID: 1487573628}
   - component: {fileID: 1487573627}
   - component: {fileID: 1487573626}
-  - component: {fileID: 1487573629}
   m_Layer: 6
   m_Name: Wall2
   m_TagString: Untagged
@@ -3666,21 +3617,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487573624}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1487573629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487573624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93db6b8df81ced14b96c8433270e1f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  type: 3
-  isFlag: 0
 --- !u!1 &1552363250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,7 +4226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898109948}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Walls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4766,7 +4702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steps: -1
-  maxSteps: 1250
+  maxSteps: 2000
   NumberOfAgents: 4
   textBlueWin: {fileID: 480137644}
   textRedWin: {fileID: 116804941}

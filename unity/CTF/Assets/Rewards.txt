@@ -10,7 +10,7 @@ flagStolenFromAgent:-0.3
 flagStolenFromAgent_team:-0.03
 agentDead:-0.6
 agentDead_team:-0.3
-agentCloseToFlag:0
+agentCloseToFlag:0.009
 agentCloseToFlag_team:0
 agentTouchesAgentSameColor:0
 agentTouchesAgentSameColor_team:0
