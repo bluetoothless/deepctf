@@ -2,46 +2,37 @@ default_settings: null
 behaviors:
   DeepCTFv2:
     trainer_type: poca
+    init_path: null
+    keep_checkpoints: 4
+    checkpoint_interval: 300000
+    max_steps: 4000000
+    time_horizon: 256
+    summary_freq: 10000
+    threaded: true
     hyperparameters:
+      learning_rate: 0.00005
       batch_size: 32
-      buffer_size: 10240
-      learning_rate: 0.0003
-      beta: 0.008
+      buffer_size: 2048
+      beta: 0.009
       epsilon: 0.2
-      lambd: 0.98
+      lambd: 0.94
       num_epoch: 3
       learning_rate_schedule: linear
       beta_schedule: linear
       epsilon_schedule: linear
     network_settings:
       normalize: false
-      hidden_units: 256
+      hidden_units: 512
       num_layers: 2
       vis_encode_type: simple
       memory: 
-        memory_size: 256
-        sequence_length: 4
-      goal_conditioning_type: hyper
-      deterministic: false
+        memory_size: 128
+        sequence_length: 16
+      conditioning_type: hyper
     reward_signals:
       extrinsic:
-        gamma: 0.995
+        gamma: 0.92
         strength: 1.0
-        network_settings:
-          normalize: false
-          hidden_units: 256
-          num_layers: 2
-          vis_encode_type: simple
-          memory: null
-          goal_conditioning_type: hyper
-          deterministic: false
-    init_path: null
-    keep_checkpoints: 4
-    checkpoint_interval: 300000
-    max_steps: 900000000
-    time_horizon: 64
-    summary_freq: 10000
-    threaded: false
     self_play: null
     behavioral_cloning: null
 env_settings:
