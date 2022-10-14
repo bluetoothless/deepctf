@@ -446,6 +446,7 @@ MonoBehaviour:
   isAgentSet: 0
   weGotEnemyFlag: 0
   weGotOurFlag: 1
+  isTrainer: 0
 --- !u!54 &3410422818080877209
 Rigidbody:
   m_ObjectHideFlags: 0

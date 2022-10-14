@@ -30,7 +30,7 @@ public class AgentMovementWSAD : Agent
 
     public bool weGotEnemyFlag = false;
     public bool weGotOurFlag = true;
-
+    public bool isTrainer = false;
 
 
     private float Reward__Delete_it = 0;
@@ -250,6 +250,11 @@ public class AgentMovementWSAD : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        if(isTrainer)
+        {
+            return;
+        }
+
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
         // walls
@@ -406,7 +411,7 @@ public class AgentMovementWSAD : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         bool W, S, A, D;
-        if (AiTrainer.GetAITrainerMode())
+        if (isTrainer && AiTrainer.GetAITrainerMode())
         {
             (W, S, A, D) = AiTrainer.Run();
         }
