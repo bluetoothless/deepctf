@@ -1,0 +1,56 @@
+{
+    "DeepCTFv2": {
+        "checkpoints": [
+            {
+                "steps": 643158,
+                "file_path": "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-643158.onnx",
+                "reward": 0.31477168534183875,
+                "creation_time": 1665745431.5926063,
+                "auxillary_file_paths": [
+                    "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-643158.pt"
+                ]
+            },
+            {
+                "steps": 714652,
+                "file_path": "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-714467.onnx",
+                "reward": 0.2343694142997265,
+                "creation_time": 1665749279.6353366,
+                "auxillary_file_paths": [
+                    "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-714467.pt"
+                ]
+            },
+            {
+                "steps": 730368,
+                "file_path": "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-730268.onnx",
+                "reward": 0.38474967579046887,
+                "creation_time": 1665749719.7490306,
+                "auxillary_file_paths": [
+                    "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-730268.pt"
+                ]
+            },
+            {
+                "steps": 857358,
+                "file_path": "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-857358.onnx",
+                "reward": 0.1035498134791851,
+                "creation_time": 1665754804.5181708,
+                "auxillary_file_paths": [
+                    "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-857358.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 857358,
+            "file_path": "results\\14_10_water\\DeepCTFv2.onnx",
+            "reward": 0.1035498134791851,
+            "creation_time": 1665754804.5181708,
+            "auxillary_file_paths": [
+                "results\\14_10_water\\DeepCTFv2\\DeepCTFv2-857358.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.12.1+cpu"
+    }
+}
