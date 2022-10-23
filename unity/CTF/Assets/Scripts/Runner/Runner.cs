@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using UnityEngine;
+using System.Diagnostics;
+using System.Linq;
 
 public static class Runner
 { 
-    private static string Id = "xd";
+    private static string Id = "2022-10-12_07-56-29_id";
     private static string Environment_path = ".\\..\\.."; // \deepctf;
-    private static bool Resume = false;
+    private static bool Resume = true;
     private static bool graphics = false;
+    private static Process process;
 
     public static bool Check_id()
     {
@@ -33,9 +36,9 @@ public static class Runner
 
     public static string MLagents_learn()
     {
-        string Configuration_path = "results\\mapoca\\configuration.yaml";
-        string Env_path = "BuildV3\\CTF";
-        int Number_of_envs = 1;
+        string Configuration_path = "results\\mapoca\\newconfiguration.yaml";
+        string Env_path = "SuperBuild1.0\\CTF";
+        int Number_of_envs = 5;
 
 
         string resume = Resume && Check_id() ? " --resume" : "";
@@ -45,7 +48,7 @@ public static class Runner
 
         return "mlagents-learn " + Configuration_path +
             " --run-id=" + Id + "" +
-            //" --env=" + Env_path +
+            " --env=" + Env_path +
             " --num-envs=" + Number_of_envs.ToString() +
             resume + no_graphics;
     }
@@ -55,8 +58,8 @@ public static class Runner
     public static void Execute()
     {
         string command =
-            CD() + " && " +
-            Buid_environment() + " && " +
+            CD() + " ; " +
+            Buid_environment() + " ; " +
             MLagents_learn();
 
         CMD_Execute(command);
@@ -64,7 +67,23 @@ public static class Runner
 
     public static void CMD_Execute(string command)
     {
-        Debug.Log("CMD.exe /k " + command);
-        System.Diagnostics.Process.Start("CMD.exe", "/k \"" + command + "\"");
+        process = new Process();
+        process.StartInfo.FileName = "powershell.exe";
+        process.StartInfo.Arguments = command;
+        UnityEngine.Debug.Log("powershell.exe " + command);
+        process.Start();
+    }
+
+    public static void Finish()
+    {
+        UnityEngine.Debug.Log("Finishing... process name: " + process.ProcessName 
+            +  ", process ID: " + process.Id);
+        //var closingProcess = new Process();
+        //closingProcess.StartInfo.FileName = "taskkill";
+        //closingProcess.StartInfo.Arguments = "/F /PID " + process.Id;
+        //closingProcess.StartInfo.CreateNoWindow = true;
+        //closingProcess.Start();
+        //process.Kill();
+        UnityEngine.Debug.Log("Closed");
     }
 }

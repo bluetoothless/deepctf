@@ -13,6 +13,7 @@ public class GoToMapGenerationScript : MonoBehaviour
     [SerializeField] Slider sliderDeserts;
     [SerializeField] Slider sliderLakes;
     [SerializeField] Slider sliderAccSurfaces;
+    [SerializeField] GameObject neuralNetworkSelectionButton;
 
     private int nrOfAgents;
     private int episodeLength;
@@ -33,6 +34,8 @@ public class GoToMapGenerationScript : MonoBehaviour
             PlayerPrefs.SetInt("desertsPercent", desertsPercent);
             PlayerPrefs.SetInt("lakesPercent", lakesPercent);
             PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);
+            PlayerPrefs.SetString("neuralNetworkPath", 
+                neuralNetworkSelectionButton.GetComponent<SelectedNeuralNetworkScript>().GetPath());
 
             SceneManager.LoadScene("SceneMain");
         }
