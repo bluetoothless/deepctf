@@ -18,9 +18,11 @@ public class EnvController : MonoBehaviour
     private PerlinNoiseMapGeneration mapGenerator;
 
     private bool isEverythingSet;
+    public string behaviorName = "DeepCTFv2";
 
     void Awake()//false dla testow czy initialize wszystko
     {
+        PlayerPrefs.SetString("neuralNetworkName", behaviorName);
         if (GameManager.IsSpectatorMode)
         {
             NumberOfAgents = PlayerPrefs.GetInt("nrOfAgents");

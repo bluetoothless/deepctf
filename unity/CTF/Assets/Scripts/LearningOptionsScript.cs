@@ -19,6 +19,10 @@ public class LearningOptionsScript : MonoBehaviour
         level = dropdownList.options[dropdownList.value].text;
 
         Debug.Log("Level: "+ level + "\nNumber of learning environment instances: " + nrOfEnvInstances);
-        //run learning script
+        Runner.Execute();
+    }
+    public void FinishLearning()
+    {
+        Runner.Finish();
     }
 }

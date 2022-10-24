@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
+using Unity.Barracuda;
+using System.IO;
+using UnityEditor;
+using System;
 
 public abstract class BaseBaseScript : MonoBehaviour
 {
@@ -56,12 +60,17 @@ public abstract class BaseBaseScript : MonoBehaviour
             }
         }
         isBaseSet = true;
+
     }
 
     public void SpawnAgentAt(int index)
     {
         GameObject agent = Instantiate(AgentPrefab, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter), Quaternion.identity);
         agent.transform.SetParent(Agents.transform);
+        if (GameManager.IsSpectatorMode)
+        {
+            SetNeuralNetworkModelForAgent(agent);
+        }
         if (isRed)
         {
             GameManager.AddRedAgent(agent);
@@ -92,4 +101,11 @@ public abstract class BaseBaseScript : MonoBehaviour
         this.isRed = isRed;
     }
 
+    private void SetNeuralNetworkModelForAgent(GameObject agent)
+    {
+        //var neuralNetworkPath = PlayerPrefs.GetString("neuralNetworkPath");
+        NNModel nnmodel = (NNModel)AssetDatabase.LoadAssetAtPath("Assets/NN/DeepCTFv2.onnx", typeof(NNModel));
+        agent.GetComponent<AgentMovementWSAD>()
+            .SetModel(GameManager.EnvContr.behaviorName, nnmodel);
+    }
 }
