@@ -1,3 +1,4 @@
+using SFB;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ public class SelectedNeuralNetworkScript : MonoBehaviour
     public void ChooseFromFileExplorer()
     {
         Debug.Log("choose");
-        neuralNetworkFilePath = EditorUtility.OpenFilePanel("Select Neural Network", "./../../../results", "onnx");
+        neuralNetworkFilePath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "onnx", true).First();
         SetNeuralNetworkName();
     }
 
@@ -58,8 +59,10 @@ public class SelectedNeuralNetworkScript : MonoBehaviour
     {
        // var neuralNetworkPath = PlayerPrefs.GetString("neuralNetworkPath");
         var nnFileName = DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss_") + neuralNetworkFilePath.Substring(neuralNetworkFilePath.LastIndexOf("\\") + 1);
-        var assetsNNPath = "Assets/NN/" + nnFileName;
-        File.Copy(neuralNetworkFilePath, "Assets/NN/DeepCTFv2.onnx", true);
+        //var assetsNNPath = "Assets/NN/" + nnFileName;
+        //File.Copy(neuralNetworkFilePath, "Assets/NN/DeepCTFv2.onnx", true);
+        var assetsNNPath = Application.streamingAssetsPath + "/DeepCTFv2.onnx"; 
+        File.Copy(neuralNetworkFilePath, assetsNNPath, true);
         return assetsNNPath;
     }
 }
