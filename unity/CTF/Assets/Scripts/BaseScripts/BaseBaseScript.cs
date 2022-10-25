@@ -6,6 +6,7 @@ using Unity.Barracuda;
 using System.IO;
 using UnityEditor;
 using System;
+using Unity.Barracuda.ONNX;
 
 public abstract class BaseBaseScript : MonoBehaviour
 {
@@ -103,9 +104,25 @@ public abstract class BaseBaseScript : MonoBehaviour
 
     private void SetNeuralNetworkModelForAgent(GameObject agent)
     {
-        //var neuralNetworkPath = PlayerPrefs.GetString("neuralNetworkPath");
-        NNModel nnmodel = (NNModel)AssetDatabase.LoadAssetAtPath("Assets/NN/DeepCTFv2.onnx", typeof(NNModel));
-        agent.GetComponent<AgentMovementWSAD>()
-            .SetModel(GameManager.EnvContr.behaviorName, nnmodel);
+        var neuralNetworkPath = PlayerPrefs.GetString("neuralNetworkPath");
+
+        var asset = ScriptableObject.CreateInstance<NNModel>();
+        asset.modelData = ScriptableObject.CreateInstance<NNModelData>();
+        //asset.modelData.Value = model;
+        var onnxModelConverter = new ONNXModelConverter(true);
+        var model = onnxModelConverter.Convert(neuralNetworkPath);
+
+        using (var memoryStream = new MemoryStream())
+        using (var writer = new BinaryWriter(memoryStream))
+        {
+            ModelWriter.Save(writer, model);
+            //assetData.Value = memoryStream.ToArray();
+
+            asset.modelData.Value = memoryStream.ToArray();
+        }
+
+        asset.name = GameManager.EnvContr.behaviorName;
+        var nnModel = asset;
+        agent.GetComponent<AgentMovementWSAD>().SetModel(GameManager.EnvContr.behaviorName, nnModel);
     }
 }
