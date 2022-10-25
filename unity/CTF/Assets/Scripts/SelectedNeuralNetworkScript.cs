@@ -1,3 +1,4 @@
+using SFB;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,12 +24,7 @@ public class SelectedNeuralNetworkScript : MonoBehaviour
     public void ChooseFromFileExplorer()
     {
         Debug.Log("choose");
-        /*System.Diagnostics.Process p = new System.Diagnostics.Process();
-        p.StartInfo = new System.Diagnostics.ProcessStartInfo("explorer.exe");
-        p.StartInfo.Arguments = "\\select";
-        p.Start();*/
-        neuralNetworkFilePath = "";
-        //neuralNetworkFilePath = EditorUtility.OpenFilePanel("Select Neural Network", "./../../../results", "onnx");
+        neuralNetworkFilePath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "onnx", true).First();
         SetNeuralNetworkName();
     }
 

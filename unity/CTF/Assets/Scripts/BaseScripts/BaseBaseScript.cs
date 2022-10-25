@@ -108,7 +108,6 @@ public abstract class BaseBaseScript : MonoBehaviour
 
         var asset = ScriptableObject.CreateInstance<NNModel>();
         asset.modelData = ScriptableObject.CreateInstance<NNModelData>();
-        //asset.modelData.Value = model;
         var onnxModelConverter = new ONNXModelConverter(true);
         var model = onnxModelConverter.Convert(neuralNetworkPath);
 
@@ -116,8 +115,6 @@ public abstract class BaseBaseScript : MonoBehaviour
         using (var writer = new BinaryWriter(memoryStream))
         {
             ModelWriter.Save(writer, model);
-            //assetData.Value = memoryStream.ToArray();
-
             asset.modelData.Value = memoryStream.ToArray();
         }
 
