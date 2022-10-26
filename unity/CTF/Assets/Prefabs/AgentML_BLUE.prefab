@@ -488,6 +488,7 @@ Transform:
   - {fileID: 1768790348142297362}
   - {fileID: 8367811760509010008}
   - {fileID: 4434945626473933555}
+  - {fileID: 8312401923617088763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -872,11 +873,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
       propertyPath: m_Name
-      value: BiomSensors
+      value: BiomSensors-old
       objectReference: {fileID: 0}
     - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
@@ -983,4 +988,66 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3779873993504804493, guid: 3585b0857870ead4dbc2ad75025bb5e9, type: 3}
   m_PrefabInstance: {fileID: 4635540099200618197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5750678911861911264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3160991633920138480}
+    m_Modifications:
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010080733112404156, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_Name
+      value: BiomSensors
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+--- !u!4 &8312401923617088763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+  m_PrefabInstance: {fileID: 5750678911861911264}
   m_PrefabAsset: {fileID: 0}

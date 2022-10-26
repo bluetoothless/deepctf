@@ -370,6 +370,7 @@ Transform:
   - {fileID: 3315085542493178811}
   - {fileID: 2610861803081535337}
   - {fileID: 3950180031001334404}
+  - {fileID: 5267372540632491349}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,7 +513,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 0791cf58cf371ca489fc4eb7ee083b19, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DeepCTFv2
@@ -971,11 +972,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
       propertyPath: m_Name
-      value: BiomSensors
+      value: BiomSensors-old
       objectReference: {fileID: 0}
     - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793205984552072232, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
@@ -983,4 +988,66 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1227202831109261487, guid: 8ca34f1f33a1a6943866676cfa8895bd, type: 3}
   m_PrefabInstance: {fileID: 2870549665012652587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8470258151460466510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3160991633920138480}
+    m_Modifications:
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010080733112404156, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+      propertyPath: m_Name
+      value: BiomSensors
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+--- !u!4 &5267372540632491349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4365414665218656795, guid: 9d4bd96b5265ac14aa6917ab66aa2c00, type: 3}
+  m_PrefabInstance: {fileID: 8470258151460466510}
   m_PrefabAsset: {fileID: 0}
