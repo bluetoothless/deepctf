@@ -33,11 +33,11 @@ public abstract class BaseBaseScript : MonoBehaviour
         Agents = GameObject.Find(isRed ? "RedAgents" : "BlueAgents");
         tiles = PerlinNoiseMapGeneration.GetTilesList();
 
-        Debug.Log("OGS: spawning egants");
+        // Debug.Log("OGS: spawning egants");
         // for every Agent
         for (int i = 0; i < GameManager.EnvContr.NumberOfAgents; i++)
         {
-            Debug.Log("OGS: trying spawn agent no "+i);
+            // Debug.Log("OGS: trying spawn agent no "+i);
             if (CheckIfCanSpawnAt(CenterTile.tilesMapListIndex + 1))             // right
             {
                 SpawnAgentAt(CenterTile.tilesMapListIndex + 1);
@@ -85,10 +85,10 @@ public abstract class BaseBaseScript : MonoBehaviour
 
     public bool CheckIfCanSpawnAt(int index)
     {
-        Debug.Log("CICS: "+index);
+        // Debug.Log("CICS: "+index);
         foreach (Transform agent in Agents.transform)
         {
-            Debug.Log("CICS: " + index + " " + agent + " at " + agent.transform.position);
+            // Debug.Log("CICS: " + index + " " + agent + " at " + agent.transform.position);
             if (agent.gameObject.activeSelf && Vector3.Distance(agent.transform.position, new Vector3(tiles[index].xCenter, agentSpawnHeight, tiles[index].yCenter)) < 1f)
             {
                 return false;

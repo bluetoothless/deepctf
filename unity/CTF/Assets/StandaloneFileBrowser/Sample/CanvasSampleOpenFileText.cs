@@ -46,7 +46,9 @@ public class CanvasSampleOpenFileText : MonoBehaviour, IPointerDownHandler {
 #endif
 
     private IEnumerator OutputRoutine(string url) {
+#pragma warning disable CS0618 // Typ lub sk³adowa jest przestarza³a
         var loader = new WWW(url);
+#pragma warning restore CS0618 // Typ lub sk³adowa jest przestarza³a
         yield return loader;
         output.text = loader.text;
     }

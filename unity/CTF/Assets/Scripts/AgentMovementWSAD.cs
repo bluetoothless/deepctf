@@ -455,6 +455,6 @@ public class AgentMovementWSAD : Agent
 
     public override void OnEpisodeBegin()
     {
-        Debug.Log("EPISODE BEGIN");
+        ; // Debug.Log("EPISODE BEGIN");
     }
 }

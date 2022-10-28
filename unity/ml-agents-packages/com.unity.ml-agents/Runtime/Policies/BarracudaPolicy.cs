@@ -98,7 +98,7 @@ namespace Unity.MLAgents.Policies
         }
 
         /// <inheritdoc />
-        public void RequestDecision(AgentInfo info, List<ISensor> sensors)
+        public void RequestDecision(AgentInfo info, List<ISensor> sensors, bool isTrainer)
         {
             SendAnalytics(sensors);
             m_AgentId = info.episodeId;

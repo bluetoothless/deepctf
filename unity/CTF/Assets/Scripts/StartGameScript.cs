@@ -20,15 +20,15 @@ public class StartGameScript : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("SG: ");
+        // Debug.Log("SG: ");
 
         GameObject.Find("ButtonStart").GetComponent<UnityEngine.UI.Button>().interactable = false;
         GameObject.Find("ButtonPlaceBlue").GetComponent<UnityEngine.UI.Button>().interactable = false;
         GameObject.Find("ButtonPlaceRed").GetComponent<UnityEngine.UI.Button>().interactable = false;
 
-        Debug.Log("SG: blue on game start");
+        // Debug.Log("SG: blue on game start");
         GameManager.blueBaseScript.OnGameStart();
-        Debug.Log("SG: red on game start");
+        // Debug.Log("SG: red on game start");
         GameManager.redBaseScript.OnGameStart();
 
         AiTrainer.Spawn();

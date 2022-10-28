@@ -29,7 +29,7 @@ public static class AiTrainer
                 desertsPercentage = 70 - accelerateSurfacePercentage;
                 return;
             case FIELD_TYPE.GRASS_WATER:
-                lakesPercentage = Random.Range(40, 50);
+                lakesPercentage = Random.Range(15, 30);
                 accelerateSurfacePercentage = 0;
                 desertsPercentage = 0;
                 return;

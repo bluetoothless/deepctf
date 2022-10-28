@@ -20,7 +20,7 @@ namespace Unity.MLAgents.Policies
         /// </summary>
         /// <param name="info"></param>
         /// <param name="sensors"></param>
-        void RequestDecision(AgentInfo info, List<ISensor> sensors);
+        void RequestDecision(AgentInfo info, List<ISensor> sensors, bool isTrainer = false);
 
         /// <summary>
         /// Signals the Policy that if the Decision has not been taken yet,

@@ -22,7 +22,7 @@ public class FlagCapturingScript : MonoBehaviour
         isActive = object2.activeSelf;
         object2.SetActive(!isActive);
         // team wins
-        Debug.Log("Team " + color + " wins!");
+       // Debug.Log("Team " + color + " wins!");
         if (color == "blue")
         {
             GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "red");

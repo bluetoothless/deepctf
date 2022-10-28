@@ -166,7 +166,7 @@ public class EnvController : MonoBehaviour
 
         if (steps % 100 == 0)
         {
-            UnityEngine.Debug.Log("Steps:" + steps);
+            ;// UnityEngine.Debug.Log("Steps:" + steps);
         }
         if (steps > maxSteps)
         {
@@ -212,7 +212,7 @@ public class EnvController : MonoBehaviour
             RewardValuesScript.getRewardValues();
             if (!isRed)
             {
-                Debug.Log("Team red wins!");
+                // Debug.Log("Team red wins!");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "blue");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "red");
                 textRedWin.SetActive(true);
@@ -221,7 +221,7 @@ public class EnvController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Team blue wins!");
+                // Debug.Log("Team blue wins!");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameLost_team"], "red");
                 GameManager.AddRewardTeam(RewardValuesScript.rewards["gameWon_team"], "blue");
                 textBlueWin.SetActive(true);

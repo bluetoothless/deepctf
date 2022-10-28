@@ -33,9 +33,12 @@ namespace Unity.MLAgents.Policies
         }
 
         /// <inheritdoc />
-        public void RequestDecision(AgentInfo info, List<ISensor> sensors)
+        public void RequestDecision(AgentInfo info, List<ISensor> sensors, bool isTrainer = false)
         {
-            StepSensors(sensors);
+            if (!isTrainer)
+            {
+                StepSensors(sensors);
+            }
             m_Done = info.done;
             m_DecisionRequested = true;
         }

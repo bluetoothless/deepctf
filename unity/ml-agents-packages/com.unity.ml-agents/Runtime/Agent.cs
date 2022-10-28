@@ -1105,7 +1105,7 @@ namespace Unity.MLAgents
 
             using (TimerStack.Instance.Scoped("RequestDecision"))
             {
-                m_Brain.RequestDecision(m_Info, sensors);
+                m_Brain.RequestDecision(m_Info, sensors, isTrainerAgent);
             }
 
             // If we have any DemonstrationWriters, write the AgentInfo and sensors to them.
