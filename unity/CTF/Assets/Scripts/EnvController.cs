@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
 using UnityEngine.SceneManagement;
 
 public class EnvController : MonoBehaviour
@@ -231,11 +232,11 @@ public class EnvController : MonoBehaviour
 
     public void EndEpisode()
     {
-        Debug.Log("EE");
+        // Debug.Log("EE");
         Ending();
-        Debug.Log("EE: EGE blue");
+        // Debug.Log("EE: EGE blue");
         GameManager.blueAgentGroup.EndGroupEpisode();
-        Debug.Log("EE: EGE red");
+        // Debug.Log("EE: EGE red");
         GameManager.redAgentGroup.EndGroupEpisode();
         //Odtad nowa mapa i start gry
         ResetScene();
@@ -245,7 +246,7 @@ public class EnvController : MonoBehaviour
     {
         if (!textRedWin.activeSelf && !textBlueWin.activeSelf)
         {
-            Debug.Log("Game Over: Tie, time ran out");
+           // Debug.Log("Game Over: Tie, time ran out");
             textTie.SetActive(true);
         }
         //Debug.Log("EndMaxSteps");

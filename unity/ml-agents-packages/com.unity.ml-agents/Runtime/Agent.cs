@@ -342,6 +342,7 @@ namespace Unity.MLAgents
 
         /// Currect MultiAgentGroup ID. Default to 0 (meaning no group)
         int m_GroupId;
+        public bool isTrainerAgent = false;
 
         /// Delegate for the agent to unregister itself from the MultiAgentGroup without cyclic reference
         /// between agent and the group
@@ -575,7 +576,10 @@ namespace Unity.MLAgents
             }
             // Request the last decision with no callbacks
             // We request a decision so Python knows the Agent is done immediately
-            m_Brain?.RequestDecision(m_Info, sensors);
+            if (m_Brain.GetType()  != typeof(Unity.MLAgents.Policies.HeuristicPolicy))
+            {
+                m_Brain?.RequestDecision(m_Info, sensors);
+            }
 
             // We also have to write any to any DemonstationStores so that they get the "done" flag.
             if (DemonstrationWriters.Count != 0)
@@ -1075,12 +1079,15 @@ namespace Unity.MLAgents
                 m_Info.CopyActions(m_ActuatorManager.StoredActions);
             }
 
-            UpdateSensors();
-            using (TimerStack.Instance.Scoped("CollectObservations"))
+            if (!isTrainerAgent)
             {
-                using (m_CollectObservationsChecker.Start())
+                UpdateSensors();
+                using (TimerStack.Instance.Scoped("CollectObservations"))
                 {
-                    CollectObservations(collectObservationsSensor);
+                    using (m_CollectObservationsChecker.Start())
+                    {
+                        CollectObservations(collectObservationsSensor);
+                    }
                 }
             }
             using (TimerStack.Instance.Scoped("WriteActionMask"))

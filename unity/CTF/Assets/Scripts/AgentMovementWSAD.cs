@@ -38,6 +38,10 @@ public class AgentMovementWSAD : Agent
     void Awake()
     {
         isAgentSet = false;
+        if (isTrainer)
+        {
+            isTrainerAgent = true;
+        }
     }
 
     void Start()
@@ -205,9 +209,9 @@ public class AgentMovementWSAD : Agent
         float maxReward = RewardValuesScript.rewards["agentCloseToFlag"];
         float distanceDifference = lastestDistance - distanceNow;
         float reward = maxReward * distanceDifference;
-        Debug.Log("Distance Difference = " + distanceDifference + "  Reward = " + reward);
+        // Debug.Log("Distance Difference = " + distanceDifference + "  Reward = " + reward);
         Reward__Delete_it += reward;
-        Debug.Log("TOTAL DISTANCE REW. = " + Reward__Delete_it);
+        // Debug.Log("TOTAL DISTANCE REW. = " + Reward__Delete_it);
         AddRewardAgent(reward);
 
         float maxRewardTeam = RewardValuesScript.rewards["agentCloseToFlag_team"];
@@ -250,10 +254,10 @@ public class AgentMovementWSAD : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        if(isTrainer)
+        /*if(isTrainer)
         {
             return;
-        }
+        }*/
 
         bool agentHoldsFlag = gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf;    // IS HOLDING FLAG? 1 float
         sensor.AddObservation(agentHoldsFlag ? 1.0f : 0.0f );
@@ -358,12 +362,12 @@ public class AgentMovementWSAD : Agent
                 outputArray[i, 1] = 1; // 1 bo znalazł agenta
                 outputArray[i, 2] = hittedColor == gameObject.GetComponent<AgentComponentsScript>().color ? 1.0f : -1.0f; // wróg -1 / swój 1
                 outputArray[i, 3] = hit.collider.gameObject.GetComponent<AgentComponentsScript>().AgentFlag.activeSelf ? 1.0f : 0.0f; // 1 jeśli ma flagę, 0 jak nie ma
-                Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
+                // Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
             }
             else
             {
                 // tablice od inicjalizacji są wypełnione 0
-                Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
+                ;// Debug.DrawRay(ray.origin, ray.direction * RayDistance, Color.green);
             }
 
         }
