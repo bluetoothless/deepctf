@@ -1,1 +1,1 @@
-Write-Host "Congratulations! Your first script executed successfully"cd .\..\...\deepCTFenv\Scripts\activatemlagents-learn results\mapoca\newconfiguration.yaml --run-id=2022-10-12_07-56-29_id --env=SuperBuild1.0\CTF --num-envs=5 --resume --no-graphicsnotepad.exe
+Write-Host "Congratulations! Your first script executed successfully"cd .\..\...\deepCTFenv\Scripts\activatemlagents-learn results\mapoca\newconfiguration.yaml --run-id=2022-10-12_07-56-29_id --env=SuperBuild1.0\CTF --num-envs=5 --resume --no-graphics

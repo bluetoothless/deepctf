@@ -53,12 +53,15 @@ public static class Runner
             resume + no_graphics;
     }
 
-
+    public static string GetCommand()
+    {
+        return Buid_environment() + " ; " + MLagents_learn();
+    }
 
     public static void Execute()
     {
         string command =
-            CD() + " ; " +
+            /*CD() + " ; " +*/
             Buid_environment() + " ; " +
             MLagents_learn();
 
@@ -69,7 +72,7 @@ public static class Runner
     {
         process = new Process();
         process.StartInfo.FileName = "powershell.exe";
-        process.StartInfo.Arguments = command;
+        //process.StartInfo.Arguments = command;
         UnityEngine.Debug.Log("powershell.exe " + command);
         process.Start();
     }
@@ -83,7 +86,7 @@ public static class Runner
         //closingProcess.StartInfo.Arguments = "/F /PID " + process.Id;
         //closingProcess.StartInfo.CreateNoWindow = true;
         //closingProcess.Start();
-        //process.Kill();
+        process.Kill();
         UnityEngine.Debug.Log("Closed");
     }
 }
