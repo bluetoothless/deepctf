@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using UnityEngine;
 
 public static class AiTrainer
@@ -7,12 +9,45 @@ public static class AiTrainer
     public enum FIELD_TYPE { DEFAULT, GRASS, GRASS_ACCELERATE_DESERT, GRASS_WATER, RANDOM_FIELD};
 
     public static bool AITrainerMode = GameObject.Find("Agents").GetComponent<AgentsComponents>().AiTrainerMode;
-    public static int test_id = 0; // test level form 0 to 5
-    public static FIELD_TYPE variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS_WATER; // test level form 0 to 3
+    public static int test_id; // test level form 0 to 5
+    public static FIELD_TYPE variant_id; // test level form 0 to 3
     private static List<TestLevel> level = new List<TestLevel>() {
                                            new TestLevel0(), new TestLevel1(),
                                            new TestLevel2(), new TestLevel3(),
                                            new TestLevel4(), new TestLevel5()};
+
+    public static void getLearningConfig()
+    {
+        // get file from streaming assets and load values;
+
+        List<string> lines = new List<string>();
+        string path = Application.streamingAssetsPath + "/LearningConfig.txt";
+        StreamReader reader = new StreamReader(path);
+
+        string[] config = reader.ReadLine().Split(';');
+        test_id = int.Parse(config[0]);
+        switch(int.Parse(config[1]))
+        {
+            case 1:
+                variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS;
+                break;
+            case 2:
+                variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS_ACCELERATE_DESERT;
+                break;
+            case 3:
+                variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.GRASS_WATER;
+                break;
+            case 4:
+                variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.RANDOM_FIELD;
+                break;
+            default:
+                variant_id = !AITrainerMode ? FIELD_TYPE.DEFAULT : FIELD_TYPE.DEFAULT;
+                break;
+        }
+
+        reader.Close();
+    }
+
 
     public static void SetPercentages(ref int lakesPercentage, ref int accelerateSurfacePercentage, ref int desertsPercentage)
     {

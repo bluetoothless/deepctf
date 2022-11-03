@@ -23,6 +23,8 @@ public class EnvController : MonoBehaviour
 
     void Awake()//false dla testow czy initialize wszystko
     {
+        AiTrainer.getLearningConfig();
+
         PlayerPrefs.SetString("neuralNetworkName", behaviorName);
         if (GameManager.IsSpectatorMode)
         {
