@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ public class LearningOptionsScript : MonoBehaviour
         level = levelChoiceDropdownList.options[levelChoiceDropdownList.value].text;
         mapType = mapTypeChoiceDropdownList.options[mapTypeChoiceDropdownList.value].text;
 
-        Debug.Log("Level: "+ level + "\nMap type: " + mapType + "\nNumber of learning environment instances: " + nrOfEnvInstances);
+        // Debug.Log("Level: "+ level + "\nMap type: " + mapType + "\nNumber of learning environment instances: " + nrOfEnvInstances);
         Runner.Execute();
     }
 
@@ -47,7 +48,17 @@ public class LearningOptionsScript : MonoBehaviour
     {
         level = levelChoiceDropdownList.options[levelChoiceDropdownList.value].text;
         mapType = mapTypeChoiceDropdownList.options[mapTypeChoiceDropdownList.value].text;
-        Debug.Log("Level choice: " + level);
-        Debug.Log("Map type choice: " + mapType);
+        // Debug.Log("Level choice: " + level);
+        // Debug.Log("Map type choice: " + mapType);
+
+        var path = Application.streamingAssetsPath + "/LearningConfig.txt";
+
+        FileStream fileStream = File.Open(path, FileMode.Append);
+        StreamWriter writer = new StreamWriter(fileStream);
+        writer.Close();
+
+        writer = new StreamWriter(path, append:false);
+        writer.WriteLine(levelChoiceDropdownList.value.ToString() + ';' + (mapTypeChoiceDropdownList.value + 1).ToString());
+        writer.Close();
     }
 }
