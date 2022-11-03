@@ -10,7 +10,7 @@ public static class Runner
 { 
     private static string Id = "2022-10-12_07-56-29_id";
     private static string Environment_path = ".\\..\\.."; // \deepctf;
-    private static bool Resume = true;
+    private static bool Resume = false;
     private static bool graphics = false;
     private static Process process;
 
@@ -36,8 +36,8 @@ public static class Runner
 
     public static string MLagents_learn()
     {
-        string Configuration_path = Application.streamingAssetsPath + "/configuration.yaml";
-        string Env_path = "SuperBuild1.0\\CTF";
+        string Configuration_path = ".\\CTF_Data\\StreamingAssets\\configuration.yaml";
+        string Env_path = "MainSceneBuild\\CTF";
         int Number_of_envs = 5;
 
 
@@ -49,8 +49,8 @@ public static class Runner
         return "mlagents-learn " + Configuration_path +
             " --run-id=" + Id + "" +
             " --env=" + Env_path +
-            " --num-envs=" + Number_of_envs.ToString() +
-            resume + no_graphics;
+            " --num-envs=" + Number_of_envs +
+            no_graphics + resume;
     }
 
     public static string GetCommand()

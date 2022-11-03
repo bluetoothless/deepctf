@@ -36,7 +36,7 @@ public class SelectedNeuralNetworkScript : MonoBehaviour
 
     private string GetLatestUpdatedDirectory()
     {
-        var dir = new DirectoryInfo("../../results");
+        var dir = new DirectoryInfo(".\\results");
         var latestUpdatedDir = dir.GetDirectories()
             .OrderByDescending(x => x.LastWriteTime)
             .Where(x => x.Name != "mapoca")

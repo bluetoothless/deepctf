@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,5 +61,22 @@ public class LearningOptionsScript : MonoBehaviour
         writer = new StreamWriter(path, append:false);
         writer.WriteLine(levelChoiceDropdownList.value.ToString() + ';' + (mapTypeChoiceDropdownList.value + 1).ToString());
         writer.Close();
+    }
+
+    public void OpenRewardsFile()
+    {
+        var rewardsFile = Application.streamingAssetsPath + "/Rewards.txt";
+        Process.Start("notepad.exe", rewardsFile);
+    }
+
+    public void OpenConfigFile()
+    {
+        var configFile = Application.streamingAssetsPath + "/configuration.yaml";
+        Process.Start("notepad.exe", configFile);
+    }
+
+    public void OpenMLAgentsDocsInBrowser()
+    {
+        Process.Start("https://github.com/Unity-Technologies/ml-agents/blob/release_19_docs/docs/Training-Configuration-File.md");
     }
 }
