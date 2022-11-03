@@ -36,7 +36,7 @@ public static class Runner
 
     public static string MLagents_learn()
     {
-        string Configuration_path = "results\\mapoca\\newconfiguration.yaml";
+        string Configuration_path = Application.streamingAssetsPath + "/configuration.yaml";
         string Env_path = "SuperBuild1.0\\CTF";
         int Number_of_envs = 5;
 
