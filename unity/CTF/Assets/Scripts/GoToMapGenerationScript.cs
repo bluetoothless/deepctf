@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class GoToMapGenerationScript : MonoBehaviour
 {
-    [SerializeField] GameObject errorText;
+    [SerializeField] GameObject biomesPercentErrorText;
+    [SerializeField] GameObject noNeuralNetworkPathErrorText;
     [SerializeField] Slider sliderNrOfAgents;
     [SerializeField] Slider sliderEpisodeLength;
     [SerializeField] Slider sliderDeserts;
@@ -34,15 +35,24 @@ public class GoToMapGenerationScript : MonoBehaviour
             PlayerPrefs.SetInt("desertsPercent", desertsPercent);
             PlayerPrefs.SetInt("lakesPercent", lakesPercent);
             PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);
-            PlayerPrefs.SetString("neuralNetworkPath", 
-                neuralNetworkSelectionButton.GetComponent<SelectedNeuralNetworkScript>().GetPath());
 
-            SceneManager.LoadScene("SceneMain");
+            var nnPath = neuralNetworkSelectionButton.GetComponent<SelectedNeuralNetworkScript>().GetPath();
+            if (nnPath.Contains(".onnx"))
+            {
+                PlayerPrefs.SetString("neuralNetworkPath", nnPath);
+
+                SceneManager.LoadScene("SceneMain");
+            }
+            else
+            {
+                bool isActive = noNeuralNetworkPathErrorText.activeSelf;
+                noNeuralNetworkPathErrorText.SetActive(!isActive);
+            }
         }
         else
         {
-            bool isActive = errorText.activeSelf;
-            errorText.SetActive(!isActive);
+            bool isActive = biomesPercentErrorText.activeSelf;
+            biomesPercentErrorText.SetActive(!isActive);
         }
     }
 }
