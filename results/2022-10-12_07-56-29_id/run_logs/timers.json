@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1667432327",
+        "python_version": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\Github(whaaat)\\deepctf\\deepCTFenv\\Scripts\\mlagents-learn results\\mapoca\\newconfiguration.yaml --run-id=2022-10-12_07-56-29_id --env=SuperBuild1.0\\CTF --num-envs=5 --no-graphics",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.12.1+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1667432332"
+    },
+    "total": 4.9832517,
+    "count": 1,
+    "self": 0.9348524000000005,
+    "children": {
+        "run_training.setup": {
+            "total": 1.6764629999999996,
+            "count": 1,
+            "self": 1.6764629999999996
+        },
+        "TrainerController.start_learning": {
+            "total": 2.3719362999999998,
+            "count": 1,
+            "self": 0.0013450999999990998,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.3705704,
+                    "count": 1,
+                    "self": 2.3705704
+                },
+                "trainer_threads": {
+                    "total": 1.600000000046009e-06,
+                    "count": 1,
+                    "self": 1.600000000046009e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 1.920000000055211e-05,
+                    "count": 1,
+                    "self": 1.920000000055211e-05
+                }
+            }
+        }
+    }
+}
