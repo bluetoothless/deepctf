@@ -21,7 +21,7 @@ public class LearningOptionsScript : MonoBehaviour
         levelChoiceDropdownList = levelChoiceDropdownListComponent.GetComponent<TMPro.TMP_Dropdown>();
         mapTypeChoiceDropdownList = mapTypeChoiceDropdownListComponent.GetComponent<TMPro.TMP_Dropdown>();
 
-        var command = Runner.GetCommand();
+        var command = Runner.GetCommand((int)sliderNrOfEnvInstances.value);
         learningCommandInputField.text = command;
         learningCommandInputField.readOnly = true;
     }
@@ -34,7 +34,7 @@ public class LearningOptionsScript : MonoBehaviour
         mapType = mapTypeChoiceDropdownList.options[mapTypeChoiceDropdownList.value].text;
 
         // Debug.Log("Level: "+ level + "\nMap type: " + mapType + "\nNumber of learning environment instances: " + nrOfEnvInstances);
-        Runner.Execute();
+        Runner.Execute(nrOfEnvInstances);
     }
 
     public void CopyToClipboard()
@@ -52,7 +52,17 @@ public class LearningOptionsScript : MonoBehaviour
         // Debug.Log("Level choice: " + level);
         // Debug.Log("Map type choice: " + mapType);
 
-        var path = Application.streamingAssetsPath + "/LearningConfig.txt";
+        String path;
+        if (Application.isEditor)
+        {
+            path = Application.streamingAssetsPath + "/LearningConfig.txt";
+        }
+        else
+        {
+            // path = Application.dataPath + "/../MainSceneBuild/CTF_Data/StreamingAssets" + "/LearningConfig.txt";
+            path = Directory.GetCurrentDirectory() + "\\MainSceneBuild\\CTF_Data\\StreamingAssets" + "\\LearningConfig.txt";
+        }
+        // UnityEngine.Debug.Log("Path: " + path);
 
         FileStream fileStream = File.Open(path, FileMode.Append);
         StreamWriter writer = new StreamWriter(fileStream);
@@ -65,7 +75,7 @@ public class LearningOptionsScript : MonoBehaviour
 
     public void OpenRewardsFile()
     {
-        var rewardsFile = Application.streamingAssetsPath + "/Rewards.txt";
+        var rewardsFile = Directory.GetCurrentDirectory() + "\\MainSceneBuild\\CTF_Data\\StreamingAssets" + "\\Rewards.txt";
         Process.Start("notepad.exe", rewardsFile);
     }
 
@@ -78,5 +88,11 @@ public class LearningOptionsScript : MonoBehaviour
     public void OpenMLAgentsDocsInBrowser()
     {
         Process.Start("https://github.com/Unity-Technologies/ml-agents/blob/release_19_docs/docs/Training-Configuration-File.md");
+    }
+
+    public void UpdateCommand()
+    {
+        var command = Runner.GetCommand((int)sliderNrOfEnvInstances.value);
+        learningCommandInputField.text = command;
     }
 }

@@ -34,11 +34,10 @@ public static class Runner
         return ".\\deepCTFenv\\Scripts\\activate";
     }
 
-    public static string MLagents_learn()
+    public static string MLagents_learn(int nrOfEnvs)
     {
         string Configuration_path = ".\\CTF_Data\\StreamingAssets\\configuration.yaml";
         string Env_path = "MainSceneBuild\\CTF";
-        int Number_of_envs = 5;
 
 
         string resume = Resume && Check_id() ? " --resume" : "";
@@ -49,21 +48,21 @@ public static class Runner
         return "mlagents-learn " + Configuration_path +
             " --run-id=" + Id + "" +
             " --env=" + Env_path +
-            " --num-envs=" + Number_of_envs +
+            " --num-envs=" + nrOfEnvs +
             no_graphics + resume;
     }
 
-    public static string GetCommand()
+    public static string GetCommand(int nrOfEnvs)
     {
-        return Buid_environment() + " ; " + MLagents_learn();
+        return Buid_environment() + " & " + MLagents_learn(nrOfEnvs);
     }
 
-    public static void Execute()
+    public static void Execute(int nrOfEnvs)
     {
         string command =
             /*CD() + " ; " +*/
-            Buid_environment() + " ; " +
-            MLagents_learn();
+            Buid_environment() + " & " +
+            MLagents_learn(nrOfEnvs);
 
         CMD_Execute(command);
     }
@@ -71,22 +70,22 @@ public static class Runner
     public static void CMD_Execute(string command)
     {
         process = new Process();
-        process.StartInfo.FileName = "powershell.exe";
+        process.StartInfo.FileName = "cmd.exe";
         //process.StartInfo.Arguments = command;
-        UnityEngine.Debug.Log("powershell.exe " + command);
+        // UnityEngine.Debug.Log("cmd.exe " + command);
         process.Start();
     }
 
     public static void Finish()
     {
-        UnityEngine.Debug.Log("Finishing... process name: " + process.ProcessName 
-            +  ", process ID: " + process.Id);
+        // UnityEngine.Debug.Log("Finishing... process name: " + process.ProcessName 
+            // +  ", process ID: " + process.Id);
         //var closingProcess = new Process();
         //closingProcess.StartInfo.FileName = "taskkill";
         //closingProcess.StartInfo.Arguments = "/F /PID " + process.Id;
         //closingProcess.StartInfo.CreateNoWindow = true;
         //closingProcess.Start();
         process.Kill();
-        UnityEngine.Debug.Log("Closed");
+        // UnityEngine.Debug.Log("Closed");
     }
 }

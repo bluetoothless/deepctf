@@ -3200,6 +3200,7 @@ GameObject:
   - component: {fileID: 962017014}
   - component: {fileID: 962017016}
   - component: {fileID: 962017015}
+  - component: {fileID: 962017017}
   m_Layer: 5
   m_Name: SliderEnvironments
   m_TagString: Untagged
@@ -3296,7 +3297,35 @@ MonoBehaviour:
   m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962017017}
+        m_TargetAssemblyTypeName: LearningOptionsScript, Assembly-CSharp
+        m_MethodName: UpdateCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &962017017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962017013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a274bd1cbc42ba4eaf647e2d90742e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderNrOfEnvInstances: {fileID: 962017016}
+  levelChoiceDropdownListComponent: {fileID: 900770282}
+  mapTypeChoiceDropdownListComponent: {fileID: 677680772}
+  learningCommandInputField: {fileID: 1228712643}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
