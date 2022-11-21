@@ -37,6 +37,12 @@ public class AgentMovementWSAD : Agent
 
     void Awake()
     {
+        var levelOrFreeMode = PlayerPrefs.GetInt("level");
+        if (levelOrFreeMode != 4)
+        {
+            isTrainer = true;
+        }
+
         isAgentSet = false;
         if (isTrainer)
         {

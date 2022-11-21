@@ -15,6 +15,8 @@ public class GoToMapGenerationScript : MonoBehaviour
     [SerializeField] Slider sliderLakes;
     [SerializeField] Slider sliderAccSurfaces;
     [SerializeField] GameObject neuralNetworkSelectionButton;
+    [SerializeField] GameObject levelChoiceDropdownListComponent;
+    private TMPro.TMP_Dropdown levelChoiceDropdownList;
 
     private int nrOfAgents;
     private int episodeLength;
@@ -25,6 +27,8 @@ public class GoToMapGenerationScript : MonoBehaviour
     {
         nrOfAgents = (int)sliderNrOfAgents.value;
         episodeLength = (int)sliderEpisodeLength.value;
+        levelChoiceDropdownList = levelChoiceDropdownListComponent.GetComponent<TMPro.TMP_Dropdown>();
+        var level = levelChoiceDropdownList.value;
         desertsPercent = (int)sliderDeserts.value;
         lakesPercent = (int)sliderLakes.value;
         accSurfacesPercent = (int)sliderAccSurfaces.value;
@@ -35,6 +39,7 @@ public class GoToMapGenerationScript : MonoBehaviour
             PlayerPrefs.SetInt("desertsPercent", desertsPercent);
             PlayerPrefs.SetInt("lakesPercent", lakesPercent);
             PlayerPrefs.SetInt("accSurfacesPercent", accSurfacesPercent);
+            PlayerPrefs.SetInt("level", level);
 
             var nnPath = neuralNetworkSelectionButton.GetComponent<SelectedNeuralNetworkScript>().GetPath();
             if (nnPath.Contains(".onnx"))

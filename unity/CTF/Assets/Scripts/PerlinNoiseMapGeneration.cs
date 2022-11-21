@@ -117,6 +117,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
     public int lakesPercentage = 20;
     public int accelerateSurfacePercentage = 10;
     public int desertsPercentage = 35;
+    public int level = 0;
     private int nextDomain = 0;
     private static GameObject blueBasePrefab;
     private static GameObject redBasePrefab;
@@ -154,6 +155,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
         lakesPercentage = PlayerPrefs.GetInt("lakesPercent");
         accelerateSurfacePercentage = PlayerPrefs.GetInt("accSurfacesPercent");
         desertsPercentage = PlayerPrefs.GetInt("desertsPercent");
+        level = PlayerPrefs.GetInt("level");
         newBlueBase = null;
         newRedBase = null;
     }
@@ -167,6 +169,7 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     public void StartAndGeneration()
     {
+
         AiTrainer.SetPercentages(ref lakesPercentage, ref accelerateSurfacePercentage, ref desertsPercentage);
 
         GenerateMap();

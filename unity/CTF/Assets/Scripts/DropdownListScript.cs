@@ -20,6 +20,16 @@ public class DropdownListScript : MonoBehaviour
                 "Level 3"
             });
         }
+        else if (dropdownListType == "levelOrFreeMode")
+        {
+            options.AddRange(new List<string>
+            {
+                "Level 1",
+                "Level 2",
+                "Level 3",
+                "Team vs. Team"
+            });
+        }
         else if (dropdownListType == "mapType")
         {
             options.AddRange(new List<string>
