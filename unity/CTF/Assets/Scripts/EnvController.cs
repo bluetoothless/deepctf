@@ -42,7 +42,7 @@ public class EnvController : MonoBehaviour
         mapGenerator = transform.GetChild(3).GetComponent<PerlinNoiseMapGeneration>(); 
         while(mapGenerator == null)
         {
-            Debug.LogError("mapGenerator is empty!");
+            ;//Debug.LogError("mapGenerator is empty!");
         }
         mapGenerator.StartAndGeneration(); // use AITRAINER, PLACES BASES AND TILES
 
@@ -51,7 +51,7 @@ public class EnvController : MonoBehaviour
 
         while(blueBaseScript == null || redBaseScript == null)
         {
-            Debug.LogError("xBaseScripts is empty is empty!");
+            ;//Debug.LogError("xBaseScripts is empty is empty!");
         }
 
         GameManager.redBaseScript = redBaseScript;
@@ -63,7 +63,7 @@ public class EnvController : MonoBehaviour
         StartGameScript SGS = transform.GetChild(7).GetChild(0).GetChild(0).GetChild(3).GetComponent<StartGameScript>();
         while(mapGenerator == null)
         {
-            Debug.LogError("StartGameScript SGS is empty!");
+            ;//Debug.LogError("StartGameScript SGS is empty!");
         }
 
 
@@ -81,24 +81,24 @@ public class EnvController : MonoBehaviour
         isEverythingSet = false;
         while(!mapGenerator.isMapSet)
         {
-            Debug.Log("Map is not set yet!");
+            //Debug.Log("Map is not set yet!");
             return;
         }
         if (!GameManager.redBaseScript.isBaseSet || !GameManager.blueBaseScript.isBaseSet)
         {
-            Debug.Log("xBase is not set yet!");
+            //Debug.Log("xBase is not set yet!");
             return;
         }
         for(int i=0;i<NumberOfAgents;i++)
         {
             if (!GameManager.BlueAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
             {
-                Debug.Log("BlueAgents[" + i + "] is not set yet!");
+                //Debug.Log("BlueAgents[" + i + "] is not set yet!");
                 return;
             }
             if (!GameManager.RedAgents[i].GetComponent<AgentMovementWSAD>().isAgentSet)
             {
-                Debug.Log("RedAgents["+i+"] is not set yet!");
+                //Debug.Log("RedAgents["+i+"] is not set yet!");
                 return;
             }
         }
