@@ -100,6 +100,15 @@ public static class AiTrainer
 
     public static void Spawn()
     {
+        var levelOrFreeMode = PlayerPrefs.GetInt("level");
+        if (levelOrFreeMode != 3)
+        {
+            AITrainerMode = true;
+        }
+        else
+        {
+            AITrainerMode = false;
+        }
         if (!AITrainerMode)
            return;
 
@@ -108,6 +117,15 @@ public static class AiTrainer
 
     public static bool GetAITrainerMode()
     {
+        var levelOrFreeMode = PlayerPrefs.GetInt("level");
+        if (levelOrFreeMode != 3)
+        {
+            AITrainerMode = true;
+        }
+        else
+        {
+            AITrainerMode = false;
+        }
         return AITrainerMode;
     }
 }

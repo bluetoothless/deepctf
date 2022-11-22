@@ -13,5 +13,9 @@ public class AgentsComponents : MonoBehaviour
         {
             AiTrainerMode = true;
         }
+        else
+        {
+            AiTrainerMode = false;
+        }
     }
 }
