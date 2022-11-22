@@ -169,8 +169,10 @@ public class PerlinNoiseMapGeneration : MonoBehaviour
 
     public void StartAndGeneration()
     {
-
-        AiTrainer.SetPercentages(ref lakesPercentage, ref accelerateSurfacePercentage, ref desertsPercentage);
+        if (level != 3)
+        {
+            AiTrainer.SetPercentages(ref lakesPercentage, ref accelerateSurfacePercentage, ref desertsPercentage);
+        }
 
         GenerateMap();
         FindDomains();
