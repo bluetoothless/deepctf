@@ -38,7 +38,7 @@ public class AgentMovementWSAD : Agent
     void Awake()
     {
         var levelOrFreeMode = PlayerPrefs.GetInt("level");
-        if (levelOrFreeMode != 3 && gameObject.GetComponent<AgentComponentsScript>().color == "blue")
+        if (levelOrFreeMode != 4 && gameObject.GetComponent<AgentComponentsScript>().color == "blue")
         {
             isTrainer = true;
             gameObject.GetComponent<BehaviorParameters>().BehaviorType = BehaviorType.HeuristicOnly;

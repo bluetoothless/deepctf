@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class TestLevel2 : TestLevel
 {
-    public int variant = 0;
-
-    public float rotateSpeed = 180f;
-    public float forwardSpeed = 600f;
-    public float backSpeed = 450f;
-
     public override (bool, bool, bool, bool) Run()
     {
-        bool W = Random.Range(0, 10) > 5;
-        bool S = !W;
-        bool A = Random.Range(0, 10) > 5;
-        bool D = !A;
-
+        bool W = true;
+        bool S = false;
+        bool A = Random.Range(0, 100) > 33;
+        bool D = false;
         return (W, S, A, D);
     }
 
     public override void Spawn()
     {
+        foreach (var agent in GameManager.BlueAgents)
+        {
+            agent.transform.position = new Vector3(agent.transform.position.x, 20, agent.transform.position.z);
+        }
+
         var blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
 
-        for (int i = 0; i < Random.Range(10, 30); i++)
+        for (int i = 0; i < Random.Range(7, 12); i++)
         {
             int index;
             do

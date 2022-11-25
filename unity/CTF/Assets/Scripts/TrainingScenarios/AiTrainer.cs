@@ -95,13 +95,15 @@ public static class AiTrainer
 
     public static (bool, bool, bool, bool) Run()
     {
-        return level[test_id].Run();
+        var levelOrFreeMode = PlayerPrefs.GetInt("level");
+        //return level[test_id].Run();
+        return level[levelOrFreeMode].Run();
     }
 
     public static void Spawn()
     {
         var levelOrFreeMode = PlayerPrefs.GetInt("level");
-        if (levelOrFreeMode != 3)
+        if (levelOrFreeMode != 4)
         {
             AITrainerMode = true;
         }
@@ -112,13 +114,14 @@ public static class AiTrainer
         if (!AITrainerMode)
            return;
 
-        level[test_id].Spawn();
+        // level[test_id].Spawn();
+        level[levelOrFreeMode].Spawn();
     }
 
     public static bool GetAITrainerMode()
     {
         var levelOrFreeMode = PlayerPrefs.GetInt("level");
-        if (levelOrFreeMode != 3)
+        if (levelOrFreeMode != 4)
         {
             AITrainerMode = true;
         }

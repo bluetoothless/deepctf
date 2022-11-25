@@ -9,7 +9,7 @@ public class AgentsComponents : MonoBehaviour
     void Awake()
     {
         var levelOrFreeMode = PlayerPrefs.GetInt("level");
-        if (levelOrFreeMode != 3)
+        if (levelOrFreeMode != 4)
         {
             AiTrainerMode = true;
         }

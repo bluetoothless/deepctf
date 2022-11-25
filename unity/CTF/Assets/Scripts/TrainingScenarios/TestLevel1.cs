@@ -22,7 +22,7 @@ public class TestLevel1 : TestLevel
 
         var blueBaseScript = GameObject.Find("Blue Base(Clone)").GetComponent<BlueBaseScript>();
 
-        for (int i = 0; i < Random.Range(10, 30); i++)
+        for (int i = 0; i < Random.Range(8, 14); i++)
         {
             int index;
             do
