@@ -7,6 +7,10 @@ public class LoadSceneScript : MonoBehaviour
 {
     public void SpectatorModeSelected()
     {
+        if(SceneManager.GetActiveScene().name == "SceneMain")
+        {
+            GameManager.EnvContr.Ending();
+        }
         GameManager.IsSpectatorMode = true;
         SceneManager.LoadScene("SceneUIMapGeneration");
     }
@@ -17,12 +21,21 @@ public class LoadSceneScript : MonoBehaviour
     }
     public void GoToMainMenu()
     {
-        GameManager.RedAgents = new List<GameObject> { };
-        GameManager.BlueAgents = new List<GameObject> { };
+        if (SceneManager.GetActiveScene().name == "SceneMain")
+        {
+            GameManager.EnvContr.Ending();
+        }
+        // GameManager.RedAgents = new List<GameObject> { };
+        // GameManager.BlueAgents = new List<GameObject> { };
+
         SceneManager.LoadScene("SceneUIStart");
     }
     public void GoToMainScene()
     {
+        if (SceneManager.GetActiveScene().name == "SceneMain")
+        {
+            GameManager.EnvContr.Ending();
+        }
         SceneManager.LoadScene("SceneMain");
     }
 }

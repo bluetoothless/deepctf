@@ -274,7 +274,7 @@ public class EnvController : MonoBehaviour
         }
     }
 
-    private void Ending()
+    public void Ending()
     {
         //Debug.Log("E: Clearing Lists");
         List<GameObject> tmp = new List<GameObject> { };

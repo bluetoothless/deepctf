@@ -2316,6 +2316,7 @@ MonoBehaviour:
   lakesPercentage: 5
   accelerateSurfacePercentage: 10
   desertsPercentage: 0
+  level: 0
   isMapSet: 0
 --- !u!1 &1063109420
 GameObject:
