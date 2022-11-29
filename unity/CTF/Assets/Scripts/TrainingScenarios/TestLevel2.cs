@@ -10,6 +10,7 @@ public class TestLevel2 : TestLevel
         bool S = false;
         bool A = Random.Range(0, 100) > 33;
         bool D = false;
+        
         return (W, S, A, D);
     }
 
